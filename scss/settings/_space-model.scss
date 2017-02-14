@@ -6,47 +6,43 @@
  * You can even give them an absolute position!
  */
 
-/*
- * Define the types of spacings you like to use
- *
- * @example results in classes like:
- *      .space-[type],
- *      .space-padding,
- *      .space-margin,
- *      .space-position -> should be used together with .space-absolute, space-relative, space-fixed
- */
-
-/*
- * Define directions for generation of direction classes
- *
- * @example for directions:
- * .space-padding-top          -> Top direction for default size
- * .space-padding-small-vertical    -> Vertical direction for small size
- */
-
-$space-settings-sizes: (
-	default:(
+$space-object-settings: (
+	/** Define generation of objects: .[object]
+	 *
+	 * @example: .space-[type],  .site-[type], .content-[type]
+	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
+	 */
+	site: ( //Defines global alignment related to the site
+		viewports:(
+			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
+			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+		),
+	),
+	content:( //Defines alignment related to the main content
 		viewports:(
 			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
 			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
 			large:(3.5rem, 3.5rem, 3.5rem, 3.5rem)
 		)
 	),
-	small: (
-		viewports:(
-			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
-			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
-			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
-		),
-	)
 ) !default;
 
 $space-settings: (
+	/** Define generation of: .space-[type]
+	 *
+	 * @example: .space-padding, .space-margin, .space-position
+	 */
 	types:(
 		padding,
 		margin,
-		absolute
+		position
 	),
+	/** Define generation of: .space-[type]-[direction]
+	 *
+	 * @example 1: .space-[type]-top, .space-[type]-vertical
+	 * @example 2: .space-padding-top, .space-margin-vertical
+	 */
 	directions:(
 		top:(
 			top
@@ -69,5 +65,10 @@ $space-settings: (
 			left
 		)
 	),
+	/** Define generation of classes: .space-[type]-[direction]-negative
+	 *
+	 * @example .space-margin-horizontal-negative
+	 * @note: does not work on 'padding' type
+	 */
 	negative: true
 ) !default;
