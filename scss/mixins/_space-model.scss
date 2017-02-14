@@ -1,0 +1,172 @@
+/*
+ * Space Model Mixin
+ *
+ * Version: 1.1
+ *
+ * Author: Harwin Borger
+ *
+ * @uses: (array)$space-types              -> to define different types of spacing
+ * @uses: (array)$space-size-settings      -> to load different sizes of spacing and breakpoints
+ * @uses: (array)$space-direction-classes  -> to load different directions
+ * @uses: (array)$space-negative-classes   -> to load negative classes if preferred
+ *
+ */
+
+$space-side-register: (
+	top, right, bottom, left
+);
+
+$space-types-combine-register: (
+	padding,
+	margin
+);
+
+$space-position-register: (
+	absolute,
+	fixed,
+	relative,
+);
+
+@function allow-negative-classes($type) {
+	@if (map_get($space-settings,negative) != true) {
+		@return false;
+	}
+	@if ($type == padding) {
+		@return false;
+	}
+
+	@return true;
+}
+
+@function allow-combined-sides($type) {
+	@if (index($space-types-combine-register,$type) == null) {
+		@return false;
+	}
+
+	@return true;
+}
+
+/*
+* space-set-property
+*
+* @para $side: defines which side has to be generated
+* @para $value: defines which values need to be used
+* @para $type: defines what kind of type needs to be used
+* @para $sign: defines whether or not a positive (1) or negative (-1) value needs to be generated.
+*/
+
+@mixin space-set-property($side, $values, $type, $sign:1) {
+	$typeName: '';
+	@if ($type == padding) {
+		$typeName: $type+'-';
+	} @else if $type == margin {
+		$typeName: $type+'-';
+	}
+	//Set css rule like: padding-left: 5px; or margin-left: 5px;
+	$cssPropertyName: false;
+	$cssPropertyValue: false;
+
+	@if ($side == false) { //Combined all values
+		//Set property
+		$cssPropertyName: #{$type};
+		$cssPropertyValue: to-string($values, ' ');
+	} @else {
+		//Set property name based on side
+		$cssPropertyName: #{$typeName+$side};
+		//Retrieve variable position based on side
+		$variablePosition: index($space-side-register, $side);
+
+		//Check if values is not null
+		@if ($values != null) {
+			$cssPropertyValue: nth($values, $variablePosition)*$sign;
+		} @else {
+			@debug ('Values is not allowed to be: ' $values);
+		}
+	}
+
+	//Set property
+	#{$cssPropertyName}: $cssPropertyValue;
+}
+
+@mixin space-set-position-classes() {
+	@each $position in $space-position-register {
+		.space-#{$position} {
+			position: $position;
+		}
+	}
+}
+
+@mixin space-loop-sides($values, $className, $type) {
+	//Set css class like: .space-[type], .space-[type]-[size]
+	#{$className} {
+		@if (allow-combined-sides($type)==true) {
+			@include space-set-property(false, $values, $type);
+		} @else {
+			@each $side in $space-side-register {
+				@include space-set-property($side, $values, $type);
+			}
+		}
+	}
+
+	//Loop through different directions and add different classes
+	@each $direction, $sides in map_get($space-settings, directions) {
+		$classNameDirection: $className+'-'+$direction;
+		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
+		#{$classNameDirection} {
+			@each $side in $sides {
+				@include space-set-property($side, $values, $type);
+			}
+		}
+
+		//Check if negative values are allowed
+		@if (allow-negative-classes($type) == true) {
+			//If allowed generate negative classes: .space-[type]-[direction]-negative
+			#{$classNameDirection}-negative {
+				@each $side in $sides {
+					@include space-set-property($side, $values, $type, -1);
+				}
+			}
+		}
+	}
+}
+
+@mixin space-loop-breakpoints($breakpoints,$className, $type) {
+	@each $breakpoint, $values in $breakpoints {
+		@include breakpoint($breakpoint) {
+			@include space-loop-sides($values, $className, $type);
+		}
+	}
+}
+
+@mixin space-loop-sizes($type) {
+	@each $sizeClassName, $breakpoints in $space-settings-sizes {
+		$className: '.space-#{$type}'; //Example space-padding
+
+		@if $sizeClassName != default {
+			$className: '#{$className}-#{$sizeClassName}'; //Example: space-padding-small, space-padding-large
+		}
+
+		@if (map_get($breakpoints, viewports)) {
+			@include space-loop-breakpoints(map_get($breakpoints, viewports), $className, $type);
+		} @else {
+			@debug("Classes for '#{$sizeClassName}' are not generated because 'viewports' setting is missing")
+		}
+	}
+}
+
+@mixin space-loop-types() {
+	@each $type, $options in map_get($space-settings, types) {
+		@if ($type == 'position') {
+			@include space-set-position-classes();
+		}
+
+		@include space-loop-sizes($type);
+	}
+}
+
+/*
+ * @return classes for using general styling
+ */
+@mixin space-init() {
+	@include space-loop-types();
+}

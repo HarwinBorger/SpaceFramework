@@ -1,0 +1,73 @@
+/*
+ * Space Model Variables
+ *
+ * @Description:
+ * With space model you can use general styling for padding, margins on elements.
+ * You can even give them an absolute position!
+ */
+
+/*
+ * Define the types of spacings you like to use
+ *
+ * @example results in classes like:
+ *      .space-[type],
+ *      .space-padding,
+ *      .space-margin,
+ *      .space-position -> should be used together with .space-absolute, space-relative, space-fixed
+ */
+
+/*
+ * Define directions for generation of direction classes
+ *
+ * @example for directions:
+ * .space-padding-top          -> Top direction for default size
+ * .space-padding-small-vertical    -> Vertical direction for small size
+ */
+
+$space-settings-sizes: (
+	default:(
+		viewports:(
+			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
+			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+			large:(3.5rem, 3.5rem, 3.5rem, 3.5rem)
+		)
+	),
+	small: (
+		viewports:(
+			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
+			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+		),
+	)
+) !default;
+
+$space-settings: (
+	types:(
+		padding,
+		margin,
+		absolute
+	),
+	directions:(
+		top:(
+			top
+		),
+		right:(
+			right
+		),
+		bottom:(
+			bottom
+		),
+		left: (
+			left
+		),
+		vertical: (
+			top,
+			bottom
+		),
+		horizontal: (
+			right,
+			left
+		)
+	),
+	negative: true
+) !default;
