@@ -27,8 +27,8 @@ $space-position-register: (
 	relative,
 ) !default;
 
-@function allow-negative-classes($type) {
-	@if (map_get($space-settings,negative) != true) {
+@function allow-negative-classes($settings,$type) {
+	@if (map_get($settings,negative) != true) {
 		@return false;
 	}
 	@if ($type == padding) {
@@ -88,15 +88,15 @@ $space-position-register: (
 	#{$cssPropertyName}: $cssPropertyValue;
 }
 
-@mixin space-set-position-classes() {
+@mixin space-set-position-classes($className) {
 	@each $position in $space-position-register {
-		.space-#{$position} {
-			position: $position;
-		}
+	'#{$className}-#{$position}' {
+		position: $position;
+	}
 	}
 }
 
-@mixin space-loop-sides($values, $className, $type) {
+@mixin space-loop-sides($className, $settings,$values, $type) {
 	//Set css class like: .space-[type], .space-[type]-[size]
 	#{$className} {
 		@if (allow-combined-sides($type)==true) {
@@ -109,7 +109,7 @@ $space-position-register: (
 	}
 
 	//Loop through different directions and add different classes
-	@each $direction, $sides in map_get($space-settings, directions) {
+	@each $direction, $sides in map_get($settings, directions) {
 		$classNameDirection: $className+'-'+$direction;
 		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
 		#{$classNameDirection} {
@@ -119,7 +119,7 @@ $space-position-register: (
 		}
 
 		//Check if negative values are allowed
-		@if (allow-negative-classes($type) == true) {
+		@if (allow-negative-classes($settings,$type) == true) {
 			//If allowed generate negative classes: .space-[type]-[direction]-negative
 			#{$classNameDirection}-negative {
 				@each $side in $sides {
@@ -130,33 +130,59 @@ $space-position-register: (
 	}
 }
 
-@mixin space-loop-breakpoints($breakpoints,$className, $type) {
-	@each $breakpoint, $values in $breakpoints {
-		@include breakpoint($breakpoint) {
-			@include space-loop-sides($values, $className, $type);
+@mixin space-loop-breakpoints($className, $settings, $type) {
+	@if (map_get($settings,viewports) != null) {
+		@each $breakpoint, $values in map_get($settings, viewports) {
+			@include breakpoint($breakpoint) {
+				@include space-loop-sides($className, $settings, $values, $type);
+			}
 		}
+	} @else {
+		@warn ("Classes for '#{$className}' are not generated because 'viewports' in $space-object-settings is missing")
 	}
 }
 
-@mixin space-loop-sizes($type) {
-	@each $sizeClassName, $breakpoints in $space-object-settings {
-		$className: '.#{$sizeClassName}-#{$type}'; //Example space-padding
+@mixin space-loop-types($className, $settings) {
+	@each $type, $options in map_get($settings, types) {
+		$newClassName: '#{$className}-'#{$type};
 
-		@if (map_get($breakpoints, viewports)) {
-			@include space-loop-breakpoints(map_get($breakpoints, viewports), $className, $type);
-		} @else {
-			@debug("Classes for '#{$sizeClassName}' are not generated because 'viewports' setting is missing")
-		}
-	}
-}
-
-@mixin space-loop-types() {
-	@each $type, $options in map_get($space-settings, types) {
 		@if ($type == 'position') {
-			@include space-set-position-classes();
+			@include space-set-position-classes($className);
 		}
 
-		@include space-loop-sizes($type);
+		@include space-loop-breakpoints($newClassName, $settings, $type);
+	}
+}
+
+@mixin space-loop-objects() {
+	$defaultTypes: (
+		types: map_get($space-settings, types)
+	);
+
+	$defaultDirections: (
+		directions: map_get($space-settings, directions)
+	);
+
+	$defaultNegative: (
+		negative: map_get($space-settings, negative)
+	);
+
+	@each $sizeClassName, $settings in $space-object-settings {
+		$className: '.#{$sizeClassName}'; // Generates .object
+
+		@if (map_get($settings, types) == null) {
+			$settings: map-merge($settings,$defaultTypes)
+		}
+
+		@if (map_get($settings, directions) == null) {
+			$settings: map-merge($settings,$defaultDirections)
+		}
+
+		@if (map_get($settings, negative) == null) {
+			$settings: map-merge($settings,$defaultNegative)
+		}
+
+		@include space-loop-types($className, $settings);
 	}
 }
 
@@ -164,5 +190,5 @@ $space-position-register: (
  * @return classes for using general styling
  */
 @mixin space-init() {
-	@include space-loop-types();
+	@include space-loop-objects();
 }

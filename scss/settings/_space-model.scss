@@ -11,14 +11,13 @@ $space-object-settings: (
 	 *
 	 * @example: .space-[type],  .site-[type], .content-[type]
 	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
-	 * @todo: Add option to overwrite default $space-settings for each object to minimal css code
 	 */
 	site: (//Defines global alignment related to the site
 		viewports:(
 			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
 			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
 			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
-		),
+		)
 	),
 	content:(//Defines alignment related to the main content
 		viewports:(
@@ -71,5 +70,5 @@ $space-settings: (
 	 * @example .space-margin-horizontal-negative
 	 * @note: does not work on 'padding' type
 	 */
-	negative: true
+	negative: false
 ) !default;
