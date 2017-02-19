@@ -77,7 +77,6 @@ $space-settings: (
 	 *
 	 * @example 1: .medium-[object]-[type]-[direction]
 	 * @example 2: .medium-site-margin-horizontal
-	 * @todo fix generation missing direction classes for responsive functionality
 	 */
-	responsive: false
+	responsive: true
 ) !default;

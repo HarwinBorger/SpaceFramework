@@ -46,6 +46,18 @@ $space-position-register: (
 	@return true;
 }
 
+@function extend-class-name($classNameArray, $extendClass){
+	$newClassName: '';
+	@each $className in $classNameArray{
+		@if $newClassName == ''{
+			$newClassName: '#{$className}-#{$extendClass}'
+		}@else{
+			$newClassName: '#{$newClassName}, #{$className}-#{$extendClass}'
+		}
+	}
+	@return $newClassName;
+}
+
 /*
 * space-set-property
 *
@@ -96,9 +108,9 @@ $space-position-register: (
 	}
 }
 
-@mixin space-loop-sides($className, $settings,$values, $type) {
+@mixin space-loop-sides($classNameArray, $settings,$values, $type) {
 	//Set css class like: .space-[type], .space-[type]-[size]
-	#{$className} {
+	#{$classNameArray} {
 		@if (allow-combined-sides($type)==true) {
 			@include space-set-property(false, $values, $type);
 		} @else {
@@ -110,7 +122,8 @@ $space-position-register: (
 
 	//Loop through different directions and add different classes
 	@each $direction, $sides in map_get($settings, directions) {
-		$classNameDirection: $className+'-'+$direction;
+		$classNameDirection: extend-class-name($classNameArray,$direction);
+
 		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
 		#{$classNameDirection} {
 			@each $side in $sides {
@@ -120,8 +133,10 @@ $space-position-register: (
 
 		//Check if negative values are allowed
 		@if (allow-negative-classes($settings,$type) == true) {
+
 			//If allowed generate negative classes: .space-[type]-[direction]-negative
-			#{$classNameDirection}-negative {
+			$classNameDirectionNegative: extend-class-name($classNameArray, '#{$direction}-negative');
+			#{$classNameDirectionNegative} {
 				@each $side in $sides {
 					@include space-set-property($side, $values, $type, -1);
 				}
@@ -132,19 +147,17 @@ $space-position-register: (
 
 @mixin space-loop-breakpoints($className, $settings, $type) {
 	@if (map_get($settings,viewports) != null) {
-		$multiClassName: '.#{$className}';
+		$classNameArray: ('.#{$className}');
+
 		@each $breakpoint, $values in map_get($settings, viewports) {
 			@include breakpoint($breakpoint) {
-				$breakpointClassName: '';
-				@if ($breakpoint != 'small') { //Only generate breakpoint classes when allowed
-					$breakpointClassName: ', .#{$breakpoint}-#{$className}';
+
+				@if (map_get($settings,responsive) == true and $breakpoint != 'small') {
+					$breakpointClassName: '.#{$breakpoint}-#{$className}';
+					$classNameArray: append($classNameArray, $breakpointClassName, comma);
 				}
 
-				@if (map_get($settings,responsive) == true) {
-					$multiClassName: '#{$multiClassName}#{$breakpointClassName}';
-				}
-
-				@include space-loop-sides($multiClassName, $settings, $values, $type);
+				@include space-loop-sides($classNameArray, $settings, $values, $type);
 			}
 		}
 	} @else {
