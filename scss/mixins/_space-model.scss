@@ -69,11 +69,10 @@ $space-position-register: (
 
 @mixin space-set-property($side, $values, $type, $sign:1) {
 	$typeName: '';
-	@if ($type == padding) {
-		$typeName: $type+'-';
-	} @else if $type == margin {
+	@if (index($space-types-combine-register,$type)) {
 		$typeName: $type+'-';
 	}
+
 	//Set css rule like: padding-left: 5px; or margin-left: 5px;
 	$cssPropertyName: false;
 	$cssPropertyValue: false;
