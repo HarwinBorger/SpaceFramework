@@ -1,8 +1,30 @@
-SpaceFramework - Front-end development made for a green future!
+## SpaceFramework 
+### Front-end development made for a green future!
 
-SpaceFramework embraces green energy and energy awareness. In other words it is climate-conscious framework. How do we do it?
-- Developed while using green energy
-- Only generates the classes you really need. SpaceFramework keeps file sizes at a minimum. Less disk space means less downloading time means less power needed. 
-- By using the SpaceFramework you can develop way faster and more efficient. No more writing classes to set paddings, margins en positions. 
+- Follows OOCSS principles
+- Develop faster and more efficient. No more writing classes to set paddings, margins en positions. 
+- Separates structure from styling 
+
+
+#### Use CSS classes like:
+For padding:
+- .site-padding
+- .site-padding-top 
+- .site-padding-vertical
+
+For margin:
+- .site-margin
+- .site-margin-left
+
+For positions:
+- .site-position
+- .site-position-vertical
+
+For responsive websites:
+- .medium-site-padding
+- .large-site-margin
+
+For negative values:
+- .site-margin-horizontal-negative  
 
 Proudly made in the Netherlands by Harwin Borger
