@@ -186,19 +186,19 @@ $space-position-register: (
 		$className: $sizeClassName; // Generates .object
 
 		@if (map_get($settings, types) == null) {
-			$settings: map-merge($settings, $defaultTypes) // Overwrite default settings
+			$settings: map-merge($settings, $defaultTypes) // Use default settings
 		}
 
 		@if (map_get($settings, directions) == null) {
-			$settings: map-merge($settings, $defaultDirections) // Overwrite default settings
+			$settings: map-merge($settings, $defaultDirections) // Use default settings
 		}
 
 		@if (map_get($settings, negative) == null) {
-			$settings: map-merge($settings, $defaultNegative) // Overwrite default settings
+			$settings: map-merge($settings, $defaultNegative) // Use default settings
 		}
 
 		@if (map_get($settings, responsive) == null) {
-			$settings: map-merge($settings, $defaultResponsive) // Overwrite default settings
+			$settings: map-merge($settings, $defaultResponsive) // Use default settings
 		}
 
 		@include space-loop-types($className, $settings);
