@@ -16,20 +16,20 @@ $space-object-settings: (
 		viewports:(
 			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
 			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
-			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
+			large:(3.5rem, 3.5rem, 3.5rem, 3.5rem),
 		)
 	),
 	content:(//Defines alignment related to the main content
 		viewports:(
 			small:(1.25rem, 1.25rem, 1.25rem, 1.25rem),
-			medium:(2.5rem, 2.5rem, 2.5rem, 2.5rem),
-			large:(3.5rem, 3.5rem, 3.5rem, 3.5rem)
+			medium:(2rem, 2rem, 2rem, 2rem),
+			large:(2.5rem, 2.5rem, 2.5rem, 2.5rem)
 		)
 	),
 ) !default;
 
 $space-settings: (
-	/** Define generation of: .space-[type]
+	/** Define generation of: .[object]-[type]
 	 *
 	 * @example: .space-padding, .space-margin, .space-position
 	 */
@@ -38,7 +38,7 @@ $space-settings: (
 		margin,
 		position
 	),
-	/** Define generation of: .space-[type]-[direction]
+	/** Define generation of: .[object]-[type]-[direction]
 	 *
 	 * @example 1: .space-[type]-top, .space-[type]-vertical
 	 * @example 2: .space-padding-top, .space-margin-vertical
@@ -65,10 +65,18 @@ $space-settings: (
 			left
 		)
 	),
-	/** Define generation of classes: .space-[type]-[direction]-negative
+	/** Define generation of classes: .[object]-[type]-[direction]-negative
 	 *
-	 * @example .space-margin-horizontal-negative
+	 * @example: .space-margin-horizontal-negative
 	 * @note: does not work on 'padding' type
 	 */
-	negative: false
+	negative: false,
+	/** Define generation of classes: .[viewport-name]-[object]-[type]-[direction]
+	 * @description: with the generation of viewport related classes you can
+	 * control on which viewport the padding, margin needs to be applied on.
+	 *
+	 * @example 1: .medium-[object]-[type]-[direction]
+	 * @example 2: .medium-site-margin-horizontal
+	 */
+	responsive: false
 ) !default;

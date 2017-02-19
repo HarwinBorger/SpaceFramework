@@ -132,9 +132,19 @@ $space-position-register: (
 
 @mixin space-loop-breakpoints($className, $settings, $type) {
 	@if (map_get($settings,viewports) != null) {
+		$multiClassName: '.#{$className}';
 		@each $breakpoint, $values in map_get($settings, viewports) {
 			@include breakpoint($breakpoint) {
-				@include space-loop-sides($className, $settings, $values, $type);
+				$breakpointClassName: '';
+				@if ($breakpoint != 'small') { //Only generate breakpoint classes when allowed
+					$breakpointClassName: ', .#{$breakpoint}-#{$className}';
+				}
+
+				@if (map_get($settings,responsive) == true) {
+					$multiClassName: '#{$multiClassName}#{$breakpointClassName}';
+				}
+
+				@include space-loop-sides($multiClassName, $settings, $values, $type);
 			}
 		}
 	} @else {
@@ -155,6 +165,7 @@ $space-position-register: (
 }
 
 @mixin space-loop-objects() {
+	//Set default settings
 	$defaultTypes: (
 		types: map_get($space-settings, types)
 	);
@@ -167,19 +178,27 @@ $space-position-register: (
 		negative: map_get($space-settings, negative)
 	);
 
+	$defaultResponsive: (
+		responsive: map_get($space-settings, responsive)
+	);
+
 	@each $sizeClassName, $settings in $space-object-settings {
-		$className: '.#{$sizeClassName}'; // Generates .object
+		$className: $sizeClassName; // Generates .object
 
 		@if (map_get($settings, types) == null) {
-			$settings: map-merge($settings,$defaultTypes)
+			$settings: map-merge($settings, $defaultTypes) // Overwrite default settings
 		}
 
 		@if (map_get($settings, directions) == null) {
-			$settings: map-merge($settings,$defaultDirections)
+			$settings: map-merge($settings, $defaultDirections) // Overwrite default settings
 		}
 
 		@if (map_get($settings, negative) == null) {
-			$settings: map-merge($settings,$defaultNegative)
+			$settings: map-merge($settings, $defaultNegative) // Overwrite default settings
+		}
+
+		@if (map_get($settings, responsive) == null) {
+			$settings: map-merge($settings, $defaultResponsive) // Overwrite default settings
 		}
 
 		@include space-loop-types($className, $settings);
