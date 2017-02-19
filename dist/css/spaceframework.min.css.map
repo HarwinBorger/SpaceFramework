@@ -3,8 +3,6 @@
 	"file": "spaceframework.min.css",
 	"sources": [
 		"../../scss/spaceframework.scss",
-		"../../bower_components/foundation-sites/scss/util/_unit.scss",
-		"../../bower_components/foundation-sites/scss/util/_breakpoint.scss",
 		"../../scss/settings/_settings.scss",
 		"../../scss/settings/_space-model.scss",
 		"../../scss/functions/_functions.scss",
