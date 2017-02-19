@@ -68,7 +68,7 @@ $space-settings: (
 	/** Define generation of classes: .[object]-[type]-[direction]-negative
 	 *
 	 * @example: .space-margin-horizontal-negative
-	 * @note: does not work on 'padding' type
+	 * @note: does not work on 'padding' type since negative padding values are not allowed
 	 *
 	 * @tip: turn it off if you don't use it.
 	 */
