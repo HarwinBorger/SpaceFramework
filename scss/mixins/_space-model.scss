@@ -90,9 +90,9 @@ $space-position-register: (
 
 @mixin space-set-position-classes($className) {
 	@each $position in $space-position-register {
-	'#{$className}-#{$position}' {
-		position: $position;
-	}
+		'#{$className}-#{$position}' {
+			position: $position;
+		}
 	}
 }
 
