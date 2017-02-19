@@ -69,6 +69,8 @@ $space-settings: (
 	 *
 	 * @example: .space-margin-horizontal-negative
 	 * @note: does not work on 'padding' type
+	 *
+	 * @tip: turn it off if you don't use it.
 	 */
 	negative: true,
 	/** Define generation of classes: .[viewport-name]-[object]-[type]-[direction]
@@ -77,6 +79,8 @@ $space-settings: (
 	 *
 	 * @example 1: .medium-[object]-[type]-[direction]
 	 * @example 2: .medium-site-margin-horizontal
+	 *
+	 * @tip: turn it off if you don't use it.
 	 */
 	responsive: true
 ) !default;
