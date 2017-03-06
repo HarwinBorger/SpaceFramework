@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "devDependencies": {
+    "autoprefixer": "*",
+    "csswring": "*",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-csscomb": "^3.1.0",
+    "grunt-merge-media": "^0.4.0",
+    "grunt-modernizr": "^1.0.2",
+    "grunt-postcss": "*",
+    "grunt-sass": "*",
+    "grunt-wp-i18n": "*",
+    "matchdep": "*"
+  },
+  "dependencies": {
+    "time-grunt": "*"
+  }
+}
