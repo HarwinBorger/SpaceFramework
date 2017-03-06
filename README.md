@@ -8,6 +8,13 @@
 ### Requirements
 - Space Framework is build on top of Foundation. Which can be found here: http://foundation.zurb.com/
 
+### Installation
+
+#### Bower: 
+```
+bower install spaceframework --save
+```
+
 #### Use CSS classes like:
 For padding:
 ```
@@ -33,6 +40,13 @@ For responsive websites:
 ```
 .medium-site-padding
 .large-site-margin
+```
+and
+
+```
+.small-only-site-padding
+.medium-only-site-padding
+.large-only-site-margin
 ```
 
 For negative values:
