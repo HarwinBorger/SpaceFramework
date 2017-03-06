@@ -1,5 +1,5 @@
 {
-  "name": "SpaceFramework",
+  "name": "spaceframework",
   "description": "Front-end development made for into Space!",
   "main": "",
   "authors": [
@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-sites": "^6.3.0"
+    "foundation-sites": "^6.2.4"
   }
 }
