@@ -5,26 +5,39 @@
 - Develop faster and more efficient. No more writing classes to set paddings, margins en positions. 
 - Separates structure from styling 
 
+### Requirements
+- Space Framework is build on top of Foundation. Which can be found here: http://foundation.zurb.com/
 
 #### Use CSS classes like:
 For padding:
-- .site-padding
-- .site-padding-top 
-- .site-padding-vertical
+```
+.site-padding
+.site-padding-top 
+.site-padding-vertical
+```
 
 For margin:
-- .site-margin
-- .site-margin-left
+```
+.site-margin
+.site-margin-left
+.site-margin-horizontal
+```
 
 For positions:
-- .site-position
-- .site-position-vertical
+```
+.site-position
+.site-position-vertical
+```
 
 For responsive websites:
-- .medium-site-padding
-- .large-site-margin
+```
+.medium-site-padding
+.large-site-margin
+```
 
 For negative values:
-- .site-margin-horizontal-negative  
+```
+.site-margin-horizontal-negative  
+```
 
 Proudly made in the Netherlands by Harwin Borger
