@@ -5,10 +5,8 @@
  *
  * Author: Harwin Borger
  *
- * @uses: (array)$space-types              -> to define different types of spacing
- * @uses: (array)$space-object-settings      -> to load different sizes of spacing and breakpoints
- * @uses: (array)$space-direction-classes  -> to load different directions
- * @uses: (array)$space-negative-classes   -> to load negative classes if preferred
+ * @uses: (array)$space-settings              
+ * @uses: (array)$space-object-settings
  *
  */
 
@@ -46,12 +44,12 @@ $space-position-register: (
 	@return true;
 }
 
-@function extend-class-name($classNameArray, $extendClass){
+@function extend-class-name($classNameArray, $extendClass) {
 	$newClassName: '';
-	@each $className in $classNameArray{
-		@if $newClassName == ''{
+	@each $className in $classNameArray {
+		@if $newClassName == '' {
 			$newClassName: '#{$className}-#{$extendClass}'
-		}@else{
+		} @else {
 			$newClassName: '#{$newClassName}, #{$className}-#{$extendClass}'
 		}
 	}
@@ -69,7 +67,7 @@ $space-position-register: (
 
 @mixin space-set-property($side, $values, $type, $sign:1) {
 	$typeName: '';
-	@if (index($space-types-combine-register,$type)) {
+	@if (index($space-types-combine-register, $type)) {
 		$typeName: $type+'-';
 	}
 
@@ -101,9 +99,9 @@ $space-position-register: (
 
 @mixin space-set-position-classes($className) {
 	@each $position in $space-position-register {
-		'#{$className}-#{$position}' {
-			position: $position;
-		}
+	'#{$className}-#{$position}' {
+		position: $position;
+	}
 	}
 }
 
@@ -121,7 +119,7 @@ $space-position-register: (
 
 	//Loop through different directions and add different classes
 	@each $direction, $sides in map_get($settings, directions) {
-		$classNameDirection: extend-class-name($classNameArray,$direction);
+		$classNameDirection: extend-class-name($classNameArray, $direction);
 
 		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
 		#{$classNameDirection} {
@@ -149,14 +147,23 @@ $space-position-register: (
 		$classNameArray: ('.#{$className}');
 
 		@each $breakpoint, $values in map_get($settings, viewports) {
+			//Generate breakpoints
 			@include breakpoint($breakpoint) {
-
 				@if (map_get($settings,responsive) == true and $breakpoint != 'small') {
 					$breakpointClassName: '.#{$breakpoint}-#{$className}';
 					$classNameArray: append($classNameArray, $breakpointClassName, comma);
 				}
 
 				@include space-loop-sides($classNameArray, $settings, $values, $type);
+			}
+
+			//Generate breakpoint only classes
+			@if (map_get($settings,responsive) == true) {
+				$breakpointClassName: '.#{$breakpoint}-only-#{$className}';
+
+				@include breakpoint($breakpoint only) {
+					@include space-loop-sides($breakpointClassName, $settings, $values, $type);
+				}
 			}
 		}
 	} @else {
