@@ -1,20 +1,20 @@
-## SpaceFramework 
-### Front-end development made for a green future!
+# SpaceFramework 
+Front-end development made for a green future!
 
 - Follows OOCSS principles
 - Develop faster and more efficient. No more writing classes to set paddings, margins en positions. 
 - Separates structure from styling 
 
-### Requirements
+## Requirements
 - Space Framework is build on top of Foundation. Which can be found here: http://foundation.zurb.com/
 
-### Installation
+## Installation
 
-#### Bower: 
+### Bower: 
 ```
 bower install spaceframework --save
 ```
-### Getting started:
+## Getting started:
 1. Make sure you have at least included the following Foundation files:
 ```
 @import 'foundation-sites/scss/util/_unit.scss';
@@ -33,20 +33,20 @@ bower install spaceframework --save
 ``` 
 6. You're all set! Enjoy 
 
-### How to
-#### The Space Framework generates classes like:
-#####Padding classes: 
+## How to
+### The Space Framework generates classes like:
+####Padding classes: 
 ```
 .site-padding
 ```
 
-#####Margin classes:
+####Margin classes:
 ```
 .site-margin
 ```
 
 
-#####Position classes:
+####Position classes:
 ```
 .site-position
 ```
@@ -56,7 +56,7 @@ You can add `-absolute` and `-fixed` classes to define the type of position:
 .site-fixed
 ```
 
-##### Direction classes
+#### Direction classes
 You can use direction specific classes by adding `-top`, `left`, `-vertical` etc:
 ```
 .site-padding-left
@@ -70,7 +70,7 @@ You can use direction specific classes by adding `-top`, `left`, `-vertical` etc
 .site-position-top
 ```
 
-#####Responsive classes for advanced control:
+####Responsive classes for advanced control:
 ```
 .medium-site-padding
 .large-site-margin
@@ -82,7 +82,7 @@ You can use direction specific classes by adding `-top`, `left`, `-vertical` etc
 ```
 - Notice: `.small-` classes are not generated, you should the base class instead. However `.small-only-` classes can be used.
 
-##### Negative classes:
+#### Negative classes:
 This generates negative values like: `margin: -2rem;` instead of `margin: 2rem;`
 ```
 .site-margin-horizontal-negative  
