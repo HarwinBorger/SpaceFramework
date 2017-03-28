@@ -80,7 +80,7 @@ You can use direction specific classes by adding `-top`, `left`, `-vertical` etc
 .medium-only-site-padding
 .large-only-site-margin
 ```
-- Notice: `.small-` classes are not generated, you should the base class instead. However `.small-only-` classes can be used.
+- Notice: `.small-` classes are not generated, you should use the base class instead. However `.small-only-` classes can be used.
 
 #### Negative classes:
 This generates negative values like: `margin: -2rem;` instead of `margin: 2rem;`
