@@ -35,18 +35,18 @@ bower install spaceframework --save
 
 ## How to
 ### The Space Framework generates classes like:
-####Padding classes: 
+#### Padding classes: 
 ```
 .site-padding
 ```
 
-####Margin classes:
+#### Margin classes:
 ```
 .site-margin
 ```
 
 
-####Position classes:
+#### Position classes:
 ```
 .site-position
 ```
@@ -70,7 +70,7 @@ You can use direction specific classes by adding `-top`, `left`, `-vertical` etc
 .site-position-top
 ```
 
-####Responsive classes for advanced control:
+#### Responsive classes for advanced control:
 ```
 .medium-site-padding
 .large-site-margin
