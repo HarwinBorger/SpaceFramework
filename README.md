@@ -33,44 +33,59 @@ bower install spaceframework --save
 ``` 
 6. You're all set! Enjoy 
 
-
-#### Use CSS classes like:
-For padding:
+### How to
+#### The Space Framework generates classes like:
+#####Padding classes: 
 ```
 .site-padding
-.site-padding-top 
-.site-padding-vertical
 ```
 
-For margin:
+#####Margin classes:
 ```
 .site-margin
+```
+
+
+#####Position classes:
+```
+.site-position
+```
+You can add `-absolute` and `-fixed` classes to define the type of position:
+```
+.site-absolute
+.site-fixed
+```
+
+##### Direction classes
+You can use direction specific classes by adding `-top`, `left`, `-vertical` etc:
+```
+.site-padding-left
+.site-padding-right
+```
+```
 .site-margin-left
 .site-margin-horizontal
 ```
-
-For positions:
 ```
-.site-position
-.site-position-vertical
+.site-position-top
 ```
 
-For responsive websites:
+#####Responsive classes for advanced control:
 ```
 .medium-site-padding
 .large-site-margin
 ```
-and
-
 ```
 .small-only-site-padding
 .medium-only-site-padding
 .large-only-site-margin
 ```
+- Notice: `.small-` classes are not generated, you should the base class instead. However `.small-only-` classes can be used.
 
-For negative values:
+##### Negative classes:
+This generates negative values like: `margin: -2rem;` instead of `margin: 2rem;`
 ```
 .site-margin-horizontal-negative  
 ```
-
-Proudly made in the Netherlands by Harwin Borger
+## Credits
+Proudly made in the Netherlands by @HarwinBorger
