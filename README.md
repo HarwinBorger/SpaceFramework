@@ -25,8 +25,8 @@ bower install spaceframework --save
 @import '../../components/spaceframework/scss/spaceframework';
 ```
 
-3. Make a copy of `scss/settings/settings.scss` and add it to your local SASS variable folder. I suggest you rename to: `spaceframework-settings.scss`
-4. In `spaceframework-settings.scss` Remove the `!default` attribute from the variables `$space-settings` and `$space-object-settings`.
+3. Make a copy of `scss/settings/_space-model.scss` and add it to your local SASS variable folder. 
+4. In `space-model.scss` Remove the `!default` attribute from the variables `$space-settings` and `$space-object-settings`.
 5. Add the code below to the location were you actually want to load the set of generated classes.
 ```
 @include space-init();
