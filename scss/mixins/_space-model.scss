@@ -117,6 +117,14 @@ $space-position-register: (
 		}
 	}
 
+	@if (allow-negative-classes($settings,$type) == true) {
+		#{$classNameArray}-negative {
+			@each $side in $space-side-register {
+				@include space-set-property($side, $values, $type, -1);
+			}
+		}
+	}
+
 	//Loop through different directions and add different classes
 	@each $direction, $sides in map_get($settings, directions) {
 		$classNameDirection: extend-class-name($classNameArray, $direction);
