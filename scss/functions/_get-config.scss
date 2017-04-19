@@ -1,0 +1,8 @@
+/*
+ * This functions allows you to get values from an SASS array
+ * Example: get-config($slidebar-values, 'lvl1', 'bg')
+ */
+
+@function get-config($sizes, $slug, $value) {
+	@return map-get(map-get($sizes, $slug), $value);
+}

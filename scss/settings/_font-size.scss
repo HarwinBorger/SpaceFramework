@@ -1,0 +1,32 @@
+/*
+ * Font size variables which are used in '@mixin font-size'
+ *
+ * @description: A font-size can be used by using: @include font-size($value); were $value stands for the font-size.
+ * @example: @include font-size(default); or
+ *           @include font-size(xlarge);
+ */
+$font-size: (
+	xlarge:(    //Mostly used for H1
+		'small': 1.5rem,
+		'medium': 2.25rem,
+	),
+	large:(     //Mostly used for H2
+		'small': 1.125rem,
+		'medium': 1.5rem
+	),
+	medium:(    //Mostly used for Intro text
+		'small': 1rem,
+		'medium': 1.125rem
+	),
+	default:( // Values in default are also used for line-space mixin
+		'small': 1rem,
+	),
+	small:(
+		'small': .875rem,
+		'medium': .875rem
+	),
+	tiny:(
+		'small': .875rem,
+		'medium': .75rem
+	)
+) !default;
