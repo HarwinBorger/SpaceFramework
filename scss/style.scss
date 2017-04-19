@@ -3,6 +3,6 @@
 
 @import 'spaceframework';
 
-@include space-init();
+@include space-model-classes();
 @include font-size-classes();
 @include line-height-classes();

@@ -232,7 +232,18 @@ $space-position-register: (
 
 /*
  * @return classes for using general styling
+ *
+ * Deprecated as of 0.2.5
  */
 @mixin space-init() {
+	@include space-loop-objects();
+	@warn('space-init is deprecated since SpaceFramework [0.2.5]. Please use space-model-classes instead');
+}
+
+
+/*
+ * @return classes for using general styling
+ */
+@mixin space-model-classes() {
 	@include space-loop-objects();
 }
