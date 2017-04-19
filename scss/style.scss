@@ -4,3 +4,5 @@
 @import 'spaceframework';
 
 @include space-init();
+@include font-size-classes();
+@include line-height-classes();

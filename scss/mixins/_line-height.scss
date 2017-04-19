@@ -1,0 +1,39 @@
+/*
+ * Line-height mixin
+ *
+ * @description this mixin handles all the different line-heights for different breakpoint.
+ *
+ * @example:  @include line-height(default) or @include line-height(small)
+ *
+ * @uses: (array)$line-height
+ */
+
+@mixin line-height($size: default,$unit: false) {
+	@each $breakpoint, $value in map-get($line-height, $size) {
+		@include breakpoint($breakpoint) {
+			@if not $unit {
+				line-height: $value;
+			} @else {
+				line-height: $value + $unit;
+			}
+		}
+	}
+}
+
+/*
+ * Line-height-classes mixin
+ *
+ * @description this mixin adds classes for all the different line-heights
+ *
+ * @example: .line-height-small or .line-height-default
+ *
+ * * @uses: (array)$line-height
+ */
+
+@mixin line-height-classes() {
+	@each $size, $value in $line-height {
+		.line-height-#{$size} {
+			@include line-height($size);
+		}
+	}
+}
