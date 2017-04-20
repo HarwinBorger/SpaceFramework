@@ -1,8 +1,11 @@
 @import '../bower_components/foundation-sites/scss/util/_unit.scss';
 @import '../bower_components/foundation-sites/scss/util/_breakpoint.scss';
-
 @import 'spaceframework';
 
 @include space-model-classes();
 @include font-size-classes();
 @include line-height-classes();
+
+h1 {
+	@include pixel-perfect(xlarge, small);
+}
