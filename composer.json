@@ -19,6 +19,6 @@
     "issues": "https://github.com/HarwinBorger/SpaceFramework/issues"
   },
   "require": {
-    "foundation-sites": "^6.3.0",
+    "foundation-sites": "^6.3.0"
   }
 }
