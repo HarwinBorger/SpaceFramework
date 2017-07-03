@@ -1,5 +1,5 @@
 {
-  "name": "harwinborger/spaceframework",
+  "name": "SpaceFramework",
   "description": "Front-end development made real easy",
   "keywords": [
     "wordpress",
@@ -8,7 +8,7 @@
   ],
   "type": "library",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework/",
-  "license": "MIT",
+  "license": "GPL3.0",
   "authors": [
     {
       "name": "Harwin Borger",
