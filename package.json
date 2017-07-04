@@ -1,6 +1,7 @@
 {
   "name": 'spaceframework',
   "version": '0.2.5',
+  "author": 'Harwin Borger',
   "devDependencies": {
     "autoprefixer": "*",
     "csswring": "*",
