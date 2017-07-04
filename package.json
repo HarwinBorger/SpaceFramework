@@ -13,7 +13,6 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "*",
     "grunt-sass": "*",
-    "grunt-wp-i18n": "*",
     "matchdep": "*"
   },
   "dependencies": {
