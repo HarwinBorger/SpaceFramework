@@ -2,6 +2,7 @@
 
 [unreleased]
 - Add negative classes for main object classes in space model from @HarwinBorger
+- Add line-space module from @HarwinBorger
 - Add font-size module from @HarwinBorger
 - Add line-height module from @HarwinBorger
 - Add pixel-perfect module from @HarwinBorger
