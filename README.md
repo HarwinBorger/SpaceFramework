@@ -14,6 +14,11 @@ Front-end development made for a green future!
 ```
 bower install spaceframework --save
 ```
+
+### NPM:
+```
+npm install spaceframework
+```
 ## Getting started:
 1. Make sure you have at least included the following Foundation files:
 ```
