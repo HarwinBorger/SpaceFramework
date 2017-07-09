@@ -1,5 +1,7 @@
 {
-  "private": true,
+  "name": 'spaceframework',
+  "version": '0.2.5',
+  "author": 'Harwin Borger',
   "devDependencies": {
     "autoprefixer": "*",
     "csswring": "*",
@@ -12,7 +14,6 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "*",
     "grunt-sass": "*",
-    "grunt-wp-i18n": "*",
     "matchdep": "*"
   },
   "dependencies": {
