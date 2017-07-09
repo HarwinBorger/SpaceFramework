@@ -14,6 +14,11 @@ Front-end development made for a green future!
 ```
 bower install spaceframework --save
 ```
+
+### NPM:
+```
+npm install spaceframework
+```
 ## Getting started:
 1. Make sure you have at least included the following Foundation files:
 ```
@@ -29,7 +34,7 @@ bower install spaceframework --save
 4. In `space-model.scss` Remove the `!default` attribute from the variables `$space-settings` and `$space-object-settings`.
 5. Add the code below to the location were you actually want to load the set of generated classes.
 ```
-@include space-init();
+@include space-model-classes();
 ``` 
 6. You're all set! Enjoy 
 

@@ -1,8 +1,6 @@
 /*
  * Space Model Mixin
  *
- * Version: 1.2
- *
  * Author: Harwin Borger
  *
  * @uses: (array)$space-settings              
@@ -117,6 +115,14 @@ $space-position-register: (
 		}
 	}
 
+	@if (allow-negative-classes($settings,$type) == true) {
+		#{$classNameArray}-negative {
+			@each $side in $space-side-register {
+				@include space-set-property($side, $values, $type, -1);
+			}
+		}
+	}
+
 	//Loop through different directions and add different classes
 	@each $direction, $sides in map_get($settings, directions) {
 		$classNameDirection: extend-class-name($classNameArray, $direction);
@@ -226,7 +232,18 @@ $space-position-register: (
 
 /*
  * @return classes for using general styling
+ *
+ * Deprecated as of 0.2.5
  */
 @mixin space-init() {
+	@include space-loop-objects();
+	@warn('space-init is deprecated since SpaceFramework [0.2.5]. Please use space-model-classes instead');
+}
+
+
+/*
+ * @return classes for using general styling
+ */
+@mixin space-model-classes() {
 	@include space-loop-objects();
 }
