@@ -34,7 +34,7 @@ npm install spaceframework
 4. In `space-model.scss` Remove the `!default` attribute from the variables `$space-settings` and `$space-object-settings`.
 5. Add the code below to the location were you actually want to load the set of generated classes.
 ```
-@include space-init();
+@include space-model-classes();
 ``` 
 6. You're all set! Enjoy 
 
