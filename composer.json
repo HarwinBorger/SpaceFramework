@@ -1,0 +1,24 @@
+{
+  "name": "harwinborger/spaceframework",
+  "description": "Front-end development made real easy",
+  "keywords": [
+    "wordpress",
+    "foundation",
+    "scss"
+  ],
+  "type": "library",
+  "homepage": "https://github.com/HarwinBorger/SpaceFramework/",
+  "license": "GPL3.0",
+  "authors": [
+    {
+      "name": "Harwin Borger",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/HarwinBorger/SpaceFramework/issues"
+  },
+  "require": {
+    "foundation-sites": "^6.3.0"
+  }
+}
