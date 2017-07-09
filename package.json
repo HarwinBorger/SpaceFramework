@@ -1,7 +1,8 @@
 {
-  "name": 'spaceframework',
-  "version": '0.2.5',
-  "author": 'Harwin Borger',
+  "name": "spaceframework",
+  "version": "0.2.6",
+  "author": "Harwin Borger <info@studioborger.nl>",
+  "licence": "GPL-3.0",
   "devDependencies": {
     "autoprefixer": "*",
     "csswring": "*",
