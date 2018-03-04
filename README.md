@@ -25,9 +25,9 @@ npm install spaceframework
 @import 'foundation-sites/scss/util/_unit.scss';
 @import 'foundation-sites/scss/util/_breakpoint.scss';
 ```
-2. Include the `scss/_spaceframework.scss` file into your SASS folder to initialize the SpaceFramework, for example:
+2. Include the `scss/_init.scss` file into your SASS folder to initialize the SpaceFramework, for example:
 ```
-@import '../../components/spaceframework/scss/spaceframework';
+@import '../../components/spaceframework/scss/init';
 ```
 
 3. Make a copy of `scss/settings/_space-model.scss` and add it to your local SASS variable folder. 
