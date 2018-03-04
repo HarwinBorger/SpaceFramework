@@ -1,0 +1,10 @@
+/**
+ * 5. OBJECTS
+ *
+ * @description: class-based selectors which define undecorated
+ * design patterns, for example media object known from OOCSS
+ */
+
+@include space-model-classes();
+@include font-size-classes();
+@include line-height-classes();
