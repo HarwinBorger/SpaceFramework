@@ -1,7 +1,54 @@
+/**
+ * ITCSS
+ */
+
+/*
+ * 1. SETTINGS
+ *
+ * used with preprocessors and contain font, colors definitions, etc.
+ */
+@import '1.settings/_settings';
+
+/*
+ * 2. TOOLS
+ *
+ * globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
+ */
 @import '../bower_components/foundation-sites/scss/util/_unit.scss';
 @import '../bower_components/foundation-sites/scss/util/_breakpoint.scss';
-@import 'spaceframework';
+@import '2.tools/_tools';
 
-@include space-model-classes();
-@include font-size-classes();
-@include line-height-classes();
+/*
+ * 3. GENERIC
+ *
+ * reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
+ */
+@import '3.generic/_generic';
+
+/*
+ * 4. ELEMENTS
+ *
+ * styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
+ */
+@import '4.elements/_elements';
+
+/*
+ * 5. OBJECTS
+ *
+ * class-based selectors which define undecorated design patterns, for example media object known from OOCSS
+ */
+@import '5.objects/_objects';
+
+/*
+ * 6. COMPONENTS
+ *
+ * specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components
+ */
+@import '6.components/_components';
+
+/*
+ * 7. UTILITIES
+ *
+ * utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+ */
+@import '7.utilities/_utilities';
