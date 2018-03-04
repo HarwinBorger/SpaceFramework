@@ -1,0 +1,95 @@
+/*
+ * Line-space mixin
+ * @description: mixin is used to define margins on bottom and top of element based on the line-height and default font size settings
+ *
+ * @uses: (array)$line-height
+ * @uses: (array)$font-size
+ *
+ * @para: (int)$top-multiplier
+ * @para: (int)$bottom-multiplier
+ * @para: (string)$top-multiplier
+ * @para: (int)$correction-multiplier
+ *
+ * @example: @include line-margin(2,1);
+ *          -> will output on small screen: margin-top: 3rem; margin-bottom: 1.5rem;
+ * @example: @include line-margin(2,1,1);
+ *          -> will output on large screen: margin-top: 3.4rem; margin-bottom: 1.7rem;
+ *
+ */
+
+/* postcss-sorting: off */
+$line-space-register: (
+	vertical:(
+		top, bottom
+	),
+	horizontal: (
+		left, right
+	)
+);
+
+@mixin rhythm-line-space($first-multiplier: false, $second-multiplier:false, $r-font-size: default, $r-line-height: 2, $type: margin, $direction: vertical) {
+	// Print font-size
+	@include font-size($r-font-size);
+	// Print line-height
+	@include rhythm-line-height($r-line-height);
+
+	$base-font-size: get-config($font-size, $r-font-size, 'small');
+
+	//Loop through different line height breakpoints to calculate correct line space
+	@each $breakpoint, $value in $rhythm {
+		// Try to get font size for current breakpoint
+		$get-font-size: get-config($font-size, $r-font-size, $breakpoint);
+
+		// If font size is set for current breakpoint than set font-size. Else use font size of previous line-height breakpoint
+		@if ($get-font-size!=null) {
+			$base-font-size: $get-font-size;
+		}
+
+		//Add breakpoint
+		@include breakpoint($breakpoint) {
+			//Calculate possible correction difference
+			$correction: ((($value * $r-line-height) - $base-font-size)/2); //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+
+			transform: translateY($correction + $correction * ($rhythmBaselineCorrection));
+
+			//Calculate margin top
+			@if ($first-multiplier != false) {
+				$default-first: ($value * $first-multiplier);
+				#{$type}-#{nth(map_get($line-space-register,$direction),1)}: ($default-first);
+			}
+
+			//Calculate margin bottom
+			@if ($second-multiplier != false) {
+				$default-second: ($value * $second-multiplier);
+				#{$type}-#{nth(map_get($line-space-register,$direction),2)}: $default-second;
+			}
+		}
+	}
+}
+
+//Shortcuts to add line space for padding or margin
+@mixin rhythm-line-margin($top-multiplier: false, $bottom-multiplier:false, $r-font-size: 0, $r-line-height: default) {
+	$attribute: margin;
+	$direction: vertical;
+	@include rhythm-line-space($top-multiplier, $bottom-multiplier, $r-font-size, $r-line-height, $attribute, $direction);
+}
+
+@mixin rhythm-line-padding($top-multiplier: false, $bottom-multiplier:false, $r-font-size: 0, $r-line-height: default) {
+	$attribute: padding;
+	$direction: vertical;
+	@include rhythm-line-space($top-multiplier, $bottom-multiplier, $r-font-size, $r-line-height, $attribute, $direction);
+}
+
+@mixin rhythm-indent-padding($left-multiplier: false, $right-multiplier:false, $r-font-size: 0, $r-line-height: default) {
+	$attribute: padding;
+	$direction: horizontal;
+	@include rhythm-line-space($left-multiplier, $right-multiplier, $r-font-size, $r-line-height, $attribute, $direction);
+}
+
+@mixin rhythm-indent-margin($left-multiplier: false, $right-multiplier:false, $r-font-size: 0, $r-line-height: default) {
+	$attribute: margin;
+	$direction: horizontal;
+	@include rhythm-line-space($left-multiplier, $right-multiplier, $r-font-size, $r-line-height, $attribute, $direction);
+}
+
+/* postcss-sorting: on */

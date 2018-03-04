@@ -1,0 +1,12 @@
+/**
+ * Space Rhythm: Define grid setting
+ */
+
+// Define the size of your virtual grid units for each breakpoint
+$rhythm: (
+	small: .5rem,
+	medium: .75rem,
+	large: .75rem
+);
+
+$rhythmBaselineCorrection: 0.25; //TODO probably this should be font specific
