@@ -50,7 +50,7 @@ $line-space-register: (
 			//Calculate possible correction difference
 			$correction: ((($value * $r-line-height) - $base-font-size)/2); //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
 
-			transform: translateY($correction + $correction * ($rhythmBaselineCorrection));
+			transform: translateY($correction + $base-font-size * $rhythmBaselineCorrection);
 
 			//Calculate margin top
 			@if ($first-multiplier != false) {
