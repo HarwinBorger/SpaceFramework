@@ -1,6 +1,10 @@
 #Changelog
 
-## [0.3.0] New features - 07-09-2017
+## [0.4] New file structure - 04-03-2017
+### Changed
+- Use ITCSS file structure from @HarwinBorger 
+
+## [0.3] New features - 07-09-2017
 ### Added
 - Add negative classes for main object classes in space model from @HarwinBorger
 - Add line-space module from @HarwinBorger
