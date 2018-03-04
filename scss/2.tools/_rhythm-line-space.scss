@@ -36,7 +36,7 @@ $line-space-register: (
 	$base-font-size: get-config($font-size, $r-font-size, 'small');
 
 	//Loop through different line height breakpoints to calculate correct line space
-	@each $breakpoint, $value in $rhythm {
+	@each $breakpoint, $value in $rhythmGrid {
 		// Try to get font size for current breakpoint
 		$get-font-size: get-config($font-size, $r-font-size, $breakpoint);
 

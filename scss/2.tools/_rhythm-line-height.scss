@@ -9,7 +9,7 @@
  */
 
 @mixin rhythm-line-height($size) {
-	@each $breakpoint, $value in $rhythm {
+	@each $breakpoint, $value in $rhythmGrid {
 		@include breakpoint($breakpoint) {
 			line-height: $value * $size;
 		}
@@ -29,7 +29,7 @@
 @mixin line-height-classes() {
 	@each $size, $value in $line-height {
 		.rhythm-line-height-#{$size} {
-			@include line-height($size);
+			@include rhythm-line-height($size);
 		}
 	}
 }
