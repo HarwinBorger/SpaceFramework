@@ -6,27 +6,34 @@
  *           @include font-size(xlarge);
  */
 $font-size: (
-	xlarge:(    //Mostly used for H1
-		'small': (1.5rem, 4),
-		'medium': (2.25rem, 4)
+	xlarge:(//Mostly used for H1
+		'small': (1.5rem, 3),
+		'medium': (2.25rem, 4),
+		'large': (3rem, 6)
 	),
-	large:(     //Mostly used for H2
-		'small': 1.125rem,
-		'medium': 1.5rem
+	large:(//Mostly used for H2
+		'small': (1.125rem, 3),
+		'medium': (1.5rem, 3),
+		'large': (1.5rem, 3),
 	),
-	medium:(    //Mostly used for Intro text
-		'small': 1rem,
-		'medium': 1.125rem
+	medium:(//Mostly used for Intro text
+		'small': (1rem, 2),
+		'medium': (1.125rem, 3),
+		'large': (1.125rem, 3)
 	),
-	default:( // Values in default are also used for line-space mixin
-		'small': 1rem,
+	default:(// Values in default are also used for line-space mixin
+		'small': (1rem, 2),
+		'medium': (1rem, 2),
+		'large': (1rem, 2),
 	),
 	small:(
-		'small': .875rem,
-		'medium': .875rem
+		'small': (.875rem, 2),
+		'medium': (.875rem, 2),
+		'large': (.875rem, 2)
 	),
 	tiny:(
-		'small': .875rem,
-		'medium': .75rem
+		'small': (.875rem, 2),
+		'medium': (.75rem, 2),
+		'large': (.75rem, 2)
 	)
 ) !default;
