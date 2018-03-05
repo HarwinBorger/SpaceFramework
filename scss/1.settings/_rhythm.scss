@@ -3,10 +3,10 @@
  */
 
 // Define the size of your virtual grid units for each breakpoint
-$rhythmGrid: (
+$rhythm-grid: (
 	small: .6rem,
 	medium: .75rem,
 	large: .75rem
 );
 
-$rhythmBaselineCorrection: 0.11; //TODO probably this should be font specific
+$rhythm-baseline-correction: 0.15; //TODO probably this should be font specific

@@ -7,8 +7,8 @@
  */
 $font-size: (
 	xlarge:(    //Mostly used for H1
-		'small': 1.5rem,
-		'medium': 2.25rem,
+		'small': (1.5rem, 4),
+		'medium': (2.25rem, 4)
 	),
 	large:(     //Mostly used for H2
 		'small': 1.125rem,
