@@ -16,7 +16,11 @@ $mapFontRhythm: 2;
  * @require $rhythm-baseline-correction
  *
  * @param $font-size-value (string)
- * @param $font-rhythm-overwrite (array) // TODO make overwrite function work
+ * @param $font-rhythm-overwrite (list)
+ *
+ * Mixin todo's:
+ * todo 1: make sure all $rhythm-grid sizes are rendered because baseline correction
+ * todo 2: make $font-rhythm-overwrite work to overwrite default line-height
  */
 @mixin font-rhythm($font-size-value: default, $font-rhythm-overwrite: false) {
 	@each $breakpoint, $font-list in map-get($font-size, $font-size-value) {
