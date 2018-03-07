@@ -11,11 +11,13 @@
 /* MIXINS */
 @import 'space-model';
 @import 'font-size';
+
+/* MIXINS FOR SPACE RHYTHM */
+@import 'space';
+@import 'font-size-ratio';
+@import 'rhythm-line-height';
+
+/* LEGACY */
 @import 'line-height';
 @import 'line-space';
 @import 'pixel-perfect';
-
-/* MIXINS FOR RHYTHM */
-@import 'font-rhythm';
-@import 'rhythm-line-height';
-@import 'rhythm-line-space';

@@ -1,0 +1,50 @@
+/*
+ * Font-size mixin
+ *
+ * @description this mixin handles all the different font-sizes for different breakpoint.
+ *
+ * @example:  @include font-size(default) or @include font-size(xlarge)
+ */
+$mapFontSize: 1;
+$mapFontRhythm: 2;
+
+/**
+ * Font Rhythm
+ *
+ * @require $font-size
+ * @require $space-units
+ * @require $baseline-correction
+ *
+ * @param $font-size-value (string)
+ * @param $font-rhythm-overwrite (list)
+ *
+ * TODO:
+ * todo 1: make sure all $rhythm-grid sizes are rendered because baseline correction
+ * todo 2: make $line-height-rhythm work to overwrite default line-height
+ */
+@mixin font-size-ratio($font-size-value: default, $line-height-rhythm: false) {
+	@each $breakpoint, $font-list in map-get($font-size, $font-size-value) {
+		@include breakpoint($breakpoint) {
+			$font-size: $font-list; //Fallback if no font-rhythm method is used
+
+			@if (is-list($font-list)) {
+				// Get font-size
+				$font-size: nth($font-list, $mapFontSize);
+				// Calculate line-height
+				$line-height: nth($font-list, $mapFontRhythm) * map-get($space-units, $breakpoint);
+				// Calculate baseline correction
+				$center-correction: ($line-height - $font-size) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+				$font-correction: $font-size * $baseline-correction;
+				$correction: $center-correction + $font-correction;
+
+				// Set line height
+				line-height: $line-height;
+				// Set translate for baseline correction
+				transform: translateY($correction);
+			}
+
+			// Set font size
+			font-size: $font-size;
+		}
+	}
+}

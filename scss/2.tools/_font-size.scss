@@ -6,12 +6,8 @@
  * @example:  @include font-size(default) or @include font-size(xlarge)
  */
 
-@mixin font-size($size: default) {
-	@each $breakpoint, $value in map-get($font-size, $size) {
-		@include breakpoint($breakpoint) {
-			font-size: $value;
-		}
-	}
+@mixin font-size($font-size-value: default) {
+	@include font-size-ratio($font-size-value);
 }
 
 /*

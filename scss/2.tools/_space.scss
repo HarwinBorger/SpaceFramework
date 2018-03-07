@@ -1,0 +1,120 @@
+/* postcss-sorting: off */
+
+/*
+ * Line-space mixin
+ * @description: mixin is used to define margins on bottom and top of element based on the line-height and default font size settings
+ *
+ * @uses: (array)$line-height
+ * @uses: (array)$font-size
+ *
+ * @para: (int)$top-multiplier
+ * @para: (int)$bottom-multiplier
+ * @para: (string)$top-multiplier
+ * @para: (int)$correction-multiplier
+ *
+ * @example: @include line-margin(2,1);
+ *          -> will output on small screen: margin-top: 3rem; margin-bottom: 1.5rem;
+ * @example: @include line-margin(2,1,1);
+ *          -> will output on large screen: margin-top: 3.4rem; margin-bottom: 1.7rem;
+ *
+ */
+
+@mixin space(
+	$top: false,
+	$right:false,
+	$bottom: false,
+	$left: false,
+	$type: margin
+) {
+	$space-side-map: (
+		'top': $top,
+		'right': $right,
+		'bottom': $bottom,
+		'left': $left
+	);
+	//Loop through different line height breakpoints to calculate correct line space
+	@each $breakpoint, $space-value in $space-units {
+		//Add breakpoint
+		@include breakpoint($breakpoint) {
+			@each $side, $side-value in $space-side-map {
+				//Calculate type top
+				@if ($side-value != false) {
+					$calculated-value: ($space-value * $side-value);
+					#{$type}-#{$side}: ($calculated-value);
+				}
+			}
+		}
+	}
+}
+
+// Space shortcuts for padding/margin and horizontal/vertical
+
+/* SPACE HELPERS */
+@mixin space-sides($top, $right, $bottom, $left, $type) {
+	// If only $top value is given than make $right equal to top
+	@if ($right == default) {
+		$right: $top;
+	}
+
+	// If $left value is default than make $left equal to $right
+	@if ($left == default) {
+		$left: $right;
+	}
+
+	// If $right has a value and $bottom has no value make $bottom equal to $right
+	@if ($bottom == default) {
+		$bottom: $top;
+	}
+
+	@include space($top, $right, $bottom, $left, $type);
+}
+
+@mixin space-vertical($top, $bottom, $type) {
+	@if ($bottom == default) {
+		$bottom: $top;
+	}
+
+	@include space($top, false, $bottom, false, $type);
+}
+
+@mixin space-horizontal($left, $right, $type) {
+	@if ($right == default) {
+		$right: $left;
+	}
+
+	@include space(false, $right, false, $left, $type);
+}
+
+/* SPACE MARGIN MIXINS */
+@mixin margin($top: false, $right: default, $bottom: default , $left: default) {
+	$type: margin;
+	@include space-sides($top, $right, $bottom, $left, $type);
+}
+
+@mixin margin-vertical($top: false, $bottom: default) {
+	$type: margin;
+	@include space-vertical($top, $bottom, $type);
+}
+
+@mixin margin-horizontal($left: false, $right: default) {
+	$type: margin;
+	@include space-horizontal($left, $right, $type);
+}
+
+/* SPACE PADDING MIXINS */
+@mixin padding($top: false, $right: default, $bottom: default, $left: default) {
+	$type: padding;
+	@include space-sides($top, $right, $bottom, $left, $type);
+}
+
+@mixin padding-vertical($top: false, $bottom: default) {
+	$type: padding;
+	@include space-vertical($top, $bottom, $type);
+}
+
+@mixin padding-horizontal($left: false, $right: default) {
+	$type: padding;
+	@include space-horizontal($left, $right, $type);
+}
+
+/* postcss-sorting: on */
