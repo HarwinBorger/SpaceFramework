@@ -1,0 +1,21 @@
+/**
+ * Text Column classes
+ * TODO - solve problem with cross alignment in combination met different font-size/line-heights. Those need to start on same line.
+ */
+[class*="text-column"] {
+	@each $breakpoint, $unit-value in $space-units{
+		@include breakpoint($breakpoint) {
+			column-gap: $unit-value*2;
+		}
+	}
+}
+
+.text-column {
+	&-2 {
+		column-count: 2;
+	}
+
+	&-3 {
+		column-count: 2;
+	}
+}
