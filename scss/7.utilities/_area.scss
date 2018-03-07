@@ -1,0 +1,13 @@
+.area,
+.area-top{
+	> *:first-child{
+		margin-top: 0;
+	}
+}
+
+.area,
+.area-top{
+	> *:last-child{
+		margin-bottom: 0;
+	}
+}
