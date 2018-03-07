@@ -1,0 +1,10 @@
+/**
+ * Typography
+ */
+$distance-section: 3 !default;
+$distance-element: 2 !default;
+
+/** HEADINGS **/
+h1 {
+	@include margin-vertical(0, $sectionDistance);
+}
