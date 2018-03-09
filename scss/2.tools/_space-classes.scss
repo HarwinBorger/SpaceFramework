@@ -6,6 +6,7 @@
  * @uses: (array)$space-classes
  * @uses: (array)$space-class-settings
  *
+ * TODO building fallback for single and multiple viewport sizes. Currently you need to give up all different breakpoints in order to have it work. So you only 'small' is not enough, you still need to fill in 'medium' and 'large'
  */
 
 $space-side-register: (
