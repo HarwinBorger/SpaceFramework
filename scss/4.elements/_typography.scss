@@ -57,8 +57,8 @@ blockquote {
 	}
 }
 
-ol,
-ul {
+:not(li) > ol,
+:not(li) > ul{
 	@include font-size();
 	@include margin-vertical($distance-element, $distance-element);
 }
