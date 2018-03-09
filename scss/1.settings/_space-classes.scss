@@ -12,7 +12,7 @@ $space-classes: (
 	 * @example: .space-[type],  .site-[type], .content-[type]
 	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
 	 */
-	main: (//Defines global alignment related to the site
+	site: (//Defines global alignment related to the site
 		viewports:(
 			small:(2),
 			medium:(4),
@@ -26,7 +26,7 @@ $space-classes: (
 			large:(4),
 		)
 	),
-	element:(//Define the alignment of different elements within a section
+	block:(//Define the alignment of different elements within a section
 		viewports:(
 			small:(2)
 		)
