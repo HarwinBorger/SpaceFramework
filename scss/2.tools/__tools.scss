@@ -9,16 +9,18 @@
 @import "functions/_functions";
 
 /* MIXINS */
-@import 'space-model';
 @import 'font-size';
 
 /* MIXINS FOR SPACE RHYTHM */
+@import 'space-classes';
 @import 'space';
 @import 'dimension';
 @import 'font-size-ratio';
-@import 'rhythm-line-height';
+@import 'reset-child-margin';
+@import 'rhythm-line-height'; // Todo combine with default line-height
 
 /* LEGACY */
+//@import 'space-model'; //conflicts with space-classes
 @import 'line-height';
 @import 'line-space';
 @import 'pixel-perfect';

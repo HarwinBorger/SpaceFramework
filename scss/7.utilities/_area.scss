@@ -1,13 +1,9 @@
 .area,
 .area-top{
-	> *:first-child{
-		margin-top: 0;
-	}
+	@include reset-child-margin-top();
 }
 
 .area,
 .area-top{
-	> *:last-child{
-		margin-bottom: 0;
-	}
+	@include reset-child-margin-bottom();
 }

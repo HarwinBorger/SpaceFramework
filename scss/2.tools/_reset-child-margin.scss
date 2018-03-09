@@ -1,0 +1,22 @@
+/**
+ * Resets child margin
+ *
+ * TODO add $cascading option for deeper lvl's
+ */
+
+@mixin reset-child-margin-top($cascading: 1){
+	> *:first-child{
+		margin-top: 0;
+	}
+}
+
+@mixin reset-child-margin-bottom($cascading: 1){
+	> *:last-child{
+		margin-bottom: 0;
+	}
+}
+
+@mixin reset-child-margin($cascading: 1){
+	@include reset-child-margin-top($cascading);
+	@include reset-child-margin-bottom($cascading);
+}
