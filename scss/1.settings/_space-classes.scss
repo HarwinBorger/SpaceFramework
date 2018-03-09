@@ -28,7 +28,9 @@ $space-classes: (
 	),
 	block:(//Define the alignment of different elements within a section
 		viewports:(
-			small:(2)
+			small:(2),
+			medium:(2),
+			large:(2)
 		)
 	)
 ) !default;
