@@ -1,0 +1,31 @@
+/**
+ * @param $sides (list)
+ */
+@function convert-sides($sides) {
+	// Map array keys
+	$top: 1;
+	$right: 2;
+	$bottom: 3;
+	$left: 4;
+
+	// Make array for new values
+	$newSides: ();
+
+	// Loop clockwise from $top to $left
+	@for $side from $top through $left {
+		// If value doesn't exist in $sides
+		@if($side > length($sides)) {
+			$sideValue: nth($sides, $top); //Get 'top' value
+
+			// If 'left' value
+			@if ($side == $left) {
+				$sideValue: nth($sides, $right); //Get 'right' value
+			}
+
+			// Add side to sides list
+			$sides: append($sides, $sideValue);
+		}
+	}
+
+	@return $sides;
+}
