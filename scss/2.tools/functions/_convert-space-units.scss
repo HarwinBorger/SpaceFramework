@@ -1,19 +1,28 @@
 /**
- * @requires $space-units
+ * @param $value (int)
+ * @param $breakpoint (string)
+ */
+@function convert-space-units($value, $breakpoint){
+	// Get space unit size
+	$space-unit-size: map-get($space-unit-sizes, $breakpoint);
+
+	@return strip-unit($value) * $space-unit-size;
+}
+
+/**
+ * @requires $space-unit-sizes
  *
  * @param $values (list)
  * @param $breakpoint (string)
  */
-@function convert-space-units($values, $breakpoint) {
-	// Get space unit size
-	$space-unit: map-get($space-units, $breakpoint);
+@function convert-space-units-array($value-list, $breakpoint) {
 	// Make array for new values
 	$newValues: ();
 
 	// Loop through each value in $values
-	@if(is-list($values)){
-		@each $value in $values{
-			$newValue: $value * $space-unit;
+	@if(is-list($value-list)){
+		@each $value in $value-list{
+			$newValue: convert-space-units($value, $breakpoint);
 			$newValues: append($newValues, $newValue);
 		}
 	}

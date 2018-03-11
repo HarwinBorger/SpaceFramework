@@ -160,7 +160,7 @@ $space-position-register: (
 			// Convert value to 4 sides
 			$values: convert-sides($values);
 			// Convert space-unit values to rem units
-			$values: convert-space-units($values, $breakpoint);
+			$values: convert-space-units-array($values, $breakpoint);
 
 			//Generate breakpoints
 			@include breakpoint($breakpoint) {

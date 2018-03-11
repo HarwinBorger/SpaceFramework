@@ -5,7 +5,7 @@
  * TODO make a list $value possible
  */
 @mixin space-dimension($value, $type) {
-	@each $breakpoint, $space-value in $space-units {
+	@each $breakpoint, $space-value in $space-unit-sizes {
 		@include breakpoint($breakpoint) {
 			#{$type}: ($space-value * $value);
 		}

@@ -33,7 +33,7 @@
 		'left': $left
 	);
 	//Loop through different line height breakpoints to calculate correct line space
-	@each $breakpoint, $space-value in $space-units {
+	@each $breakpoint, $space-value in $space-unit-sizes {
 		//Add breakpoint
 		@include breakpoint($breakpoint) {
 			@each $side, $side-value in $space-side-map {

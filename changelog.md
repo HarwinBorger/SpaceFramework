@@ -5,6 +5,7 @@
 - Add overall support for space units from @HarwinBorger
 - Add reset-child-margin mixin from @HarwinBorger
 - Add dimensions mixin so you make dimension in space unit grid from @HarwinBorger
+- Add basic text-column support from @HarwinBorger
 
 ### Changed
 - Changed space-model to space-classes for class support of space units from @HarwinBorger 

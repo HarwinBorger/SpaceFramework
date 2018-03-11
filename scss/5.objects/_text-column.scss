@@ -3,9 +3,9 @@
  * TODO - solve problem with cross alignment in combination met different font-size/line-heights. Those need to start on same line.
  */
 [class*="text-column"] {
-	@each $breakpoint, $unit-value in $space-units{
+	@each $breakpoint, $space-unit-size in $space-unit-sizes{
 		@include breakpoint($breakpoint) {
-			column-gap: $unit-value*2;
+			column-gap: convert-space-units(2su, $breakpoint);
 		}
 	}
 }
