@@ -13,14 +13,7 @@
 
 /* MIXINS FOR SPACE RHYTHM */
 @import 'space-classes';
-@import 'space';
-@import 'dimension';
+@import 'space-offset';
+@import 'space-dimension';
 @import 'font-size-ratio';
 @import 'reset-child-margin';
-@import 'rhythm-line-height'; // Todo combine with default line-height
-
-/* LEGACY */
-//@import 'space-model'; //conflicts with space-classes
-@import 'line-height';
-@import 'line-space';
-@import 'pixel-perfect';

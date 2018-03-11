@@ -256,15 +256,17 @@ $space-position-register: (
  * Deprecated as of 0.2.5
  */
 @mixin space-init() {
-	@warn('"space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "space-classes()" instead');
+	@warn('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "space-classes()" instead');
 	@include space-classes();
 }
 
 /*
  * @return classes for using general styling
+ *
+ * Deprecated as of 0.5
  */
 @mixin space-model-classes() {
-	@warn('"space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "space-classes()" instead');
+	@warn('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "space-classes()" instead');
 	@include space-classes();
 }
 
