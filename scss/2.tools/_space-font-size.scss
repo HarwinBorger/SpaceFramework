@@ -12,7 +12,7 @@
  * todo 1: make sure all $rhythm-grid sizes are rendered because baseline correction
  * todo 2: make $line-height-rhythm work to overwrite default line-height
  */
-@mixin font-size-ratio($font-size-value: default, $line-height-rhythm: false) {
+@mixin space-font-size($font-size-value: default, $line-height-rhythm: false) {
 	$map-font-size: 1;
 	$map-font-rhythm: 2;
 
@@ -41,6 +41,34 @@
 
 			// Set font size
 			font-size: $font-size;
+		}
+	}
+}
+
+/*
+ * Font-size mixin
+ *
+ * @description this mixin handles all the different font-sizes for different breakpoint.
+ *
+ * @example:  @include font-size(default) or @include font-size(xlarge)
+ */
+
+@mixin font-size($font-size-value: default) {
+	@include space-font-size($font-size-value);
+}
+
+/*
+ * Font-size-classes mixin
+ *
+ * @description this mixin adds classes for all the different font-sizes
+ *
+ * @example: .font-size-small or .font-size-default
+ */
+
+@mixin font-size-classes() {
+	@each $size, $value in $font-size {
+		.font-size-#{$size} {
+			@include font-size($size);
 		}
 	}
 }

@@ -9,11 +9,8 @@
 @import "functions/_functions";
 
 /* MIXINS */
-@import 'font-size';
-
-/* MIXINS FOR SPACE RHYTHM */
+@import 'space-font-size';
 @import 'space-classes';
 @import 'space-offset';
 @import 'space-dimension';
-@import 'font-size-ratio';
 @import 'reset-child-margin';
