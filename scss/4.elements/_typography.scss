@@ -1,8 +1,8 @@
 /**
  * Typography
  */
-$distance-section: 3 !default;
-$distance-element: 2 !default;
+$distance-section: 3su !default;
+$distance-element: 2su !default;
 
 /** HEADINGS **/
 h1 {
@@ -64,7 +64,7 @@ blockquote {
 }
 
 button {
-	@include padding(1);
+	@include padding(1su);
 	@include font-size();
 }
 

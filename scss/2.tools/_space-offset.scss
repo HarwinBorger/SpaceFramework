@@ -39,7 +39,7 @@
 			@each $side, $side-value in $space-side-map {
 				//Calculate type top
 				@if ($side-value != false) {
-					$calculated-value: ($space-value * $side-value);
+					$calculated-value: convert-space-units($side-value, $breakpoint);
 					#{$type}-#{$side}: ($calculated-value);
 				}
 			}
