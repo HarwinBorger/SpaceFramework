@@ -9,8 +9,8 @@
 @import "functions/_functions";
 
 /* MIXINS */
-@import 'space-model';
-@import 'font-size';
-@import 'line-height';
-@import 'line-space';
-@import 'pixel-perfect';
+@import 'space-font-size';
+@import 'space-classes';
+@import 'space-offset';
+@import 'space-dimension';
+@import 'reset-child-margin';

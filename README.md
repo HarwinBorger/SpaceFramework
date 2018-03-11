@@ -1,8 +1,9 @@
 # SpaceFramework 
-Front-end development made for a green future!
+Vertical Grid System: Brings cross-alignment back to the web
 
-- Follows OOCSS principles
+- Follows OOCSS and ITCSS principles
 - Develop faster and more efficient. No more writing classes to set paddings, margins en positions. 
+- Uses Baseline and vertical grid
 - Separates structure from styling 
 
 ## Requirements

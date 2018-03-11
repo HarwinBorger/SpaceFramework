@@ -1,0 +1,9 @@
+.area,
+.area-top{
+	@include reset-child-margin-top();
+}
+
+.area,
+.area-top{
+	@include reset-child-margin-bottom();
+}

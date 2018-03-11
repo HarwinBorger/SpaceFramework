@@ -1,5 +1,16 @@
 #Changelog
 
+## [0.5] Space Units - 04-03-2017
+### Added
+- Add overall support for space units from @HarwinBorger
+- Add reset-child-margin mixin from @HarwinBorger
+- Add dimensions mixin so you make dimension in space unit grid from @HarwinBorger
+- Add basic text-column support from @HarwinBorger
+
+### Changed
+- Changed space-model to space-classes for class support of space units from @HarwinBorger 
+- Add font-size for compatibility with space units from @HarwinBorger
+
 ## [0.4] New file structure - 04-03-2017
 ### Changed
 - Use ITCSS file structure from @HarwinBorger 
