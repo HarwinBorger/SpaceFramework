@@ -1,0 +1,78 @@
+/**
+ * Typography
+ */
+$distance-section: 3su !default;
+$distance-element: 2su !default;
+
+/** HEADINGS **/
+h1 {
+	@include font-size(xlarge);
+	@include margin-vertical(0, $distance-section);
+}
+
+h2 {
+	@include font-size(large);
+	@include margin-vertical($distance-section, $distance-element);
+}
+
+h3 {
+	@include font-size();
+	@include margin-vertical($distance-element, 0);
+}
+
+/** ELEMENTS **/
+p {
+	@include font-size();
+	@include margin-vertical($distance-element, $distance-element);
+
+	h3 + & {
+		@include margin-vertical(0, false);
+	}
+}
+
+hr {
+	@include margin-vertical($distance-element, $distance-element);
+	@include height($distance-element);
+
+	box-sizing: border-box;
+}
+
+blockquote {
+	padding: 0;
+	border: 0;
+
+	@include margin-vertical(0, 0);
+	@include margin-horizontal($distance-element, $distance-element);
+
+	p {
+		@include font-size(large);
+
+		&:first-child{
+			margin-top: 0;
+		}
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+
+:not(li) > ol,
+:not(li) > ul{
+	@include font-size();
+	@include margin-vertical($distance-element, $distance-element);
+}
+
+button {
+	@include padding(1su);
+	@include font-size();
+}
+
+table {
+	@include margin-vertical($distance-element, $distance-element);
+}
+
+th,
+td {
+	@include font-size();
+}

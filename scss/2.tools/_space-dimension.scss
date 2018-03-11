@@ -1,0 +1,26 @@
+/**
+ * Dimension
+ * @param $value (in space-units)
+ * @param $type (width || height)
+ * TODO make a list $value possible
+ */
+@mixin space-dimension($value, $type) {
+	@each $breakpoint, $space-units-size in $space-unit-sizes {
+		@include breakpoint($breakpoint) {
+			#{$type}: convert-space-units($value, $breakpoint);
+		}
+	}
+}
+
+/**
+ * Vanilla CSS mixins
+ */
+@mixin width($value) {
+	$type: width;
+	@include space-dimension($value, $type)
+}
+
+@mixin height($value) {
+	$type: height;
+	@include space-dimension($value, $type)
+}

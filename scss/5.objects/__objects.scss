@@ -7,4 +7,5 @@
 
 @include space-model-classes();
 @include font-size-classes();
-@include line-height-classes();
+
+@import "text-column";

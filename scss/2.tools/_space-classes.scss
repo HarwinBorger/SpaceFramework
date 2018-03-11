@@ -3,9 +3,10 @@
  *
  * Author: Harwin Borger
  *
- * @uses: (array)$space-settings              
- * @uses: (array)$space-object-settings
+ * @uses: (array)$space-classes
+ * @uses: (array)$space-class-settings
  *
+ * TODO building fallback for single and multiple viewport sizes. Currently you need to give up all different breakpoints in order to have it work. So you only 'small' is not enough, you still need to fill in 'medium' and 'large'
  */
 
 $space-side-register: (
@@ -97,13 +98,14 @@ $space-position-register: (
 
 @mixin space-set-position-classes($className) {
 	@each $position in $space-position-register {
-	'.#{$className}-#{$position}' {
-		position: $position;
-	}
+		'.#{$className}-#{$position}' {
+			position: $position;
+		}
 	}
 }
 
-@mixin space-loop-sides($classNameArray, $settings,$values, $type) {
+@mixin space-loop-sides($classNameArray, $settings, $values, $type) {
+	$negative: -1;
 	//Set css class like: .space-[type], .space-[type]-[size]
 	#{$classNameArray} {
 		@if (allow-combined-sides($type)==true) {
@@ -116,9 +118,11 @@ $space-position-register: (
 	}
 
 	@if (allow-negative-classes($settings,$type) == true) {
-		#{$classNameArray}-negative {
+		$classNameNegative: extend-class-name($classNameArray, 'negative');
+
+		#{$classNameNegative} {
 			@each $side in $space-side-register {
-				@include space-set-property($side, $values, $type, -1);
+				@include space-set-property($side, $values, $type, $negative);
 			}
 		}
 	}
@@ -141,7 +145,7 @@ $space-position-register: (
 			$classNameDirectionNegative: extend-class-name($classNameArray, '#{$direction}-negative');
 			#{$classNameDirectionNegative} {
 				@each $side in $sides {
-					@include space-set-property($side, $values, $type, -1);
+					@include space-set-property($side, $values, $type, $negative);
 				}
 			}
 		}
@@ -153,6 +157,11 @@ $space-position-register: (
 		$classNameArray: ('.#{$className}');
 
 		@each $breakpoint, $values in map_get($settings, viewports) {
+			// Convert value to 4 sides
+			$values: convert-sides($values);
+			// Convert space-unit values to rem units
+			$values: convert-space-units-array($values, $breakpoint);
+
 			//Generate breakpoints
 			@include breakpoint($breakpoint) {
 				@if (map_get($settings,responsive) == true and $breakpoint != 'small') {
@@ -192,22 +201,22 @@ $space-position-register: (
 @mixin space-loop-objects() {
 	//Set default settings
 	$defaultTypes: (
-		types: map_get($space-settings, types)
+		types: map_get($space-class-settings, types)
 	);
 
 	$defaultDirections: (
-		directions: map_get($space-settings, directions)
+		directions: map_get($space-class-settings, directions)
 	);
 
 	$defaultNegative: (
-		negative: map_get($space-settings, negative)
+		negative: map_get($space-class-settings, negative)
 	);
 
 	$defaultResponsive: (
-		responsive: map_get($space-settings, responsive)
+		responsive: map_get($space-class-settings, responsive)
 	);
 
-	@each $sizeClassName, $settings in $space-object-settings {
+	@each $sizeClassName, $settings in $space-classes{
 		$className: $sizeClassName; // Generates .object
 
 		@if (map_get($settings, types) == null) {
@@ -232,18 +241,32 @@ $space-position-register: (
 
 /*
  * @return classes for using general styling
+ */
+@mixin space-classes() {
+	@include space-loop-objects();
+}
+
+/***
+ *** !!! DEPRECATED / LEGACY FUNCTIONS
+ ***/
+
+/*
+ * @return classes for using general styling
  *
  * Deprecated as of 0.2.5
  */
 @mixin space-init() {
-	@include space-loop-objects();
-	@warn('space-init is deprecated since SpaceFramework [0.2.5]. Please use space-model-classes instead');
+	@warn('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "space-classes()" instead');
+	@include space-classes();
 }
-
 
 /*
  * @return classes for using general styling
+ *
+ * Deprecated as of 0.5
  */
 @mixin space-model-classes() {
-	@include space-loop-objects();
+	@warn('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "space-classes()" instead');
+	@include space-classes();
 }
+
