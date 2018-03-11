@@ -9,7 +9,7 @@
  */
 
 @mixin rhythm-line-height($size) {
-	@each $breakpoint, $value in $rhythm-grid {
+	@each $breakpoint, $value in $space-units {
 		@include breakpoint($breakpoint) {
 			line-height: $value * $size;
 		}
