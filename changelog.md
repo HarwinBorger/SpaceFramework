@@ -1,6 +1,10 @@
 #Changelog
 
-## [0.5] Space Units - 04-03-2017
+## [0.6] Rework Font Presets - 12-03-2017
+### Changed
+- Rework of font-size variables to font-presets and mixin from @HarwinBorger 
+
+## [0.5] Space Units - 11-03-2017
 ### Added
 - Add overall support for space units from @HarwinBorger
 - Add reset-child-margin mixin from @HarwinBorger
