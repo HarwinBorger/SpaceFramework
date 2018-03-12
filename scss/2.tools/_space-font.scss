@@ -34,7 +34,7 @@
 
 				// If translate text to baseline
 				@if ($baseline == true) {
-					$center-correction: ($line-height - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+					$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
 					$font-correction: $font-size-value * $baseline-correction;
 					$translate-y-value: $center-correction + $font-correction;
 				}
@@ -65,7 +65,7 @@
  * @param $baseline (true|false)
  */
 @mixin font-preset($font-preset: default, $baseline: true) {
-	@include space-font-preset($font-preset, false, $baseline);
+	@include space-font-preset($font-preset, true, $baseline);
 }
 
 /*
