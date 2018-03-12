@@ -74,7 +74,7 @@
  * Todo: reintroduce line-height mixin
  */
 @mixin font-size($font-size-value: default, $baseline: false) {
-	@include font-preset($font-size-value, false, false);
+	@include space-font-preset($font-size-value, false, false);
 }
 
 /*
@@ -82,7 +82,7 @@
  *
  * @description this mixin adds classes for all the different font-sizes
  *
- * @example: font-size-small | font-size-default
+ * @example: font-size-small | fongrunt-size-default
  */
 
 @mixin font-size-classes() {
