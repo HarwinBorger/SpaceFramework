@@ -1,0 +1,108 @@
+/**
+ * Font Presets
+ *
+ * @require $font-preset
+ * @require $space-unit-sizes
+ * @require $baseline-correction
+ *
+ * @param $font-size-value (string)
+ * @param $line-height (list)
+ *
+ * TODO:
+ * todo 1: make sure all $space-units sizes are rendered because baseline correction
+ * todo 2: make $line-height work to overwrite default line-height
+ */
+@mixin space-font-preset($font-preset-value: default, $line-height: true, $baseline: true) {
+	$map-font-size: 1;
+	$map-line-height: 2;
+
+	@each $breakpoint, $font-preset in map-get($font-presets, $font-preset-value) {
+		@include breakpoint($breakpoint) {
+			$font-size-value: $font-preset; //Fallback if no font-rhythm method is used
+
+			// Check if $font-preset is a preset array
+			@if (is-list($font-preset)) {
+				// Get font-size
+				$font-size-value: nth($font-preset, $map-font-size);
+
+				// Calculate line-height
+				$space-units: nth($font-preset, $map-line-height);
+				$line-height-value: convert-space-units($space-units, $breakpoint);
+
+				// Calculate baseline correction
+				$translate-y-value: 0; // Reset correction if $baseline is false. Needed in case inherit correction is applied
+
+				// If translate text to baseline
+				@if ($baseline == true) {
+					$center-correction: ($line-height - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+					$font-correction: $font-size-value * $baseline-correction;
+					$translate-y-value: $center-correction + $font-correction;
+				}
+
+				// If line-height should be set
+				@if ($line-height == true) {
+					// Set line height
+					line-height: $line-height-value;
+				}
+
+				// Set translate for baseline correction
+				transform: translateY($translate-y-value);
+			}
+
+			// Set font size
+			font-size: $font-size-value;
+		}
+	}
+}
+
+/*
+ * Font preset mixin
+ *
+ * @example
+ * @include font-preset(large) => font-size: 24rem; line-height: 3.2rem;
+ *
+ * @param $font-preset (array-key of $font-presets)
+ * @param $baseline (true|false)
+ */
+@mixin font-preset($font-preset: default, $baseline: true) {
+	@include space-font-preset($font-preset, false, $baseline);
+}
+
+/*
+ * Font-size function
+ *
+ * Todo: reintroduce line-height mixin
+ */
+@mixin font-size($font-size-value: default, $baseline: false) {
+	@include font-preset($font-size-value, false, false);
+}
+
+/*
+ * Font-size-classes mixin
+ *
+ * @description this mixin adds classes for all the different font-sizes
+ *
+ * @example: font-size-small | font-size-default
+ */
+
+@mixin font-size-classes() {
+	@each $size, $value in $font-presets {
+		.font-size-#{$size} {
+			@include font-size($size);
+		}
+	}
+}
+
+/*
+ * Font-preset-classes mixin
+ *
+ * @description this mixin adds classes for all the different font-presets
+ * @example: font-preset-large | font-preset-xlarge
+ */
+@mixin font-preset-classes() {
+	@each $size, $value in $font-presets {
+		.font-preset-#{$size} {
+			@include font-preset($size);
+		}
+	}
+}
