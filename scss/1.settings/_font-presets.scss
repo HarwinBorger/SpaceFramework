@@ -1,5 +1,5 @@
 /*
- * Font size variables which are used in '@mixin font-size'
+ * Font Presets
  *
  * @description: A font-size can be used by using: @include font-size($value); were $value stands for the font-size.
  * @example: @include font-size(default); or
@@ -7,7 +7,19 @@
  *
  * Define font-size and line-height in space-units
  */
-$font-size: (
+
+$baseline-correction: 0.15 !default;
+$base-font-family: Helvetica, Roboto, Arial, sans-serif !default;
+
+// Future variable to apply different baseline corrections and fonts to the font-presets
+$font-families: (
+	default: (
+		family: $base-font-family,
+		baseline-correction: $baseline-correction
+	),
+);
+
+$font-presets: (
 	xlarge:(//Mostly used for H1
 		'small': (1.5rem, 3su),
 		'medium': (2.25rem, 4su),
@@ -18,12 +30,12 @@ $font-size: (
 		'medium': (1.5rem, 3su),
 		'large': (1.5rem, 3su),
 	),
-	medium:(//Mostly used for Intro text
+	medium:(// Mostly used for Intro text
 		'small': (1rem, 2su),
 		'medium': (1.125rem, 3su),
 		'large': (1.125rem, 3su)
 	),
-	default:(// Values in default are also used for line-space mixin
+	default:(// Body font-size
 		'small': (1rem, 2su),
 		'medium': (1rem, 2su),
 		'large': (1rem, 2su),
