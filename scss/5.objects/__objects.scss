@@ -5,7 +5,7 @@
  * design patterns, for example media object known from OOCSS
  */
 
-@include space-model-classes();
+@include space-classes();
 @include font-size-classes();
 
 @import "text-column";
