@@ -32,7 +32,7 @@ p {
 
 hr {
 	@include margin-vertical($distance-element, $distance-element);
-	@include height($distance-element);
+	@include height(1);
 
 	box-sizing: border-box;
 }
