@@ -1,6 +1,6 @@
 #Changelog
 
-## [unreleased] Alignment classes - unreleased
+## [0.7] Alignment classes - 13-03-2017
 
 ### Add 
 - Add align-baseline so you can specify where you want to apply baseline alignment from @HarwinBorger
