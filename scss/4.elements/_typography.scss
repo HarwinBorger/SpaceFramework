@@ -42,7 +42,7 @@ blockquote {
 	border: 0;
 
 	@include margin-vertical(0, 0);
-	@include margin-horizontal($distance-element, $distance-element);
+	@include margin-horizontal($distance-element);
 
 	p {
 		@include font-preset(large);
@@ -57,10 +57,14 @@ blockquote {
 	}
 }
 
-:not(li) > ol,
-:not(li) > ul{
+ol,
+ul{
 	@include font-preset();
-	@include margin-vertical($distance-element, $distance-element);
+	@include margin-vertical($distance-element);
+
+	& & {
+		@include margin-vertical(0)
+	}
 }
 
 button {
@@ -69,7 +73,7 @@ button {
 }
 
 table {
-	@include margin-vertical($distance-element, $distance-element);
+	@include margin-vertical($distance-element);
 }
 
 th,
