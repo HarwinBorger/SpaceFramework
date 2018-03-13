@@ -7,12 +7,16 @@
  *
  * @param $font-size-value (string)
  * @param $line-height (list)
+ * @param $baseline (true | false | reset)
  *
  * TODO:
  * todo 1: make sure all $space-units sizes are rendered because baseline correction
  * todo 2: make $line-height work to overwrite default line-height
  */
-@mixin space-font-preset($font-preset-value: default, $line-height: true, $baseline: true) {
+$class-align-baseline: '.align-baseline' !default;
+$class-align-topline: '.align-topline' !default; // TODO build in top alignment
+
+@mixin space-font-preset($font-preset-value: default, $line-height: default, $baseline: true) {
 	$map-font-size: 1;
 	$map-line-height: 2;
 
@@ -29,8 +33,12 @@
 				$space-units: nth($font-preset, $map-line-height);
 				$line-height-value: convert-space-units($space-units, $breakpoint);
 
-				// Calculate baseline correction
-				$translate-y-value: 0; // Reset correction if $baseline is false. Needed in case inherit correction is applied
+				$translate-y-value: false;
+
+				// Reset baseline correction
+				@if ($baseline == reset) {
+					$translate-y-value: 0; // Reset correction if $baseline is false. Needed in case inherit correction is applied
+				}
 
 				// If translate text to baseline
 				@if ($baseline == true) {
@@ -40,13 +48,23 @@
 				}
 
 				// If line-height should be set
-				@if ($line-height == true) {
+				@if ($line-height != false) {
 					// Set line height
 					line-height: $line-height-value;
 				}
 
 				// Set translate for baseline correction
-				transform: translateY($translate-y-value);
+				@if ($translate-y-value != false) {
+					// Add element to .align-baseline object
+					#{$class-align-baseline} & {
+						transform: translateY($translate-y-value);
+					}
+
+					// Add element to .align-topline object
+					#{$class-align-topline} & {
+						transform: translateY(-$translate-y-value);
+					}
+				}
 			}
 
 			// Set font size

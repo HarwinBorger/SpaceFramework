@@ -1,5 +1,14 @@
 #Changelog
 
+## [0.7] Alignment classes - 13-03-2017
+
+### Add 
+- Add align-baseline so you can specify where you want to apply baseline alignment from @HarwinBorger
+- Add align-topline so you can specify where you want to apply topline alignment from @HarwinBorger
+
+### Remove
+- Remove default alignment of main elements. 
+
 ## [0.6] Rework Font Presets - 12-03-2017
 ### Changed
 - Rework of font-size variables to font-presets and mixin from @HarwinBorger 
