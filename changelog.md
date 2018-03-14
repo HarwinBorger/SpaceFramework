@@ -1,8 +1,12 @@
 #Changelog
 
+## [unreleased] 
+### Added
+- Add line-height mixin so you can define customs line-heights from @HarwinBorger
+
 ## [0.7] Alignment classes - 13-03-2017
 
-### Add 
+### Added
 - Add align-baseline so you can specify where you want to apply baseline alignment from @HarwinBorger
 - Add align-topline so you can specify where you want to apply topline alignment from @HarwinBorger
 
