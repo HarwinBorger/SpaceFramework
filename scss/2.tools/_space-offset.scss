@@ -86,11 +86,13 @@
 }
 
 /* SPACE MARGIN MIXINS */
+// Origin
 @mixin margin($top: false, $right: default, $bottom: default , $left: default) {
 	$type: margin;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
 }
 
+// Directions
 @mixin margin-vertical($top: false, $bottom: default) {
 	$type: margin;
 	@include space-offset-vertical($top, $bottom, $type);
@@ -101,12 +103,35 @@
 	@include space-offset-horizontal($left, $right, $type);
 }
 
+// Sides
+@mixin margin-top($top: false) {
+	$type: margin;
+	@include space-offset($top, false, false, false, $type);
+}
+
+@mixin margin-right($right: false) {
+	$type: margin;
+	@include space-offset(false, $right, false, false, $type);
+}
+
+@mixin margin-bottom($bottom: false) {
+	$type: margin;
+	@include space-offset(false, false, $bottom, false, $type);
+}
+
+@mixin margin-left($left: false) {
+	$type: margin;
+	@include space-offset(false, false, false, $left, $type);
+}
+
 /* SPACE PADDING MIXINS */
+// Origin
 @mixin padding($top: false, $right: default, $bottom: default, $left: default) {
 	$type: padding;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
 }
 
+// Directions
 @mixin padding-vertical($top: false, $bottom: default) {
 	$type: padding;
 	@include space-offset-vertical($top, $bottom, $type);
@@ -115,6 +140,27 @@
 @mixin padding-horizontal($left: false, $right: default) {
 	$type: padding;
 	@include space-offset-horizontal($left, $right, $type);
+}
+
+// Sides
+@mixin padding-top($top: false) {
+	$type: padding;
+	@include space-offset($top, false, false, false, $type);
+}
+
+@mixin padding-right($right: false) {
+	$type: padding;
+	@include space-offset(false, $right, false, false, $type);
+}
+
+@mixin padding-bottom($bottom: false) {
+	$type: padding;
+	@include space-offset(false, false, $bottom, false, $type);
+}
+
+@mixin padding-left($left: false) {
+	$type: padding;
+	@include space-offset(false, false, false, $left, $type);
 }
 
 /* postcss-sorting: on */
