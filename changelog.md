@@ -1,11 +1,11 @@
 #Changelog
 
-## [unreleased] 
+## [0.8] Offset and lineheight - 14-03-2017
 ### Added
 - Add line-height mixin so you can define customs line-heights
 - Add side classes for space offset
 
-## [0.7] Alignment classes - 13-03-2017
+## [0.7] Vertical alignment classes - 13-03-2017
 
 ### Added
 - Add align-baseline so you can specify where you want to apply baseline alignment
