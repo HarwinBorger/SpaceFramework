@@ -4,6 +4,10 @@
 $distance-section: 3su !default;
 $distance-element: 2su !default;
 
+body{
+	@include font-preset();
+}
+
 /** HEADINGS **/
 h1 {
 	@include font-preset(xlarge);
@@ -22,7 +26,7 @@ h3 {
 
 /** ELEMENTS **/
 p {
-	@include font-preset();
+	@include font-preset(inherit);
 	@include margin-vertical($distance-element, $distance-element);
 
 	h3 + & {
@@ -59,7 +63,7 @@ blockquote {
 
 ol,
 ul{
-	@include font-preset();
+	@include font-preset(inherit);
 	@include margin-vertical($distance-element);
 
 	& & {
@@ -68,8 +72,8 @@ ul{
 }
 
 button {
+	@include font-preset(inherit);
 	@include padding(1su);
-	@include font-preset();
 }
 
 table {
@@ -78,5 +82,5 @@ table {
 
 th,
 td {
-	@include font-preset();
+	@include font-preset(inherit);
 }

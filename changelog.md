@@ -1,5 +1,12 @@
 #Changelog
 
+## [0.9] Inherit FontPreset support and Capline naming - 15-03-2017
+### Added
+- Add support for inherit font-preset
+
+### Changed
+- Change align-topline to align-capline conform typography naming conventions
+
 ## [0.8] Offset and lineheight - 14-03-2017
 ### Added
 - Add line-height mixin so you can define customs line-heights
