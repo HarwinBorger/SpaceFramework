@@ -1,50 +1,79 @@
 /**
  * Font Presets
+ * @note if $font-preset-value is set on 'inherit' make sure the 'default' $font-preset is set on the '<body>' element
  *
  * @require $font-preset
+ * @require $font-families with cap-height set
  * @require $space-unit-sizes
- * @require $baseline-correction
  *
- * @param $font-size-value (string)
+ * @param $font-size-value (inherit | string)
  * @param $line-height (list)
- * @param $baseline (true | false | reset)
+ * @param $set-align-classes (true | false | reset)
  *
  * TODO:
  * todo 1: make sure all $space-units sizes are rendered because baseline correction
  * todo 2: make $line-height work to overwrite default line-height
+ * todo 3: support secondary font
  */
 $class-align-baseline: '.align-baseline' !default;
-$class-align-topline: '.align-topline' !default; // TODO build in top alignment
+$class-align-capline: '.align-capline' !default;
+$class-align-median: '.align-median' !default; // TODO build in xline alignment
 
-@mixin space-font-preset($font-preset-value: default, $line-height: default, $baseline: true) {
+@mixin space-font-preset($font-preset: default, $line-height: default, $set-align-classes: true) {
+	// Set mapping of $font-preset values
 	$map-font-size: 1;
 	$map-line-height: 2;
 
-	@each $breakpoint, $font-preset in map-get($font-presets, $font-preset-value) {
+	$font-preset-value: $font-preset;
+
+	$font-family: map-get($font-families, default);
+
+	@if ($font-preset == inherit) {
+		$font-preset-value: default; // Set $font-preset-value to default to still set .align-baseline and .align-capline classes
+	}
+
+	@each $breakpoint, $font-preset-list in map-get($font-presets, $font-preset-value) {
 		@include breakpoint($breakpoint) {
-			$font-size-value: $font-preset; //Fallback if no font-rhythm method is used
+			$font-size-value: $font-preset-list; //Fallback if no font-rhythm method is used
 
 			// Check if $font-preset is a preset array
-			@if (is-list($font-preset)) {
+			@if (is-list($font-preset-list)) {
 				// Get font-size
-				$font-size-value: nth($font-preset, $map-font-size);
+				$font-size-value: nth($font-preset-list, $map-font-size);
 
 				// Calculate line-height
-				$space-units: nth($font-preset, $map-line-height);
+				$space-units: nth($font-preset-list, $map-line-height);
 				$line-height-value: convert-space-units($space-units, $breakpoint);
 
-				$translate-y-value: false;
+				// Set translate-y value for baseline and capline alignments
+				$capheight-correction-value: false;
+				$xheight-correction-value: false;
 
 				// Reset baseline correction
-				@if ($baseline == reset) {
-					$translate-y-value: 0; // Reset correction if $baseline is false. Needed in case inherit correction is applied
+				@if ($set-align-classes == reset) {
+					$capheight-correction-value: 0; // Reset correction if $set-align-classes is false. Needed in case inherit correction is applied
+					$xheight-correction-value: 0;
 				}
 
-				// If translate text to baseline
-				@if ($baseline == true) {
+				// If translate text to baseline, capline and xline
+				@if ($set-align-classes == true) {
 					$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
-					$font-correction: $font-size-value * $baseline-correction;
-					$translate-y-value: $center-correction + $font-correction;
+
+					// Calculate baseline and capline
+					$cap-height: map-get($font-family, cap-height);
+					$font-correction: $font-size-value * ((1 - $cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
+					$capheight-correction-value: $center-correction + $font-correction;
+
+					// Calculate median
+					$x-height: map-get($font-family, x-height);
+					$font-correction: $font-size-value * ((1 - $cap-height*$x-height )/ 2);
+					$xheight-correction-value: $center-correction + $font-correction;
+				}
+
+				// Overwrite font-size and line-height with inherit when it should be inherit
+				@if ($font-preset == inherit) {
+					$font-size-value: inherit;
+					$line-height-value: inherit;
 				}
 
 				// If line-height should be set
@@ -54,15 +83,22 @@ $class-align-topline: '.align-topline' !default; // TODO build in top alignment
 				}
 
 				// Set translate for baseline correction
-				@if ($translate-y-value != false) {
+				@if ($capheight-correction-value != false) {
 					// Add element to .align-baseline object
 					#{$class-align-baseline} & {
-						transform: translateY($translate-y-value);
+						transform: translateY($capheight-correction-value);
 					}
 
-					// Add element to .align-topline object
-					#{$class-align-topline} & {
-						transform: translateY(-$translate-y-value);
+					// Add element to .align-capline object
+					#{$class-align-capline} & {
+						transform: translateY(-$capheight-correction-value);
+					}
+				}
+
+				@if($xheight-correction-value != false){
+					// Add element to .align-xline object
+					#{$class-align-median} & {
+						transform: translateY(-$xheight-correction-value);
 					}
 				}
 			}
@@ -79,19 +115,17 @@ $class-align-topline: '.align-topline' !default; // TODO build in top alignment
  * @example
  * @include font-preset(large) => font-size: 24rem; line-height: 3.2rem;
  *
- * @param $font-preset (array-key of $font-presets)
- * @param $baseline (true|false)
+ * @param $font-preset (array-key | inherit) string of array-key of $font-presets
+ * @param $set-align-classes (true | false)
  */
-@mixin font-preset($font-preset: default, $baseline: true) {
-	@include space-font-preset($font-preset, true, $baseline);
+@mixin font-preset($font-preset: default, $set-align-classes: true) {
+	@include space-font-preset($font-preset, true, $set-align-classes);
 }
 
 /*
  * Font-size function
- *
- * Todo: reintroduce line-height mixin
  */
-@mixin font-size($font-size-value: default, $baseline: false) {
+@mixin font-size($font-size-value: default, $set-align-classes: false) {
 	@include space-font-preset($font-size-value, false, false);
 }
 
