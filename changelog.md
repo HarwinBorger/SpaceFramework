@@ -2,7 +2,7 @@
 
 ## [0.9] Inherit FontPreset support and Capline naming - 15-03-2017
 ### Added
-- Add support for inherit font-preset
+- Add support for inherit font-preset falling back to default alignments
 
 ### Changed
 - Change align-topline to align-capline conform typography naming conventions

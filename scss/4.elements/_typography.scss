@@ -4,7 +4,7 @@
 $distance-section: 3su !default;
 $distance-element: 2su !default;
 
-body{
+body {
 	@include font-preset();
 }
 
@@ -51,18 +51,18 @@ blockquote {
 	p {
 		@include font-preset(large);
 
-		&:first-child{
+		&:first-child {
 			margin-top: 0;
 		}
 
-		&:last-child{
+		&:last-child {
 			margin-bottom: 0;
 		}
 	}
 }
 
 ol,
-ul{
+ul {
 	@include font-preset(inherit);
 	@include margin-vertical($distance-element);
 
