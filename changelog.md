@@ -3,9 +3,11 @@
 ## [0.9] Inherit FontPreset support and Capline naming - 15-03-2017
 ### Added
 - Add support for inherit font-preset falling back to default alignments
+- Add support for align-median 
 
 ### Changed
 - Change align-topline to align-capline conform typography naming conventions
+- Replace $baseline-correction variable by $font-families to set x-height and cap-height attributes
 
 ## [0.8] Offset and lineheight - 14-03-2017
 ### Added
