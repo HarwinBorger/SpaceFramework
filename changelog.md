@@ -1,6 +1,6 @@
 #Changelog
 
-## [0.9] Inherit FontPreset support and Capline naming - 15-03-2017
+## [0.9] Inherit FontPreset support and Capline naming - 15-03-2018
 ### Added
 - Add support for inherit font-preset falling back to default alignments
 - Add support for align-median 
@@ -9,12 +9,12 @@
 - Change align-topline to align-capline conform typography naming conventions
 - Replace $baseline-correction variable by $font-families to set x-height and cap-height attributes
 
-## [0.8] Offset and lineheight - 14-03-2017
+## [0.8] Offset and lineheight - 14-03-2018
 ### Added
 - Add line-height mixin so you can define customs line-heights
 - Add side classes for space offset
 
-## [0.7] Vertical alignment classes - 13-03-2017
+## [0.7] Vertical alignment classes - 13-03-2018
 
 ### Added
 - Add align-baseline so you can specify where you want to apply baseline alignment
@@ -23,11 +23,11 @@
 ### Remove
 - Remove default alignment of main elements. 
 
-## [0.6] Rework Font Presets - 12-03-2017
+## [0.6] Rework Font Presets - 12-03-2018
 ### Changed
 - Rework of font-size variables to font-presets and mixin 
 
-## [0.5] Space Units - 11-03-2017
+## [0.5] Space Units - 11-03-2018
 ### Added
 - Add overall support for space units
 - Add reset-child-margin mixin
@@ -41,7 +41,7 @@
 ### Removed
 - Remove pixel-perfect module
 
-## [0.4] New file structure - 04-03-2017
+## [0.4] New file structure - 04-03-2018
 ### Changed
 - Use ITCSS file structure 
 
