@@ -3,8 +3,10 @@
  *
  * @description: used with preprocessors and contain font, colors definitions, etc.
  */
+// 3rd party variables used
+@import 'foundation-fallback';
 
-//@import 'space-model';
+// SpaceFramework variables
 @import 'space-units';
 @import 'font-presets';
 @import 'space-classes';
