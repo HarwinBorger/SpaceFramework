@@ -38,30 +38,34 @@ $class-align-median: '.align-median' !default;
 
 	// Set default value for font-size
 	$font-size: $font-size-list;
-	@if(is-list($font-size-list)){
+	@if (is-list($font-size-list)) {
 		$font-size: nth($font-size-list, 1);
 	}
 
 	// Set default value for line-height
 	$line-height: $line-height-list;
-	@if(is-list($line-height-list)){
+	@if (is-list($line-height-list)) {
 		$line-height: nth($line-height-list, 1);
 	}
 
-	// Set default value for font
-	@if(is-list($font) == false){
-		$font: map-get($fonts, $font);
-	}@else{
-		@warn('different fonts for each breakpoint is not yet supported')
+	// Set default value for font-list
+	$font-list: map-get($fonts, default);
+	@if (is-list($font) == false) {
+		$font-list: map-get($fonts, $font);
+	} @else {
+		@warn ('different fonts for each breakpoint is not yet supported')
 	}
 
 	// Set font settings
-	$font-family: map-get($font, family);
-	$font-cap-height: map-get($font, cap-height);
-	$font-x-height: map-get($font, x-height);
+	$font-family: map-get($font-list, family);
+	$font-cap-height: map-get($font-list, cap-height);
+	$font-x-height: map-get($font-list, x-height);
 
 	// Print font-family
-	font-family: $font-family;
+
+	@if ($font != default) {
+		font-family: $font-family;
+	}
 
 	@each $breakpoint in $space-breakpoints {
 		$index: index($space-breakpoints, $breakpoint);
@@ -69,75 +73,75 @@ $class-align-median: '.align-median' !default;
 		//@each $breakpoint, $set-font-preset-list in map-get($set-font-presets, $set-font-preset-value) {
 		@include breakpoint($breakpoint) {
 			// Set font-size for current breakpoint or fallback on font-size of previous breakpoint
-			@if($index <= length($font-size-list)){
+			@if ($index <= length($font-size-list)) {
 				$font-size: nth($font-size-list, $index);
 			}
 			// Set line-height for current breakpoint or fallback on line-height of previous breakpoint
-			@if($index <= length($line-height-list)){
+			@if ($index <= length($line-height-list)) {
 				$line-height: nth($line-height-list, $index);
 			}
 
 			// Check if $set-font-preset is a preset array
-				// Get font-size
-				$font-size-value: $font-size;
+			// Get font-size
+			$font-size-value: $font-size;
 
-				// Calculate line-height
-				$space-units: $line-height;
-				$line-height-value: convert-space-units($space-units, $breakpoint);
+			// Calculate line-height
+			$space-units: $line-height;
+			$line-height-value: convert-space-units($space-units, $breakpoint);
 
-				// Set translate-y value for baseline and capline alignments
-				$capheight-correction-value: false;
-				$xheight-correction-value: false;
+			// Set translate-y value for baseline and capline alignments
+			$capheight-correction-value: false;
+			$xheight-correction-value: false;
 
-				// Reset baseline correction
-				@if ($set-align-classes == reset) {
-					$capheight-correction-value: 0; // Reset correction if $set-align-classes is false. Needed in case inherit correction is applied
-					$xheight-correction-value: 0;
+			// Reset baseline correction
+			@if ($set-align-classes == reset) {
+				$capheight-correction-value: 0; // Reset correction if $set-align-classes is false. Needed in case inherit correction is applied
+				$xheight-correction-value: 0;
+			}
+
+			// If translate text to baseline, capline and xline
+			@if ($set-align-classes == true) {
+				$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+
+				// Calculate baseline and capline
+				$font-correction: $font-size-value * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
+				$capheight-correction-value: $center-correction + $font-correction;
+
+				// Calculate median
+				$font-correction: $font-size-value * ((1 - $font-cap-height*$font-x-height )/ 2);
+				$xheight-correction-value: $center-correction + $font-correction;
+			}
+
+			// Overwrite font-size and line-height with inherit when it should be inherit
+			@if ($set-font-preset == inherit) {
+				$font-size-value: inherit;
+				$line-height-value: inherit;
+			}
+
+			// If line-height should be set
+			@if ($line-height != false) {
+				// Set line height
+				line-height: $line-height-value;
+			}
+
+			// Set translate for baseline correction
+			@if ($capheight-correction-value != false) {
+				// Add element to .align-baseline object
+				#{$class-align-baseline} & {
+					transform: translateY($capheight-correction-value);
 				}
 
-				// If translate text to baseline, capline and xline
-				@if ($set-align-classes == true) {
-					$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
-
-					// Calculate baseline and capline
-					$font-correction: $font-size-value * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
-					$capheight-correction-value: $center-correction + $font-correction;
-
-					// Calculate median
-					$font-correction: $font-size-value * ((1 - $font-cap-height*$font-x-height )/ 2);
-					$xheight-correction-value: $center-correction + $font-correction;
+				// Add element to .align-capline object
+				#{$class-align-capline} & {
+					transform: translateY(-$capheight-correction-value);
 				}
+			}
 
-				// Overwrite font-size and line-height with inherit when it should be inherit
-				@if ($set-font-preset == inherit) {
-					$font-size-value: inherit;
-					$line-height-value: inherit;
+			@if ($xheight-correction-value != false) {
+				// Add element to .align-xline object
+				#{$class-align-median} & {
+					transform: translateY(-$xheight-correction-value);
 				}
-
-				// If line-height should be set
-				@if ($line-height != false) {
-					// Set line height
-					line-height: $line-height-value;
-				}
-
-				// Set translate for baseline correction
-				@if ($capheight-correction-value != false) {
-					// Add element to .align-baseline object
-					#{$class-align-baseline} & {
-						transform: translateY($capheight-correction-value);
-					}
-
-					// Add element to .align-capline object
-					#{$class-align-capline} & {
-						transform: translateY(-$capheight-correction-value);
-					}
-				}
-
-				@if ($xheight-correction-value != false) {
-					// Add element to .align-xline object
-					#{$class-align-median} & {
-						transform: translateY(-$xheight-correction-value);
-					}
 			}
 
 			// Set font size
