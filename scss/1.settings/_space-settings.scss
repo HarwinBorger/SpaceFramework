@@ -7,4 +7,9 @@ $space-unit-sizes: (
 	small: .625rem,
 	medium: .75rem,
 	large: .8125rem
-);
+) !default;
+
+// Define each (foundation) breakpoint you want to support for the spaceframework
+$space-breakpoints: (
+	small, medium, large
+) !default;
