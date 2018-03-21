@@ -19,8 +19,6 @@
  * Define font-size and line-height in space-units
  */
 
-$alternative-font-family: 'Open Sans', 'sans-serif' !default;
-
 // Future variable to apply different baseline corrections and fonts to the font-presets
 $fonts: (
 	default: (
@@ -29,7 +27,7 @@ $fonts: (
 		x-height: .53
 	),
 	secondary:(
-		family: $alternative-font-family,
+		family: $body-font-family,
 		cap-height: .71,
 		x-height: .53
 	),
