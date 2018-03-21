@@ -1,5 +1,13 @@
 #Changelog
 
+## [unreleased]
+### Added
+- Add support for multiple fonts
+- Add fallback support for breakpoints on line-height and font-size
+
+### Changed
+- Improved the font-preset array 
+
 ## [0.9] Inherit FontPreset support and Capline naming - 15-03-2018
 ### Added
 - Add support for inherit font-preset falling back to default alignments
