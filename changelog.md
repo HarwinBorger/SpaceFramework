@@ -2,6 +2,10 @@
 
 ## [unreleased]
 ### Added
+- Add the implode feature 
+
+## [0.10]
+### Added
 - Add support for multiple fonts
 - Add fallback support for breakpoints on line-height and font-size
 
