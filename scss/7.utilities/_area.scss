@@ -1,9 +1,14 @@
+/**
+ * Deprecated class name since 0.10 -> this class is renamed to .trim
+ */
 .area,
 .area-top{
+	@warn("'.area' is a deprecated class name since 0.10 use '.trim' instead");
 	@include reset-child-margin-top();
 }
 
 .area,
-.area-top{
+.area-bottom{
+	@warn("'.area' is a deprecated class name since 0.10 use '.trim' instead");
 	@include reset-child-margin-bottom();
 }
