@@ -4,6 +4,9 @@
 ### Added
 - Add the implode feature 
 
+### Changed
+- Change name of area class to trim class
+
 ## [0.10]
 ### Added
 - Add support for multiple fonts
