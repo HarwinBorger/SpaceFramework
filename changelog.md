@@ -3,6 +3,7 @@
 ## [unreleased]
 ### Added
 - Add the implode feature 
+- Add normalize.css v8.0.0
 
 ### Changed
 - Change name of area class to trim class
