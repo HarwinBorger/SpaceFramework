@@ -2,6 +2,8 @@
 
 ## [unreleased]
 ### Added
+- Add Foundation 6.3 unit functions 
+- Add Foundation 6.3 breakpoint mixin / functions  
 - Add the implode feature 
 - Add normalize.css v8.0.0
 

@@ -8,7 +8,10 @@
 /* IMPORT FUNCTION FOR SUPPORT OF MIXINS */
 @import "functions/_functions";
 
-/* MIXINS */
+/* FOUNDATION MIXINS */
+@import 'breakpoints';
+
+/* SPACE MIXINS */
 @import 'space-font';
 @import 'line-height';
 @import 'space-classes';
