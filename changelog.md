@@ -1,6 +1,16 @@
 #Changelog
 
-## [unreleased]
+## [0.11] Standalone and extra utilities - 28-06-2018
+### Added
+- Add Foundation 6.3 unit functions 
+- Add Foundation 6.3 breakpoint mixin / functions  
+- Add the implode feature 
+- Add normalize.css v8.0.0
+
+### Changed
+- Change name of area class to trim class
+
+## [0.10]
 ### Added
 - Add support for multiple fonts
 - Add fallback support for breakpoints on line-height and font-size
