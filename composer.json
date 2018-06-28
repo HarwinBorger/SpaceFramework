@@ -1,11 +1,12 @@
 {
   "name": "harwinborger/spaceframework",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Vertical grid system",
   "keywords": [
-    "wordpress",
     "foundation",
-    "scss"
+    "scss",
+    "sass",
+    "grid"
   ],
   "type": "library",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework/",
