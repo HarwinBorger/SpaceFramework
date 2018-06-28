@@ -1,6 +1,6 @@
 #Changelog
 
-## [unreleased]
+## [0.11] Standalone and extra utilities - 28-06-2018
 ### Added
 - Add Foundation 6.3 unit functions 
 - Add Foundation 6.3 breakpoint mixin / functions  
