@@ -6,7 +6,8 @@
  * @param $line-height (int in spaceunits)
  */
 
-@mixin line-height($line-height) {
+@mixin line-height($line-height: default) {
+
 	@if index($line-height, $line-heights) {
 		$line-height: map-get($line-heights, $line-height);
 	}
