@@ -7,6 +7,10 @@
  */
 
 @mixin line-height($line-height) {
+	@if index($line-height, $line-heights) {
+		$line-height: map-get($line-heights, $line-height);
+	}
+
 	@each $breakpoint, $space-unit-size in $space-unit-sizes {
 		@include breakpoint($breakpoint) {
 			line-height: convert-space-units($line-height, $breakpoint);
