@@ -1,7 +1,7 @@
 {
   "name": "spaceframework",
   "description": "Front-end development made for into Space!",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "main": "",
   "authors": [
     "Harwin Borger <harwin@studioborger.nl>"
@@ -15,8 +15,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "foundation-sites": "^6.2.4"
-  }
+  ]
 }
