@@ -8,7 +8,7 @@
 
 @mixin line-height($line-height: default) {
 
-	@if index($line-height, $line-heights) {
+	@if map-has-key($line-heights, $line-height) {
 		$line-height: map-get($line-heights, $line-height);
 	}
 
