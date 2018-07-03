@@ -1,6 +1,6 @@
 #Changelog
 
-## [unreleased] Global line-heights support- 03-07-2018
+## [0.12] Global line-heights support- 03-07-2018
 ### Added
 - Add global line-heights support
 
