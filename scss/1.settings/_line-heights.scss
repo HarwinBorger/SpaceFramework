@@ -1,0 +1,10 @@
+/*
+ * Line height variables which are used in '@mixin line-height'
+ *
+ * @description: A line-height can be used by using: @include line-height($value); were $value stands for the line-height in space units.
+ * @example: @include line-height(default); or
+ *           @include line-height(small);
+ */
+$line-heights: (
+	default: (2su),
+);
