@@ -1,5 +1,9 @@
 #Changelog
 
+## [0.12] Global line-heights support- 03-07-2018
+### Added
+- Add global line-heights support
+
 ## [0.11.1] Clean up - 03-07-2018
 ### Removed
 - Remove text-column concept, concept not ready for use yet
