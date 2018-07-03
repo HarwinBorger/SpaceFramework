@@ -4,7 +4,8 @@
  * @description: A line-height can be used by using: @include line-height($value); were $value stands for the line-height in space units.
  * @example: @include line-height(default); or
  *           @include line-height(small);
+ * TODO support multiple breakpoints for each line-height set, like: default: (2su,3su,4su)
  */
 $line-heights: (
-	default: (2su),
+	default: 2su,
 );
