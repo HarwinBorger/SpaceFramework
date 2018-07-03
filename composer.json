@@ -1,6 +1,6 @@
 {
   "name": "harwinborger/spaceframework",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "Vertical grid system",
   "keywords": [
     "foundation",
@@ -19,8 +19,5 @@
   ],
   "support": {
     "issues": "https://github.com/HarwinBorger/SpaceFramework/issues"
-  },
-  "require": {
-    "foundation-sites": "^6.3.0"
   }
 }

@@ -1,5 +1,9 @@
 #Changelog
 
+## [0.11.1] Clean up - 03-07-2018
+### Removed
+- Remove text-column concept, concept not ready for use yet
+
 ## [0.11] Standalone and extra utilities - 28-06-2018
 ### Added
 - Add Foundation 6.3 unit functions 
