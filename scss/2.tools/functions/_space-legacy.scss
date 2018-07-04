@@ -1,0 +1,14 @@
+/** Space Legacy
+ *
+ * @uses $space-legacy
+ * TODO change default settings of $space-legacy to false in the year of 2020
+ */
+$space-legacy: true !default;
+
+@function space-legacy(){
+	@if $space-legacy == true{
+		@return true;
+	}@else{
+		@return false
+	}
+}

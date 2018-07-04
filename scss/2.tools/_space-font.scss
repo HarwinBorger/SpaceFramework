@@ -181,8 +181,10 @@ $class-align-median: '.align-median' !default;
 	}
 
 	// Print font size
-	//Fallback for IE11, < Edge 15 Android < 4.4.4
-	font-size: $font-size-fallback-value;
+	@if space-legacy() {
+		font-size: $font-size-fallback-value;
+	}
+
 	font-size: $font-size-value;
 
 	// Print line height

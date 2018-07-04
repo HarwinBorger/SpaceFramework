@@ -18,6 +18,30 @@
  *          -> will output on large screen: margin-top: 3.4rem; margin-bottom: 1.7rem;
  *
  */
+$space-offset-root-list: (0);
+
+@function offsetName($value) {
+	@return --offset-#{str-replace(#{$value},'.','-')};
+}
+
+@mixin space-offset-root($value) {
+	@if $value != false and index($space-offset-root-list, $value) == null {
+		// Add value to list so css variable won't be generated again
+		$space-offset-root-list: join($space-offset-root-list, $value) !global;
+
+		@each $breakpoint, $space-value in $space-unit-sizes {
+			//Add breakpoint
+			@at-root {
+				:root {
+					@include breakpoint($breakpoint) {
+						$calculated-value: convert-space-units($value, $breakpoint);
+						#{offsetName($value)}: ($calculated-value);
+					}
+				}
+			}
+		}
+	}
+}
 
 @mixin space-offset(
 	$top: false,
@@ -32,17 +56,25 @@
 		'bottom': $bottom,
 		'left': $left
 	);
-	//Loop through different line height breakpoints to calculate correct line space
-	@each $breakpoint, $space-value in $space-unit-sizes {
-		//Add breakpoint
-		@include breakpoint($breakpoint) {
-			@each $side, $side-value in $space-side-map {
-				//Calculate type top
-				@if ($side-value != false) {
-					$calculated-value: convert-space-units($side-value, $breakpoint);
-					#{$type}-#{$side}: ($calculated-value);
-				}
+
+	@if space-legacy() {
+		@each $side, $side-value in $space-side-map {
+			//Calculate type top
+			@if ($side-value != false) {
+				$breakpoint: last(map-keys($space-unit-sizes));
+				$calculated-value: convert-space-units($side-value, $breakpoint);
+				#{$type}-#{$side}: ($calculated-value);
 			}
+		}
+	}
+
+	// Modern browsers
+	@each $side, $side-value in $space-side-map {
+		@if $side-value != false {
+			$value: strip-unit($side-value);
+
+			@include space-offset-root($value);
+			#{$type}-#{$side}: var(#{offsetName($value)});
 		}
 	}
 }
