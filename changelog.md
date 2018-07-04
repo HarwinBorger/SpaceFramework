@@ -3,6 +3,13 @@
 ### Added 
 - Add optimize values function to generate less code by default
 
+### Optimize
+- Optimize typography values sizes by using css variables
+	- from initial *51.970 bytes* to *44.646 bytes* saving potential *7.324 bytes* which is a total safe of *14%*
+
+### Drop support 
+- Drop support for typography alignment classes for Edge < 15
+
 ### Fixed 
 - Fix merge media in grunt
 
