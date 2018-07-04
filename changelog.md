@@ -1,4 +1,10 @@
 #Changelog
+## [unreleased]
+### Added 
+- Add optimize values function to generate less code by default
+
+### Fixed 
+- Fix merge media in grunt
 
 ## [0.12] Global line-heights support- 03-07-2018
 ### Added

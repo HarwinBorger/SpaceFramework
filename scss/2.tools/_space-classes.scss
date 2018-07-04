@@ -77,7 +77,7 @@ $space-position-register: (
 	@if ($side == false) { //Combined all values
 		//Set property
 		$cssPropertyName: #{$type};
-		$cssPropertyValue: to-string($values, ' ');
+		$cssPropertyValue: to-string(optimize-values($values), ' ');
 	} @else {
 		//Set property name based on side
 		$cssPropertyName: #{$typeName+$side};
