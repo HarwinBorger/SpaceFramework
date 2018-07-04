@@ -1,4 +1,4 @@
-#Changelog
+# SpaceLog
 
 ## [0.13] Saving bytes - 04-07-2018
 ### Added
