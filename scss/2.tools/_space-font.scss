@@ -108,25 +108,26 @@ $class-align-median: '.align-median' !default;
 				$xheight-correction-value: $center-correction + $font-correction;
 			}
 
+
+			// Set font size
+			--#{$font-preset-value}-font-size: #{$font-size-value};
+
 			// If line-height should be set
 			@if ($line-height != false) {
 				// Set line height
-				--#{$font-preset-value}-line-height: $line-height-value;
+				--#{$font-preset-value}-line-height: #{$line-height-value};
 			}
 
 			// Set translate for baseline correction
 			@if ($capheight-correction-value != false) {
 				// Add element to .align-baseline object
-				--#{$font-preset-value}-capheight: $capheight-correction-value;
+				--#{$font-preset-value}-capheight: #{$capheight-correction-value};
 			}
 
 			@if ($xheight-correction-value != false) {
 				// Add element to .align-xline object
-				--#{$font-preset-value}-xheight: $xheight-correction-value;
+				--#{$font-preset-value}-xheight: #{$xheight-correction-value};
 			}
-
-			// Set font size
-			--#{$font-preset-value}-font-size: $font-size-value;
 		}
 	}
 }
@@ -155,6 +156,8 @@ $class-align-median: '.align-median' !default;
 	} @else {
 		@warn ('different fonts for each breakpoint is not yet supported')
 	}
+	// Get font-sizes
+	$font-size-fallback-value: last(map-get($font-preset, font-size)); // Get highest value
 
 	// Set font settings
 	$font-family-value: map-get($font-list, family);
@@ -178,6 +181,8 @@ $class-align-median: '.align-median' !default;
 	}
 
 	// Print font size
+	//Fallback for IE11, < Edge 15 Android < 4.4.4
+	font-size: $font-size-fallback-value;
 	font-size: $font-size-value;
 
 	// Print line height
@@ -190,19 +195,19 @@ $class-align-median: '.align-median' !default;
 		// Add element to .align-baseline object
 		#{$class-align-baseline} & {
 			// Set short variable
-			--s: var(--#{$font-preset-value}-capheight);
-			transform: translateY(var(--s));
+			--s: translateY(var(--#{$font-preset-value}-capheight));
+			transform: var(--s);
 		}
 
 		// Add element to .align-capline object
 		#{$class-align-capline} & {
-			--s: calc(0 - var(--#{$font-preset-value}-capheight));
-			transform: translateY(var(--s));
+			--s: translateY(calc(0 - var(--#{$font-preset-value}-capheight)));
+			transform: var(--s);
 		}
 
 		#{$class-align-median} & {
-			--s: calc(0 - var(--#{$font-preset-value}-xheight));
-			transform: translateY(var(--s));
+			--s: translateY(calc(0 - var(--#{$font-preset-value}-xheight)));
+			transform: var(--s);
 		}
 	}
 }
