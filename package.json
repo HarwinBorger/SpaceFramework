@@ -1,6 +1,6 @@
 {
   "name": "spaceframework",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "author": "Harwin Borger <info@studioborger.nl>",
   "licence": "GPL-3.0",
   "devDependencies": {
