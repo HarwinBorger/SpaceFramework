@@ -13,3 +13,19 @@ $space-unit-sizes: (
 $space-breakpoints: (
 	small, medium, large
 ) !default;
+
+/**
+ * SPACE LEGACY
+ *
+ * Use $space-legacy if you want to provide support to old browser such as:
+ * - IE 11
+ * - < Edge 15
+ * - < Android 4.4.4
+ *
+ * SpaceFramework uses modern functions like 'css-variables' to avoid large stylesheets.
+ * @source https://caniuse.com/#feat=css-variables
+ *
+ * Space legacy is true by default, providing max reliability.
+ * If you are sure you up for it, check the provided sources and change $space-legacy to false
+ */
+$space-legacy: true !default;

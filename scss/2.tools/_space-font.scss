@@ -16,7 +16,7 @@ $class-align-baseline: '.align-baseline' !default;
 $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
 
-@mixin space-font-preset($set-font-preset: default, $line-height: default, $set-align-classes: true) {
+@mixin space-font-preset-root($set-font-preset: default, $line-height: default, $set-align-classes: true) {
 	// Write back $set-font-preset to variable to keep original value
 	$font-preset-value: $set-font-preset;
 	@if ($set-font-preset == inherit) {
@@ -63,10 +63,6 @@ $class-align-median: '.align-median' !default;
 
 	// Print font-family
 
-	@if ($font != default) {
-		font-family: $font-family;
-	}
-
 	@each $breakpoint in $space-breakpoints {
 		$index: index($space-breakpoints, $breakpoint);
 
@@ -112,40 +108,108 @@ $class-align-median: '.align-median' !default;
 				$xheight-correction-value: $center-correction + $font-correction;
 			}
 
-			// Overwrite font-size and line-height with inherit when it should be inherit
-			@if ($set-font-preset == inherit) {
-				$font-size-value: inherit;
-				$line-height-value: inherit;
-			}
+
+			// Set font size
+			--#{$font-preset-value}-font-size: #{$font-size-value};
 
 			// If line-height should be set
 			@if ($line-height != false) {
 				// Set line height
-				line-height: $line-height-value;
+				--#{$font-preset-value}-line-height: #{$line-height-value};
 			}
 
 			// Set translate for baseline correction
 			@if ($capheight-correction-value != false) {
 				// Add element to .align-baseline object
-				#{$class-align-baseline} & {
-					transform: translateY($capheight-correction-value);
-				}
-
-				// Add element to .align-capline object
-				#{$class-align-capline} & {
-					transform: translateY(-$capheight-correction-value);
-				}
+				--#{$font-preset-value}-capheight: #{$capheight-correction-value};
 			}
 
 			@if ($xheight-correction-value != false) {
 				// Add element to .align-xline object
-				#{$class-align-median} & {
-					transform: translateY(-$xheight-correction-value);
-				}
+				--#{$font-preset-value}-xheight: #{$xheight-correction-value};
 			}
+		}
+	}
+}
 
-			// Set font size
-			font-size: $font-size-value;
+@mixin space-font-preset-values($set-font-preset: default, $line-height: default, $set-align-classes: true) {
+	// Write back $set-font-preset to variable to keep original value
+	$font-preset-value: $set-font-preset;
+	@if ($set-font-preset == inherit) {
+		$font-preset-value: default; // Set $set-font-preset-value to default to still set .align-baseline and .align-capline classes
+	}
+
+	// Get font-preset settings
+	$font-preset: map-get($font-presets, $font-preset-value);
+
+	$font: default;
+
+	// If font family is added to preset overwrite default
+	@if (map-has-key($font-preset, font)) {
+		$font: map-get($font-preset, font);
+	}
+
+	// Set default value for font-list
+	$font-list: map-get($fonts, default);
+	@if (is-list($font) == false) {
+		$font-list: map-get($fonts, $font);
+	} @else {
+		@warn ('different fonts for each breakpoint is not yet supported')
+	}
+	// Get font-sizes
+	$font-size-fallback-value: last(map-get($font-preset, font-size)); // Get highest value
+
+	// Set font settings
+	$font-family-value: map-get($font-list, family);
+
+	$font-size-value: var(--#{$font-preset-value}-font-size);
+	$line-height-value: var(--#{$font-preset-value}-line-height);
+
+	// Overwrite font-size and line-height with inherit when it should be inherit
+	@if ($set-font-preset == inherit) {
+		$font-size-value: inherit;
+		$line-height-value: inherit;
+	}
+
+	/**
+	 * ASSIGN VALUES TO ATTRIBUTES
+	 */
+
+	// Print font-family
+	@if ($font != default) {
+		font-family: $font-family-value;
+	}
+
+	// Print font size
+	@if space-legacy() {
+		font-size: $font-size-fallback-value;
+	}
+
+	font-size: $font-size-value;
+
+	// Print line height
+	@if ($line-height != false) {
+		line-height: $line-height-value;
+	}
+
+	// Set typography alignment classes
+	@if ($set-align-classes == true) {
+		// Add element to .align-baseline object
+		#{$class-align-baseline} & {
+			// Set short variable
+			--s: translateY(var(--#{$font-preset-value}-capheight));
+			transform: var(--s);
+		}
+
+		// Add element to .align-capline object
+		#{$class-align-capline} & {
+			--s: translateY(calc(0 - var(--#{$font-preset-value}-capheight)));
+			transform: var(--s);
+		}
+
+		#{$class-align-median} & {
+			--s: translateY(calc(0 - var(--#{$font-preset-value}-xheight)));
+			transform: var(--s);
 		}
 	}
 }
@@ -160,14 +224,27 @@ $class-align-median: '.align-median' !default;
  * @param $set-align-classes (true | false)
  */
 @mixin font-preset($set-font-preset: default, $set-align-classes: true) {
-	@include space-font-preset($set-font-preset, true, $set-align-classes);
+	@include space-font-preset-values($set-font-preset, true, $set-align-classes);
 }
 
 /*
  * Font-size function
  */
-@mixin font-size($font-size-value: default, $set-align-classes: false) {
-	@include space-font-preset($font-size-value, false, false);
+@mixin font-size($font-size-value: default) {
+	@include space-font-preset-values($font-size-value, false, false);
+}
+
+/*
+ * Font-preset root variables
+ *
+ * @description this mixins creates root variables. Working from Edge 15+
+ */
+@mixin font-preset-root() {
+	:root {
+		@each $size, $value in $font-presets {
+			@include space-font-preset-root($size);
+		}
+	}
 }
 
 /*
@@ -199,3 +276,4 @@ $class-align-median: '.align-median' !default;
 		}
 	}
 }
+

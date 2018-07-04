@@ -1,0 +1,21 @@
+@function optimize-values($list) {
+	$match: true;
+	$first: nth($list,1);
+	$result: $list;
+
+	// If any list item doesn't match, set on match on false
+	@for $i from 1 through length($list) {
+		$e: nth($list, $i);
+
+		@if $e != $first {
+			$match: false;
+		}
+	}
+
+	// If all items match then only use first value
+	@if $match == true{
+		$result: $first;
+	}
+
+	@return $result;
+}

@@ -45,8 +45,8 @@ module.exports = function (grunt)
 				compress: true
 			},
 			files: {
-				src: "<%= dir.assets %>/css/style.min.css",
-				dest: "<%= dir.assets %>/css/style.min.css"
+				src: "<%= dir.dist %>/css/style.min.css",
+				dest: "<%= dir.dist %>/css/style.min.css"
 			}
 		},
 		watch: {
