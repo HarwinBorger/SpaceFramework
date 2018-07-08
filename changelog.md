@@ -1,6 +1,6 @@
 # SpaceLog
 
-## [unreleased]
+## [0.15] Shift en optimize - 08-07-2018
 ### Added
 - Add shift utility to move objects by a number
 
