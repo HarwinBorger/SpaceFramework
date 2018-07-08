@@ -1,5 +1,9 @@
 # SpaceLog
 
+## [unreleased] New functions -
+### Added
+- Add support for position offsets such as: top, left, right, bottom.  
+
 ## [0.13] Saving bytes - 04-07-2018
 ### Added
 - Add optimize values function to generate less code by default

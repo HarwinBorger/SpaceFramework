@@ -14,7 +14,6 @@
  */
 $space-offset-root-list: (0);
 
-
 /**
  * CORE SPACE OFFSET
  * @private
@@ -56,28 +55,27 @@ $space-offset-root-list: (0);
 		'left': $left
 	);
 
-	@if space-legacy() {
-		@each $side, $side-value in $space-side-map {
-			//Calculate type top
-			@if ($side-value != false) {
+	@each $side, $side-value in $space-side-map {
+		$attribute: $side;
+		@if (space-prefix-type($type)) {
+			$attribute: #{$type}-#{$side};
+		}
+
+		@if $side-value != false {
+			@if space-legacy() {
+				//Calculate type top
 				$breakpoint: last(map-keys($space-unit-sizes));
 				$calculated-value: convert-space-units($side-value, $breakpoint);
-				#{$type}-#{$side}: ($calculated-value);
+				#{$attribute}: ($calculated-value);
 			}
-		}
-	}
 
-	// Modern browsers
-	@each $side, $side-value in $space-side-map {
-		@if $side-value != false {
 			$value: strip-unit($side-value);
 
 			@include space-offset-root($value);
-			#{$type}-#{$side}: var(#{offsetName($value)});
+			#{$attribute}: var(#{offsetName($value)});
 		}
 	}
 }
-
 
 /**
  * SPACE HELPERS
@@ -118,7 +116,6 @@ $space-offset-root-list: (0);
 
 	@include space-offset(false, $right, false, $left, $type);
 }
-
 
 /**
  * SPACE MARGIN MIXINS
@@ -201,6 +198,27 @@ $space-offset-root-list: (0);
 
 @mixin padding-left($left: false) {
 	$type: padding;
+	@include space-offset(false, false, false, $left, $type);
+}
+
+// SPACE POSITION MIXINS
+@mixin top($top: false) {
+	$type: position;
+	@include space-offset($top, false, false, false, $type);
+}
+
+@mixin right($right: false) {
+	$type: position;
+	@include space-offset(false, $right, false, false, $type);
+}
+
+@mixin bottom($bottom: false) {
+	$type: position;
+	@include space-offset(false, false, $bottom, false, $type);
+}
+
+@mixin left($left: false) {
+	$type: position;
 	@include space-offset(false, false, false, $left, $type);
 }
 

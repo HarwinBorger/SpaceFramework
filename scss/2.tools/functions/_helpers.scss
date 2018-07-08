@@ -1,0 +1,13 @@
+$space-prefix-type-register: (
+	padding,
+	margin
+);
+
+@function space-prefix-type($type){
+	@if (index($space-prefix-type-register,$type) == null) {
+		@return false;
+	}
+
+	@return true;
+}
+
