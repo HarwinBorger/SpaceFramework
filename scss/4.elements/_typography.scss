@@ -16,7 +16,7 @@ h1 {
 
 h2 {
 	@include font-preset(large);
-	@include margin-vertical($distance-section, $distance-element);
+	@include margin-vertical($distance-section);
 }
 
 h3 {
@@ -27,7 +27,7 @@ h3 {
 /** ELEMENTS **/
 p {
 	@include font-preset(inherit);
-	@include margin-vertical($distance-element, $distance-element);
+	@include margin-vertical($distance-element);
 
 	h3 + & {
 		@include margin-vertical(0, false);
@@ -35,7 +35,7 @@ p {
 }
 
 hr {
-	@include margin-vertical($distance-element, $distance-element);
+	@include margin-vertical($distance-element);
 	@include height(1);
 
 	box-sizing: border-box;
@@ -45,7 +45,7 @@ blockquote {
 	padding: 0;
 	border: 0;
 
-	@include margin-vertical(0, 0);
+	@include margin-vertical(0);
 	@include margin-horizontal($distance-element);
 
 	p {
