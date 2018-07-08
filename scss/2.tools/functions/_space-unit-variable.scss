@@ -1,0 +1,29 @@
+/**
+ * Space Unit Variables
+ */
+@function space-unit-variable($value) {
+	$value: strip-unit($value);
+	@return --su-#{str-replace(#{$value},'.','-')};
+}
+
+$space-unit-variable-list: (false);
+@mixin add-space-unit-variable($value) {
+	$value: strip-unit($value);
+
+	@if $value != false and index($space-unit-variable-list, $value) == null {
+		// Add value to list so css variable won't be generated again
+		$space-unit-variable-list: join($space-unit-variable-list, $value) !global;
+
+		@each $breakpoint, $space-value in $space-unit-sizes {
+			//Add breakpoint
+			@at-root {
+				:root {
+					@include breakpoint($breakpoint) {
+						$calculated-value: convert-space-units($value, $breakpoint);
+						#{space-unit-variable($value)}: ($calculated-value);
+					}
+				}
+			}
+		}
+	}
+}

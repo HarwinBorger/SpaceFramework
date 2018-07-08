@@ -1,0 +1,11 @@
+$space-shift-range-start: 1;
+$space-shift-range-end: 3;
+
+@mixin shift-classes() {
+	@for $i from $space-shift-range-start through $space-shift-range-end {
+		.shift-#{$i},
+		.child-shift-#{$i} > *:first-child {
+			@include margin-top($i);
+		}
+	}
+}

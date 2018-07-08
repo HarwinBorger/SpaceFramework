@@ -4,7 +4,6 @@
  * Space offset mixin
  *
  * @uses: (array)$space-units
- * @uses: (array)$space-offset-root-list
  *
  * @para: (int)$top-multiplier
  * @para: (int)$bottom-multiplier
@@ -12,34 +11,6 @@
  * @para: (int)$correction-multiplier
  *
  */
-$space-offset-root-list: (0);
-
-/**
- * CORE SPACE OFFSET
- * @private
- */
-@function offsetName($value) {
-	@return --offset-#{str-replace(#{$value},'.','-')};
-}
-
-@mixin space-offset-root($value) {
-	@if $value != false and index($space-offset-root-list, $value) == null {
-		// Add value to list so css variable won't be generated again
-		$space-offset-root-list: join($space-offset-root-list, $value) !global;
-
-		@each $breakpoint, $space-value in $space-unit-sizes {
-			//Add breakpoint
-			@at-root {
-				:root {
-					@include breakpoint($breakpoint) {
-						$calculated-value: convert-space-units($value, $breakpoint);
-						#{offsetName($value)}: ($calculated-value);
-					}
-				}
-			}
-		}
-	}
-}
 
 @mixin space-offset(
 	$top: false,
@@ -62,17 +33,17 @@ $space-offset-root-list: (0);
 		}
 
 		@if $side-value != false {
+			$value: $side-value; // strip units because of add-space-unit-variable
+
 			@if space-legacy() {
 				//Calculate type top
 				$breakpoint: last(map-keys($space-unit-sizes));
-				$calculated-value: convert-space-units($side-value, $breakpoint);
+				$calculated-value: convert-space-units($value, $breakpoint);
 				#{$attribute}: ($calculated-value);
 			}
 
-			$value: strip-unit($side-value);
-
-			@include space-offset-root($value);
-			#{$attribute}: var(#{offsetName($value)});
+			@include add-space-unit-variable($value);
+			#{$attribute}: var(#{space-unit-variable($value)});
 		}
 	}
 }

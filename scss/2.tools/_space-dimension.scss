@@ -2,14 +2,19 @@
  * Dimension
  * @param $value (in space-units)
  * @param $type (width || height)
- * TODO make a list $value possible
  */
 @mixin space-dimension($value, $type) {
-	@each $breakpoint, $space-units-size in $space-unit-sizes {
-		@include breakpoint($breakpoint) {
-			#{$type}: convert-space-units($value, $breakpoint);
-		}
+	@if space-legacy() {
+		//Calculate type top
+		$breakpoint: last(map-keys($space-unit-sizes));
+		$calculated-value: convert-space-units($value, $breakpoint);
+		#{$type}: ($calculated-value);
 	}
+
+	$value: strip-unit($value);
+
+	@include add-space-unit-variable($value);
+	#{$type}: var(#{space-unit-variable($value)});
 }
 
 /**
