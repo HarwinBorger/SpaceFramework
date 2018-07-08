@@ -15,9 +15,9 @@
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "*",
     "grunt-sass": "*",
+    "time-grunt": "*",
     "matchdep": "*"
   },
   "dependencies": {
-    "time-grunt": "*"
   }
 }
