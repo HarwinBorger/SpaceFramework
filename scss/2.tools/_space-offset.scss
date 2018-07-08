@@ -1,25 +1,24 @@
 /* postcss-sorting: off */
 
 /*
- * Line-space mixin
- * @description: mixin is used to define margins on bottom and top of element based on the line-height and default font size settings
+ * Space offset mixin
  *
- * @uses: (array)$line-height
- * @uses: (array)$font-size
+ * @uses: (array)$space-units
+ * @uses: (array)$space-offset-root-list
  *
  * @para: (int)$top-multiplier
  * @para: (int)$bottom-multiplier
  * @para: (string)$top-multiplier
  * @para: (int)$correction-multiplier
  *
- * @example: @include line-margin(2,1);
- *          -> will output on small screen: margin-top: 3rem; margin-bottom: 1.5rem;
- * @example: @include line-margin(2,1,1);
- *          -> will output on large screen: margin-top: 3.4rem; margin-bottom: 1.7rem;
- *
  */
 $space-offset-root-list: (0);
 
+
+/**
+ * CORE SPACE OFFSET
+ * @private
+ */
 @function offsetName($value) {
 	@return --offset-#{str-replace(#{$value},'.','-')};
 }
@@ -79,9 +78,12 @@ $space-offset-root-list: (0);
 	}
 }
 
-// Space shortcuts for padding/margin and horizontal/vertical
 
-/* SPACE HELPERS */
+/**
+ * SPACE HELPERS
+ * @private mixins
+ */
+
 @mixin space-offset-sides($top, $right, $bottom, $left, $type) {
 	// If only $top value is given than make $right equal to top
 	@if ($right == default) {
@@ -117,8 +119,12 @@ $space-offset-root-list: (0);
 	@include space-offset(false, $right, false, $left, $type);
 }
 
-/* SPACE MARGIN MIXINS */
-// Origin
+
+/**
+ * SPACE MARGIN MIXINS
+ * @public mixins
+ */
+
 @mixin margin($top: false, $right: default, $bottom: default , $left: default) {
 	$type: margin;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
@@ -156,8 +162,11 @@ $space-offset-root-list: (0);
 	@include space-offset(false, false, false, $left, $type);
 }
 
-/* SPACE PADDING MIXINS */
-// Origin
+/**
+ * SPACE PADDING MIXINS
+ * @public mixins
+ */
+
 @mixin padding($top: false, $right: default, $bottom: default, $left: default) {
 	$type: padding;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
