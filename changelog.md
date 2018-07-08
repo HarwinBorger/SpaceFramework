@@ -1,5 +1,9 @@
 # SpaceLog
 
+## [unreleased]
+### Added
+- Add shift utility to move objects by a number
+
 ## [0.14] New fit and position functions - 08-07-2018
 ### Added
 - Add helper function to turn on and off typography alignment classes if you not used
