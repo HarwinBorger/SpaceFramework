@@ -1,12 +1,13 @@
 {
   "name": "harwinborger/spaceframework",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Vertical grid system",
   "keywords": [
     "foundation",
     "scss",
     "sass",
-    "grid"
+    "grid",
+    "typography"
   ],
   "type": "library",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework/",
@@ -14,7 +15,7 @@
   "authors": [
     {
       "name": "Harwin Borger",
-      "role": "Developer"
+      "role": "Founder"
     }
   ],
   "support": {
