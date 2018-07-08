@@ -219,8 +219,8 @@ $class-fit: '.fit' !default;
 		}
 
 		@if (space-support(fit)) {
-			#{$class-align-capline} #{$class-fit} > &:first-child,
-			#{$class-align-capline}#{$class-fit} > &:first-child {
+			#{$class-align-baseline} #{$class-fit} > &:first-child,
+			#{$class-align-baseline}#{$class-fit} > &:first-child {
 				margin-top: calc(var(--#{$font-preset-value}-capheight) * -2);
 			}
 		}
