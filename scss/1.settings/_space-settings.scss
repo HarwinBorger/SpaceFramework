@@ -1,3 +1,11 @@
+/**************************************************************
+ * BASIC CORE SETTINGS
+ *
+ * Context:
+ * - Space Unit Sizes
+ * - Space Breakpoints
+**************************************************************/
+
 /**
  * Space Rhythm: Define grid setting
  */
@@ -9,10 +17,34 @@ $space-unit-sizes: (
 	large: .8125rem
 ) !default;
 
-// Define each (foundation) breakpoint you want to support for the spaceframework
+// Define each (foundation) breakpoint you want to support for the SpaceFramework
 $space-breakpoints: (
 	small, medium, large
 ) !default;
+
+
+
+/**************************************************************
+ * ADVANCED CORE SETTINGS
+ *
+ * Context:
+ * - Space Support
+ * - Space Legacy
+ **************************************************************/
+
+
+/**
+ * TYPOGRAPHY SUPPORT
+ *
+ * Using automatic generation of typographic classes takes much space, you can turn off typography alignment if you don't intend to use it.
+ */
+$space-support:(
+	align-baseline: true,
+	align-capline: true,
+	align-median: true,
+	fit: true
+) !default;
+
 
 /**
  * SPACE LEGACY
@@ -26,6 +58,6 @@ $space-breakpoints: (
  * @source https://caniuse.com/#feat=css-variables
  *
  * Space legacy is true by default, providing max reliability.
- * If you are sure you up for it, check the provided sources and change $space-legacy to false
+ * If you are certain you are up for it, check the provided sources and change $space-legacy to false
  */
 $space-legacy: true !default;

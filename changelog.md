@@ -2,6 +2,8 @@
 
 ## [unreleased] New functions -
 ### Added
+- Add helper function to turn on and off typography alignment classes if you not used
+- Add support for fit to remove line-height space on top of baseline alignment
 - Add support for position offsets such as: top, left, right, bottom.  
 
 ## [0.13] Saving bytes - 04-07-2018

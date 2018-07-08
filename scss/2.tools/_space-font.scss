@@ -15,6 +15,7 @@
 $class-align-baseline: '.align-baseline' !default;
 $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
+$class-fit: '.fit' !default;
 
 @mixin space-font-preset-root($set-font-preset: default, $line-height: default, $set-align-classes: true) {
 	// Write back $set-font-preset to variable to keep original value
@@ -108,7 +109,6 @@ $class-align-median: '.align-median' !default;
 				$xheight-correction-value: $center-correction + $font-correction;
 			}
 
-
 			// Set font size
 			--#{$font-preset-value}-font-size: #{$font-size-value};
 
@@ -195,21 +195,34 @@ $class-align-median: '.align-median' !default;
 	// Set typography alignment classes
 	@if ($set-align-classes == true) {
 		// Add element to .align-baseline object
-		#{$class-align-baseline} & {
-			// Set short variable
-			--s: translateY(var(--#{$font-preset-value}-capheight));
-			transform: var(--s);
+		@if (space-support(align-baseline)) {
+			#{$class-align-baseline} & {
+				// Set short variable
+				--s: translateY(var(--#{$font-preset-value}-capheight));
+				transform: var(--s);
+			}
 		}
 
 		// Add element to .align-capline object
-		#{$class-align-capline} & {
-			--s: translateY(calc(0 - var(--#{$font-preset-value}-capheight)));
-			transform: var(--s);
+		@if (space-support(align-capline)) {
+			#{$class-align-capline} & {
+				--s: translateY(calc(0 - var(--#{$font-preset-value}-capheight)));
+				transform: var(--s);
+			}
 		}
 
-		#{$class-align-median} & {
-			--s: translateY(calc(0 - var(--#{$font-preset-value}-xheight)));
-			transform: var(--s);
+		@if (space-support(align-median)) {
+			#{$class-align-median} & {
+				--s: translateY(calc(0 - var(--#{$font-preset-value}-xheight)));
+				transform: var(--s);
+			}
+		}
+
+		@if (space-support(fit)) {
+			#{$class-align-capline} #{$class-fit} > &:first-child,
+			#{$class-align-capline}#{$class-fit} > &:first-child {
+				margin-top: calc(var(--#{$font-preset-value}-capheight) * -2);
+			}
 		}
 	}
 }
