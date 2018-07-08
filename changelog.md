@@ -1,5 +1,12 @@
 # SpaceLog
 
+## [unreleased] New functions -
+### Added
+- Add helper function to turn on and off typography alignment classes if you not used
+- Add support for *fit* in combination with baseline alignment, removing remaining line-height space
+- Add support for *fit* in combination with capline alignment, removing remaining line-height space
+- Add support for position offsets such as: top, left, right, bottom.  
+
 ## [0.13] Saving bytes - 04-07-2018
 ### Added
 - Add optimize values function to generate less code by default

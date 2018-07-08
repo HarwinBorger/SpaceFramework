@@ -1,25 +1,23 @@
 /* postcss-sorting: off */
 
 /*
- * Line-space mixin
- * @description: mixin is used to define margins on bottom and top of element based on the line-height and default font size settings
+ * Space offset mixin
  *
- * @uses: (array)$line-height
- * @uses: (array)$font-size
+ * @uses: (array)$space-units
+ * @uses: (array)$space-offset-root-list
  *
  * @para: (int)$top-multiplier
  * @para: (int)$bottom-multiplier
  * @para: (string)$top-multiplier
  * @para: (int)$correction-multiplier
  *
- * @example: @include line-margin(2,1);
- *          -> will output on small screen: margin-top: 3rem; margin-bottom: 1.5rem;
- * @example: @include line-margin(2,1,1);
- *          -> will output on large screen: margin-top: 3.4rem; margin-bottom: 1.7rem;
- *
  */
 $space-offset-root-list: (0);
 
+/**
+ * CORE SPACE OFFSET
+ * @private
+ */
 @function offsetName($value) {
 	@return --offset-#{str-replace(#{$value},'.','-')};
 }
@@ -57,31 +55,33 @@ $space-offset-root-list: (0);
 		'left': $left
 	);
 
-	@if space-legacy() {
-		@each $side, $side-value in $space-side-map {
-			//Calculate type top
-			@if ($side-value != false) {
+	@each $side, $side-value in $space-side-map {
+		$attribute: $side;
+		@if (space-prefix-type($type)) {
+			$attribute: #{$type}-#{$side};
+		}
+
+		@if $side-value != false {
+			@if space-legacy() {
+				//Calculate type top
 				$breakpoint: last(map-keys($space-unit-sizes));
 				$calculated-value: convert-space-units($side-value, $breakpoint);
-				#{$type}-#{$side}: ($calculated-value);
+				#{$attribute}: ($calculated-value);
 			}
-		}
-	}
 
-	// Modern browsers
-	@each $side, $side-value in $space-side-map {
-		@if $side-value != false {
 			$value: strip-unit($side-value);
 
 			@include space-offset-root($value);
-			#{$type}-#{$side}: var(#{offsetName($value)});
+			#{$attribute}: var(#{offsetName($value)});
 		}
 	}
 }
 
-// Space shortcuts for padding/margin and horizontal/vertical
+/**
+ * SPACE HELPERS
+ * @private mixins
+ */
 
-/* SPACE HELPERS */
 @mixin space-offset-sides($top, $right, $bottom, $left, $type) {
 	// If only $top value is given than make $right equal to top
 	@if ($right == default) {
@@ -117,8 +117,11 @@ $space-offset-root-list: (0);
 	@include space-offset(false, $right, false, $left, $type);
 }
 
-/* SPACE MARGIN MIXINS */
-// Origin
+/**
+ * SPACE MARGIN MIXINS
+ * @public mixins
+ */
+
 @mixin margin($top: false, $right: default, $bottom: default , $left: default) {
 	$type: margin;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
@@ -156,8 +159,11 @@ $space-offset-root-list: (0);
 	@include space-offset(false, false, false, $left, $type);
 }
 
-/* SPACE PADDING MIXINS */
-// Origin
+/**
+ * SPACE PADDING MIXINS
+ * @public mixins
+ */
+
 @mixin padding($top: false, $right: default, $bottom: default, $left: default) {
 	$type: padding;
 	@include space-offset-sides($top, $right, $bottom, $left, $type);
@@ -192,6 +198,27 @@ $space-offset-root-list: (0);
 
 @mixin padding-left($left: false) {
 	$type: padding;
+	@include space-offset(false, false, false, $left, $type);
+}
+
+// SPACE POSITION MIXINS
+@mixin top($top: false) {
+	$type: position;
+	@include space-offset($top, false, false, false, $type);
+}
+
+@mixin right($right: false) {
+	$type: position;
+	@include space-offset(false, $right, false, false, $type);
+}
+
+@mixin bottom($bottom: false) {
+	$type: position;
+	@include space-offset(false, false, $bottom, false, $type);
+}
+
+@mixin left($left: false) {
+	$type: position;
 	@include space-offset(false, false, false, $left, $type);
 }
 

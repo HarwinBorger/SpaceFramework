@@ -13,11 +13,6 @@ $space-side-register: (
 	top, right, bottom, left
 );
 
-$space-types-combine-register: (
-	padding,
-	margin
-);
-
 $space-position-register: (
 	absolute,
 	fixed,
@@ -36,11 +31,7 @@ $space-position-register: (
 }
 
 @function allow-combined-sides($type) {
-	@if (index($space-types-combine-register,$type) == null) {
-		@return false;
-	}
-
-	@return true;
+	@return space-prefix-type($type);
 }
 
 @function extend-class-name($classNameArray, $extendClass) {
@@ -66,7 +57,7 @@ $space-position-register: (
 
 @mixin space-set-property($side, $values, $type, $sign:1) {
 	$typeName: '';
-	@if (index($space-types-combine-register, $type)) {
+	@if (space-prefix-type($type)) {
 		$typeName: $type+'-';
 	}
 
