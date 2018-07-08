@@ -218,10 +218,17 @@ $class-fit: '.fit' !default;
 			}
 		}
 
-		@if (space-support(fit)) {
+		@if (space-support(fit-baseline)) {
 			#{$class-align-baseline} #{$class-fit} > &:first-child,
 			#{$class-align-baseline}#{$class-fit} > &:first-child {
 				margin-top: calc(var(--#{$font-preset-value}-capheight) * -2);
+			}
+		}
+
+		@if (space-support(fit-capline)) {
+			#{$class-align-capline} #{$class-fit} > &:last-child,
+			#{$class-align-capline}#{$class-fit} > &:last-child {
+				margin-bottom: calc(var(--#{$font-preset-value}-capheight) * -2);
 			}
 		}
 	}
