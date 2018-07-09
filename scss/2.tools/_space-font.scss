@@ -17,7 +17,27 @@ $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
 $class-fit: '.fit' !default;
 
-@mixin space-font-preset-root($set-font-preset: default, $line-height: default, $set-align-classes: true) {
+// Short vars
+$short-variable: (
+	font-size: 'fs',
+	line-height: 'lh',
+	capheight: 'ch',
+	xheight: 'xh',
+);
+
+@function shortVar($prefix, $value) {
+	@return #{--#{$prefix}-#{map-get($short-variable, $value)}};
+}
+
+@function setVar($prefix, $value) {
+	@return shortVar($prefix, $value);
+}
+
+@function getVar($prefix, $value) {
+	@return var(#{shortVar($prefix, $value)});
+}
+
+@mixin space-font-preset-root($set-font-preset: default) {
 	// Write back $set-font-preset to variable to keep original value
 	$font-preset-value: $set-font-preset;
 	@if ($set-font-preset == inherit) {
@@ -83,50 +103,38 @@ $class-fit: '.fit' !default;
 			$font-size-value: $font-size;
 
 			// Calculate line-height
-			$space-units: $line-height;
-			$line-height-value: convert-space-units($space-units, $breakpoint);
-
-			// Set translate-y value for baseline and capline alignments
-			$capheight-correction-value: false;
-			$xheight-correction-value: false;
-
-			// Reset baseline correction
-			@if ($set-align-classes == reset) {
-				$capheight-correction-value: 0; // Reset correction if $set-align-classes is false. Needed in case inherit correction is applied
-				$xheight-correction-value: 0;
-			}
+			$line-height-value: convert-space-units($line-height, $breakpoint);
 
 			// If translate text to baseline, capline and xline
-			@if ($set-align-classes == true) {
-				$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+			$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
 
-				// Calculate baseline and capline
-				$font-correction: $font-size-value * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
-				$capheight-correction-value: $center-correction + $font-correction;
+			// Calculate baseline and capline
+			$font-correction: $font-size-value * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
+			$capheight-correction-value: $center-correction + $font-correction;
 
-				// Calculate median
-				$font-correction: $font-size-value * ((1 - $font-cap-height*$font-x-height )/ 2);
-				$xheight-correction-value: $center-correction + $font-correction;
-			}
+			// Calculate median
+			$font-correction: $font-size-value * ((1 - $font-cap-height*$font-x-height )/ 2);
+			$xheight-correction-value: $center-correction + $font-correction;
+
 
 			// Set font size
-			--#{$font-preset-value}-font-size: #{$font-size-value};
+			#{setVar($font-preset-value, font-size)}: #{$font-size-value};
 
 			// If line-height should be set
 			@if ($line-height != false) {
 				// Set line height
-				--#{$font-preset-value}-line-height: #{$line-height-value};
+				#{setVar($font-preset-value, line-height)}: #{$line-height-value};
 			}
 
 			// Set translate for baseline correction
 			@if ($capheight-correction-value != false) {
 				// Add element to .align-baseline object
-				--#{$font-preset-value}-capheight: #{$capheight-correction-value};
+				#{setVar($font-preset-value, capheight)}: #{$capheight-correction-value};
 			}
 
 			@if ($xheight-correction-value != false) {
 				// Add element to .align-xline object
-				--#{$font-preset-value}-xheight: #{$xheight-correction-value};
+				#{setVar($font-preset-value, xheight)}: #{$xheight-correction-value};
 			}
 		}
 	}
@@ -162,8 +170,8 @@ $class-fit: '.fit' !default;
 	// Set font settings
 	$font-family-value: map-get($font-list, family);
 
-	$font-size-value: var(--#{$font-preset-value}-font-size);
-	$line-height-value: var(--#{$font-preset-value}-line-height);
+	$font-size-value: #{getVar($font-preset-value, font-size)};
+	$line-height-value: #{getVar($font-preset-value, line-height)};
 
 	// Overwrite font-size and line-height with inherit when it should be inherit
 	@if ($set-font-preset == inherit) {
@@ -198,7 +206,7 @@ $class-fit: '.fit' !default;
 		@if (space-support(align-baseline)) {
 			#{$class-align-baseline} & {
 				// Set short variable
-				--s: translateY(var(--#{$font-preset-value}-capheight));
+				--s: translateY(#{getVar($font-preset-value, capheight)});
 				transform: var(--s);
 			}
 		}
@@ -206,14 +214,14 @@ $class-fit: '.fit' !default;
 		// Add element to .align-capline object
 		@if (space-support(align-capline)) {
 			#{$class-align-capline} & {
-				--s: translateY(calc(0 - var(--#{$font-preset-value}-capheight)));
+				--s: translateY(calc(0 - #{getVar($font-preset-value, capheight)}));
 				transform: var(--s);
 			}
 		}
 
 		@if (space-support(align-median)) {
 			#{$class-align-median} & {
-				--s: translateY(calc(0 - var(--#{$font-preset-value}-xheight)));
+				--s: translateY(calc(0 - #{getVar($font-preset-value, xheight)}));
 				transform: var(--s);
 			}
 		}
@@ -221,14 +229,14 @@ $class-fit: '.fit' !default;
 		@if (space-support(fit-baseline)) {
 			#{$class-align-baseline} #{$class-fit} > &:first-child,
 			#{$class-align-baseline}#{$class-fit} > &:first-child {
-				margin-top: calc(var(--#{$font-preset-value}-capheight) * -2);
+				margin-top: calc(#{getVar($font-preset-value, capheight)} * -2);
 			}
 		}
 
 		@if (space-support(fit-capline)) {
 			#{$class-align-capline} #{$class-fit} > &:last-child,
 			#{$class-align-capline}#{$class-fit} > &:last-child {
-				margin-bottom: calc(var(--#{$font-preset-value}-capheight) * -2);
+				margin-bottom: calc(#{getVar($font-preset-value, capheight)} * -2);
 			}
 		}
 	}
@@ -270,7 +278,7 @@ $class-fit: '.fit' !default;
 /*
  * Legacy
  */
-@mixin font-preset-root(){
+@mixin font-preset-root() {
 	@warn '`font-preset-root` is a deprecated function since 0.16 use `font-preset-variables` instead';
 	@include font-preset-variables();
 }
