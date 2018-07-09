@@ -259,12 +259,20 @@ $class-fit: '.fit' !default;
  *
  * @description this mixins creates root variables. Working from Edge 15+
  */
-@mixin font-preset-root() {
+@mixin font-preset-variables() {
 	:root {
 		@each $size, $value in $font-presets {
 			@include space-font-preset-root($size);
 		}
 	}
+}
+
+/*
+ * Legacy
+ */
+@mixin font-preset-root(){
+	@warn '`font-preset-root` is a deprecated function since 0.16 use `font-preset-variables` instead';
+	@include font-preset-variables();
 }
 
 /*

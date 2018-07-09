@@ -1,8 +1,8 @@
 /**
  * Typography
  */
-$distance-section: 3su !default;
-$distance-element: 2su !default;
+$section-offset: 3su !default;
+$element-offset: 2su !default;
 
 body {
 	@include font-preset();
@@ -11,23 +11,23 @@ body {
 /** HEADINGS **/
 h1 {
 	@include font-preset(xlarge);
-	@include margin-vertical(0, $distance-section);
+	@include margin-vertical(0, $section-offset);
 }
 
 h2 {
 	@include font-preset(large);
-	@include margin-vertical($distance-section);
+	@include margin-vertical($section-offset);
 }
 
 h3 {
 	@include font-preset();
-	@include margin-vertical($distance-element, 0);
+	@include margin-vertical($element-offset, 0);
 }
 
 /** ELEMENTS **/
 p {
 	@include font-preset(inherit);
-	@include margin-vertical($distance-element);
+	@include margin-vertical($element-offset);
 
 	h3 + & {
 		@include margin-vertical(0, false);
@@ -35,7 +35,7 @@ p {
 }
 
 hr {
-	@include margin-vertical($distance-element);
+	@include margin-vertical($element-offset);
 	@include height(1);
 
 	box-sizing: border-box;
@@ -46,7 +46,7 @@ blockquote {
 	border: 0;
 
 	@include margin-vertical(0);
-	@include margin-horizontal($distance-element);
+	@include margin-horizontal($element-offset);
 
 	p {
 		@include font-preset(large);
@@ -64,7 +64,7 @@ blockquote {
 ol,
 ul {
 	@include font-preset(inherit);
-	@include margin-vertical($distance-element);
+	@include margin-vertical($element-offset);
 
 	& & {
 		@include margin-vertical(0)
@@ -77,7 +77,7 @@ button {
 }
 
 table {
-	@include margin-vertical($distance-element);
+	@include margin-vertical($element-offset);
 }
 
 th,

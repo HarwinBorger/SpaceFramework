@@ -3,7 +3,7 @@
  */
 @function space-unit-variable($value) {
 	$value: strip-unit($value);
-	@return --su-#{str-replace(#{$value},'.','-')};
+	@return #{$su}-#{str-replace(#{$value},'.','-')};
 }
 
 $space-unit-variable-list: (false);
@@ -14,15 +14,11 @@ $space-unit-variable-list: (false);
 		// Add value to list so css variable won't be generated again
 		$space-unit-variable-list: join($space-unit-variable-list, $value) !global;
 
-		@each $breakpoint, $space-value in $space-unit-sizes {
-			//Add breakpoint
-			@at-root {
-				:root {
-					@include breakpoint($breakpoint) {
-						$calculated-value: convert-space-units($value, $breakpoint);
-						#{space-unit-variable($value)}: ($calculated-value);
-					}
-				}
+		//Add breakpoint
+		@at-root {
+			:root {
+				$test: $su;
+				#{space-unit-variable($value)}: calc(#{$value} * var(#{$su}));
 			}
 		}
 	}
