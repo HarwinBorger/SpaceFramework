@@ -1,5 +1,9 @@
 # SpaceLog
 
+## [0.16] Space unit variable - 09-07-2018
+### Optimize
+- Optimize space units to save even more space
+
 ## [0.15] Shift en optimize - 08-07-2018
 ### Added
 - Add shift utility to move objects by a number
