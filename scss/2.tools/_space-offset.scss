@@ -10,6 +10,8 @@
  * @para: (string)$top-multiplier
  * @para: (int)$correction-multiplier
  *
+ * TODO optimize situation were 4 sides have the same value
+ *
  */
 
 @mixin space-offset(

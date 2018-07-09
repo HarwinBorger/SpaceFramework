@@ -1,0 +1,12 @@
+@mixin space-unit-variables {
+	@each $breakpoint, $space-unit in $space-unit-sizes{
+		//Add breakpoint
+		@at-root {
+			:root {
+				@include breakpoint($breakpoint) {
+					#{--su}: ($space-unit);
+				}
+			}
+		}
+	}
+}
