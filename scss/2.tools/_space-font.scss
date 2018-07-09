@@ -25,6 +25,7 @@ $short-variable: (
 	xheight: 'xh',
 );
 
+/* Variable function */
 @function shortVar($prefix, $value) {
 	@return #{--#{$prefix}-#{map-get($short-variable, $value)}};
 }
@@ -35,6 +36,27 @@ $short-variable: (
 
 @function getVar($prefix, $value) {
 	@return var(#{shortVar($prefix, $value)});
+}
+
+/* Calculate font functions  */
+@function calcCenter($line-height, $font-size) {
+	$center-correction: ($line-height - $font-size) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+	@return $center-correction;
+}
+
+@function calcCapheight($font-size, $line-height, $font-cap-height) {
+	// Calculate baseline and capline
+	$font-correction: $font-size * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
+	$capheight-correction: calcCenter($line-height, $font-size) + $font-correction;
+
+	@return $capheight-correction;
+}
+
+@function calcXheight($font-size, $line-height, $font-cap-height, $font-x-height) {
+	$font-correction: $font-size * ((1 - $font-cap-height*$font-x-height )/ 2);
+	$xheight-correction: calcCenter($line-height, $font-size) + $font-correction;
+
+	@return $xheight-correction;
 }
 
 @mixin space-font-preset-root($set-font-preset: default) {
@@ -105,17 +127,11 @@ $short-variable: (
 			// Calculate line-height
 			$line-height-value: convert-space-units($line-height, $breakpoint);
 
-			// If translate text to baseline, capline and xline
-			$center-correction: ($line-height-value - $font-size-value) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
-
 			// Calculate baseline and capline
-			$font-correction: $font-size-value * ((1 - $font-cap-height )/ 2); // Split correction by 2 because only 50% of the alignments needs to be done
-			$capheight-correction-value: $center-correction + $font-correction;
+			$capheight-correction-value: calcCapheight($font-size-value, $line-height-value, $font-cap-height);
 
 			// Calculate median
-			$font-correction: $font-size-value * ((1 - $font-cap-height*$font-x-height )/ 2);
-			$xheight-correction-value: $center-correction + $font-correction;
-
+			$xheight-correction-value: calcXheight($font-size-value, $line-height-value, $font-cap-height, $font-x-height);
 
 			// Set font size
 			#{setVar($font-preset-value, font-size)}: #{$font-size-value};
