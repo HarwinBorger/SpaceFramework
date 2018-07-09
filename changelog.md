@@ -1,6 +1,6 @@
 # SpaceLog
 
-## [0.16] Space unit variable - 09-07-2018
+## [0.15.1] Space unit variable - 09-07-2018
 ### Optimize
 - Optimize space units to save even more space
 
