@@ -1,5 +1,10 @@
 # SpaceLog
 
+## [unreleased]
+### Optimize
+- Optimize variable length and functions
+- Cleanup old code
+
 ## [0.15.1] Space unit variable - 09-07-2018
 ### Optimize
 - Optimize space units to save even more space
