@@ -10,9 +10,7 @@
 		$calculated-value: convert-space-units($value, $breakpoint);
 		#{$type}: ($calculated-value);
 	}
-
-	$value: strip-unit($value);
-
+	
 	@include add-space-unit-variable($value);
 	#{$type}: var(#{space-unit-variable($value)});
 }
