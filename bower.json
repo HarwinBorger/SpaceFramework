@@ -6,7 +6,7 @@
   "authors": [
     "Harwin Borger <harwin@studioborger.nl>"
   ],
-  "license": "AGPL-3.0-only",
+  "license": "GPL-3.0-only",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework",
   "private": true,
   "ignore": [
