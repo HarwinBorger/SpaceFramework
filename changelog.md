@@ -1,6 +1,9 @@
 # SpaceLog
 
 ## [unreleased]
+### Added
+- Add support for min-height, max-height, min-width, max-width and possibility to add custom properties combined with space units 
+
 ### Optimize
 - Optimize variable length and functions
 - Cleanup old code

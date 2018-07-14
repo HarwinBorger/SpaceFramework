@@ -1,0 +1,49 @@
+/**
+ * Properties
+ * @param $value (in space-units)
+ * @param $type (width || height)
+ */
+@mixin space-property($type, $value) {
+	@if space-legacy() {
+		//Calculate type top
+		$breakpoint: last(map-keys($space-unit-sizes));
+		$calculated-value: convert-space-units($value, $breakpoint);
+		#{$type}: ($calculated-value);
+	}
+	
+	@include add-space-unit-variable($value);
+	#{$type}: var(#{space-unit-variable($value)});
+}
+
+/**
+ * Vanilla CSS mixins
+ */
+@mixin width($value) {
+	$type: width;
+	@include space-property($type, $value)
+}
+
+@mixin min-width($value){
+	$type: min-width;
+	@include space-property($type, $value)
+}
+
+@mixin max-width($value){
+	$type: max-width;
+	@include space-property($type, $value)
+}
+
+@mixin height($value) {
+	$type: height;
+	@include space-property($type, $value)
+}
+
+@mixin min-height($value) {
+	$type: min-height;
+	@include space-property($type, $value)
+}
+
+@mixin max-height($value) {
+	$type: max-height;
+	@include space-property($type, $value)
+}
