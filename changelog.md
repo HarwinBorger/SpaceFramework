@@ -1,6 +1,6 @@
 # SpaceLog
 
-## [unreleased]
+## [0.16] Custom properties and optimize space - 16-07-2018
 ### Added
 - Add support for min-height, max-height, min-width, max-width and possibility to add custom properties combined with space units 
 
