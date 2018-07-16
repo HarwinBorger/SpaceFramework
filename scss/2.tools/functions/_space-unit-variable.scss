@@ -17,7 +17,6 @@ $space-unit-variable-list: (false);
 		//Add breakpoint
 		@at-root {
 			:root {
-				$test: $su;
 				#{space-unit-variable($value)}: calc(#{$value} * var(#{$su}));
 			}
 		}

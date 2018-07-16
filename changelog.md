@@ -1,5 +1,13 @@
 # SpaceLog
 
+## [0.16] Custom properties and optimize space - 16-07-2018
+### Added
+- Add support for min-height, max-height, min-width, max-width and possibility to add custom properties combined with space units 
+
+### Optimize
+- Optimize variable length and functions
+- Cleanup old code
+
 ## [0.15.1] Space unit variable - 09-07-2018
 ### Optimize
 - Optimize space units to save even more space
@@ -26,7 +34,7 @@
 - Optimize typography values by using css variables to have small file size
 	- from initial *51.970 bytes* to *40.442 bytes* saving potential *11.528 bytes* which is a total safe of *22%*
 - Optimize offset mixins by using css variables to get smaller file sizes
-	- from initital *40.422 bytes* to *40.270 bytes* saving *152 bytes* which is minimal safe of >*0,3%* but could be saving up to *1,3%*
+	- from initial *40.422 bytes* to *40.270 bytes* saving *152 bytes* which is minimal safe of >*0,3%* but could be saving up to *1,3%*
 
 ### Drop support 
 - Drop support for typography alignment classes for Edge < 15

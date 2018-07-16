@@ -1,12 +1,12 @@
 {
   "name": "spaceframework",
   "description": "Front-end development made for into Space!",
-  "version": "0.15.1",
+  "version": "0.16.0",
   "main": "",
   "authors": [
     "Harwin Borger <harwin@studioborger.nl>"
   ],
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-only",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework",
   "private": true,
   "ignore": [

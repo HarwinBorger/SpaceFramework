@@ -1,6 +1,6 @@
 {
   "name": "harwinborger/spaceframework",
-  "version": "0.15.1",
+  "version": "0.16.0",
   "description": "Vertical grid system",
   "keywords": [
     "foundation",
@@ -11,7 +11,7 @@
   ],
   "type": "library",
   "homepage": "https://github.com/HarwinBorger/SpaceFramework/",
-  "license": "GPL3.0",
+  "license": "GPL-3.0-only",
   "authors": [
     {
       "name": "Harwin Borger",
