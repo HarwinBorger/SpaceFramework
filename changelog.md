@@ -1,5 +1,10 @@
 # SpaceLog
 
+## [0.16.1] Fix space unit variable - 07-09-2018
+### Fixed
+- Print space-unit-variables outside the media query instead of inside.
+ This way the variable is no longer related to a viewport size and can it be used globally
+
 ## [0.16] Custom properties and optimize space - 16-07-2018
 ### Added
 - Add support for min-height, max-height, min-width, max-width and possibility to add custom properties combined with space units 
