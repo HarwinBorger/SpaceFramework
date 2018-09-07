@@ -15,7 +15,7 @@ $space-unit-variable-list: (false);
 		$space-unit-variable-list: join($space-unit-variable-list, $value) !global;
 
 		//Add breakpoint
-		@at-root {
+		@at-root (without:all){
 			:root {
 				#{space-unit-variable($value)}: calc(#{$value} * var(#{$su}));
 			}
