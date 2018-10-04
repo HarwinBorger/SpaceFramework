@@ -1,0 +1,23 @@
+
+.bg {
+	&-units {
+		background-color: #269;
+		background-image: linear-gradient(rgba(255, 255, 255, .28) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, .28) 1px, transparent 1px);
+		background-size: var(--su) var(--su), var(--su) var(--su);
+		background-position: -1px -1px, -1px -1px;
+	}
+
+	&-header {
+		background-color: white;
+	}
+
+	&-padding {
+		background-color: rgba(purple, .8);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+}
