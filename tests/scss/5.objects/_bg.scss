@@ -28,4 +28,18 @@
 			background-clip: content-box;
 		}
 	}
+
+
+	&-margin {
+		background-color: rgba(orange, .5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+
+	&-margin-dark {
+		background-color: rgba(darkorange, .5);
+	}
 }
