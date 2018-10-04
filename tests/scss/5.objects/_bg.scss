@@ -50,4 +50,13 @@
 			background-clip: content-box;
 		}
 	}
+
+	&-negative{
+		background-color: rgba(black,.5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
 }
