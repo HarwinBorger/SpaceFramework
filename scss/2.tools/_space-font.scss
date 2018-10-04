@@ -230,14 +230,14 @@ $short-variable: (
 		// Add element to .align-capline object
 		@if (space-support(align-capline)) {
 			#{$class-align-capline} & {
-				--s: translateY(calc(0 - #{getVar($font-preset-value, capheight)}));
+				--s: translateY(calc(#{getVar($font-preset-value, capheight)} * -1));
 				transform: var(--s);
 			}
 		}
 
 		@if (space-support(align-median)) {
 			#{$class-align-median} & {
-				--s: translateY(calc(0 - #{getVar($font-preset-value, xheight)}));
+				--s: translateY(calc(#{getVar($font-preset-value, xheight)} * -1));
 				transform: var(--s);
 			}
 		}
