@@ -15,15 +15,15 @@ $fonts: (
 	),
 	secondary:(
 		family: $body-font-family,
-		cap-height: .91,
-		x-height: .6
+		cap-height: .78,
+		x-height: .51
 	),
 ) !default;
 
 $font-presets: (
 	xlarge:(//Mostly used for H1
 		font-size: (1.5rem, 2.25rem, 3rem),
-		line-height: (3su, 4su,	6su),
+		line-height: (3su, 4su,	5su),
 		font: secondary
 	),
 	large:(//Mostly used for H2
