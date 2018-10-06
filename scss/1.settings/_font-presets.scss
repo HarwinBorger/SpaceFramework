@@ -27,13 +27,13 @@ $font-presets: (
 		font: secondary
 	),
 	large:(//Mostly used for H2
-		font-size: (1.125rem, 1.5rem, 1.5rem),
-		line-height: (3su, 3su, 3su),
+		font-size: (1.25rem, 1.5rem, 2rem),
+		line-height: (3su, 3.5su, 4su),
 		font: secondary
 	),
 	medium:(// Mostly used for Intro text
 		font-size: (1rem, 1.125rem, 1.125rem),
-		line-height: (2su, 3su, 3su)
+		line-height: (2su, 2.5su, 2.5su)
 	),
 	default:(// Body font-size
 		font-size: 1rem,
@@ -44,7 +44,7 @@ $font-presets: (
 		line-height: 2su
 	),
 	tiny:(
-		font-size: (8.75rem, .75rem),
-		line-height: 2su
+		font-size: (.75rem, .75rem),
+		line-height: 1.5su
 	)
 ) !default;
