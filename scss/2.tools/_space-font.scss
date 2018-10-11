@@ -272,6 +272,15 @@ $short-variable: (
 }
 
 /*
+ * Self align mixin
+ * @description aligns items based on default font-size to align-baseline, align-capline, align-median
+ * without actually setting font-sizes, line-height or font-families
+ */
+@mixin self-align(){
+	@include font-preset(inherit);
+}
+
+/*
  * Font-size function
  */
 @mixin font-size($font-size-value: default) {
