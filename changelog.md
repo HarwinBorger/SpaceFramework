@@ -1,6 +1,6 @@
 # SpaceLog
 
-## [unreleased]
+## [0.17.0] Self and reset classes
 - Add several tests to stabilize code 
 - Add self-fill and self-align classes and test
 - Add align-reset class to reset vertical alignments
