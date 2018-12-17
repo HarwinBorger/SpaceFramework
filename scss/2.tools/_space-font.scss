@@ -15,6 +15,7 @@
 $class-align-baseline: '.align-baseline' !default;
 $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
+$class-align-reset: '.align-reset' !default;
 $class-fit: '.fit' !default;
 
 // Short vars
@@ -253,6 +254,12 @@ $short-variable: (
 			#{$class-align-capline} #{$class-fit} > &:last-child,
 			#{$class-align-capline}#{$class-fit} > &:last-child {
 				margin-bottom: calc(#{getVar($font-preset-value, capheight)} * -2);
+			}
+		}
+
+		@if (space-support(align-reset)) {
+			#{$class-align-reset} & {
+				transform: none;
 			}
 		}
 	}
