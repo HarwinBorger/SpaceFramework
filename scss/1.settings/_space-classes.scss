@@ -79,7 +79,7 @@ $space-class-settings: (
 	 *
 	 * @tip: turn it off if you don't use it.
 	 */
-	negative: false,
+	negative: true,
 	/** Define generation of classes: .[viewport-name]-[object]-[type]-[direction]
 	 * @description: with the generation of viewport related classes you can
 	 * control on which viewport the padding, margin needs to be applied on.

@@ -1,0 +1,66 @@
+
+.bg {
+	&-units {
+		background-color: #269;
+		background-image: linear-gradient(rgba(255, 255, 255, .28) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, .28) 1px, transparent 1px);
+		background-size: var(--su) var(--su), var(--su) var(--su);
+		background-position: -1px -1px, -1px -1px;
+	}
+
+	&-units-light {
+		background-color: #fff;
+		background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
+		background-size: var(--su) var(--su), var(--su) var(--su);
+		background-position: -1px -1px, -1px -1px;
+	}
+
+	&-white{
+		background-color: white;
+	}
+
+	&-header {
+		background-color: white;
+	}
+
+	&-padding {
+		background-color: rgba(purple, .8);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+
+	&-margin {
+		background-color: rgba(orange, .5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+
+	&-margin-dark {
+		background-color: rgba(darkorange, .5);
+	}
+
+	&-position {
+		background-color: rgba(green, .5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+
+	&-negative{
+		background-color: rgba(black,.5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+}

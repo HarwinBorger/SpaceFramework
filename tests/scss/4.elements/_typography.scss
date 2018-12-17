@@ -1,0 +1,6 @@
+pre {
+	background: #333;
+	color: white;
+	@include padding(1);
+	@include margin-vertical(1);
+}
