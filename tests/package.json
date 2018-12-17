@@ -18,6 +18,5 @@
     "time-grunt": "*",
     "matchdep": "*"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
