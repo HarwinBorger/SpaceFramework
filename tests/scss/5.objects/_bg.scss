@@ -16,12 +16,16 @@
 		background-position: -1px -1px, -1px -1px;
 	}
 
-	&-black{
+	&-black {
 		background: #222;
 	}
 
-	&-white{
+	&-white {
 		background-color: white;
+	}
+
+	&-blue {
+		background-color: #269;
 	}
 
 	&-header {
@@ -59,8 +63,8 @@
 		}
 	}
 
-	&-negative{
-		background-color: rgba(black,.5);
+	&-negative {
+		background-color: rgba(black, .5);
 
 		> * {
 			background-color: white;
