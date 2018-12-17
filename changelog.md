@@ -1,5 +1,8 @@
 # SpaceLog
 
+## [unreleased]
+- Add several tests to stablize code
+
 ## [0.16.2] Fix calculation of capline and median values - 04-10-2018
 
 ## [0.16.1] Fix space unit variable - 07-09-2018

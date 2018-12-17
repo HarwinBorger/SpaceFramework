@@ -1,0 +1,57 @@
+<html>
+<head>
+	<link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body class="bg-units">
+<header class="bg-header block-padding site-margin-vertical trim">
+	<h1>Class: Margin mixin</h1>
+	<p><strong>Goal: </strong> determining margin mixin is working properly</p>
+	<p><strong>Expected result: </strong></p>
+	<ul>
+		<li>Small viewport should see a yellow marked margin from 1 space unit</li>
+		<li>Medium viewport should see a yellow marked margin from 3 space units</li>
+		<li>Large viewport should see a yellow marked margin from 5 space units</li>
+	</ul>
+</header>
+<div class="site-margin">
+	<div class="bg-margin site-margin-vertical" style="padding-top: 0.1px; padding-bottom: 0.1px;">
+		<div class="margin-test">
+			<div class="block-padding trim">
+				<h2>@include margin(value in Space-Units)</h2>
+				<h3>Small Breakpoint</h3>
+				<pre>@include margin(1)</pre>
+				<h3>Medium breakpoint</h3>
+				<pre>@include margin(3)</pre>
+				<h3>Large breakpoint</h3>
+				<pre>@include margin(5)</pre>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-white block-padding site-margin-vertical trim">
+	<h2>Possible margin mixins are:</h2>
+	<ul>
+		<li>
+			<pre>@include margin(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-vertical(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-horizontal(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-top(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-right(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-bottom(value in space-units)</pre>
+		</li>
+		<li>
+			<pre>@include margin-left(value in space-units)</pre>
+	</ul>
+</div>
+</body>
+</html>
