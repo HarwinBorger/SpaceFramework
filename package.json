@@ -5,7 +5,7 @@
   "licence": "GPL-3.0-only",
   "devDependencies": {
     "autoprefixer": "*",
-    "csswring": "*",
+    "csswring": "6.0.3",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
@@ -14,10 +14,9 @@
     "grunt-merge-media": "^0.4.0",
     "grunt-modernizr": "^1.0.2",
     "grunt-postcss": "*",
-    "grunt-sass": "*",
+    "grunt-sass": "^2.1",
     "time-grunt": "*",
     "matchdep": "*"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

@@ -1,7 +1,9 @@
 # SpaceLog
 
 ## [unreleased]
-- Add several tests to stablize code
+- Add several tests to stabilize code 
+- Add self-fill and self-align classes and test
+- Add align-reset class to reset vertical alignments
 
 ## [0.16.2] Fix calculation of capline and median values - 04-10-2018
 

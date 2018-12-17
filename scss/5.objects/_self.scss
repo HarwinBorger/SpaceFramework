@@ -1,0 +1,16 @@
+
+/**
+ * Snap class can be used for aligning objects to align-baseline, align-capline, align-median
+ *
+ */
+
+.self {
+	&-align {
+		@include self-align();
+	}
+
+	&-fill {
+		padding-top: getVar(default, capheight);
+		padding-bottom: getVar(default, capheight);
+	}
+}

@@ -15,6 +15,7 @@
 $class-align-baseline: '.align-baseline' !default;
 $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
+$class-align-reset: '.align-reset' !default;
 $class-fit: '.fit' !default;
 
 // Short vars
@@ -255,6 +256,12 @@ $short-variable: (
 				margin-bottom: calc(#{getVar($font-preset-value, capheight)} * -2);
 			}
 		}
+
+		@if (space-support(align-reset)) {
+			#{$class-align-reset} & {
+				transform: none;
+			}
+		}
 	}
 }
 
@@ -269,6 +276,15 @@ $short-variable: (
  */
 @mixin font-preset($set-font-preset: default, $set-align-classes: true) {
 	@include space-font-preset-values($set-font-preset, true, $set-align-classes);
+}
+
+/*
+ * Self align mixin
+ * @description aligns items based on default font-size to align-baseline, align-capline, align-median
+ * without actually setting font-sizes, line-height or font-families
+ */
+@mixin self-align(){
+	@include font-preset(inherit);
 }
 
 /*

@@ -10,14 +10,22 @@
 
 	&-units-light {
 		background-color: #fff;
-		background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
+		background-image: linear-gradient(rgba(black, .1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(black, .1) 1px, transparent 1px);
 		background-size: var(--su) var(--su), var(--su) var(--su);
 		background-position: -1px -1px, -1px -1px;
 	}
 
-	&-white{
+	&-black {
+		background: #222;
+	}
+
+	&-white {
 		background-color: white;
+	}
+
+	&-blue {
+		background-color: #269;
 	}
 
 	&-header {
@@ -55,8 +63,8 @@
 		}
 	}
 
-	&-negative{
-		background-color: rgba(black,.5);
+	&-negative {
+		background-color: rgba(black, .5);
 
 		> * {
 			background-color: white;
