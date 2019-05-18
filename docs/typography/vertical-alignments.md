@@ -9,8 +9,11 @@ What makes the SpaceFramework special is the vertical alignment of your elements
 
 - [Cross alignment](#align-median)
 
+
+- [Reset alignment](#align-reset)
+
 ---
-## Align baseline
+## Baseline alignment
 By applying the css class `.align-baseline` on an **element** you can align all (defined) **children** of this element on the baseline grid. This includes headings, images, tables etc.
 
 ```scss
@@ -18,12 +21,12 @@ By applying the css class `.align-baseline` on an **element** you can align all 
 ```
 
 ---
-## Align capline
+## Capline alignment
 By applying the css class `.align-capline` on an **element** you can align all (defined) **children** of this element on the capline grid. This includes headings, images, tables etc.
 
 
 ---
-## Align median
+## Median alignement
 By applying the css class `.align-median` on an **element** you can align all (defined) **children** of this element on the median grid. This includes headings, images, tables etc.
 
 
@@ -31,3 +34,5 @@ By applying the css class `.align-median` on an **element** you can align all (d
 ## Cross Alignment
 By using the `.align-baseline` in combination with the `.shift` utility class you can align multiple columns containing different content with each other.
 
+---
+## Reset Alignment

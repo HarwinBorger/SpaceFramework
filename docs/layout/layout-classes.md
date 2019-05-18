@@ -3,7 +3,7 @@
 #### Layout classes are very powerful classes to achieve perfect layout rhythms.
 
 **Requirements:**
-- Configurate [Layout-Presets](settings/space-classes.md) so it fits your design 
+- Configurate [Layout-Presets](settings/layout-presets.md) so it fits your design 
 
 
 **Table of content**

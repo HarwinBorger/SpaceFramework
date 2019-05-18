@@ -10,7 +10,7 @@
   
 - Settings
   - [Space Units](settings/space-units.md)
-  - [Layout Presets](settings/space-classes.md)
+  - [Layout Presets](settings/layout-presets.md)
   - [Fonts](settings/fonts.md)
   - [Font Presets](settings/font-presets.md)
   - [Support & Legacy Browers](settings/support-legacy.md)
