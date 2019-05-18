@@ -14,7 +14,12 @@
     window.$docsify = {
       name: 'SpaceFramework',
       repo: '',
-	    loadSidebar: true
+	    loadSidebar: true,
+	    alias: {
+		    '/.*/_sidebar.md': '/_sidebar.md'
+	    },
+	    subMaxLevel: 2,
+	    loadNavbar: true
 
     }
   </script>

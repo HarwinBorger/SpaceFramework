@@ -1,8 +1,8 @@
 - Getting started
-  - [Introduction](/getting-started/introduction.md)
-  - [NPM install](/getting-started/npm.md)
-  - [SCSS integration](/)
-  - [ITCSS](/)
+  - [Introduction](getting-started/introduction.md)
+  - [NPM Install](getting-started/npm.md)
+  - [Integration](getting-started/integration.md)
+  - [ITCSS](getting-started/itcss.md)
 
 - Base principles
   - [Space-Units](/getting-started/space-unit.md)
