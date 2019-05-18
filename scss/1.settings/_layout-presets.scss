@@ -1,0 +1,93 @@
+/*
+ * Space Model Variables
+ *
+ * @Description:
+ * With space model you can use general styling for padding, margins on elements.
+ * You can even give them an absolute position!
+ */
+
+$space-classes: (
+	/** Define generation of objects: .[object]
+	 *
+	 * @example: .space-[type],  .site-[type], .content-[type]
+	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
+	 */
+	site: (//Defines global alignment related to the site
+		viewports:(
+			small:(2su),
+			medium:(4su),
+			large:(6su),
+		)
+	),
+	section:(//Define the alignment of different elements within a site
+		viewports:(
+			small:(2su),
+			medium:(3su),
+			large:(4su),
+		)
+	),
+	block:(//Define the alignment of different elements within a section
+		viewports:(
+			small:(2su),
+			medium:(2su),
+			large:(2su)
+		)
+	)
+) !default;
+
+$space-class-settings: (
+	/** Define generation of: .[object]-[type]
+	 *
+	 * @example: .space-padding, .space-margin, .space-position
+	 */
+	types:(
+		padding,
+		margin,
+		position
+	),
+	/** Define generation of: .[object]-[type]-[direction]
+	 *
+	 * @example 1: .space-[type]-top, .space-[type]-vertical
+	 * @example 2: .space-padding-top, .space-margin-vertical
+	 */
+	directions:(
+		top:(
+			top
+		),
+		right:(
+			right
+		),
+		bottom:(
+			bottom
+		),
+		left: (
+			left
+		),
+		vertical: (
+			top,
+			bottom
+		),
+		horizontal: (
+			right,
+			left
+		)
+	),
+	/** Define generation of classes: .[object]-[type]-[direction]-negative
+	 *
+	 * @example: .space-margin-horizontal-negative
+	 * @note: does not work on 'padding' type since negative padding values are not allowed
+	 *
+	 * @tip: turn it off if you don't use it.
+	 */
+	negative: true,
+	/** Define generation of classes: .[viewport-name]-[object]-[type]-[direction]
+	 * @description: with the generation of viewport related classes you can
+	 * control on which viewport the padding, margin needs to be applied on.
+	 *
+	 * @example 1: .medium-[object]-[type]-[direction]
+	 * @example 2: .medium-site-margin-horizontal
+	 *
+	 * @tip: turn it off if you don't use it.
+	 */
+	responsive: true
+) !default;
