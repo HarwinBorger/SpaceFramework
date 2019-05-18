@@ -1,4 +1,4 @@
-# SpaceFramework 
+# SpaceFramework
 Vertical Grid System: Brings cross-alignment back to the web
 
 - Adding typography alignments have never been more easy, you can align on *baseline*, *capline* and the *median*. 
