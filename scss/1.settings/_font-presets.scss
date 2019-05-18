@@ -10,30 +10,30 @@
 $fonts: (
 	default: (
 		family: $body-font-family,
-		cap-height: .71,
-		x-height: .53
+		cap-height: .73,
+		x-height: .51
 	),
 	secondary:(
 		family: $body-font-family,
-		cap-height: .71,
-		x-height: .53
+		cap-height: .78,
+		x-height: .51
 	),
 ) !default;
 
 $font-presets: (
 	xlarge:(//Mostly used for H1
 		font-size: (1.5rem, 2.25rem, 3rem),
-		line-height: (3su, 4su,	6su),
+		line-height: (3su, 4su,	5su),
 		font: secondary
 	),
 	large:(//Mostly used for H2
-		font-size: (1.125rem, 1.5rem, 1.5rem),
-		line-height: (3su, 3su, 3su),
+		font-size: (1.25rem, 1.5rem, 2rem),
+		line-height: (3su, 3.5su, 4su),
 		font: secondary
 	),
 	medium:(// Mostly used for Intro text
 		font-size: (1rem, 1.125rem, 1.125rem),
-		line-height: (2su, 3su, 3su)
+		line-height: (2su, 2.5su, 2.5su)
 	),
 	default:(// Body font-size
 		font-size: 1rem,
@@ -44,7 +44,7 @@ $font-presets: (
 		line-height: 2su
 	),
 	tiny:(
-		font-size: (8.75rem, .75rem),
-		line-height: 2su
+		font-size: (.75rem, .75rem),
+		line-height: 1.5su
 	)
 ) !default;

@@ -1,5 +1,10 @@
 # SpaceLog
 
+## [0.17.0] Self and reset classes
+- Add several tests to stabilize code 
+- Add self-fill and self-align classes and test
+- Add align-reset class to reset vertical alignments
+
 ## [0.16.2] Fix calculation of capline and median values - 04-10-2018
 
 ## [0.16.1] Fix space unit variable - 07-09-2018

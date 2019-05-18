@@ -1,10 +1,17 @@
 # SpaceFramework 
-Vertical Grid System: Brings cross-alignment back to the web
+The SpaceFramework is a high-end front-end framework which focuses on delivering excellent and pixel perfect user interfaces. 
 
-- Adding typography alignments have never been more easy, you can align on *baseline*, *capline* and the *median*. 
-- Easy to include to your website by using *OOCSS* and *ITCSS* front-end patterns. 
-- Exceptional equal sized alignments by using *global classes* to set *paddings*, *margins* en *positions*.
-- Everything is build with one common size factor called a 'space unit'. Which combines typography and grid vertical alignments perfectly. 
+The purpose is create common vertical rhythm between components and typographic elements. This is done by centralizing all distances, alignments and font-presets. 
+
+You can also use typographic alignments like:
+ * Baseline alignments
+ * Capline alignments
+ * Median alignments
+ * Cross alignments 
+ 
+By centralizing similarities between main components, it fits well with the principles of Atomic Design.
+
+The core of SpaceFramework lies in the use of a shared unit that connects all common parts. This unit is called the *Space-Unit*. 
 
 ## Recommended to use
 - Space Framework is build on top of Foundation. However we made 
@@ -18,7 +25,7 @@ npm install spaceframework
 ```
 
 ## Documentation (work in progress)
-- We are currently working on providing a good documentation. However it is not complete enough yet. The current state of our documentation can be found here: https://spacerhythm.com 
+- I am currently working on providing a documentation. The current state of our documentation can be found here: https://spacerhythm.com 
 
 
 ## Credits
