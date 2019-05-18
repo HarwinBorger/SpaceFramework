@@ -38,12 +38,20 @@
 
 ---
 ## @padding-top
+> We will add documentation soon
+
 ---
 ## @padding-right
+> We will add documentation soon
+
 ---
 ## @padding-bottom
+> We will add documentation soon
+
 ---
 ## @padding-left
+> We will add documentation soon
+
 
 
 ---
@@ -54,3 +62,4 @@
 ```
 ---
 ## @padding-horizontal
+> We will add documentation soon

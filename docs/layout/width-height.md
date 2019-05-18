@@ -4,6 +4,7 @@
 - [@width](#width)
 - [@height](#height)
 
+---
 ## @width
 
 ```scss
@@ -25,7 +26,7 @@
 [filename](_examples/width.md ':include')
 
 <!-- tabs:end -->
-
+---
 ## @Height
 
 ```scss

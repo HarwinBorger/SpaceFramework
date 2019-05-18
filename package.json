@@ -3,6 +3,9 @@
   "version": "0.16.2",
   "author": "Harwin Borger <info@studioborger.nl>",
   "licence": "GPL-3.0-only",
+  "scripts": {
+     "start": "docsify serve docs"
+  },
   "devDependencies": {
     "autoprefixer": "*",
     "csswring": "*",

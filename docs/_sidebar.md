@@ -2,31 +2,40 @@
   - [Introduction](/getting-started/introduction.md)
   - [NPM install](/getting-started/npm.md)
   - [SCSS integration](/)
+  - [ITCSS](/)
 
 - Base principles
-  - [Space-Units (su)](/getting-started/space-unit.md)
-  - [Modular building]()
-
+  - [Space-Units](/getting-started/space-unit.md)
+  - [Modular]()
+  
 - Settings
-  - [Space Classes]()
-  - [Font Presets]()
+  - [Space Units](settings/space-units.md)
+  - [Layout Presets](settings/space-classes.md)
+  - [Fonts](settings/fonts.md)
+  - [Font Presets](settings/font-presets.md)
+  - [Support & Legacy Browers](settings/support-legacy.md)
 
 - Layout
+  - [Layout Classes](layout/layout-classes.md)
   - [Margins](layout/margin.md)
   - [Paddings](layout/padding.md)
   - [Positions](layout/position.md)
   - [Width & Height](layout/width-height.md)
   
-- Typography 
+- Typography & Content 
+  - [Font Classes & Mixins](settings/font-presets.md)
   - [Vertical Alignments](typography/vertical-alignments.md)
-  - [Self-Fit]()
-  - [Self-Snap]()
+  - [Self Classes](typography/self-classes.md)
   
 - Utility Classes
-  - [Trim]()
-  - [Fit]()
-  - [Implode]()
-  - [Shift]()
+  - [Trim](utility-classes/trim.md)
+  - [Fit](utility-classes/fit.md)
+  - [Implode](utility-classes/implode.md)
+  - [Shift](utility-classes/shift.md)
 
 - Functions
-	- [Su](functions/su.md) 
+  - [Su](functions/su.md) 
+   
+- Extra's
+  - [NPM](https://www.npmjs.com/package/spaceframework)
+  - [Github](https://github.com/HarwinBorger/SpaceFramework)
