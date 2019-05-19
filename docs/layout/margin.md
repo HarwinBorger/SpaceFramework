@@ -27,7 +27,7 @@
 - **$top, $right, $bottom, $left** value defined in **space-units**
 - If you only fill in the **$top** value the other values (**$right, $bottom, $left**) will take over this value. Similar to vanille CSS
 
-### Example 1
+#### Example 1
 <!-- tabs:start -->
 
 #### ** How to use **

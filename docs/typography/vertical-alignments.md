@@ -1,5 +1,7 @@
 # Vertical Alignments
-What makes the SpaceFramework special is the vertical alignment of your elements. This can be done by using classes such as
+#### What makes the SpaceFramework special is the vertical alignment of your elements. 
+
+This can be done by using classes such as
 `.align-baseline` `.align-capline` and `.align-median`.
 
 - [Baseline alignment](#align-baseline)

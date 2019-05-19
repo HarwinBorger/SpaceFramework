@@ -17,15 +17,16 @@
 
 - Layout
   - [Layout Classes](layout/layout-classes.md)
-  - [Margins](layout/margin.md)
-  - [Paddings](layout/padding.md)
-  - [Positions](layout/position.md)
-  - [Width & Height](layout/width-height.md)
+  - [@Margins](layout/margin.md)
+  - [@Paddings](layout/padding.md)
+  - [@Positions](layout/position.md)
+  - [@Width & @Height](layout/width-height.md)
   
 - Typography & Content 
-  - [Font Classes & Mixins](settings/font-presets.md)
-  - [Vertical Alignments](typography/vertical-alignments.md)
+  - [Font Classes](typography/font-classes.md)
+  - [Vertical Alignment Classes](typography/vertical-alignments.md)
   - [Self Classes](typography/self-classes.md)
+  - [@Font](typography/font-mixins.md)
   
 - Utility Classes
   - [Trim](utility-classes/trim.md)
@@ -34,7 +35,7 @@
   - [Shift](utility-classes/shift.md)
 
 - Functions
-  - [Su](functions/su.md) 
+  - [@Su](functions/su.md) 
    
 - Extra's
   - [NPM](https://www.npmjs.com/package/spaceframework)
