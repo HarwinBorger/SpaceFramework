@@ -1,5 +1,3 @@
-# Trim
-
-**Classname:** `.trim`
+# Modular
 
 > We will add documentation soon

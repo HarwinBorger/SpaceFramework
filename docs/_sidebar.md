@@ -5,8 +5,8 @@
   - [ITCSS](getting-started/itcss.md)
 
 - Base principles
-  - [Space-Unit Grid](/getting-started/space-unit.md)
-  - [Modular]()
+  - [Space-Unit Grid](base-principles/space-unit-grid.md)
+  - [Modular](base-principles/modular.md)
   
 - Settings
   - [Space Units](settings/space-units.md)
@@ -35,7 +35,7 @@
   - [Shift](utility-classes/shift.md)
 
 - Functions
-  - [@Su](functions/su.md) 
+  - [Su](functions/su.md) 
    
 - External links
   - [NPM](https://www.npmjs.com/package/spaceframework)

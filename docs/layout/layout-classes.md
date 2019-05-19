@@ -15,7 +15,7 @@
 
 ---
 ## Identifier / Name
-**Class format:** `[name*]-[type*]`<br>
+**Classname format:** `[name*]-[type*]`<br>
 `*` = required
 
 Each class starts with the given `[name]` in the layout-presets. Like `[name]`. You always need to define the `[type]` as well. The `[name]` and the `[type]` together form the base of the className. 
@@ -36,7 +36,7 @@ By combining the `[name]` together with a `[type]` you can use classes such as:
 ## Types
 There are 3 different types you can use by default for `[type]` in `[name]-[type]`
 
-**Class format:** `[name*]-[type*]`<br>
+**Classname format:** `[name*]-[type*]`<br>
 `*` = required
 
 **Parameters:**
@@ -53,7 +53,7 @@ There are 3 different types you can use by default for `[type]` in `[name]-[type
 Add a `[direction]` to your classname if you want to use a specific direction for your **padding** or **margin**.
  
  
-**Class format:** `.[name*]-[type*]-[direction]`<br>
+**Classname format:** `.[name*]-[type*]-[direction]`<br>
 `*` = required
 
 **Parameters:**
@@ -73,7 +73,7 @@ Add a `[direction]` to your classname if you want to use a specific direction fo
 ## Viewport
 Add a  `[viewport]` to your class for responsive use.
 
-**Class format:** `.[viewport]-[name*]-[type*]-[direction]`<br>
+**Classname format:** `.[viewport]-[name*]-[type*]-[direction]`<br>
 `*` = required
 
 
@@ -92,7 +92,7 @@ Add a  `[viewport]` to your class for responsive use.
 
 ---
 ## Negative
-**Class format:** `.[viewport]-[name*]-[type*]-[direction]-[negative]`<br>
+**Classname format:** `.[viewport]-[name*]-[type*]-[direction]-[negative]`<br>
 `*` = required
 
 **Parameters:**

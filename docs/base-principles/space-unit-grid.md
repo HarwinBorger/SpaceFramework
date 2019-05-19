@@ -1,5 +1,3 @@
-# Trim
-
-**Classname:** `.trim`
+# Space-Unit Grid
 
 > We will add documentation soon
