@@ -1,9 +1,7 @@
 /*
- * Space Model Variables
+ * Layout Presets
+ * Documentation: https://SpaceFramework.dev/docs/#/settings/layout-presets
  *
- * @Description:
- * With space model you can use general styling for padding, margins on elements.
- * You can even give them an absolute position!
  */
 
 $space-classes: (
@@ -12,21 +10,21 @@ $space-classes: (
 	 * @example: .space-[type],  .site-[type], .content-[type]
 	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
 	 */
-	site: (//Defines global alignment related to the site
+	site: (
 		viewports:(
 			small:(2su),
 			medium:(4su),
 			large:(6su),
 		)
 	),
-	section:(//Define the alignment of different elements within a site
+	section:(
 		viewports:(
 			small:(2su),
 			medium:(3su),
 			large:(4su),
 		)
 	),
-	block:(//Define the alignment of different elements within a section
+	block:(
 		viewports:(
 			small:(2su),
 			medium:(2su),
