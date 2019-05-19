@@ -5,7 +5,7 @@
   - [ITCSS](getting-started/itcss.md)
 
 - Base principles
-  - [Space-Units](/getting-started/space-unit.md)
+  - [Space-Unit Grid](/getting-started/space-unit.md)
   - [Modular]()
   
 - Settings

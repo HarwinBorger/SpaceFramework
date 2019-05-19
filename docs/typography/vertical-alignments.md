@@ -16,21 +16,21 @@ This can be done by using classes such as
 
 ---
 ## Baseline alignment
-By applying the css class `.align-baseline` on an **element** you can align all (defined) **children** of this element on the baseline grid. This includes headings, images, tables etc.
+By applying the css class `.align-baseline` on an **container element** you can align all (defined) **children**  by its **baseline** on the **space-unit grid**. This includes headings, images, tables etc.
 
-```scss
-.align-baseline
-```
+**Classname:** `.align-baseline`
 
 ---
 ## Capline alignment
-By applying the css class `.align-capline` on an **element** you can align all (defined) **children** of this element on the capline grid. This includes headings, images, tables etc.
+By applying the css class `.align-capline` on an **container element** you can align all (defined) **children** by its **capline** on the **space-unit grid**. This includes headings, images, tables etc.
 
+**Classname:** `.align-capline`
 
 ---
 ## Median alignement
-By applying the css class `.align-median` on an **element** you can align all (defined) **children** of this element on the median grid. This includes headings, images, tables etc.
+By applying the css class `.align-median` on an **container element** you can align all (defined) **children**  by its **median** on the **space-unit grid**. You should probably apply this only on headings.
 
+**Classname:** `.align-median`
 
 ---
 ## Cross Alignment
@@ -38,4 +38,8 @@ By using the `.align-baseline` in combination with the `.shift` utility class yo
 
 ---
 ## Reset Alignment
+
+**Classname:** `.align-reset`
+
 > We will add documentation soon
+

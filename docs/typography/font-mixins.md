@@ -3,7 +3,7 @@
 
 ---
 ## @font-preset
-The use of Font-preset are required to make use of [vertical alignment classes](typography/vertical-alignments.md) such as `.align-baseline`, `.align-capline` and `.align-median`
+The use of Font-preset is required to make use of [vertical alignment classes](typography/vertical-alignments.md) such as `.align-baseline`.
 
 ```scss
 @include font-preset($value = default, $vertical-align = true);
