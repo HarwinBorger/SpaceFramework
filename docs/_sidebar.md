@@ -1,6 +1,6 @@
 - Getting started
-  - [Introduction](getting-started/introduction.md)
-  - [NPM Install](getting-started/npm.md)
+  - [Welcome](getting-started/welcome.md)
+  - [Installation](getting-started/installation.md)
   - [Integration](getting-started/integration.md)
   - [ITCSS](getting-started/itcss.md)
 
@@ -37,6 +37,6 @@
 - Functions
   - [@Su](functions/su.md) 
    
-- Extra's
+- External links
   - [NPM](https://www.npmjs.com/package/spaceframework)
   - [Github](https://github.com/HarwinBorger/SpaceFramework)
