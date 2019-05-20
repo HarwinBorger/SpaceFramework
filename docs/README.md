@@ -1,4 +1,7 @@
 # SpaceFramework
+[![npm version](https://badge.fury.io/js/spaceframework.svg)](http://badge.fury.io/js/spaceframework)
+[![Bower version](https://badge.fury.io/bo/spaceframework.svg)](http://badge.fury.io/bo/spaceframework)
+
 Vertical Grid System: Brings cross-alignment back to the web
 
 - Adding typography alignments have never been more easy, you can align on *baseline*, *capline* and the *median*. 
@@ -18,7 +21,7 @@ npm install spaceframework
 ```
 
 ## Documentation (work in progress)
-- We are currently working on providing a good documentation. However it is not complete enough yet. The current state of our documentation can be found here: https://spacerhythm.com 
+- https://docs.spaceframework.dev (last update May 2019)
 
 
 ## Credits

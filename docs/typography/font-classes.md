@@ -9,6 +9,7 @@ By default the SpaceFramework generates a set of pre-made classes for you. You c
 - [Font-size classes](#font-size-classes)
 - [Custom classes](#custom-classes)
 
+---
 ## Font-preset classes
 **Classname format:** `.font-preset-[size]`
 
@@ -24,8 +25,9 @@ In most situations it's best to use the **font-preset** class. By using the font
 
 **Mixin:** `@include font-preset-classes()`
 
-If the font-preset-classes classes are not generated, then use the mixin to output the classes.
+Use the mixin to output the classes when font-preset classes are not generated
 
+---
 ## Font-size classes
 **Classname format:** `.font-size-[size]`
 
@@ -41,8 +43,9 @@ In some situations you only want to output the **font-size** of a font-preset an
 
 **Mixin:** `@include font-size-classes()`
 
-If the font-size classes are not generated, then use the mixin to output the classes.
+Use the mixin to output the classes when font-size classes are not generated
 
+---
 ## Custom classes
 You can change the font-presets to your needs. Which we explain in the [font-preset](settings/font-presets) article.
 
