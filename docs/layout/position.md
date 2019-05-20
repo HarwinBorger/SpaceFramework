@@ -6,16 +6,23 @@
 - [@left](#left)
 ---
 ## @top
-> We will add documentation soon
+**Mixin:** `@include top($value)`
+
+- **$value** value defined in **space-units**
 
 ---
 ## @right
-> We will add documentation soon
+**Mixin:** `@include right($value)`
 
+- **$value** value defined in **space-units**
 ---
 ## @bottom
-> We will add documentation soon
+**Mixin:** `@include bottom($value)`
+
+- **$value** value defined in **space-units**
 
 ---
 ## @left
-> We will add documentation soon
+**Mixin:** `@include left($value)`
+
+- **$value** value defined in **space-units**

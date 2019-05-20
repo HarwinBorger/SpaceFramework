@@ -38,28 +38,47 @@
 
 ---
 ## @padding-top
-> We will add documentation soon
+**Mixin:** `@include padding-top($value)`
+
+- **$value** value defined in **space-units**
 
 ---
 ## @padding-right
-> We will add documentation soon
+**Mixin:** `@include padding-right($value)`
+
+- **$value** value defined in **space-units**
 
 ---
 ## @padding-bottom
-> We will add documentation soon
+**Mixin:** `@include padding-bottom($value)`
 
+- **$value** value defined in **space-units**
 ---
 ## @padding-left
-> We will add documentation soon
+**Mixin:** `@include padding-left($value)`
 
-
+- **$value** value defined in **space-units**
 
 ---
 ## @padding-vertical
-**how to use:**<br>
+**Mixin:** `@include padding-vertical($top, $bottom)`
+
+- **$top, $bottom** value defined in **space-units**
+
+**Two different ways to use:**
 ```scss
-@include padding-vertical($top, $bottom);
+@include padding-vertical($value);               // padding-top: 4px; padding-bottom: 4px;
+@include padding-vertical($top, $bottom);        // padding-top: 4px; padding-bottom: 8px;
 ```
+
 ---
 ## @padding-horizontal
-> We will add documentation soon
+**Mixin:** `@include padding-horizontal($left, $right)`
+
+- **$left, $right** value defined in **space-units**
+
+**Two Different ways to use:**
+```scss
+@include padding-horizontal($value);             // padding-left: 4px; padding-right: 4px;
+@include padding-horizontal($left, $right);      // padding-left: 4px; padding-right: 8px;
+```

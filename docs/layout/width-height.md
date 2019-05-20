@@ -6,12 +6,9 @@
 
 ---
 ## @width
+**Mixin:** `@include width($value)`
 
-```scss
-@include width($width);
-```
-
-- **$width** value defined in **space-units**
+- **$value** value defined in **space-units**
 
 ### Example 1
 <!-- tabs:start -->
@@ -28,12 +25,9 @@
 <!-- tabs:end -->
 ---
 ## @Height
+**Mixin:** `@include height($value)`
 
-```scss
-@include height($height);
-```
-
-- **height** value defined in **space-units**
+- **$value** value defined in **space-units**
 
 ### Example 1
 <!-- tabs:start -->
