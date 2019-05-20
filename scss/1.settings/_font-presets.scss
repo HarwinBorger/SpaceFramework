@@ -7,18 +7,6 @@
  *
  * Define font-preset and line-height in space-units
  */
-$fonts: (
-	default: (
-		family: $body-font-family,
-		cap-height: .73,
-		x-height: .51
-	),
-	secondary:(
-		family: $body-font-family,
-		cap-height: .78,
-		x-height: .51
-	),
-) !default;
 
 $font-presets: (
 	xlarge:(//Mostly used for H1

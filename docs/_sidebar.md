@@ -7,6 +7,8 @@
 - Base principles
   - [Space-Unit Grid](base-principles/space-unit-grid.md)
   - [Modular](base-principles/modular.md)
+  - [Responsive Typography](base-principles/responsive-typography.md)
+  - [Responsive Layout](base-principles/responsive-layout.md)
   
 - Settings
   - [Space Units](settings/space-units.md)

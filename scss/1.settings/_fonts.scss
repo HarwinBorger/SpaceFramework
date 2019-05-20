@@ -1,0 +1,16 @@
+/**
+ * Fonts settings
+ */
+
+$fonts: (
+	default: (
+		family: $body-font-family,
+		cap-height: .73,
+		x-height: .51
+	),
+	secondary:(
+		family: $body-font-family,
+		cap-height: .78,
+		x-height: .51
+	),
+) !default;
