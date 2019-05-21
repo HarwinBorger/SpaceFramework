@@ -33,13 +33,13 @@
 #### Example 1
 <!-- tabs:start -->
 
-#### ** How to use **
+**How to use**
 ```scss
 .example{
 	@include margin(1);
 }
 ``` 
-#### ** Generated CSS **
+**Generated CSS**
 [filename](_examples/margin.md ':include')
 
 <!-- tabs:end -->
