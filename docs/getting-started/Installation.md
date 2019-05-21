@@ -6,39 +6,30 @@
 - [PNPM](#PNPM) 
 - [YARN](#YARN) 
 - [Bower](#Bower) 
+- [Other](#Other-package-managers) 
 
 ---
 ## NPM
+`npm install spaceframework`
 
-``` bash
-npm install spaceframework
-```
 https://www.npmjs.com/package/spaceframework
 
 ---
 ## PNPM
-
-``` bash
-pnpm install spaceframework
-```
+`pnpm install spaceframework`
 
 ---
 ## YARN
-
-``` bash
-yarn add spaceframework
-```
+`yarn add spaceframework`
 
 https://yarnpkg.com/en/package/spaceframework
 
 ---
 ## Bower
 
-``` bash
-bower install spaceframework
-```
+`bower install spaceframework`
 
 ---
 ## Other package managers
 
-If you are missing your package manager, please let us know. 
+If you are missing your package manager, please let me know on [Github](https://github.com/HarwinBorger/SpaceFramework/).  
