@@ -1,14 +1,13 @@
 # Font Presets
-#### It can be hard to manage all different font-styles over your websites. Font-Presets help you with this. Centralizing all different font-styles at one place.
+#### It can be hard to manage all different font-styles in your website. Font-Presets help you with this. Centralizing all different font-styles at one place.
 
-Whether want to apply a font-style directly in your html code or include a font-style in your custom SCSS code. Font-presets supports it.  
+Whether want to apply a font-style directly in your html code or include a font-style in your custom SCSS code. Font-presets supports it. Also by using font-preset you can use advanced vertical alignment classes such as `.align-baseline`.  
 
-- [Font-presets]()
---- 
+---------------------------------------------------------------------------------------------------------------
 ## Adding a new font-preset
 
 Adding a new font-preset is easy. Open the `.settings/_font-presets.scss` file from your repository. 
-Don't have a font-preset file yet?  [Learn how integrated the font-preset here](getting-started/integration.md)
+Don't have a font-preset file yet?  [Learn how to integrate the font-preset here](getting-started/integration.md)
 
 You will see a code just like this:
 ```scss
@@ -19,15 +18,19 @@ $font-presets: (
 		line-height: (3su, 4su, 5su),
 		font: secondary
 	),
+	//...
 ``` 
 
 Now add your own Font-Preset using the following format:
 ```scss
+$font-presets: (
 	your-custom-name:( // Your custom font-preset
 		font-size: (1.5rem, 2.25rem, 3rem),
 		line-height: (3su, 4su, 5su),
 		font: secondary
 	),
+	xlarge:(//Mostly used for H1
+	//...
 ```
 
 `(array)` **font-size:** ($value, $value, $value, etc)
@@ -41,4 +44,10 @@ Add a line-height value for each viewport. You need to use [space-units](base-pr
 `(string)` **font:** (optional)
  
 Add a font from the list in `1.settings/fonts.scss/`. It wil use the *default* font by default 
-> We will add documentation soon
+
+
+---------------------------------------------------------------------------------------------------------------
+## Changing a font-preset
+Changing a font-preset is easy, just change the name, font-size, line-height or fonts however you want it. 
+
+> Note: when you change the name of the preset. You have to refactor the classes and mixin you already used for that font-preset. 
