@@ -30,11 +30,11 @@ Now add your own Font-Preset using the following format:
 	),
 ```
 
-`(array)` **font-size:** (small, medium, large, etc)
+`(array)` **font-size:** ($value, $value, $value, etc)
 
-Add a font-size value for each viewport configurated in 1.settings/viewports.scss` (small, medium, large).
+Add a font-size value for each viewport configurated in `1.settings/viewports.scss` (small, medium, large).
   
-`(array)` **line-height:**  (small, medium, large, etc)
+`(array)` **line-height:** ($value, $value, $value, etc)
 
 Add a line-height value for each viewport. You need to use [space-units](base-principles/space-unit-grid.md) here in order to align with the [Space-Unit grid](base-principles/space-unit-grid.md)  and to use [Vertical Alignment Classes](/typography/vertical-alignments)
 
