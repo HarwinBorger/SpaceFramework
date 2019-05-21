@@ -37,15 +37,7 @@
 		@if $side-value != false {
 			$value: $side-value; // strip units because of add-space-unit-variable
 
-			@if space-legacy() {
-				//Calculate type top
-				$breakpoint: last(map-keys($space-unit-sizes));
-				$calculated-value: convert-space-units($value, $breakpoint);
-				#{$attribute}: ($calculated-value);
-			}
-
-			@include add-space-unit-variable($value);
-			#{$attribute}: var(#{space-unit-variable($value)});
+			@include property($attribute, $value);
 		}
 	}
 }
