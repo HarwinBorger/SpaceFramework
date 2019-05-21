@@ -1,5 +1,5 @@
 # Width & Height
-#### Define the dimentions of your element in space-units to your elements
+#### Define the dimensions of your element in space-units to your elements
 
 - [@width](#width)
 - [@min-width](#width)
