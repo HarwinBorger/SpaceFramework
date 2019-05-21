@@ -24,7 +24,7 @@
   - [@Paddings](layout/padding.md)
   - [@Positions](layout/position.md)
   - [@Width & @Height](layout/width-height.md)
-  - [@Property](layout/property.md)
+  - [@Custom Properties](layout/property.md)
   
 - Typography & Content 
   - [Font Classes](typography/font-classes.md)
@@ -39,7 +39,7 @@
   - [Shift](utility-classes/shift.md)
 
 - Functions
-  - [Su](functions/su.md) 
+  - [Su()](functions/su.md) 
    
 - External links
   - [NPM](https://www.npmjs.com/package/spaceframework)

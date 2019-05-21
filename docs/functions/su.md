@@ -1,2 +1,2 @@
-# SU
-> We will add documentation soon
+# SU()
+> Not yet supported, but will be available in the future :)

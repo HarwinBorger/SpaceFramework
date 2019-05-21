@@ -1,9 +1,13 @@
 # Positions
-#### Add top, right, bottom, left position defined in space units to your elements
+#### Add the top, right, bottom and left position defined in space units to your elements
 - [@top](#top)
 - [@right](#right)
 - [@bottom](#bottom)
 - [@left](#left)
+
+
+**Requirements:** the `position` attribute has to be set to `fixed` , `absolute` or `relative`
+
 ---
 ## @top
 **Mixin:** `@include top($value)`
