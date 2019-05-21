@@ -35,7 +35,7 @@
 		}
 
 		@if $side-value != false {
-			$value: $side-value; // strip units because of add-space-unit-variable
+			$value: $side-value; // strip units because of register-su-var
 
 			@include property($attribute, $value);
 		}

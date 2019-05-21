@@ -1,13 +1,13 @@
 /**
  * Space Unit Variables
  */
-@function space-unit-variable($value) {
+@function su-var-attribute($value) {
 	$value: strip-unit($value);
 	@return #{$su}-#{str-replace(#{$value},'.','-')};
 }
 
 $space-unit-variable-list: (false);
-@mixin add-space-unit-variable($value) {
+@mixin register-su-var($value) {
 	$value: strip-unit($value);
 
 	@if $value != false and index($space-unit-variable-list, $value) == null {
@@ -17,8 +17,22 @@ $space-unit-variable-list: (false);
 		//Add breakpoint
 		@at-root (without:all){
 			:root {
-				#{space-unit-variable($value)}: calc(#{$value} * var(#{$su}));
+				#{su-var-attribute($value)}: calc(#{$value} * var(#{$su}));
 			}
 		}
 	}
+}
+
+@function su($value){
+	@if($space-legacy == true){
+		@warn('The function su() should not be used while $space-legacy support = true');
+	}
+	// Todo write this function and 2nd function to print the variables from this function. Printing variables should be done after the 7.utilities directory
+	@warn('This function is not supported yet. We are working on it');
+
+	@return false;
+}
+
+.test{
+    margin: su(5);
 }

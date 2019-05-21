@@ -11,7 +11,7 @@
 		#{$attr}: ($calculated-value);
 	}
 	
-	@include add-space-unit-variable($value);
+	@include register-su-var($value);
 	#{$attr}: var(#{space-unit-variable($value)});
 }
 
