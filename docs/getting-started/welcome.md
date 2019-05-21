@@ -5,7 +5,7 @@ The SpaceFramework is a front-end framework build in SASS which focuses on build
 
 Were most front-end frameworks focus only on the horizontal grid, the SpaceFramework works differently. Instead it has a strong focus on the **vertical grid** and the **vertical rhythms**. The horizontal grid is of course just as important. But there are plenty of those already. The vertical algorithm ensures you perfect **balanced** websites.
 
-The core of the framework lays in the use of so called **Space-Units**. With Space-Units a virtual is created on which every element in the website is aligned on. 
+The core of the framework lays in the use of the so called **Space-Units**. With Space-Units, a virtual grid is created on which every element in the website is aligned on. 
 
 ## Vision
 With the SpaceFramework I want to reach perfection in typography and layout alignments. This I want to do by closing the gap between what a front-end developer can do and what a designer wants them to do. The SpaceFramework is build with typographical rules in mind. 
