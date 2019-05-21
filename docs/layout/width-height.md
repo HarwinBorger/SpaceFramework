@@ -2,43 +2,25 @@
 #### Define the dimentions of your element in space-units to your elements
 
 - [@width](#width)
+- [@min-width](#width)
+- [@max-width](#width)
 - [@height](#height)
+- [@min-height](#height)
+- [@max-height](#height)
 
 ---
 ## @width
-**Mixin:** `@include width($value)`
+**Mixin:** `@include width($value)`<br>
+**Mixin:** `@include min-width($value)`<br>
+**Mixin:** `@include max-width($value)`<br>
 
 - **$value** value defined in **space-units**
 
-### Example 1
-<!-- tabs:start -->
-
-#### ** How to use **
-```scss
-.example {
-	@include with(1);
-}
-``` 
-#### ** Generated CSS **
-[filename](_examples/width.md ':include')
-
-<!-- tabs:end -->
 ---
 ## @Height
-**Mixin:** `@include height($value)`
+**Mixin:** `@include height($value)` <br>
+**Mixin:** `@include min-height($value)`<br>
+**Mixin:** `@include max-height($value)`<br>
 
 - **$value** value defined in **space-units**
 
-### Example 1
-<!-- tabs:start -->
-
-#### ** How to use **
-```scss
-.example {
-	@include height(1);
-}
-``` 
-#### ** Generated CSS **
-[filename](_examples/height.md ':include')
-
-<!-- tabs:end -->

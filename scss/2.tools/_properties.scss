@@ -3,7 +3,7 @@
  * @param $value (in space-units)
  * @param $type (width || height)
  */
-@mixin space-property($type, $value) {
+@mixin property($type, $value) {
 	@if space-legacy() {
 		//Calculate type top
 		$breakpoint: last(map-keys($space-unit-sizes));
@@ -15,35 +15,42 @@
 	#{$type}: var(#{space-unit-variable($value)});
 }
 
+// Deprecated as of 0.18
+@mixin space-property($type, $value){
+	@warn('[DEPRECATED] - "space-property()" is deprecated since SpaceFramework [0.18]. Please use "property()" instead');
+	@include property($type, $value);
+}
+
 /**
  * Vanilla CSS mixins
  */
 @mixin width($value) {
 	$type: width;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
 
 @mixin min-width($value){
 	$type: min-width;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
 
 @mixin max-width($value){
 	$type: max-width;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
 
 @mixin height($value) {
 	$type: height;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
 
 @mixin min-height($value) {
 	$type: min-height;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
 
 @mixin max-height($value) {
 	$type: max-height;
-	@include space-property($type, $value)
+	@include property($type, $value)
 }
+

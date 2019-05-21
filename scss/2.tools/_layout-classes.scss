@@ -231,15 +231,16 @@ $space-position-register: (
 }
 
 /*
- * @return classes for using general styling
+ * @return Layout Classes
  */
-@mixin space-classes() {
+@mixin layout-classes() {
 	@include space-loop-objects();
 }
 
-/***
- *** !!! DEPRECATED / LEGACY FUNCTIONS
- ***/
+
+/************************************************
+ * DEPRECATED FUNCTIONS
+ */
 
 /*
  * @return classes for using general styling
@@ -247,8 +248,8 @@ $space-position-register: (
  * Deprecated as of 0.2.5
  */
 @mixin space-init() {
-	@warn('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "space-classes()" instead');
-	@include space-classes();
+	@warn('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "layout-classes()" instead');
+	@include layout-classes();
 }
 
 /*
@@ -257,7 +258,16 @@ $space-position-register: (
  * Deprecated as of 0.5
  */
 @mixin space-model-classes() {
-	@warn('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "space-classes()" instead');
-	@include space-classes();
+	@warn('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "layout-classes()" instead');
+	@include layout-classes();
 }
 
+/*
+ * @return classes for using general styling
+ *
+ * Deprecated as of 0.18
+ */
+@mixin space-classes() {
+	@warn('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [0.18]. Please use "layout-classes()" instead');
+	@include layout-classes();
+}
