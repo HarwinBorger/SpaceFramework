@@ -1,8 +1,6 @@
 # Support & Legacy Browsers
 
-## Support
-
-### Typography support
+## Typography support
 Using automatic generation of typographic classes takes much space, you can turn off typography alignment if you don't intend to use it.
 
 ```scss

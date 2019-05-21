@@ -11,6 +11,7 @@
   - [! Responsive Layout](base-principles/responsive-layout.md)
   
 - Settings
+  - [Viewports](settings/viewports.md)
   - [Space Units](settings/space-units.md)
   - [Layout Presets](settings/layout-presets.md)
   - [Fonts](settings/fonts.md)

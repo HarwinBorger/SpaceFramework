@@ -7,11 +7,11 @@ If you are familiar using ITCSS, then it is very easy to integrate the SpaceFram
 If you are not using ITCSS, then you might consider the **ITCSS architecture**. In this article we explain how ITCSS works and how it helps you organize your CSS code.
 
 ## What is ITCSS?
-ITCSS is basically nothing more then an idealogic folder structure to organize your **SCSS**, **LESS** or **CSS** code. If you already using naming conventions such as **OOCSS** and **BEM**, then ITCSS puts them at their right full place in de folder hierarchy. 
+ITCSS is basically nothing more then an idealogic folder structure to organize your **SCSS**, **LESS** or **CSS** code. It is simular to SMACSS but way more envolved. If you already using naming conventions such as **OOCSS** and **BEM**, then you gonna love our ITCSS structure. 
 
-The thought behind its folder structure is however way bigger then just a folder structure. It focuses on maintaining clear code which is easily expandable. 
+The thought behind its folder structure is however way bigger then just a folder structure. It focuses on maintaining clear code which is easily expandable and writing as less code as possible. 
 
-It knows the following main folders:
+ITCSS knows the following main folders:
 
 1. [Settings](#_1-settings)
 2. Tools

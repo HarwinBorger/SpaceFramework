@@ -107,11 +107,11 @@ $short-variable: (
 
 	// Print font-family
 
-	@each $breakpoint in $space-breakpoints {
-		$index: index($space-breakpoints, $breakpoint);
+	@each $viewport in $viewport-classes {
+		$index: index($viewport-classes, $viewport);
 
-		//@each $breakpoint, $set-font-preset-list in map-get($set-font-presets, $set-font-preset-value) {
-		@include breakpoint($breakpoint) {
+		//@each $viewport, $set-font-preset-list in map-get($set-font-presets, $set-font-preset-value) {
+		@include breakpoint($viewport) {
 			// Set font-size for current breakpoint or fallback on font-size of previous breakpoint
 			@if ($index <= length($font-size-list)) {
 				$font-size: nth($font-size-list, $index);
@@ -126,7 +126,7 @@ $short-variable: (
 			$font-size-value: $font-size;
 
 			// Calculate line-height
-			$line-height-value: convert-space-units($line-height, $breakpoint);
+			$line-height-value: convert-space-units($line-height, $viewport);
 
 			// Calculate baseline and capline
 			$capheight-correction-value: calcCapheight($font-size-value, $line-height-value, $font-cap-height);

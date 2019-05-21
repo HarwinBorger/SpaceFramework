@@ -16,6 +16,7 @@ I don't want to give you pre-made components, since this only limits the designe
 * Horizontal alignment classes (v1.1)
 * Horizontal grid system
 * Horizontal column system
+* Replace Grunt with Gulp / Webpack
 
 ## Documentation Roadmap
 In this first version of the documentation we only explained how you can configurate the SpaceFramework.
