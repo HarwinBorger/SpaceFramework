@@ -6,11 +6,11 @@ Whether want to apply a font-style directly in your html code or include a font-
 ---------------------------------------------------------------------------------------------------------------
 ## Adding a new font-preset
 
-Adding a new font-preset is easy. Open the `.settings/_font-presets.scss` file from your repository. 
+Adding a new font-preset is easy. Open the `1.settings/_font-presets.scss` file from your repository. 
 Don't have a font-preset file yet?  [Learn how to integrate the font-preset here](getting-started/integration.md)
 
 You will see a code just like this:
-```scss
+```scss{2}
 $font-presets: (
 	// -> add your new font-preset here
 	xlarge:(//Mostly used for H1
@@ -22,7 +22,7 @@ $font-presets: (
 ``` 
 
 Now add your own Font-Preset using the following format:
-```scss
+```scss{2-6}
 $font-presets: (
 	your-custom-name:( // Your custom font-preset
 		font-size: (1.5rem, 2.25rem, 3rem),

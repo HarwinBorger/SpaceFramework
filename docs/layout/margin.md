@@ -1,20 +1,6 @@
 # Margins
 #### Add margins defined in space units to your elements
 
-- [@margin](#margin) 
-
-
-- [@margin-top](#margin-top)
-- [@margin-right](#margin-right)
-- [@margin-bottom](#margin-bottom)
-- [@margin-left](#margin-left)
-
-
-- [@margin-vertical](#margin-vertical)
-- [@margin-horizontal](#margin-horizontal)
-
-
----
 ## @margin
 
 **Mixin:** `@include margin($top, $right, $bottom, $left);`
@@ -31,7 +17,6 @@
 ```
 
 #### Example 1
-<!-- tabs:start -->
 
 **How to use**
 ```scss
@@ -39,10 +24,13 @@
 	@include margin(1);
 }
 ``` 
-**Generated CSS**
-[filename](_examples/margin.md ':include')
 
-<!-- tabs:end -->
+<Layout-Margin-Margin/>
+
+
+**Generated CSS**
+
+<<< @/docs/layout/_examples/margin.css
 
 
 ---
