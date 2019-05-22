@@ -25,14 +25,15 @@ $space-unit-variable-list: (false);
 
 @function su($value){
 	@if($space-legacy == true){
-		@warn('The function su() should not be used while $space-legacy support = true');
+		@warn('The function su() should not be used while $space-legacy = true');
 	}
-	// Todo write this function and 2nd function to print the variables from this function. Printing variables should be done after the 7.utilities directory
-	@warn('This function is not supported yet. We are working on it');
 
-	@return false;
+	@return calc(#{$value} * var(#{$su}));
 }
 
-.test{
-    margin: su(5);
+@function su-fallback($value){
+	$breakpoint: last(map-keys($space-unit-sizes));
+	$calculated-value: convert-space-units($value, $breakpoint);
+
+	@return($calculated-value);
 }

@@ -5,14 +5,10 @@
  */
 @mixin property($attr, $value) {
 	@if space-legacy() {
-		//Calculate type top
-		$breakpoint: last(map-keys($space-unit-sizes));
-		$calculated-value: convert-space-units($value, $breakpoint);
-		#{$attr}: ($calculated-value);
+		#{$attr}: su-fallback($value);
 	}
-	
-	@include register-su-var($value);
-	#{$attr}: var(#{space-unit-variable($value)});
+
+	#{$attr}: su($value);
 }
 
 // Deprecated as of 0.18
