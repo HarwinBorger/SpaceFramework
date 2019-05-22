@@ -63,13 +63,13 @@ let sidebar =  [
 			['functions/su.md','Su()'],
 		]
 	},
-	{
-		title: 'External Links',
-		children:[
-			['https://www.npmjs.com/package/spaceframework','NPM'],
-			['https://github.com/HarwinBorger/SpaceFramework','Github'],
-		]
-	},
+//	{
+//		title: 'External Links',
+//		children:[
+//			['https://www.npmjs.com/package/spaceframework','NPM'],
+//			['https://github.com/HarwinBorger/SpaceFramework','Github'],
+//		]
+//	},
 ];
 
 let navbar = [
