@@ -6,7 +6,7 @@
 	@include space-unit-variables();
 
 	.margin {
-		margin-top: su(3);
+		@include margin-top(3);
 		line-height: su(3);
 	}
 </style>
