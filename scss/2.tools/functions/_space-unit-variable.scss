@@ -25,7 +25,7 @@ $space-unit-variable-list: (false);
 
 @function su($value){
 	@if($space-legacy == true){
-		@warn('The function su() should not be used while $space-legacy = true');
+		//@warn('The function su() should not be used while $space-legacy = true');
 	}
 
 	@return calc(#{$value} * var(#{$su}));

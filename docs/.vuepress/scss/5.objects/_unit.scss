@@ -1,0 +1,46 @@
+.unit {
+	&-margin {
+		display: inline-block;
+		@include width(1);
+		@include height(1);
+		@include margin-right(.5);
+		@include margin-left(1);
+		background-color: rgba(orange, .5);
+		border: 1px solid rgba(orange, .8);
+		box-sizing: border-box;
+		vertical-align: middle;
+	}
+
+	&-padding {
+		display: inline-block;
+		@include width(1);
+		@include height(1);
+		@include margin-right(.5);
+		@include margin-left(1);
+
+		background-color: rgba(purple, .5);
+		border: 1px solid rgba(purple, .8);
+		box-sizing: border-box;
+		vertical-align: middle;
+	}
+
+	&-element{
+		display: inline-block;
+		@include width(1);
+		@include height(1);
+		@include margin-right(.5);
+		@include margin-left(1);
+
+		border: 1px solid #5865BC;
+		box-sizing: border-box;
+		vertical-align: middle;
+
+		background: repeating-linear-gradient(
+				45deg,
+				#606dbc,
+				#606dbc 10px,
+				#5865BC 10px,
+				#5865BC 20px
+		);
+	}
+}

@@ -1,0 +1,38 @@
+.example {
+	@include padding(2);
+	border: 1px solid #eee;
+
+	overflow: hidden;
+
+	&-overflow {
+		overflow: hidden;
+	}
+
+	&-element {
+		background: #fff;
+		font-style: italic;
+		font-size: 14px;
+		color: #fff;
+		font-weight: bold;
+
+		background: repeating-linear-gradient(
+				45deg,
+				#606dbc,
+				#606dbc su(0.707),
+				#5865BC su(0.707),
+				#5865BC su(1.414)
+		);
+	}
+
+	&-container {
+		@include margin-vertical(2);
+		background: #eee;
+		border-radius: 5px;
+
+		&__legend {
+			@include padding-horizontal(1);
+			@include line-height(2);
+			font-size: 12px;
+		}
+	}
+}

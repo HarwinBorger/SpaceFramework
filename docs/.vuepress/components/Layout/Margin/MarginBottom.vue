@@ -2,7 +2,7 @@
 	<div class="example-container">
 		<div class="example bg-units-light">
 			<div class="example-overflow bg-margin">
-				<div class="example-element example-margin">1 space-unit margin on each side and 5 space-units on top</div>
+				<div class="example-element example-margin-bottom">1 space-unit margin on bottom</div>
 			</div>
 		</div>
 		<Legend></Legend>
@@ -21,8 +21,8 @@
 <style lang="scss">
 	@import "../../../scss/init";
 
-	.example-margin {
-		@include margin(5,1,1,1);
+	.example-margin-bottom {
+		@include margin-bottom(1);
 		@include padding(1);
 		line-height: su(2);
 	}

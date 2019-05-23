@@ -1,5 +1,6 @@
 # Margins
-#### Add margins defined in space units to your elements
+Add margins defined in space units to your elements
+[[toc]]
 
 ## @margin
 
@@ -16,73 +17,75 @@
 @include margin($top, $right, $bottom, $left);  // margin: 4px 8px 12px 16px;
 ```
 
-#### Example 1
+#### Example
+<Layout-Margin-Margin/>
 
-**How to use**
-```scss
-.example{
-	@include margin(1);
+```scss {2}
+.example-element {
+	@include margin(5,1,1,1);
 }
 ``` 
 
-<Layout-Margin-Margin/>
 
 
-**Generated CSS**
-
-<<< @/docs/layout/_examples/margin.css
-
-
----
 ## @margin-top
-**Mixin:** `@include margin-top($value)`
+- **Mixin:** `@include margin-top($space-units)`
 
-- **$value** value defined in **space-units**
+**Example:**
+<Layout-Margin-MarginTop/>
 
-**One way to use:**
-```scss
-@include margin-top($value);   // margin-top: 4px; 
-```
-> We will add documentation soon
+```scss {2}
+.example-element {
+	@include margin-top(1);
+}
+``` 
 
----
+
 ## @margin-right
-**Mixin:** `@include margin-right($value)`
+- **Mixin:** `@include margin-right($space-units)`
 
-- **$value** value defined in **space-units**
+**Example:**
 
-**One way to use:**
-```scss
-@include margin-right($value);   // margin-right: 4px; 
-```
-> We will add documentation soon
+<Layout-Margin-MarginRight/>
 
----
+```scss {2}
+.example-element {
+	@include margin-right(1);
+}
+``` 
+
+
+
 ## @margin-bottom
-**Mixin:** `@include margin-bottom($value)`
+- **Mixin:** `@include margin-bottom($space-units)`
 
-- **$value** value defined in **space-units**
 
-**One way to use:**
-```scss
-@include margin-bottom($value);   // margin-bottom: 4px; 
-```
-> We will add documentation soon
+**Example:**
 
----
+<Layout-Margin-MarginBottom/>
+
+```scss {2}
+.example-element {
+	@include margin-bottom(1);
+}
+``` 
+
+
+
 ## @margin-left
-**Mixin:** `@include margin-left($value)`
+- **Mixin:** `@include margin-left($space-units)`
 
-- **$value** value defined in **space-units**
+**Example:**
 
-**One way to use:**
-```scss
-@include margin-left($value);   // margin-left: 4px; 
-```
-> We will add documentation soon
+<Layout-Margin-MarginLeft/>
+
+```scss {2}
+.example-element {
+	@include margin-left(1);
+}
+``` 
 
 
----
 ## @margin-vertical
 **Mixin:** `@include margin-vertical($top, $bottom)`
 
@@ -93,9 +96,11 @@
 @include margin-vertical($value);               // margin-top: 4px; margin-bottom: 4px;
 @include margin-vertical($top, $bottom);        // margin-top: 4px; margin-bottom: 8px;
 ```
-> We will add examples soon
+::: warning
+Examples will be added soon
+:::
 
----
+
 ## @margin-horizontal
 **Mixin:** `@include margin-horizontal($left, $right)`
 
@@ -107,4 +112,6 @@
 @include margin-horizontal($left, $right);      // margin-left: 4px; margin-right: 8px;
 ```
 
-> We will add examples soon
+::: warning
+Examples will be added soon
+:::
