@@ -1,7 +1,7 @@
 <template>
 	<Example>
-		<div class="example-overflow bg-position example-left">
-			<div class="example-element">1 space-unit position on left</div>
+		<div class="bg-position position-relative example-left-height">
+			<div class="example-element example-left position-absolute">{{ content }}</div>
 		</div>
 	</Example>
 </template>
@@ -9,7 +9,8 @@
 	import Example from '../../Example'
 
 	export default {
-		name: 'PositionLeft',
+		name: 'Left',
+		props: ['content'],
 		components: {
 			Example
 		}
@@ -19,7 +20,14 @@
 	@import "../../../scss/init";
 
 	.example-left {
-		@include left(1);
-		line-height: su(3);
+		@include left(3);
+		@include padding(1,1,1,1);
+		line-height: su(2);
+		width: auto;
+		right: 0;
+	}
+
+	.example-left-height{
+		@include height(4);
 	}
 </style>

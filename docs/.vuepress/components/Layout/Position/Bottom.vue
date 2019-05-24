@@ -1,7 +1,7 @@
 <template>
 	<Example>
-		<div class="example-overflow bg-position example-bottom">
-			<div class="example-element">1 space-unit position on bottom</div>
+		<div class="bg-position position-relative example-bottom-height">
+			<div class="example-element example-bottom position-absolute">{{ content }}</div>
 		</div>
 	</Example>
 </template>
@@ -10,6 +10,7 @@
 
 	export default {
 		name: 'Bottom',
+		props: ['content'],
 		components: {
 			Example
 		}
@@ -19,7 +20,14 @@
 	@import "../../../scss/init";
 
 	.example-bottom {
-		@include bottom(1);
-		line-height: su(3);
+		@include bottom(3);
+		@include padding(1,1,1,1);
+		line-height: su(2);
+		left: 0;
+		right: 0;
+	}
+
+	.example-bottom-height{
+		@include height(7);
 	}
 </style>

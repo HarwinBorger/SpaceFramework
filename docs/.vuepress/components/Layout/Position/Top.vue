@@ -1,7 +1,7 @@
 <template>
 	<Example>
 		<div class="bg-position position-relative example-top-height">
-			<div class="example-element example-top position-relative">{{ content }}</div>
+			<div class="example-element example-top position-absolute">{{ content }}</div>
 		</div>
 	</Example>
 </template>
@@ -21,8 +21,10 @@
 
 	.example-top {
 		@include top(3);
-		@include padding(1,1,1,2);
+		@include padding(1,1,1,1);
 		line-height: su(2);
+		left: 0;
+		right: 0;
 	}
 
 	.example-top-height{
