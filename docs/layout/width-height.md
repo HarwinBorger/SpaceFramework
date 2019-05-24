@@ -1,21 +1,16 @@
 # Width & Height
 #### Define the dimensions of your element in space-units to your elements
 
-- [@width](#width)
-- [@min-width](#width)
-- [@max-width](#width)
-- [@height](#height)
-- [@min-height](#height)
-- [@max-height](#height)
+[[toc]]
 
----
+
 ## @Width
-**Mixin:** `@include width($value)`<br>
-**Mixin:** `@include min-width($value)`<br>
-**Mixin:** `@include max-width($value)`<br>
+- **Mixin:** `@include width($space-units)`
 
-- **$value** value defined in **space-units**
 
+### Width variants
+- **Min-width:** `@include min-width($space-units)`
+- **Max-width:** `@include max-width($space-units)`
 
 ### Example
 <Layout-Dimensions-Width content="10 space-units width"/>
@@ -35,11 +30,28 @@
 ``` 
 
 
----
+
 ## @Height
-**Mixin:** `@include height($value)` <br>
-**Mixin:** `@include min-height($value)`<br>
-**Mixin:** `@include max-height($value)`<br>
+- **Mixin:** `@include height($space-units)` <br>
+- **Mixin:** `@include min-height($space-units)`<br>
+- **Mixin:** `@include max-height($space-units)`<br>
 
 - **$value** value defined in **space-units**
 
+
+### Example
+<Layout-Dimensions-Height content="5 space-units height"/>
+
+```scss {2,6,10}
+.example-element-1 {
+	@include height(5);
+}
+
+.example-element-2 {
+	@include height(10);
+}
+
+.example-element-3 {
+	@include height(15);
+}
+``` 
