@@ -1,39 +1,29 @@
 .unit {
+	display: inline-block;
+	@include width(1);
+	@include height(1);
+	@include margin-right(.5);
+	@include margin-left(1);
+	box-sizing: border-box;
+	vertical-align: middle;
+
 	&-margin {
-		display: inline-block;
-		@include width(1);
-		@include height(1);
-		@include margin-right(.5);
-		@include margin-left(1);
 		background-color: rgba(orange, .5);
 		border: 1px solid rgba(orange, .8);
-		box-sizing: border-box;
-		vertical-align: middle;
 	}
 
 	&-padding {
-		display: inline-block;
-		@include width(1);
-		@include height(1);
-		@include margin-right(.5);
-		@include margin-left(1);
-
 		background-color: rgba(purple, .5);
 		border: 1px solid rgba(purple, .8);
-		box-sizing: border-box;
-		vertical-align: middle;
+	}
+
+	&-position {
+		background-color: rgba(green, .5);
+		border: 1px solid rgba(green, .8);
 	}
 
 	&-element{
-		display: inline-block;
-		@include width(1);
-		@include height(1);
-		@include margin-right(.5);
-		@include margin-left(1);
-
 		border: 1px solid #5865BC;
-		box-sizing: border-box;
-		vertical-align: middle;
 
 		background: repeating-linear-gradient(
 				45deg,

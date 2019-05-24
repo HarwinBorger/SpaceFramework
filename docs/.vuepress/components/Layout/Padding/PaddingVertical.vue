@@ -9,7 +9,7 @@
 	import Example from '../../Example'
 
 	export default {
-		name: 'Padding',
+		name: 'PaddingVertical',
 		props: ['content'],
 		components: {
 			Example

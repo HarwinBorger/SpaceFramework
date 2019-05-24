@@ -9,7 +9,7 @@
 	import Example from '../../Example'
 
 	export default {
-		name: 'Margin',
+		name: 'MarginVertical',
 		props: ['content'],
 		components: {
 			Example
