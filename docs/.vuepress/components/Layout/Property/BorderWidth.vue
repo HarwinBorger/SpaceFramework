@@ -1,7 +1,7 @@
 <template>
-	<Example special raster>
+	<Example special element>
 		<div class="example-overflow">
-				<div class="example-cleanelement example-text-indent">
+				<div class="example-element example-border-width">
 					{{ content }}
 				</div>
 		</div>
@@ -21,19 +21,12 @@
 <style lang="scss">
 	@import "../../../scss/init";
 
-	.example-text-indent {
-		@include space-property(text-indent, 3);
+	.example-border-width {
+		@include space-property(border-width, 1);
+		border-color: rgba(red, 0.5);
+		border-style: solid;
 		box-sizing: border-box;
 		line-height: su(2);
 		position: relative;;
-
-		&::before {
-			position: absolute;
-			@include width(3);
-			@include height(2);
-			@include left(0);
-			content: '';
-			background: rgba(red, 0.5);
-		}
 	}
 </style>

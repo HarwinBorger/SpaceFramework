@@ -13,3 +13,21 @@ You can use almost any property you want to support Space-Units. For example `te
 	@include property('text-indent', 3);
 }
 ```
+
+### Example border-width
+<Layout-Property-BorderWidth content="1 space-units border-width"/>
+
+```scss
+.example-element {
+	@include property('border-width', 1);
+}
+```
+
+### Example letter-spacing
+<Layout-Property-LetterSpacing content="1 space-unit letter-spacing"/>
+
+```scss
+.example-element {
+	@include property('letter-spacing', 1);
+}
+```

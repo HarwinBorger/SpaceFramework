@@ -2,6 +2,7 @@
 	<div class="example-container">
 		<div class="example bg-units">
 			<div v-if="raster" class="bg-units-large bg-overlay"></div>
+			<div v-if="vertical" class="bg-units-vertical bg-overlay"></div>
 			<slot></slot>
 		</div>
 		<div class="example-container__legend">
@@ -24,6 +25,7 @@
 			special: Boolean,
 			element: Boolean,
 			raster: Boolean,
+			vertical: Boolean,
 		}
 	}
 </script>
