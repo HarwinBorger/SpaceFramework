@@ -3,7 +3,7 @@
 
 Whether want to apply a font-style directly in your html code or include a font-style in your custom SCSS code. Font-presets supports it. Also by using font-preset you can use advanced vertical alignment classes such as `.align-baseline`.  
 
----------------------------------------------------------------------------------------------------------------
+
 ## Adding a new font-preset
 
 Adding a new font-preset is easy. Open the `1.settings/_font-presets.scss` file from your repository. 
@@ -46,7 +46,7 @@ Add a line-height value for each viewport. You need to use [space-units](base-pr
 Add a font from the list in `1.settings/fonts.scss/`. It wil use the *default* font by default 
 
 
----------------------------------------------------------------------------------------------------------------
+
 ## Changing a font-preset
 Changing a font-preset is easy, just change the name, font-size, line-height or fonts however you want it. 
 

@@ -26,6 +26,8 @@ You can use almost any property you want to support Space-Units. For example `te
 ```
 
 ### Example letter-spacing
+Each letter has its own width, because of that the letter themself won't align on the grid. The space between the letters is however exactly 1 space unit.
+
 <Layout-Property-LetterSpacing content="1 space-unit letter-spacing"/>
 
 ```scss

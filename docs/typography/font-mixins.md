@@ -1,7 +1,7 @@
 # Font Mixins
 #### Use font-preset and font-size mixin to define your typography. Which is usually done in the as high as possible. 
 
----
+
 ## @font-preset
 The use of Font-preset is required to make use of [vertical alignment classes](typography/vertical-alignments.md) such as `.align-baseline`.
 
@@ -40,7 +40,7 @@ h2 {
 
 
 
----
+
 ## @font-size
 > We will add documentation soon
 
