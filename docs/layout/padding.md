@@ -1,84 +1,122 @@
 # Paddings
-#### Add paddings defined in space units to your elements
+Add paddings defined in space units to your elements
+[[toc]]
 
-- [@padding](#padding)
-
-
-- [@padding-top](#padding-top)
-- [@padding-right](#padding-right)
-- [@padding-bottom](#padding-bottom)
-- [@padding-left](#padding-left)
-
-
-- [@padding-vertical](#padding-vertical)
-- [@padding-horizontal](#padding-horizontal)
-
-
----
 ## @padding
 
-```scss
-@include padding($top, $right, $bottom, $left);
-```
+**Mixin:** `@include padding($top, $right, $bottom, $left);`
 
-- **$top, $right, $bottom, $left** value in '**space-units**'
-- If you only fill in the **top** value the other values will take over this value. Similar to vanille CSS
+- **$top, $right, $bottom, $left** value defined in **space-units**
+- If you only fill in the **$top** value the other values (**$right, $bottom, $left**) will take over this value. Similar to vanille CSS
 
-### Example 1
-<!-- tabs:start -->
+### Multiple input methods
+- `@include padding($space-units);`
+- `@include padding($vertical, $horizontal);`
+- `@include padding($top, $horizontal, $bottom);`
+- `@include padding($top, $right, $bottom, $left);`
 
-#### ** How to use **
-```scss
-@include padding(1);
+### Example
+<Layout-Padding-Padding content="1 space-unit padding top and bottom, 2 space units left and right"/>
+
+```scss {2,4}
+.example-element {
+	@include padding(1,2,1,2);
+	//or shorthand
+	@include padding(1,2);
+}
 ``` 
-#### ** Generated CSS **
-[filename](_examples/padding.md ':include')
 
-<!-- tabs:end -->
 
----
+
 ## @padding-top
-**Mixin:** `@include padding-top($value)`
+- **Mixin:** `@include padding-top($space-units)`
 
-- **$value** value defined in **space-units**
+### Example
+<Layout-Padding-PaddingTop/>
 
----
+```scss {2}
+.example-element {
+	@include padding-top(1);
+}
+``` 
+
+
 ## @padding-right
-**Mixin:** `@include padding-right($value)`
+- **Mixin:** `@include padding-right($space-units)`
 
-- **$value** value defined in **space-units**
+### Example
 
----
+<Layout-Padding-PaddingRight/>
+
+```scss {2}
+.example-element {
+	@include padding-right(1);
+}
+``` 
+
+
+
 ## @padding-bottom
-**Mixin:** `@include padding-bottom($value)`
+- **Mixin:** `@include padding-bottom($space-units)`
 
-- **$value** value defined in **space-units**
----
+
+### Example
+
+<Layout-Padding-PaddingBottom/>
+
+```scss {2}
+.example-element {
+	@include padding-bottom(1);
+}
+``` 
+
+
+
 ## @padding-left
-**Mixin:** `@include padding-left($value)`
+- **Mixin:** `@include padding-left($space-units)`
 
-- **$value** value defined in **space-units**
+### Example
 
----
+<Layout-Padding-PaddingLeft/>
+
+```scss {2}
+.example-element {
+	@include padding-left(1);
+}
+``` 
+
+
 ## @padding-vertical
-**Mixin:** `@include padding-vertical($top, $bottom)`
+- **Mixin:** `@include padding-vertical($top, $bottom)`
 
-- **$top, $bottom** value defined in **space-units**
+### Multiple input methods
+- `@include padding-vertical($space-units);`
+- `@include padding-vertical($top, $bottom);`
 
-**Two different ways to use:**
-```scss
-@include padding-vertical($value);               // padding-top: 4px; padding-bottom: 4px;
-@include padding-vertical($top, $bottom);        // padding-top: 4px; padding-bottom: 8px;
-```
+### Example
 
----
+<Layout-Padding-PaddingVertical content="2 space-unit padding on top and bottom"/>
+
+```scss {2}
+.example-element {
+	@include padding-vertical(2);
+}
+``` 
+
+
 ## @padding-horizontal
-**Mixin:** `@include padding-horizontal($left, $right)`
+- **Mixin:** `@include padding-horizontal($left, $right)`
 
-- **$left, $right** value defined in **space-units**
+### Multiple input methods
+- `@include padding-horizontal($space-units);`
+- `@include padding-horizontal($left, $right);`
 
-**Two Different ways to use:**
-```scss
-@include padding-horizontal($value);             // padding-left: 4px; padding-right: 4px;
-@include padding-horizontal($left, $right);      // padding-left: 4px; padding-right: 8px;
-```
+### Example
+
+<Layout-Padding-PaddingHorizontal content="2 space-unit padding on left and right"/>
+
+```scss {2}
+.example-element {1
+	@include padding-horizontal(2);
+}
+``` 

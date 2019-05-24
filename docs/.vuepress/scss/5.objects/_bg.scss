@@ -25,35 +25,14 @@
 		background-color: white;
 	}
 
-	&-blue {
-		background-color: #269;
-	}
-
-	&-header {
-		background-color: white;
-	}
-
 	&-padding {
-		background-color: rgba(purple, .8);
-
-		> * {
-			background-color: white;
-			background-clip: content-box;
-		}
+		background-color: rgba(purple, .5);
 	}
 
 	&-margin {
 		background-color: rgba(orange, .5);
-
-		> * {
-			background-color: white;
-			background-clip: content-box;
-		}
 	}
 
-	&-margin-dark {
-		background-color: rgba(darkorange, .5);
-	}
 
 	&-position {
 		background-color: rgba(green, .5);
