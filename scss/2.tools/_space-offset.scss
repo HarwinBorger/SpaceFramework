@@ -28,16 +28,23 @@
 		'left': $left
 	);
 
-	@each $side, $side-value in $space-side-map {
-		$attribute: $side;
-		@if (space-prefix-type($type)) {
-			$attribute: #{$type}-#{$side};
-		}
+	// If all sides have equal values. Use CSS shorthand. For example: margin: $value;
+	@if ($top == $right and $right == $bottom and $bottom == $left) {
+		$value: $top;
+		$attribute: $type;
+		@include property($attribute, $value);
+	} @else { // If not all sides have equal values use separate classes. For example: margin-top: $value;
+		@each $side, $side-value in $space-side-map {
+			$attribute: $side;
+			@if (space-prefix-type($type)) {
+				$attribute: #{$type}-#{$side};
+			}
 
-		@if $side-value != false {
-			$value: $side-value; // strip units because of register-su-var
+			@if $side-value != false {
+				$value: $side-value; // strip units because of register-su-var
 
-			@include property($attribute, $value);
+				@include property($attribute, $value);
+			}
 		}
 	}
 }
