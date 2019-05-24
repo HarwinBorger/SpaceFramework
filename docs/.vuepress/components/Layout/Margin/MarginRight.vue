@@ -1,20 +1,17 @@
 <template>
-	<div class="example-container">
-		<div class="example bg-units-light">
-			<div class="example-overflow bg-margin">
-				<div class="example-element example-margin-right">1 space-unit margin on right</div>
-			</div>
+	<Example>
+		<div class="example-overflow bg-margin">
+			<div class="example-element example-margin-right">1 space-unit margin on right</div>
 		</div>
-		<Legend></Legend>
-	</div>
+	</Example>
 </template>
 <script>
-	import Legend from '../../Legend'
+	import Example from '../../Example'
 
 	export default {
 		name: 'Margin',
 		components: {
-			Legend
+			Example
 		}
 	}
 </script>

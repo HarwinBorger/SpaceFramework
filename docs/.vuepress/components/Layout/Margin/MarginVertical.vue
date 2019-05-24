@@ -1,7 +1,7 @@
 <template>
 	<Example>
 		<div class="example-overflow bg-margin">
-			<div class="example-element example-margin-top">1 space-unit margin on top</div>
+			<div class="example-element example-margin-vertical">{{ content }}</div>
 		</div>
 	</Example>
 </template>
@@ -10,6 +10,7 @@
 
 	export default {
 		name: 'Margin',
+		props: ['content'],
 		components: {
 			Example
 		}
@@ -18,8 +19,8 @@
 <style lang="scss">
 	@import "../../../scss/init";
 
-	.example-margin-top {
-		@include margin-top(1);
+	.example-margin-vertical {
+		@include margin-vertical(2);
 		@include padding(1);
 		line-height: su(2);
 	}

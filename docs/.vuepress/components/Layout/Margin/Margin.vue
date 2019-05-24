@@ -1,20 +1,18 @@
 <template>
-	<div class="example-container">
-		<div class="example bg-units-light">
-			<div class="example-overflow bg-margin">
-				<div class="example-element example-margin">1 space-unit margin on each side and 5 space-units on top</div>
-			</div>
+	<Example>
+		<div class="example-overflow bg-margin">
+			<div class="example-element example-margin">{{ content }}</div>
 		</div>
-		<Legend></Legend>
-	</div>
+	</Example>
 </template>
 <script>
-	import Legend from '../../Legend'
+	import Example from '../../Example'
 
 	export default {
 		name: 'Margin',
+		props: ['content'],
 		components: {
-			Legend
+			Example
 		}
 	}
 </script>
@@ -22,7 +20,7 @@
 	@import "../../../scss/init";
 
 	.example-margin {
-		@include margin(5,1,1,1);
+		@include margin(5, 1, 1, 1);
 		@include padding(1);
 		line-height: su(2);
 	}

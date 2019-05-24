@@ -9,16 +9,14 @@ Add margins defined in space units to your elements
 - **$top, $right, $bottom, $left** value defined in **space-units**
 - If you only fill in the **$top** value the other values (**$right, $bottom, $left**) will take over this value. Similar to vanille CSS
 
-**Four different ways to use:**
-```scss
-@include margin($value);                        // margin: 4px;
-@include margin($vertical, $horizontal);        // margin: 4px 8px;
-@include margin($top, $horizontal, $bottom);    // margin: 4px 8px 12px;
-@include margin($top, $right, $bottom, $left);  // margin: 4px 8px 12px 16px;
-```
+### Multiple input methods
+- `@include margin($space-units);`
+- `@include margin($vertical, $horizontal);`
+- `@include margin($top, $horizontal, $bottom);`
+- `@include margin($top, $right, $bottom, $left);`
 
-#### Example
-<Layout-Margin-Margin/>
+### Example
+<Layout-Margin-Margin content="1 space-unit margin on each side and 5 space-units on top"/>
 
 ```scss {2}
 .example-element {
@@ -31,7 +29,7 @@ Add margins defined in space units to your elements
 ## @margin-top
 - **Mixin:** `@include margin-top($space-units)`
 
-**Example:**
+### Example
 <Layout-Margin-MarginTop/>
 
 ```scss {2}
@@ -44,7 +42,7 @@ Add margins defined in space units to your elements
 ## @margin-right
 - **Mixin:** `@include margin-right($space-units)`
 
-**Example:**
+### Example
 
 <Layout-Margin-MarginRight/>
 
@@ -60,7 +58,7 @@ Add margins defined in space units to your elements
 - **Mixin:** `@include margin-bottom($space-units)`
 
 
-**Example:**
+### Example
 
 <Layout-Margin-MarginBottom/>
 
@@ -75,7 +73,7 @@ Add margins defined in space units to your elements
 ## @margin-left
 - **Mixin:** `@include margin-left($space-units)`
 
-**Example:**
+### Example
 
 <Layout-Margin-MarginLeft/>
 
@@ -87,31 +85,36 @@ Add margins defined in space units to your elements
 
 
 ## @margin-vertical
-**Mixin:** `@include margin-vertical($top, $bottom)`
+- **Mixin:** `@include margin-vertical($top, $bottom)`
 
-- **$top, $bottom** value defined in **space-units**
+### Multiple input methods
+- `@include margin-vertical($space-units);`
+- `@include margin-vertical($top, $bottom);`
 
-**Two different ways to use:**
-```scss
-@include margin-vertical($value);               // margin-top: 4px; margin-bottom: 4px;
-@include margin-vertical($top, $bottom);        // margin-top: 4px; margin-bottom: 8px;
-```
-::: warning
-Examples will be added soon
-:::
+### Example
+
+<Layout-Margin-MarginVertical content="2 space-unit margin on top and bottom"/>
+
+```scss {2}
+.example-element {
+	@include margin-vertical(2);
+}
+``` 
 
 
 ## @margin-horizontal
-**Mixin:** `@include margin-horizontal($left, $right)`
+- **Mixin:** `@include margin-horizontal($left, $right)`
 
-- **$left, $right** value defined in **space-units**
+### Multiple input methods
+- `@include margin-horizontal($space-units);`
+- `@include margin-horizontal($left, $right);`
 
-**Two Different ways to use:**
-```scss
-@include margin-horizontal($value);             // margin-left: 4px; margin-right: 4px;
-@include margin-horizontal($left, $right);      // margin-left: 4px; margin-right: 8px;
-```
+### Example
 
-::: warning
-Examples will be added soon
-:::
+<Layout-Margin-MarginHorizontal content="2 space-unit margin on left and right"/>
+
+```scss {2}
+.example-element {1
+	@include margin-horizontal(2);
+}
+``` 

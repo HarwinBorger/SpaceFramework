@@ -89,4 +89,7 @@ module.exports = {
 		sidebar: sidebar,
 		nav: navbar,
 	},
+	markdown: {
+		toc: {includeLevel: [2]},
+	}
 };
