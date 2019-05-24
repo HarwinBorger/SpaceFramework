@@ -1,20 +1,39 @@
 # Layout Classes
+**Requirements:**
+- Configure your custom [Layout-Presets](/settings/layout-presets.md) first.
+
+**Table of content:**
+[[toc]]
+
+
+## What are Layout Classes?
 
 Layout classes are global classes which you can use for consistency in your layout elements. You can apply predefined `paddings`, `margins` and `positions` in different sizes. You can also add a direction or use it as negative value. On top of that you can choose a viewport size.  
 
-The classes name exist out of the following parts: <br>
+**Different viewport, different sizes**<br>
+What is unique for layout classes is that you can define an amount space-units for each viewport. This way you can optimize your components quickly for each viewport. 
+
+**The classes name exist out of the following parts:** <br>
 `.[viewport]-[name*]-[type*]-[direction]-[negative]`
 
-You can use classes like:
+**You can use classes like:**
 - `.site-padding`
 - `.section-margin-vertical`
 - `.medium-block-margin-left-negative`
 
-**Requirements:**
-- Configure your custom [Layout-Presets](settings/layout-presets.md) first.
 
-**Table of content:**
-[[toc]]
+### Example
+<Layout-Classes-Name content="site-padding"/>
+
+```html
+<div class="site-padding">content</div>
+```
+
+::: tip Tip
+Make your window smaller and larger to see how the padding of the component changes from **2 space-units**, **4 space-units** to **6 space-units**. 
+:::
+
+
 
 ## Name
 - **Classname format:** `[name*]-[type*]`<br>
@@ -38,7 +57,6 @@ By combining the `[name]` together with a `[type]` you can use classes such as:
 - `.site-[type]` 
 - `.section-[type]`
 - `.block-[type]`
-
 
 ## Type
  - **Classname format:** `[name*]-[type*]`<br>
