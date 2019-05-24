@@ -1,5 +1,5 @@
 <template>
-	<Example>
+	<Example padding element>
 		<div class="example-overflow bg-padding  example-padding">
 			<div class="example-element">{{ content }}</div>
 		</div>

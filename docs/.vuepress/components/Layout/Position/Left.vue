@@ -1,5 +1,5 @@
 <template>
-	<Example>
+	<Example position element>
 		<div class="bg-position position-relative example-left-height">
 			<div class="example-element example-left position-absolute">{{ content }}</div>
 		</div>

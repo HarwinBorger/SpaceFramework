@@ -1,5 +1,5 @@
 <template>
-	<Example>
+	<Example padding element>
 		<div class="example-overflow bg-padding  example-padding-bottom">
 			<div class="example-element">1 space-unit padding on bottom</div>
 		</div>

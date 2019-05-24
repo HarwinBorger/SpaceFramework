@@ -1,7 +1,5 @@
 <template>
-	<Example>
-		<div class="bg-units-large bg-overlay">
-		</div>
+	<Example element raster>
 		<div class="example-overflow bg-width">
 			<div class="example-group">
 				<div class="example-element example-width">{{ content }}</div>

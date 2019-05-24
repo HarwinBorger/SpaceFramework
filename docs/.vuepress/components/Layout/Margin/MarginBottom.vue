@@ -1,5 +1,5 @@
 <template>
-	<Example>
+	<Example margin element>
 		<div class="example-overflow bg-margin">
 			<div class="example-element example-margin-bottom">1 space-unit margin on bottom</div>
 		</div>
