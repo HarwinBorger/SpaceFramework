@@ -17,9 +17,11 @@ You can use almost any property you want to support Space-Units. For example `te
 ### Example border-width
 <Layout-Property-BorderWidth content="1 space-units border-width"/>
 
-```scss
+```scss {2}
 .example-element {
 	@include property('border-width', 1);
+	border-color: rgba(red, 0.5);
+    border-style: solid;
 }
 ```
 
