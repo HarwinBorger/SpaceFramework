@@ -1,6 +1,14 @@
 # Custom Properties
 
 ## @Property
-**Mixin:** `@include property($attribute, $value)`<br>
-- Any property you want to support Space-Units. For example `text-indent` based on Space-Units
-- **$value** value defined in **space-units**
+- **Mixin:** `@include property($attribute, $space-units)`
+
+You can use almost any property you want to support Space-Units. For example `text-indent` based on Space-Units.
+
+<Layout-Property-TextIndent content="3 space-units text-indent"/>
+
+```scss
+.example-element {
+	@include property('text-indent', 3);
+}
+```
