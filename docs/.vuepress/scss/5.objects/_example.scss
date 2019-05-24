@@ -35,4 +35,11 @@
 			font-size: 12px;
 		}
 	}
+
+	&-group {
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: su(2);
+		grid-auto-columns: min-content;
+	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<div class="example-container">
-		<div class="example bg-units-light">
+		<div class="example bg-units">
 			<slot></slot>
 		</div>
 		<Legend></Legend>

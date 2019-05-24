@@ -1,20 +1,30 @@
 
 .bg {
 	&-units {
-		background-color: #269;
-		background-image: linear-gradient(rgba(255, 255, 255, .28) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(255, 255, 255, .28) 1px, transparent 1px);
-		background-size: var(--su) var(--su), var(--su) var(--su);
-		background-position: -1px -1px, -1px -1px;
-	}
-
-	&-units-light {
+		position: relative;
 		background-color: #fff;
 		background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
 
 		background-size: var(--su) var(--su), var(--su) var(--su);
 		background-position: -1px -1px, -1px -1px;
+
+		&-large {
+			background-image: linear-gradient(rgba(red, .2) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(red, .2) 1px, transparent 1px);
+			background-size: su(5) su(5), su(5) su(5);
+			background-position: -1px -1px, -1px -1px;
+		}
+	}
+
+	&-overlay{
+		@include top(-3);
+		@include right(-3);
+		@include bottom(-3);
+		@include left(-3);
+		position: absolute;
+		z-index: 999;
+		pointer-events: none;
 	}
 
 	&-black {

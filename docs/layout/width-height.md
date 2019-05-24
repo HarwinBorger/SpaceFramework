@@ -9,12 +9,31 @@
 - [@max-height](#height)
 
 ---
-## @width
+## @Width
 **Mixin:** `@include width($value)`<br>
 **Mixin:** `@include min-width($value)`<br>
 **Mixin:** `@include max-width($value)`<br>
 
 - **$value** value defined in **space-units**
+
+
+### Example
+<Layout-Dimensions-Width content="10 space-units width"/>
+
+```scss {2,6,10}
+.example-element-1 {
+	@include width(10);
+}
+
+.example-element-2 {
+	@include width(20);
+}
+
+.example-element-3 {
+	@include width(15);
+}
+``` 
+
 
 ---
 ## @Height
