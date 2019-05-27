@@ -180,7 +180,7 @@ Add a  `[viewport]` before your class for responsive use.
 - `.large-section-margin-vertical`
 
 ::: tip Tip
-The following examples are depending on your window width whether you see padding or not. 
+The following examples are influenced by your window width. Up and downscale them to see how they work. 
 :::
 ### Example `.small-only-[name]-[type]`
 
@@ -222,7 +222,14 @@ Negative cannot be used for the `[type]` **padding** .
 - `.medium-section-margin-top-negative` 
 - `.large-only-section-margin-vertical-negative`
 
+### Example `.[name]-[type]-[direction]-negative`
+<Layout-Classes-MarginNegative content="content"/>
 
+```html
+	<div class="section-padding">
+		<div class="section-margin-left-negative">content</div>
+	</div>
+```
 
 
 
