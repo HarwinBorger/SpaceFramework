@@ -1,7 +1,7 @@
 <template>
 	<Example padding element>
-		<div class="example-overflow bg-padding site-padding border-black">
-			<div class="example-element example-name">{{ content }}</div>
+		<div class="example-overflow bg-padding small-only-block-padding border-black">
+			<div class="example-element example-small-only">{{ content }}</div>
 		</div>
 	</Example>
 </template>
@@ -9,7 +9,7 @@
 	import Example from '../../Example'
 
 	export default {
-		name: 'Name',
+		name: 'SmallOnly',
 		props: ['content'],
 		components: {
 			Example
@@ -19,7 +19,8 @@
 <style lang="scss">
 	@import "../../../scss/init";
 
-	.example-name {
-		line-height: su(3);
+	.example-small-only {
+		@include padding(1);
+		line-height: su(2);
 	}
 </style>

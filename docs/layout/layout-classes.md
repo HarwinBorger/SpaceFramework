@@ -8,12 +8,12 @@
 
 ## What are Layout Classes?
 
-Layout classes are global classes which you can use for consistency in your layout elements. You can apply predefined `paddings`, `margins` and `positions` in different sizes. You can also add a direction or use it as negative value. On top of that you can choose a viewport size.  
+Layout classes are global classes which you can use for consistency in your repeating layout elements. You can apply predefined `paddings`, `margins` and `positions` in different sizes. You can also add a direction or use it as negative value. On top of that you can choose a viewport size.  
 
 **Different viewport, different sizes**<br>
-What is unique for layout classes is that you can define an amount space-units for each viewport. This way you can optimize your components quickly for each viewport. 
+What is unique for layout classes is that you can define an amount of space-units for each viewport. This way you can optimize your components quickly for each viewport. 
 
-**The classes name exist out of the following parts:** <br>
+**The classes name exist out of the following parameters:** <br>
 `.[viewport]-[name*]-[type*]-[direction]-[negative]`
 
 **You can use classes like:**
@@ -30,7 +30,7 @@ What is unique for layout classes is that you can define an amount space-units f
 ```
 
 ::: tip Tip
-Make your window smaller and larger to see how the padding of the component changes from **2 space-units**, **4 space-units** to **6 space-units**. 
+Resize your window smaller and larger to see how the padding of the component changes from **2 space-units**, **4 space-units** to **6 space-units**. 
 :::
 
 
@@ -45,7 +45,7 @@ Each class starts with the given `[name]` in the layout-presets. Like `[name]`. 
  The `[type]` is required for a layout class. The `[name]` and the `[type]` together are the base of a layout class.  Go to [Types](#types)  
 :::
 
-### `[name]` options
+### `[name]` parameters
 - `site`
 - `section`
 - `block`
@@ -63,16 +63,39 @@ By combining the `[name]` together with a `[type]` you can use classes such as:
 `*` = required
 
 There are 3 different types you can use by default for `[type]` in `[name]-[type]`
-### `[type]` options
+### `[type]` parameters
 - `padding`
 - `margin`
 - `position` 
 
 ### Example output classes
-- `.section-padding`
 - `.section-margin`
+- `.section-padding`
 - `.section-position`
 
+
+### Example `.[name]-margin`
+<Layout-Classes-SectionMargin content="content"/>
+
+```html
+<div class="section-margin">content</div>
+```
+
+### Example `.[name]-padding`
+<Layout-Classes-SectionPadding content="content"/>
+
+```html
+<div class="section-padding">content</div>
+```
+
+### Example `.[name]-position`
+<Layout-Classes-SectionPosition content="content"/>
+
+```html
+<div class="position-relative">
+	<div class="section-position position-absolute">content</div>
+</div>
+```
 
 ## Direction
 - **Classname format:** `.[name*]-[type*]-[direction]`<br>
@@ -82,7 +105,7 @@ There are 3 different types you can use by default for `[type]` in `[name]-[type
 Add a `[direction]` to your classname if you want to use a specific direction for your **padding** or **margin**.
  
  
-### `[direction]` options
+### `[direction]` parameters
 - `top`
 - `right`
 - `bottom`
@@ -96,13 +119,55 @@ Add a `[direction]` to your classname if you want to use a specific direction fo
 - `.block-position-right`
 
 
+### Example `.[name]-[type]-top`
+<Layout-Classes-Top content="content"/>
+
+```html
+	<div class="section-margin-top">content</div>
+```
+
+### Example `.[name]-[type]-right`
+<Layout-Classes-Right content="content"/>
+
+```html
+	<div class="section-margin-right">content</div>
+```
+
+### Example `.[name]-[type]-bottom`
+<Layout-Classes-Bottom content="content"/>
+
+```html
+	<div class="section-margin-bottom">content</div>
+```
+
+### Example `.[name]-[type]-left`
+<Layout-Classes-Left content="content"/>
+
+```html
+	<div class="section-margin-left">content</div>
+```
+
+### Example `.[name]-[type]-vertical`
+<Layout-Classes-Vertical content="content"/>
+
+```html
+	<div class="section-margin-vertical">content</div>
+```
+
+### Example `.[name]-[type]-horizontal`
+<Layout-Classes-Horizontal content="content"/>
+
+```html
+	<div class="section-margin-horizontal">content</div>
+```
+
 ## Viewport
 **Classname format:** `.[viewport]-[name*]-[type*]-[direction]`<br>
 `*` = required
 
 Add a  `[viewport]` before your class for responsive use.
 
-### `[viewport]` options
+### `[viewport]` parameters
 - `small-only`
 - `medium`
 - `medium-only`
@@ -112,8 +177,33 @@ Add a  `[viewport]` before your class for responsive use.
 ### Example output classes
 - `.small-only-block-padding`
 - `.medium-section-padding-top`
-- `.large-only-section-margin-vertical`
+- `.large-section-margin-vertical`
 
+::: tip Tip
+The following examples are depending on your window width whether you see padding or not. 
+:::
+### Example `.small-only-[name]-[type]`
+
+
+<Layout-Classes-SmallOnly content="content"/>
+
+```html
+	<div class="small-only-block-padding">content</div>
+```
+
+### Example `.medium-[name]-[type]-[direction]`
+<Layout-Classes-Medium content="content"/>
+
+```html
+	<div class="medium-section-padding-top">content</div>
+```
+
+### Example `.large-[name]-[type]-[direction]`
+<Layout-Classes-Large content="content"/>
+
+```html
+	<div class="large-section-margin-vertical">content</div>
+```
 
 ## Negative
 **Classname format:** `.[viewport]-[name*]-[type*]-[direction]-[negative]`<br>
@@ -123,7 +213,7 @@ Add a  `[viewport]` before your class for responsive use.
 Negative cannot be used for the `[type]` **padding** . 
 :::
 
-### `[negative]` options
+### `[negative]` parameters
 - `negative`
 
 
