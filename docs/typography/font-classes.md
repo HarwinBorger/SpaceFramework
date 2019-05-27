@@ -27,6 +27,7 @@ In most situations it's best to use the **font-preset** class. By using the font
 
 Use the mixin to output the classes when font-preset classes are not generated
 
+<Typography-FontClasses/>
 
 ## Font-size classes
 **Classname format:** `.font-size-[size]`

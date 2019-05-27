@@ -16,14 +16,22 @@
 			background-position: -1px -1px, -1px -1px;
 		}
 
-		&-vertical{
+		&-vertical {
 			background-image: linear-gradient(90deg, rgba(red, .2) 1px, transparent 1px);
 			background-size: su(1) su(1);
 			background-position: -1px -1px;
 		}
+
+		&-small {
+			background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
+
+			background-size: su(.5) su(.5), su(.5) su(.5);
+			background-position: -1px -1px, -1px -1px;
+		}
 	}
 
-	&-overlay{
+	&-overlay {
 		@include top(-3);
 		@include right(-3);
 		@include bottom(-3);
@@ -53,7 +61,7 @@
 		background-color: rgba(green, .5);
 	}
 
-	&-special{
+	&-special {
 		background-color: rgba(pink, .5);
 	}
 

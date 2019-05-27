@@ -1,6 +1,6 @@
 <template>
 	<div class="example-container">
-		<div class="example bg-units">
+		<div class="example bg-units" v-bind:class="{'bg-units-small': small}">
 			<div v-if="raster" class="bg-units-large bg-overlay"></div>
 			<div v-if="vertical" class="bg-units-vertical bg-overlay"></div>
 			<slot></slot>
@@ -26,6 +26,7 @@
 			element: Boolean,
 			raster: Boolean,
 			vertical: Boolean,
+			small: Boolean,
 		}
 	}
 </script>
