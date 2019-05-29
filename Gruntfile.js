@@ -1,6 +1,6 @@
 module.exports = function (grunt)
 {
-
+	const sass = require('node-sass');
 	require('time-grunt')(grunt);
 
 	grunt.config.init({
@@ -22,6 +22,7 @@ module.exports = function (grunt)
 				],
 				options: {
 					cleancss: true,
+					implementation: sass,
 					outputStyle: 'compressed',
 					//sourceComments: 'map',
 					sourceMap: true
@@ -32,21 +33,17 @@ module.exports = function (grunt)
 			options: {
 				map: true,
 				processors: [
-					require('autoprefixer')({browsers: ['last 5 versions', 'ie >= 9']}),
+					require('autoprefixer')({
+						browsers: ['last 5 versions', 'ie >= 11']
+					}),
+					require('css-mqpacker')({
+						sort: require('sort-css-media-queries')
+					}),
 					require('csswring')
 				]
 			},
 			dist: {
 				src: "<%= dir.dist %>/css/**/*.css"
-			}
-		},
-		merge_media: {
-			options: {
-				compress: true
-			},
-			files: {
-				src: "<%= dir.dist %>/css/style.min.css",
-				dest: "<%= dir.dist %>/css/style.min.css"
 			}
 		},
 		watch: {
@@ -73,11 +70,11 @@ module.exports = function (grunt)
 		}
 	});
 
-	grunt.registerTask( 'default', ['csscomb', 'sass',  'postcss', 'merge_media', 'watch'] );
+	grunt.registerTask( 'default', ['csscomb', 'sass',  'postcss', 'watch'] );
 
 	grunt.registerTask('optimize', ['csscomb']);
 
-	grunt.registerTask('build', ['sass', 'postcss', 'merge_media']);
+	grunt.registerTask('build', ['sass', 'postcss']);
 
 	require( 'matchdep' ).filterDev( 'grunt-*' ).forEach( grunt.loadNpmTasks );
 };

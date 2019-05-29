@@ -1,22 +1,24 @@
 {
   "name": "spaceframework",
-  "version": "0.16.1",
+  "version": "0.17.1",
+  "repository": "https://github.com/HarwinBorger/SpaceFramework",
   "author": "Harwin Borger <info@studioborger.nl>",
-  "licence": "GPL-3.0-only",
+  "license": "GPL-3.0-only",
   "devDependencies": {
-    "autoprefixer": "*",
-    "csswring": "6.0.3",
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
+    "autoprefixer": "^9.5.1",
+    "css-mqpacker": "^7.0.0",
+    "csswring": "7.0.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "*",
-    "grunt-csscomb": "^3.1.0",
-    "grunt-merge-media": "^0.4.0",
-    "grunt-modernizr": "^1.0.2",
+    "grunt-csscomb": "^4.0.0",
+    "grunt-modernizr": "^2.0.1",
     "grunt-postcss": "*",
-    "grunt-sass": "^2.1",
-    "time-grunt": "*",
-    "matchdep": "*"
-  },
-  "dependencies": {}
+    "grunt-sass": "^3.0",
+    "matchdep": "*",
+    "node-sass": "^4.12.0",
+    "sort-css-media-queries": "^1.4.3",
+    "time-grunt": "*"
+  }
 }
