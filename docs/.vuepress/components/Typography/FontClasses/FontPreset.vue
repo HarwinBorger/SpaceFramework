@@ -11,10 +11,10 @@
 	</Example>
 </template>
 <script>
-	import Example from '../Example'
+	import Example from '../../Example'
 
 	export default {
-		name: 'FontClasses',
+		name: 'FontPreset',
 		props: ['content'],
 		components: {
 			Example
@@ -22,5 +22,5 @@
 	}
 </script>
 <style lang="scss">
-	@import "../../scss/init";
+	@import "../../../scss/init";
 </style>

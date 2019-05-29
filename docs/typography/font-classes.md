@@ -27,7 +27,7 @@ In most situations it's best to use the **font-preset** class. By using the font
 
 Use the mixin to output the classes when font-preset classes are not generated
 
-<Typography-FontClasses/>
+<Typography-FontClasses-FontPreset/>
 
 ## Font-size classes
 **Classname format:** `.font-size-[size]`
@@ -41,6 +41,9 @@ Use the mixin to output the classes when font-preset classes are not generated
  - `.font-size-tiny`
  
 In some situations you only want to output the **font-size** of a font-preset and not the **line-height** or **font-family**. In this case you can just use the `.font-size-[size]` class. If you want the full font-preset then you should use `.font-preset-[size]` instead.   
+
+<Typography-FontClasses-FontSize/>
+
 
 **Mixin:** `@include font-size-classes()`
 
