@@ -9,5 +9,17 @@
 		@include breakpoint(large){
 			@include margin(5);
 		}
+
+		&-negative{
+			@include margin(-1);
+
+			@include breakpoint(medium){
+				@include margin(-3);
+			}
+
+			@include breakpoint(large){
+				@include margin(-5);
+			}
+		}
 	}
 }
