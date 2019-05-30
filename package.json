@@ -4,7 +4,6 @@
   "repository": "https://github.com/HarwinBorger/SpaceFramework",
   "author": "Harwin Borger <info@studioborger.nl>",
   "license": "GPL-3.0-only",
-  "repository": "https://github.com/HarwinBorger/SpaceFramework",
   "scripts": {
     "start": "docsify serve docs",
     "docs:dev": "vuepress dev docs",
