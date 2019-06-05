@@ -1,0 +1,52 @@
+/**
+ * Properties
+ * @param $value (in space-units)
+ * @param $attr (width || height)
+ */
+@mixin property($attr, $value) {
+	@if space-legacy() {
+		#{$attr}: su-fallback($value);
+	}
+
+	#{$attr}: su($value);
+}
+
+// Deprecated as of 0.18
+@mixin space-property($attr, $value){
+	@warn('[DEPRECATED] - "space-property()" is deprecated since SpaceFramework [0.18]. Please use "property()" instead');
+	@include property($attr, $value);
+}
+
+/**
+ * Vanilla CSS mixins
+ */
+@mixin width($value) {
+	$attr: width;
+	@include property($attr, $value)
+}
+
+@mixin min-width($value){
+	$attr: min-width;
+	@include property($attr, $value)
+}
+
+@mixin max-width($value){
+	$attr: max-width;
+	@include property($attr, $value)
+}
+
+@mixin height($value) {
+	$attr: height;
+	@include property($attr, $value)
+}
+
+@mixin min-height($value) {
+	$attr: min-height;
+	@include property($attr, $value)
+}
+
+@mixin max-height($value) {
+	$attr: max-height;
+	@include property($attr, $value)
+}
+

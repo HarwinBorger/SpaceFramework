@@ -7,6 +7,7 @@
 
 /* IMPORT FUNCTION FOR SUPPORT OF MIXINS */
 @import "functions/_functions";
+@import "helpers/_helpers";
 
 /* FOUNDATION MIXINS */
 @import 'breakpoints';
@@ -14,9 +15,9 @@
 /* SPACE MIXINS */
 @import 'space-unit';
 @import 'space-font';
-@import 'space-line-height';
-@import 'space-classes';
+@import 'line-height';
+@import 'layout-classes';
 @import 'space-offset';
-@import 'space-properties';
-@import 'space-shift';
-@import 'reset-child-margin';
+@import 'properties';
+@import 'shift-classes';
+

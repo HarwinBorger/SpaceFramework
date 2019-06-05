@@ -1,7 +1,11 @@
 # SpaceLog
 
-## [0.17.1]
-- Replace old package for merging media queries - 29-05-2019
+## [unreleased]
+- Add first documentation
+- Add examples in documentation
+
+## [0.17.1] Security fix 29-05-2019
+- Replace old package for merging media queries
 
 ## [0.17.0] Self and reset classes
 - Add several tests to stabilize code 

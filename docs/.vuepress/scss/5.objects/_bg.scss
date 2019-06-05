@@ -1,0 +1,76 @@
+
+.bg {
+	&-units {
+		position: relative;
+		background-color: #fff;
+		background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
+
+		background-size: var(--su) var(--su), var(--su) var(--su);
+		background-position: -1px -1px, -1px -1px;
+
+		&-large {
+			background-image: linear-gradient(rgba(red, .2) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(red, .2) 1px, transparent 1px);
+			background-size: su(5) su(5), su(5) su(5);
+			background-position: -1px -1px, -1px -1px;
+		}
+
+		&-vertical {
+			background-image: linear-gradient(90deg, rgba(red, .2) 1px, transparent 1px);
+			background-size: su(1) su(1);
+			background-position: -1px -1px;
+		}
+
+		&-small {
+			background-image: linear-gradient(rgba(black, .05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(black, .05) 1px, transparent 1px);
+
+			background-size: su(.5) su(.5), su(.5) su(.5);
+			background-position: -1px -1px, -1px -1px;
+		}
+	}
+
+	&-overlay {
+		@include top(-3);
+		@include right(-3);
+		@include bottom(-3);
+		@include left(-3);
+		position: absolute;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	&-black {
+		background: #222;
+	}
+
+	&-white {
+		background-color: white;
+	}
+
+	&-padding {
+		background-color: rgba(purple, .5);
+	}
+
+	&-margin {
+		background-color: rgba(orange, .5);
+	}
+
+	&-position {
+		background-color: rgba(green, .5);
+	}
+
+	&-special {
+		background-color: rgba(pink, .5);
+	}
+
+	&-negative {
+		background-color: rgba(black, .5);
+
+		> * {
+			background-color: white;
+			background-clip: content-box;
+		}
+	}
+}

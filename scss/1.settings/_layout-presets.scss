@@ -1,0 +1,33 @@
+/*
+ * Layout Presets
+ *
+ */
+
+$layout-presets: (
+	/** Define generation of objects: .[object]
+	 *
+	 * @example: .space-[type],  .site-[type], .content-[type]
+	 * @note: the definition of a [type] is a requirement, which is loaded by default by $space-settings variable
+	 */
+	site: (
+		viewports:(
+			small:(2su),
+			medium:(4su),
+			large:(6su),
+		)
+	),
+	section:(
+		viewports:(
+			small:(2su),
+			medium:(3su),
+			large:(4su),
+		)
+	),
+	block:(
+		viewports:(
+			small:(2su),
+			medium:(2su),
+			large:(2su)
+		)
+	)
+) !default;

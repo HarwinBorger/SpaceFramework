@@ -1,0 +1,41 @@
+.unit {
+	display: inline-block;
+	@include width(1);
+	@include height(1);
+	@include margin-right(.5);
+	@include margin-left(1);
+	box-sizing: border-box;
+	vertical-align: middle;
+
+	&-margin {
+		background-color: rgba(orange, .5);
+		border: 1px solid rgba(orange, .8);
+	}
+
+	&-padding {
+		background-color: rgba(purple, .5);
+		border: 1px solid rgba(purple, .8);
+	}
+
+	&-position {
+		background-color: rgba(green, .5);
+		border: 1px solid rgba(green, .8);
+	}
+
+	&-special {
+		background-color: rgba(red, .5);
+		border: 1px solid rgba(red, .8);
+	}
+
+	&-element{
+		border: 1px solid #5865BC;
+
+		background: repeating-linear-gradient(
+				45deg,
+				#606dbc,
+				#606dbc 10px,
+				#5865BC 10px,
+				#5865BC 20px
+		);
+	}
+}

@@ -1,0 +1,49 @@
+.example {
+	@include padding(2);
+	border: 1px solid #eee;
+
+	overflow: hidden;
+
+	&-overflow {
+		overflow: hidden;
+	}
+
+	&-element,
+	&-cleanelement{
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	&-element {
+		background: #fff;
+		color: #fff;
+
+		background: repeating-linear-gradient(
+				45deg,
+				#606dbc,
+				#606dbc su(0.707),
+				#5865BC su(0.707),
+				#5865BC su(1.414)
+		);
+		background-clip: padding-box;
+	}
+
+	&-container {
+		@include margin-vertical(2);
+		background: #eee;
+		border-radius: 5px;
+
+		&__legend {
+			@include padding-horizontal(1);
+			@include line-height(2);
+			font-size: 12px;
+		}
+	}
+
+	&-group {
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: su(2);
+		grid-auto-columns: min-content;
+	}
+}

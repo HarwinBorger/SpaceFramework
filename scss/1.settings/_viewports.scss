@@ -1,0 +1,18 @@
+$support-zurb-foundation-breakpoints: false !default;
+
+// Define each viewport you want to support for the SpaceFramework
+$viewports: (
+	small: 0,
+	medium: 640px,
+	large: 1024px,
+) !default;
+
+// Define on which viewports you want to generate your classes (layout and typography classes)
+$viewport-classes:(
+	small, medium, large
+) !default;
+
+@if($support-zurb-foundation-breakpoints){
+	$viewports: $breakpoints;
+	$viewport-classes: $breakpoint-classes;
+}
