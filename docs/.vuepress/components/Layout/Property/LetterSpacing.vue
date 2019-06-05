@@ -24,7 +24,7 @@
 	@import "../../../scss/init";
 
 	.example-letter-spacing {
-		@include space-property(letter-spacing, 1);
+		@include property(letter-spacing, 1);
 		box-sizing: border-box;
 		line-height: su(2);
 		position: relative;

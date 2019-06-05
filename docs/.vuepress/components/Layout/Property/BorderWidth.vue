@@ -22,7 +22,7 @@
 	@import "../../../scss/init";
 
 	.example-border-width {
-		@include space-property(border-width, 1);
+		@include property(border-width, 1);
 		border-color: rgba(red, 0.5);
 		border-style: solid;
 		box-sizing: border-box;

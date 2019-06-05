@@ -22,7 +22,7 @@
 	@import "../../../scss/init";
 
 	.example-text-indent {
-		@include space-property(text-indent, 3);
+		@include property(text-indent, 3);
 		box-sizing: border-box;
 		line-height: su(2);
 		position: relative;;
