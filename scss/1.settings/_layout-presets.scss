@@ -1,10 +1,9 @@
 /*
  * Layout Presets
- * Documentation: https://SpaceFramework.dev/docs/#/settings/layout-presets
  *
  */
 
-$layout-classes: (
+$layout-presets: (
 	/** Define generation of objects: .[object]
 	 *
 	 * @example: .space-[type],  .site-[type], .content-[type]
