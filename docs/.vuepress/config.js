@@ -76,9 +76,9 @@ const path = require("path");
 
 
 let navbar = [
-	{text: 'Home', link: '/'},
-	{text: 'DOCS', link: '/guide/'},
-	{text: 'Examples', link: '/examples/'},
+//	{text: 'Home', link: '/'},
+	{text: 'DOCS', link: '/'},
+//	{text: 'Examples', link: '/examples/'},
 	{text: 'Github', link: 'https://github.com/HarwinBorger/SpaceFramework'},
 ];
 
