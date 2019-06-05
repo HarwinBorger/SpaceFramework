@@ -1,7 +1,8 @@
 # SpaceLog
 
 ## [unreleased]
-- Add basic documentation 19-05-2019
+- Add first documentation
+- Add examples in documentation
 
 ## [0.17.1] Security fix 29-05-2019
 - Replace old package for merging media queries
