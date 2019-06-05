@@ -85,7 +85,7 @@ let navbar = [
 module.exports = {
 	title: 'SpaceFramework',
 	description: 'Just playing around',
-	base: '/SpaceFramework/',
+	base: '/',
 	themeConfig: {
 		sidebar: sidebar,
 		nav: navbar,
