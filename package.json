@@ -21,11 +21,12 @@
     "grunt-modernizr": "^2.0.1",
     "grunt-postcss": "*",
     "grunt-sass": "^3.0",
+    "husky": "^2.3.0",
     "matchdep": "*",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
     "sort-css-media-queries": "^1.4.3",
+    "style-loader": "^0.23.1",
     "time-grunt": "*",
     "vuepress": "^1.0.0-alpha.48"
   }
