@@ -4,10 +4,14 @@ module.exports = {
 		'autoprefixer': {},
 		'css-mqpacker': {
 			sort: require('sort-css-media-queries')
-		}
-//		'cssnano': {
-//			preset: 'default',
-//		},
+		},
+		'cssnano': {
+			preset: ['default', {
+				discardComments: {
+					removeAll: true,
+				},
+			}],
+		},
 //		'postcss-import': {},
 //		'postcss-preset-env': {},
 	}

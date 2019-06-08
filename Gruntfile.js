@@ -33,9 +33,7 @@ module.exports = function (grunt)
 			options: {
 				map: true,
 				processors: [
-					require('autoprefixer')({
-						browsers: ['last 5 versions', 'ie >= 11']
-					}),
+					require('autoprefixer'),
 					require('css-mqpacker')({
 						sort: require('sort-css-media-queries')
 					}),
