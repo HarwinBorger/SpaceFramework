@@ -11,7 +11,8 @@
     "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "./deploy.sh"
+    "docs:deploy": "./deploy.sh",
+    "test": "stylelint"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
