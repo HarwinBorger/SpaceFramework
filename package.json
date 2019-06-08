@@ -12,7 +12,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "./deploy.sh",
-    "test": "stylelint"
+    "test": "npm run stylelint"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
