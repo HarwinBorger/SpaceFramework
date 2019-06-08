@@ -5,13 +5,16 @@
   "author": "Harwin Borger <info@studioborger.nl>",
   "license": "GPL-3.0-only",
   "scripts": {
-    "start": "docsify serve docs",
+    "start": "grunt",
+    "build": "webpack",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "./deploy.sh"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.0",
     "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
     "csswring": "7.0.0",
     "grunt": "^1.0.4",
     "grunt-contrib-jshint": "^2.1.0",
@@ -23,11 +26,18 @@
     "grunt-sass": "^3.0",
     "husky": "^2.3.0",
     "matchdep": "*",
+    "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "sort-css-media-queries": "^1.4.3",
     "style-loader": "^0.23.1",
     "time-grunt": "*",
-    "vuepress": "^1.0.0-alpha.48"
+    "vuepress": "^1.0.0-alpha.48",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3"
+  },
+  "dependencies": {
+    "postcss-scss": "^2.0.0"
   }
 }
