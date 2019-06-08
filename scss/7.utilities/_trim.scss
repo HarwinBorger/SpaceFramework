@@ -1,9 +1,9 @@
 .trim,
-.trim-top{
+.trim-top {
 	@include reset-child-margin-top();
 }
 
 .trim,
-.trim-bottom{
+.trim-bottom {
 	@include reset-child-margin-bottom();
 }

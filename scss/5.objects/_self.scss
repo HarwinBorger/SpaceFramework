@@ -1,4 +1,3 @@
-
 /**
  * Snap class can be used for aligning objects to align-baseline, align-capline, align-median
  *
@@ -10,7 +9,7 @@
 	}
 
 	&-fill {
-		padding-top: getVar(default, capheight);
-		padding-bottom: getVar(default, capheight);
+		padding-top: get-var(default, capheight);
+		padding-bottom: get-var(default, capheight);
 	}
 }

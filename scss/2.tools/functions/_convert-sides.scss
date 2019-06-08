@@ -14,7 +14,7 @@
 	// Loop clockwise from $top to $left
 	@for $side from $top through $left {
 		// If value doesn't exist in $sides
-		@if($side > length($sides)) {
+		@if ($side > length($sides)) {
 			$sideValue: nth($sides, $top); //Get 'top' value
 
 			// If 'left' value

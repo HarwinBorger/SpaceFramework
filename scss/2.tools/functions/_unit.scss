@@ -76,6 +76,7 @@ $global-font-size: 100% !default;
 	// Check if the value is a number
 	@if type-of($value) != 'number' {
 		@warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
+
 		@return $value;
 	}
 
@@ -90,7 +91,7 @@ $global-font-size: 100% !default;
 	}
 
 	// Turn 0rem into 0
-	@if $value == 0rem {
+	@if $value == 0rem { /* stylelint-disable-line */
 		$value: 0;
 	}
 

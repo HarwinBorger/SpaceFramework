@@ -67,7 +67,7 @@ ul {
 	@include margin-vertical($element-offset);
 
 	& & {
-		@include margin-vertical(0)
+		@include margin-vertical(0);
 	}
 }
 

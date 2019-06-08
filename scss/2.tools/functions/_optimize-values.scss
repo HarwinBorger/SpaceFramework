@@ -1,6 +1,6 @@
 @function optimize-values($list) {
 	$match: true;
-	$first: nth($list,1);
+	$first: nth($list, 1);
 	$result: $list;
 
 	// If any list item doesn't match, set on match on false
@@ -13,7 +13,7 @@
 	}
 
 	// If all items match then only use first value
-	@if $match == true{
+	@if $match == true {
 		$result: $first;
 	}
 

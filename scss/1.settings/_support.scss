@@ -11,7 +11,7 @@
  *
  * Using automatic generation of typographic classes takes much space, you can turn off typography alignment if you don't intend to use it.
  */
-$space-support:(
+$space-support: (
 	align-baseline: true,
 	align-capline: false,
 	align-median: false,
@@ -19,7 +19,6 @@ $space-support:(
 	fit-capline: false,
 	align-reset: false
 ) !default;
-
 
 /**
  * SPACE LEGACY

@@ -1,7 +1,7 @@
 $su: --su;
 
 @mixin space-unit-variables {
-	@each $breakpoint, $space-unit in $space-unit-sizes{
+	@each $breakpoint, $space-unit in $space-unit-sizes {
 		//Add breakpoint
 		@at-root {
 			:root {

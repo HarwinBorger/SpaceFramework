@@ -26,22 +26,10 @@ $short-variable: (
 	xheight: 'xh',
 );
 
-/* Variable function */
-@function short-var($prefix, $value) {
-	@return #{--#{$prefix}-#{map-get($short-variable, $value)}};
-}
-
-@function set-var($prefix, $value) {
-	@return short-var($prefix, $value);
-}
-
-@function get-var($prefix, $value) {
-	@return var(#{short-var($prefix, $value)});
-}
-
 /* Calculate font functions  */
 @function calc-center($line-height, $font-size) {
 	$center-correction: ($line-height - $font-size) / 2; //$line-height-value Minus default height of font-size Split by 2. So 1.5 becomes .5 split by two become .25
+
 	@return $center-correction;
 }
 
@@ -63,6 +51,7 @@ $short-variable: (
 @mixin space-font-preset-root($set-font-preset: default) {
 	// Write back $set-font-preset to variable to keep original value
 	$font-preset-value: $set-font-preset;
+
 	@if ($set-font-preset == inherit) {
 		$font-preset-value: default; // Set $set-font-preset-value to default to still set .align-baseline and .align-capline classes
 	}
@@ -82,22 +71,25 @@ $short-variable: (
 
 	// Set default value for font-size
 	$font-size: $font-size-list;
+
 	@if (is-list($font-size-list)) {
 		$font-size: nth($font-size-list, 1);
 	}
 
 	// Set default value for line-height
 	$line-height: $line-height-list;
+
 	@if (is-list($line-height-list)) {
 		$line-height: nth($line-height-list, 1);
 	}
 
 	// Set default value for font-list
 	$font-list: map-get($fonts, default);
+
 	@if (is-list($font) == false) {
 		$font-list: map-get($fonts, $font);
 	} @else {
-		@warn ('different fonts for each breakpoint is not yet supported')
+		@warn ('different fonts for each breakpoint is not yet supported');
 	}
 
 	// Set font settings
@@ -160,6 +152,7 @@ $short-variable: (
 @mixin space-font-preset-values($set-font-preset: default, $line-height: default, $set-align-classes: true) {
 	// Write back $set-font-preset to variable to keep original value
 	$font-preset-value: $set-font-preset;
+
 	@if ($set-font-preset == inherit) {
 		$font-preset-value: default; // Set $set-font-preset-value to default to still set .align-baseline and .align-capline classes
 	}
@@ -176,11 +169,13 @@ $short-variable: (
 
 	// Set default value for font-list
 	$font-list: map-get($fonts, default);
+
 	@if (is-list($font) == false) {
 		$font-list: map-get($fonts, $font);
 	} @else {
-		@warn ('different fonts for each breakpoint is not yet supported')
+		@warn ('different fonts for each breakpoint is not yet supported');
 	}
+
 	// Get font-sizes
 	$font-size-fallback-value: last(map-get($font-preset, font-size)); // Get highest value
 
@@ -224,6 +219,7 @@ $short-variable: (
 			#{$class-align-baseline} & {
 				// Set short variable
 				--s: translateY(#{get-var($font-preset-value, capheight)});
+
 				transform: var(--s);
 			}
 		}
@@ -231,14 +227,18 @@ $short-variable: (
 		// Add element to .align-capline object
 		@if (space-support(align-capline)) {
 			#{$class-align-capline} & {
+				// Set short variable
 				--s: translateY(calc(#{get-var($font-preset-value, capheight)} * -1));
+
 				transform: var(--s);
 			}
 		}
 
 		@if (space-support(align-median)) {
 			#{$class-align-median} & {
+				// Set short variable
 				--s: translateY(calc(#{get-var($font-preset-value, xheight)} * -1));
+
 				transform: var(--s);
 			}
 		}
@@ -283,7 +283,7 @@ $short-variable: (
  * @description aligns items based on default font-size to align-baseline, align-capline, align-median
  * without actually setting font-sizes, line-height or font-families
  */
-@mixin self-align(){
+@mixin self-align() {
 	@include font-preset(inherit);
 }
 
@@ -312,6 +312,7 @@ $short-variable: (
  */
 @mixin font-preset-root() {
 	@warn '`font-preset-root` is a deprecated function since 0.16 use `font-preset-variables` instead';
+
 	@include font-preset-variables();
 }
 
@@ -344,4 +345,3 @@ $short-variable: (
 		}
 	}
 }
-

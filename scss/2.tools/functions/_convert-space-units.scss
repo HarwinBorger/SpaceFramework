@@ -2,7 +2,7 @@
  * @param $value (int)
  * @param $breakpoint (string)
  */
-@function convert-space-units($value, $breakpoint){
+@function convert-space-units($value, $breakpoint) {
 	// Get space unit size
 	$space-unit-size: map-get($space-unit-sizes, $breakpoint);
 
@@ -20,8 +20,8 @@
 	$newValues: ();
 
 	// Loop through each value in $values
-	@if(is-list($value-list)){
-		@each $value in $value-list{
+	@if (is-list($value-list)) {
+		@each $value in $value-list {
 			$newValue: convert-space-units($value, $breakpoint);
 			$newValues: append($newValues, $newValue);
 		}
