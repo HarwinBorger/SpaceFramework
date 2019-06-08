@@ -8,11 +8,11 @@ $viewports: (
 ) !default;
 
 // Define on which viewports you want to generate your classes (layout and typography classes)
-$viewport-classes:(
+$viewport-classes: (
 	small, medium, large
 ) !default;
 
-@if($support-zurb-foundation-breakpoints){
+@if ($support-zurb-foundation-breakpoints) {
 	$viewports: $breakpoints;
 	$viewport-classes: $breakpoint-classes;
 }

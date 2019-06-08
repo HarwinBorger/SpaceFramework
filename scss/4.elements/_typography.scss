@@ -1,8 +1,8 @@
 /**
  * Typography
  */
-$section-offset: 3su !default;
-$element-offset: 2su !default;
+$section-offset: 3 !default; // defined in space-units
+$element-offset: 2 !default; // defined in space-units
 
 body {
 	@include font-preset();
@@ -43,6 +43,7 @@ hr {
 
 blockquote {
 	padding: 0;
+
 	border: 0;
 
 	@include margin-vertical(0);
@@ -67,13 +68,13 @@ ul {
 	@include margin-vertical($element-offset);
 
 	& & {
-		@include margin-vertical(0)
+		@include margin-vertical(0);
 	}
 }
 
 button {
 	@include font-preset(inherit);
-	@include padding(1su);
+	@include padding(1);
 }
 
 table {

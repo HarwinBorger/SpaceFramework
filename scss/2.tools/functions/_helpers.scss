@@ -2,7 +2,7 @@
  * SPACE PREFIX TYPE
  * Function to match input on 'padding', 'margin' or 'position' were 'position' returns false
  */
-@function space-prefix-type($type){
+@function space-prefix-type($type) {
 	$space-prefix-type-register: (
 		padding,
 		margin
@@ -20,7 +20,7 @@
  * Function to match support for given type
  * @uses $space-support
  */
-@function space-support($type){
+@function space-support($type) {
 	// If support option exists, than match on input
 	@if (map-get($space-support,$type) != null and map-get($space-support,$type) == false) {
 		@return false;
@@ -29,4 +29,3 @@
 	// Support by default
 	@return true;
 }
-

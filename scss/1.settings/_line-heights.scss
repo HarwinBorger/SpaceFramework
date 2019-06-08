@@ -7,5 +7,5 @@
  * TODO support multiple breakpoints for each line-height set, like: default: (2su,3su,4su)
  */
 $line-heights: (
-	default: 2su,
+	default: 2, // defined in space-units
 );

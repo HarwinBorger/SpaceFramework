@@ -5,10 +5,10 @@
  */
 $space-legacy: true !default;
 
-@function space-legacy(){
-	@if $space-legacy == true{
+@function space-legacy() {
+	@if $space-legacy == true {
 		@return true;
-	}@else{
-		@return false
+	} @else {
+		@return false;
 	}
 }

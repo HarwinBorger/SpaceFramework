@@ -1,0 +1,13 @@
+
+/* Variable function */
+@function short-var($prefix, $value) {
+	@return #{--#{$prefix}-#{map-get($short-variable, $value)}};
+}
+
+@function set-var($prefix, $value) {
+	@return short-var($prefix, $value);
+}
+
+@function get-var($prefix, $value) {
+	@return var(#{short-var($prefix, $value)});
+}

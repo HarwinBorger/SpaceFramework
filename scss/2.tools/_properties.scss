@@ -12,8 +12,9 @@
 }
 
 // Deprecated as of 0.18
-@mixin space-property($attr, $value){
-	@warn('[DEPRECATED] - "space-property()" is deprecated since SpaceFramework [0.18]. Please use "property()" instead');
+@mixin space-property($attr, $value) {
+	@warn ('[DEPRECATED] - "space-property()" is deprecated since SpaceFramework [0.18]. Please use "property()" instead');
+
 	@include property($attr, $value);
 }
 
@@ -22,31 +23,36 @@
  */
 @mixin width($value) {
 	$attr: width;
-	@include property($attr, $value)
+
+	@include property($attr, $value);
 }
 
-@mixin min-width($value){
+@mixin min-width($value) {
 	$attr: min-width;
-	@include property($attr, $value)
+
+	@include property($attr, $value);
 }
 
-@mixin max-width($value){
+@mixin max-width($value) {
 	$attr: max-width;
-	@include property($attr, $value)
+
+	@include property($attr, $value);
 }
 
 @mixin height($value) {
 	$attr: height;
-	@include property($attr, $value)
+
+	@include property($attr, $value);
 }
 
 @mixin min-height($value) {
 	$attr: min-height;
-	@include property($attr, $value)
+
+	@include property($attr, $value);
 }
 
 @mixin max-height($value) {
 	$attr: max-height;
-	@include property($attr, $value)
-}
 
+	@include property($attr, $value);
+}

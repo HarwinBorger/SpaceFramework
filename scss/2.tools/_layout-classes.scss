@@ -23,6 +23,7 @@ $space-position-register: (
 	@if (map_get($settings,negative) != true) {
 		@return false;
 	}
+
 	@if ($type == padding) {
 		@return false;
 	}
@@ -36,13 +37,15 @@ $space-position-register: (
 
 @function extend-class-name($classNameArray, $extendClass) {
 	$newClassName: '';
+
 	@each $className in $classNameArray {
 		@if $newClassName == '' {
-			$newClassName: '#{$className}-#{$extendClass}'
+			$newClassName: '#{$className}-#{$extendClass}';
 		} @else {
-			$newClassName: '#{$newClassName}, #{$className}-#{$extendClass}'
+			$newClassName: '#{$newClassName}, #{$className}-#{$extendClass}';
 		}
 	}
+
 	@return $newClassName;
 }
 
@@ -57,6 +60,7 @@ $space-position-register: (
 
 @mixin space-set-property($side, $values, $type, $sign:1) {
 	$typeName: '';
+
 	@if (space-prefix-type($type)) {
 		$typeName: $type+'-';
 	}
@@ -77,7 +81,7 @@ $space-position-register: (
 
 		//Check if values is not null
 		@if ($values != null) {
-			$cssPropertyValue: nth($values, $variablePosition)*$sign;
+			$cssPropertyValue: nth($values, $variablePosition) * $sign;
 		} @else {
 			@debug ('Values is not allowed to be: ' $values);
 		}
@@ -89,7 +93,7 @@ $space-position-register: (
 
 @mixin space-set-position-classes($className) {
 	@each $position in $space-position-register {
-		'.#{$className}-#{$position}' {
+		.#{$className}-#{$position} {
 			position: $position;
 		}
 	}
@@ -131,9 +135,9 @@ $space-position-register: (
 
 		//Check if negative values are allowed
 		@if (allow-negative-classes($settings,$type) == true) {
-
 			//If allowed generate negative classes: .space-[type]-[direction]-negative
 			$classNameDirectionNegative: extend-class-name($classNameArray, '#{$direction}-negative');
+
 			#{$classNameDirectionNegative} {
 				@each $side in $sides {
 					@include space-set-property($side, $values, $type, $negative);
@@ -173,7 +177,7 @@ $space-position-register: (
 			}
 		}
 	} @else {
-		@warn ("Classes for '#{$className}' are not generated because 'viewports' in $space-object-settings is missing")
+		@warn ("Classes for '#{$className}' are not generated because 'viewports' in $space-object-settings is missing");
 	}
 }
 
@@ -207,7 +211,7 @@ $space-position-register: (
 		responsive: map_get($space-class-settings, responsive)
 	);
 
-	@each $sizeClassName, $settings in $layout-presets{
+	@each $sizeClassName, $settings in $layout-presets {
 		$className: $sizeClassName; // Generates .object
 
 		@if (map_get($settings, types) == null) {
@@ -237,7 +241,6 @@ $space-position-register: (
 	@include space-loop-objects();
 }
 
-
 /************************************************
  * DEPRECATED FUNCTIONS
  */
@@ -248,7 +251,8 @@ $space-position-register: (
  * Deprecated as of 0.2.5
  */
 @mixin space-init() {
-	@warn('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "layout-classes()" instead');
+	@warn ('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "layout-classes()" instead');
+
 	@include layout-classes();
 }
 
@@ -258,7 +262,8 @@ $space-position-register: (
  * Deprecated as of 0.5
  */
 @mixin space-model-classes() {
-	@warn('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "layout-classes()" instead');
+	@warn ('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "layout-classes()" instead');
+
 	@include layout-classes();
 }
 
@@ -268,6 +273,7 @@ $space-position-register: (
  * Deprecated as of 0.18
  */
 @mixin space-classes() {
-	@warn('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [0.18]. Please use "layout-classes()" instead');
+	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [0.18]. Please use "layout-classes()" instead');
+
 	@include layout-classes();
 }
