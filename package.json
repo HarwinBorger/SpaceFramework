@@ -10,7 +10,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "./deploy.sh",
-    "stylelint": "stylelint 'scss/**/*.scss'"
+    "stylelint": "stylelint 'scss/**/*.scss'",
+    "stylelint-fix": "stylelint 'scss/**/*.scss' --fix"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
@@ -26,6 +27,7 @@
     "sort-css-media-queries": "^1.4.3",
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0",
     "vuepress": "^1.0.0-alpha.48",
     "webpack": "^4.33.0",

@@ -1,6 +1,10 @@
 {
   "plugins": [
-    "stylelint-scss"
+    "stylelint-scss",
+    "stylelint-order"
+  ],
+  "extends": [
+    "./.stylelintrc-order.json"
   ],
   "rules": {
     "scss/at-else-empty-line-before": "never",
@@ -83,6 +87,7 @@
         ],
         "ignore": [
           "after-comment",
+          "after-declaration",
           "inside-single-line-block"
         ]
       }
@@ -98,7 +103,9 @@
     "indentation": [
       "tab",
       {
-        "ignore": ["inside-parens"]
+        "ignore": [
+          "inside-parens"
+        ]
       }
     ],
     "length-zero-no-unit": true,
