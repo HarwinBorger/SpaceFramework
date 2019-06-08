@@ -7,11 +7,11 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard webpack-dev-server",
     "build": "NODE_ENV=production webpack",
+    "stylelint": "stylelint 'scss/**/*.scss'",
+    "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:deploy": "./deploy.sh",
-    "stylelint": "stylelint 'scss/**/*.scss'",
-    "stylelint-fix": "stylelint 'scss/**/*.scss' --fix"
+    "docs:deploy": "./deploy.sh"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
