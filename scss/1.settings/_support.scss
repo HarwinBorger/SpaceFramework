@@ -13,11 +13,11 @@
  */
 $space-support:(
 	align-baseline: true,
-	align-capline: true,
-	align-median: true,
+	align-capline: false,
+	align-median: false,
 	fit-baseline: true,
-	fit-capline: true,
-	align-reset: true
+	fit-capline: false,
+	align-reset: false
 ) !default;
 
 
