@@ -1,6 +1,8 @@
 # SpaceLog
 
-## [unreleased]
+## [0.18-alpha.3]
+- Replace Grunt with Webpack
+- Add Travis CI for unit testing
 - Add first documentation
 - Add examples in documentation
 
