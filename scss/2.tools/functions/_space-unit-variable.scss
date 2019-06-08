@@ -3,6 +3,7 @@
  */
 @function su-var-attribute($value) {
 	$value: strip-unit($value);
+
 	@return #{$su}-#{str-replace(#{$value},'.','-')};
 }
 
@@ -15,7 +16,7 @@ $space-unit-variable-list: (false);
 		$space-unit-variable-list: join($space-unit-variable-list, $value) !global;
 
 		//Add breakpoint
-		@at-root (without:all){
+		@at-root (without:all) {
 			:root {
 				#{su-var-attribute($value)}: calc(#{$value} * var(#{$su}));
 			}
@@ -23,17 +24,17 @@ $space-unit-variable-list: (false);
 	}
 }
 
-@function su($value){
-	@if($space-legacy == true){
+@function su($value) {
+	@if ($space-legacy == true) {
 		//@warn('The function su() should not be used while $space-legacy = true');
 	}
 
 	@return calc(#{$value} * var(#{$su}));
 }
 
-@function su-fallback($value){
+@function su-fallback($value) {
 	$breakpoint: last(map-keys($space-unit-sizes));
 	$calculated-value: convert-space-units($value, $breakpoint);
 
-	@return($calculated-value);
+	@return ($calculated-value);
 }

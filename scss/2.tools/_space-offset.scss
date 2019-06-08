@@ -32,8 +32,9 @@
 	@if ($top == $right and $right == $bottom and $bottom == $left) {
 		$value: $top;
 		$attribute: $type;
+
 		@include property($attribute, $value);
-	} @else { // If not all sides have equal values use separate classes. For example: margin-top: $value;
+	}@else { // If not all sides have equal values use separate classes. For example: margin-top: $value;
 		@each $side, $side-value in $space-side-map {
 			$attribute: $side;
 			@if (space-prefix-type($type)) {
