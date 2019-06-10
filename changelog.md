@@ -1,6 +1,6 @@
 # SpaceLog
 
-## [1.0.0-alpha.3]
+## [1.0.0-alpha.4]
 - Replace Grunt with Webpack
 - Add Travis CI for unit testing
 - Add first documentation
@@ -8,6 +8,7 @@
 - Replace space-classes for layout-classes
 - Change scss implementation way of trim classes
 - Change scss implementation way of implode classes
+- Change scss implementation way of self classes
 - Reorder multiple files for more logical places
 
 ## [0.17.1] Security fix 29-05-2019

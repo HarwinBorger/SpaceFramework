@@ -8,5 +8,4 @@
 @include layout-classes();
 @include font-size-classes();
 @include font-preset-classes();
-
-@import "self";
+@include self-classes();
