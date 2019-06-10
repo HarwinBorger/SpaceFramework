@@ -7,3 +7,11 @@ before_install:
     - npm install
 
 script: npm run test
+
+jobs:
+    include:
+        - stage: "Tests"
+          name: "Stylelint"
+          script: npm run stylelint
+        - name: "Build"
+          script: npm run build
