@@ -1,0 +1,18 @@
+/*
+ * Self Classes
+ */
+
+@mixin self-classes() {
+	.self {
+		// self-align class can be used for aligning objects to align-baseline etc.
+		&-align {
+			@include self-align();
+		}
+
+		// self-fill class can be used to fill up remaining space on filled components
+		&-fill {
+			padding-top: get-var(default, capheight);
+			padding-bottom: get-var(default, capheight);
+		}
+	}
+}
