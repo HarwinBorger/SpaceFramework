@@ -5,7 +5,7 @@
  * anything which goes before in the triangle, eg. hide helper class
  */
 
+@include trim-classes();
 @include shift-classes();
 
-@import "trim";
 @import "implode";

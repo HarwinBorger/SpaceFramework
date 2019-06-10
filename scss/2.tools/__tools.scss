@@ -16,7 +16,10 @@
 @import 'space-unit';
 @import 'space-font';
 @import 'line-height';
-@import 'layout-classes';
 @import 'space-offset';
 @import 'properties';
+
+/* CLASSES GENERATION */
+@import 'layout-classes';
+@import 'trim-classes';
 @import 'shift-classes';
