@@ -2,7 +2,7 @@
  * Implode Classes
  */
 
-@mixin implode-classes(){
+@mixin implode-classes() {
 	.implode {
 		> *:not(:first-child) {
 			margin-top: 0;
