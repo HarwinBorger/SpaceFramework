@@ -12,10 +12,11 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "docs:deploy": "./deploy.sh",
-    "test": "npm run stylelint"
+    "test": "concurrently 'npm run stylelint' 'npm run build'"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
+    "concurrently": "^4.1.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "husky": "^2.3.0",
