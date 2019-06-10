@@ -4,7 +4,7 @@
  * @description: reset and/or normalize styles, box-sizing definition,
  * etc. This is the first layer which generates actual CSS.
  */
-@import "normalize";
+@include normalize();
 
 @include space-unit-variables();
 @include font-preset-variables();
