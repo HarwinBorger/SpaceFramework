@@ -5,6 +5,5 @@
  * etc. This is the first layer which generates actual CSS.
  */
 @include normalize();
-
 @include space-unit-variables();
 @include font-preset-variables();
