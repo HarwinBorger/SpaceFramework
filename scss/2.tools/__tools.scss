@@ -19,9 +19,11 @@
 @import 'space-offset';
 @import 'properties';
 
-/* CLASSES GENERATION */
+/* CLASSES GENERATION MIXINS*/
 // 5.objects
 @import 'layout-classes';
+@import 'self-classes';
+
 // 7.utilities
 @import 'trim-classes';
 @import 'implode-classes';
