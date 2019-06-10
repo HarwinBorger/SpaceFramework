@@ -6,7 +6,8 @@
 - Add first documentation
 - Add examples in documentation
 - Replace space-classes for layout-classes
-- Change implementation way of trim classes
+- Change scss implementation way of trim classes
+- Change scss implementation way of implode classes
 - Reorder multiple files for more logical places
 
 ## [0.17.1] Security fix 29-05-2019

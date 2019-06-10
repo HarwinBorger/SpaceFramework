@@ -6,6 +6,5 @@
  */
 
 @include trim-classes();
+@include implode-classes();
 @include shift-classes();
-
-@import "implode";
