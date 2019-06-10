@@ -5,6 +5,9 @@
 - Add Travis CI for unit testing
 - Add first documentation
 - Add examples in documentation
+- Replace space-classes for layout-classes
+- Change implementation way of trim classes
+- Reorder multiple files for more logical places
 
 ## [0.17.1] Security fix 29-05-2019
 - Replace old package for merging media queries
