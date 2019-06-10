@@ -1,10 +1,11 @@
 # SpaceLog
 
-## [1.0.0-alpha.4]
+## [1.0.0-alpha.1]
 - Replace Grunt with Webpack
 - Add Travis CI for unit testing
 - Add first documentation
 - Add examples in documentation
+- Add normalize code to mixin normalize()
 - Replace space-classes for layout-classes
 - Change scss implementation way of trim classes
 - Change scss implementation way of implode classes
