@@ -13,3 +13,5 @@ jobs:
         - stage: "Tests"
           name: "Stylelint"
           script: npm run stylelint
+        - name: "Build"
+          script: npm run build
