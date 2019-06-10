@@ -20,4 +20,3 @@ CONTENT=`< $FILE tr '\n' '$'`
 sed "s~__NORMALIZE__~${CONTENT}~g" $TEMPLATE | tr '$' '\n'  > $NEW_FILE
 
 echo "Normalize.css updated from $CURRENTVERSION to $VERSION"
-
