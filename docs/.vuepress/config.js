@@ -89,6 +89,11 @@ module.exports = {
 	themeConfig: {
 		sidebar: sidebar,
 		nav: navbar,
+		// Assumes GitHub. Can also be a full GitLab url.
+		repo: 'HarwinBorger/SpaceFramework',
+		docsDir: 'docs',
+		editLinks: true,
+		editLinkText: 'Help us improve this page!'
 	},
 	markdown: {
 		toc: {includeLevel: [2]},
