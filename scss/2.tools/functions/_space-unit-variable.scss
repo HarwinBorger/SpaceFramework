@@ -3,7 +3,7 @@
  */
 @function su-var-attribute($value) {
 	$value-name: strip-unit($value);
-	$value-name: str-replace(#{$value-name},'.','dot');
+	$value-name: str-replace(#{$value-name}, '.', 'dot');
 
 	@return #{$su}-#{$value-name};
 }
