@@ -13,7 +13,8 @@
     "docs:build": "vuepress build docs",
     "docs:deploy": "./deploy.sh",
     "test": "concurrently 'npm run stylelint' 'npm run build'",
-    "update:vendor": "./scripts/normalize.sh"
+    "update:vendor": "./scripts/normalize.sh",
+    "version": "./scripts/version.sh"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",

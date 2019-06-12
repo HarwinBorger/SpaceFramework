@@ -1,10 +1,22 @@
 #!/bin/bash
 # Colors
-HIGHLIGHT='\033[38;2;255;0;255m'
+HIGHLIGHT='\033[38;2;0;255;255m'
+BLUE='\033[38;2;0;160;255m'
 NC='\033[0m' # No Color
+
 
 # Welcome
 echo "SpaceFramework version management"
+# Show current version
+PACKAGE_VERSION=$(cat package.json \
+  | grep version \
+  | head -1 \
+  | awk -F: '{ print $2 }' \
+  | sed 's/[",]//g' \
+  | tr -d '[[:space:]]')
+
+echo -e "current version is: ${BLUE}$PACKAGE_VERSION${NC}"
+
 # Ask for the version
 echo -e "${HIGHLIGHT}Enter the new version:${NC}"
 read version
@@ -41,7 +53,7 @@ EOF
 	rm -v $backupFile
 
 	# Print update message
-	echo "Changed version in '$packageFile' to: $version"
+	echo -e "Changed version in ${BLUE}$packageFile${NC} to: ${BLUE}$version${NC}"
 done
 
 
