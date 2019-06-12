@@ -60,8 +60,15 @@ EOF
 
 	# Print update message
 	echo -e "Changed version in ${BLUE}$packageFile${NC} to: ${BLUE}$version${NC}"
+
+	# Add file to git stage
+	echo -e "git add ${BLUE}./$packageFile${NC}"
+	git add ./$packageFile
 done
 echo "---------------------------------"
+echo -e "git tag ${BLUE}$version${NC}"
+git tag $version
+
 echo -e "${GREEN}Done"
 
 
