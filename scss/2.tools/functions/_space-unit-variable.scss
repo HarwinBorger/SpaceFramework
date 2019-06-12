@@ -2,9 +2,10 @@
  * Space Unit Variables
  */
 @function su-var-attribute($value) {
-	$value: strip-unit($value);
+	$value-name: strip-unit($value);
+	$value-name: str-replace(#{$value-name}, '.', 'dot');
 
-	@return #{$su}-#{str-replace(#{$value},'.','-')};
+	@return #{$su}-#{$value-name};
 }
 
 $space-unit-variable-list: (false);
