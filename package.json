@@ -9,9 +9,6 @@
     "build": "NODE_ENV=production webpack",
     "stylelint": "stylelint 'scss/**/*.scss'",
     "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "./deploy.sh",
     "test": "concurrently 'npm run stylelint' 'npm run build'",
     "update:vendor": "./scripts/normalize.sh",
     "version": "./scripts/version.sh"
@@ -33,7 +30,6 @@
     "stylelint": "^10.1.0",
     "stylelint-order": "^3.0.0",
     "stylelint-scss": "^3.8.0",
-    "vuepress": "^1.0.0-alpha.48",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.3",
     "webpack-dashboard": "^3.0.7"
