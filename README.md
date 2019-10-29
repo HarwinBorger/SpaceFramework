@@ -1,17 +1,9 @@
 # SpaceFramework 
-The SpaceFramework is a high-end front-end framework which focuses on delivering excellent and pixel perfect user interfaces. 
+The SpaceFramework is a front-end framework build in SASS which focuses on building websites rapidly, responsive and pixel perfect. The framework helps you with centralizing typography, centralizing layouts elements and delivering vertical alignment on typography and elements. Each component you create, can be placed modular in the website and writing exceptions belongs to the past.
 
-The purpose is create common vertical rhythm between components and typographic elements. This is done by centralizing all distances, alignments and font-presets. 
+Were most front-end frameworks focus only on the horizontal grid, the SpaceFramework works differently. Instead it has a strong focus on the vertical grid and the vertical rhythms. The horizontal grid is of course just as important. But there are plenty of those already. The vertical algorithm ensures you perfect balanced websites.
 
-You can also use typographic alignments like:
- * Baseline alignments
- * Capline alignments
- * Median alignments
- * Cross alignments 
- 
-By centralizing similarities between main components, it fits well with the principles of Atomic Design.
-
-The core of SpaceFramework lies in the use of a shared unit that connects all common parts. This unit is called the *Space-Unit*. 
+The core of the framework lays in the use of the so called Space-Units. With Space-Units, a virtual grid is created on which every element in the website is aligned on.
 
 ## Recommended to use
 - Space Framework is build on top of Foundation. However we made 
@@ -24,9 +16,8 @@ SpaceFramework to work without Foundation as well, but full power can be unlocke
 npm install spaceframework
 ```
 
-## Documentation (work in progress)
-- I am currently working on providing a documentation. The current state of our documentation can be found here: https://spacerhythm.com 
-
+## Documentation
+For documentation go to https://docs.spaceframework.dev 
 
 ## Credits
 Proudly made in the Netherlands by @HarwinBorger
