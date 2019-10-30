@@ -1,5 +1,16 @@
 # SpaceLog
 
+## [1.0.0-alpha.4] [not yet released]
+- Rename old $space-class-settings variable to $layout-presets-support
+
+## [1.0.0-alpha.3]
+- Move documentation from docs folder to own repository
+- Improve naming of core .scss files (`spaceframework.scss` and `init-spaceframework.scss`) 
+
+## [1.0.0-alpha.2]
+- Add fallback with warning for situation when a used font-preset is not present within `$font-presets`. For example when `@include font-preset('hero')` is used when `hero` does not exist within `$font-presets`
+- Remove secondary font from the pre-setup so no conflicts are given when using easy setup
+
 ## [1.0.0-alpha.1]
 - Replace Grunt with Webpack
 - Add Travis CI for unit testing
