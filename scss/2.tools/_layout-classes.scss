@@ -4,7 +4,7 @@
  * Author: Harwin Borger
  *
  * @uses: (array)$layout-presets
- * @uses: (array)$space-class-settings
+ * @uses: (array)$layout-presets-support
  *
  * TODO building fallback for single and multiple viewport sizes. Currently you need to give up all different breakpoints in order to have it work. So you only 'small' is not enough, you still need to fill in 'medium' and 'large'
  */
@@ -196,19 +196,19 @@ $space-position-register: (
 @mixin space-loop-objects() {
 	//Set default settings
 	$defaultTypes: (
-		types: map_get($space-class-settings, types)
+		types: map_get($layout-presets-support, types)
 	);
 
 	$defaultDirections: (
-		directions: map_get($space-class-settings, directions)
+		directions: map_get($layout-presets-support, directions)
 	);
 
 	$defaultNegative: (
-		negative: map_get($space-class-settings, negative)
+		negative: map_get($layout-presets-support, negative)
 	);
 
 	$defaultResponsive: (
-		responsive: map_get($space-class-settings, responsive)
+		responsive: map_get($layout-presets-support, responsive)
 	);
 
 	@each $sizeClassName, $settings in $layout-presets {
