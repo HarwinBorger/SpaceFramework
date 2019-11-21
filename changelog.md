@@ -1,6 +1,7 @@
 # SpaceLog
 
-## [1.0.0-alpha.4] [not yet released]
+## [1.0.0-alpha.4] 
+- Fix node problem causing white space in classnames
 - Rename old $space-class-settings variable to $layout-presets-support
 
 ## [1.0.0-alpha.3]
