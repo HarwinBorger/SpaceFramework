@@ -2,7 +2,7 @@
   "name": "spaceframework",
   "version": "1.0.0-alpha.4",
   "repository": "https://github.com/HarwinBorger/SpaceFramework",
-  "author": "Harwin Borger <info@studioborger.nl>",
+  "author": "Harwin Borger <hello@harwin.nl>",
   "license": "GPL-3.0-only",
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard webpack-dev-server",
