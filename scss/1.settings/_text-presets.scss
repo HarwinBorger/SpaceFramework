@@ -1,14 +1,14 @@
 /*
- * Font Presets
+ * Text Presets
  *
- * @description: A font-preset can be used by using: @include font-preset($value); were $value stands for the font-preset.
- * @example: @include font-preset(default); or
- *           @include font-preset(xlarge);
+ * @description: A text-preset can be used by using: @include text-preset($value); were $value stands for the text-preset.
+ * @example: @include text-preset(default); or
+ *           @include text-preset(xlarge);
  *
- * Define font-preset and line-height in space-units
+ * Define text-preset and line-height in space-units
  */
 
-$font-presets: (
+$text-presets: (
 	xlarge:(//Mostly used for H1
 		font-size: (1.5rem, 2.25rem, 3rem),
 		line-height: (3, 4, 5), // defined in space-units

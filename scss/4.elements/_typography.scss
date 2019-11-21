@@ -5,28 +5,28 @@ $section-offset: 3 !default; // defined in space-units
 $element-offset: 2 !default; // defined in space-units
 
 body {
-	@include font-preset();
+	@include text-preset();
 }
 
 /** HEADINGS **/
 h1 {
-	@include font-preset(xlarge);
+	@include text-preset(xlarge);
 	@include margin-vertical(0, $section-offset);
 }
 
 h2 {
-	@include font-preset(large);
+	@include text-preset(large);
 	@include margin-vertical($section-offset);
 }
 
 h3 {
-	@include font-preset();
+	@include text-preset();
 	@include margin-vertical($element-offset, 0);
 }
 
 /** ELEMENTS **/
 p {
-	@include font-preset(inherit);
+	@include text-preset(inherit);
 	@include margin-vertical($element-offset);
 
 	h3 + & {
@@ -50,7 +50,7 @@ blockquote {
 	@include margin-horizontal($element-offset);
 
 	p {
-		@include font-preset(large);
+		@include text-preset(large);
 
 		&:first-child {
 			margin-top: 0;
@@ -64,7 +64,7 @@ blockquote {
 
 ol,
 ul {
-	@include font-preset(inherit);
+	@include text-preset(inherit);
 	@include margin-vertical($element-offset);
 
 	& & {
@@ -73,7 +73,7 @@ ul {
 }
 
 button {
-	@include font-preset(inherit);
+	@include text-preset(inherit);
 	@include padding(1);
 }
 
@@ -83,5 +83,5 @@ table {
 
 th,
 td {
-	@include font-preset(inherit);
+	@include text-preset(inherit);
 }

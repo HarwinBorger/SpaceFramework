@@ -2,9 +2,14 @@
 
 ## [1.0] (unreleased)
 
+#### [1.0.0-alpha.5]
+- Renamed `$font-presets` variable to `$text-presets` since this name fits it's purpose better
+- Renamed `@include font-preset` mixin to `@include text-preset` since this name fits it's purpose better
+- Renamed `font-preset-variables()` function to `text-preset-variables()` since this name fits it's purpose better
+ 
 #### [1.0.0-alpha.4] 
 - Fix node problem causing white space in classnames
-- Rename old $space-class-settings variable to $layout-presets-support
+- Rename old `$space-class-settings` variable to `$layout-presets-support`
 
 #### [1.0.0-alpha.3]
 - Move documentation from docs folder to own repository
