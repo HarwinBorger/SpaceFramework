@@ -364,7 +364,7 @@ $short-variable: (
 	@include text-preset($set-text-preset, $set-align-classes);
 }
 
-@mixin font-preset-classes(){
+@mixin font-preset-classes() {
 	@warn '`@include font-preset-classes()` is a deprecated mixin since 1.0.0.alpha-5  use `@include text-preset-classes()` instead';
 
 	@include text-preset-classes();
