@@ -2,7 +2,8 @@
 
 ## [1.0] (unreleased)
 
-#### [1.0.0-alpha.6]
+#### [1.0.0-alpha.6] (unreleased)
+- Set default space-unit size to 1rem instead of .875rem
 - Add fallback message for deprecated `font-preset-classes()`
 
 #### [1.0.0-alpha.5]
