@@ -1,5 +1,8 @@
 # SpaceLog
 
+## [0.17.3]
+- Fix scss error in newer version causing white spaces at layout classes
+
 ## [0.17.1]
 - Replace old package for merging media queries - 29-05-2019
 
