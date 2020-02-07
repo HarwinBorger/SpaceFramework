@@ -179,7 +179,7 @@ $space-position-register: (
 
 @mixin space-loop-types($className, $settings) {
 	@each $type, $options in map_get($settings, types) {
-		$newClassName: '#{$className}-'#{$type};
+		$newClassName: '#{$className}-#{$type}';
 
 		@if ($type == 'position') {
 			@include space-set-position-classes($className);
