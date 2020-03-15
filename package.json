@@ -2,6 +2,7 @@
   "name": "spaceframework",
   "version": "1.0.0",
   "repository": "https://github.com/HarwinBorger/SpaceFramework",
+  "homepage": "https://spaceframework.dev",
   "author": "Harwin Borger <hello@harwin.nl>",
   "license": "GPL-3.0-only",
   "scripts": {
