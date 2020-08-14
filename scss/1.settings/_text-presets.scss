@@ -7,11 +7,10 @@
  *
  * Define text-preset and line-height in space-units
  */
-
 $text-presets: (
 	xlarge:(//Mostly used for H1
 		font-size: (1.5rem, 2.25rem, 3rem),
-		line-height: (3, 4, 5), // defined in space-units
+		line-height: (3, 4, 5), // defined in space-units,
 	),
 	large:(//Mostly used for H2
 		font-size: (1.25rem, 1.5rem, 2rem),

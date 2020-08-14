@@ -48,6 +48,12 @@ $short-variable: (
 	@return $xheight-correction;
 }
 
+/**
+ * Space-text-preset-root
+ * @description with space-text-preset-root variables for each text-preset will be set
+ * @uses $text-presets
+ * @param $set-text-preset
+ */
 @mixin space-text-preset-root($set-text-preset: default) {
 	// Write back $set-text-preset to variable to keep original value
 	$text-preset-value: $set-text-preset;
@@ -149,6 +155,9 @@ $short-variable: (
 	}
 }
 
+/**
+ * Space text preset values
+ */
 @mixin space-text-preset-values($set-text-preset: default, $line-height: default, $set-align-classes: true) {
 	// Write back $set-text-preset to variable to keep original value
 	$text-preset-value: $set-text-preset;
@@ -162,14 +171,19 @@ $short-variable: (
 
 	// Check validity of $text-preset
 	@if ($text-preset != null) {
+		/**
+		 * GET VALUES
+	     */
+
+		// Set font-family
 		$font: default;
 
-		// If font family is added to preset overwrite default
+		//// If font family is added to preset overwrite default
 		@if (map-has-key($text-preset, font)) {
 			$font: map-get($text-preset, font);
 		}
 
-		// Set default value for font-list
+		//// Set default value for font-list
 		$font-list: map-get($fonts, default);
 
 		@if (is-list($font) == false) {
@@ -178,19 +192,31 @@ $short-variable: (
 			@warn ('different fonts for each breakpoint is not yet supported');
 		}
 
-		// Get font-sizes
-		$font-size-fallback-value: last(map-get($text-preset, font-size)); // Get highest value
-
-		// Set font settings
 		$font-family-value: map-get($font-list, family);
 
-		$font-size-value: #{get-var($text-preset-value, font-size)};
-		$line-height-value: #{get-var($text-preset-value, line-height)};
+		// Set font-size
+		$font-size-legacy-value: last(map-get($text-preset, font-size)); // Get highest value from font-size array
+		$font-size-value: inherit;
+		@if ($set-text-preset != inherit) {
+			$font-size-value: #{get-var($text-preset-value, font-size)};
+		}
 
-		// Overwrite font-size and line-height with inherit when it should be inherit
-		@if ($set-text-preset == inherit) {
-			$font-size-value: inherit;
-			$line-height-value: inherit;
+		// Set line-height
+		$line-height-value: inherit;
+		@if ($set-text-preset != inherit) {
+			$line-height-value: #{get-var($text-preset-value, line-height)};
+		}
+
+		// Set color
+		$color-value: false;
+		@if (map-has-key($text-preset, color)) {
+			$color-value: #{map-get($text-preset,color)};
+		}
+
+		// Set font-weight
+		$font-weight-value: false;
+		@if (map-has-key($text-preset, font-weight)) {
+			$font-weight-value: #{map-get($text-preset,font-weight)};
 		}
 
 		/**
@@ -204,7 +230,7 @@ $short-variable: (
 
 		// Print font size
 		@if space-legacy() {
-			font-size: $font-size-fallback-value;
+			font-size: $font-size-legacy-value;
 		}
 
 		font-size: $font-size-value;
@@ -212,6 +238,16 @@ $short-variable: (
 		// Print line height
 		@if ($line-height != false) {
 			line-height: $line-height-value;
+		}
+
+		// Print color
+		@if ($color-value != false) {
+			color: $color-value;
+		}
+
+		// Print font-weight
+		@if ($font-weight-value != false) {
+			font-weight: $font-weight-value;
 		}
 
 		// Set typography alignment classes
@@ -306,8 +342,8 @@ $short-variable: (
  */
 @mixin text-preset-variables() {
 	:root {
-		@each $size, $value in $text-presets {
-			@include space-text-preset-root($size);
+		@each $text-preset, $value in $text-presets {
+			@include space-text-preset-root($text-preset);
 		}
 	}
 }
@@ -335,9 +371,9 @@ $short-variable: (
  * @example: text-preset-large | text-preset-xlarge
  */
 @mixin text-preset-classes() {
-	@each $size, $value in $text-presets {
-		.text-preset-#{$size} {
-			@include text-preset($size);
+	@each $text-preset, $value in $text-presets {
+		.text-preset-#{$text-preset} {
+			@include text-preset($text-preset);
 		}
 	}
 }

@@ -1,6 +1,10 @@
 # SpaceLog
 
-## [1.0] (unreleased)
+## [1.1] (unreleased)
+- At font-weight and color support in text-presets
+
+## [1.0] Stable release
+- Bug fixes
 
 #### [1.0.0-alpha.6] (unreleased)
 - Set default space-unit size to 1rem instead of .875rem
