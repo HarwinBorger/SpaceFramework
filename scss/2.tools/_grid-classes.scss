@@ -1,0 +1,45 @@
+@mixin grid-classes(){
+	.grid {
+		display: grid;
+		grid-gap: 1rem;
+		grid-gap: su(1);
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	@each $viewport, $size in $viewports {
+		$prefix: '#{$viewport}-';
+		@if($viewport == 'small'){
+			$prefix: '';
+		}
+
+		@include breakpoint($viewport) {
+			// Grid Columns
+			@each $columns in $grid-columns {
+				.#{$prefix}grid-#{$columns} {
+					grid-template-columns: repeat($columns, 1fr);
+				}
+			}
+
+			// Grid Gap
+			@each $gap in $grid-gaps {
+				.#{$prefix}grid-gap-#{$gap} {
+					grid-gap: su($gap);
+				}
+			}
+
+			// Grid Row Gap
+			@each $gap in $grid-gaps {
+				.#{$prefix}grid-row-gap-#{$gap} {
+					grid-row-gap: su($gap);
+				}
+			}
+
+			// Grid Column Gap
+			@each $gap in $grid-gaps {
+				.#{$prefix}grid-column-gap-#{$gap} {
+					grid-column-gap: su($gap);
+				}
+			}
+		}
+	}
+}
