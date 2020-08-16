@@ -4,13 +4,22 @@
  * Author: Harwin Borger
  *
  * @uses: (array)$space-presets
- * @uses: (array)$space-presets-support
+ * @uses: (array)$space-preset-settings
  *
  * TODO building fallback for single and multiple viewport sizes. Currently you need to give up all different breakpoints in order to have it work. So you only 'small' is not enough, you still need to fill in 'medium' and 'large'
  */
 
 $space-side-register: (
 	top, right, bottom, left
+);
+
+$space-directions-register: (
+	top:(top),
+	right:(right),
+	bottom:(bottom),
+	left: (left),
+	y: ( top, bottom),
+	x: (right, left)
 );
 
 @function allow-negative-classes($preset-conf,$type) {
@@ -34,13 +43,13 @@ $space-side-register: (
  * @description if specific preset has a specific custom configuration, then use those. If not use default configuration
  */
 @function get-space-preset-configuration($configurations) {
-	$conf-keys: (types, directions, negative-classes, viewport-classes, viewport-only-classes);
+	$conf-keys: (types, direction-classes, negative-classes, viewport-classes, viewport-only-classes);
 
-	@each $conf-key in $conf-keys{
+	@each $conf-key in $conf-keys {
 		// If custom configuration is not set, then use default configuration
 		@if (map_get($configurations, $conf-key) == null) {
 			// Get default configuration
-			$configuration:  map_get($space-presets-support, $conf-key);
+			$configuration: map_get($space-preset-settings, $conf-key);
 			// Add default configuration to configurations
 			$configurations: map-merge($configurations, ($conf-key: $configuration)) // Use default settings
 		}
@@ -129,7 +138,10 @@ $space-side-register: (
 	}
 
 	//Loop through different directions and add different classes
-	@each $direction, $sides in map_get($preset-conf, directions) {
+	$directions: map_get($preset-conf, direction-classes);
+
+	@each $direction in $directions {
+		$sides: map_get($space-directions-register, $direction);
 		$classNameDirection: extend-class-name($class-name-array, $direction);
 
 		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
@@ -157,8 +169,8 @@ $space-side-register: (
 	@if (map_get($preset-conf,viewports) != null) {
 		$class-name-array: ('.#{$class-name}');
 		$viewports: map_get($preset-conf, viewports);
-		$viewport-classes: map_get($preset-conf,viewport-classes);
-		$viewport-only-classes: map_get($preset-conf,viewport-only-classes);
+		$viewport-classes: map_get($preset-conf, viewport-classes);
+		$viewport-only-classes: map_get($preset-conf, viewport-only-classes);
 
 		// Loop through all viewports
 		@each $viewport, $value in $viewports {

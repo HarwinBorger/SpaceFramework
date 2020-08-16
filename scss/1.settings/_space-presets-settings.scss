@@ -1,0 +1,28 @@
+$space-preset-settings: (
+	// Which types are you going to use? (.[preset-name]-padding, .[preset-name]-margin)
+	// padding || margin || position
+	types:(
+		padding,
+		margin,
+		position
+	),
+	// In which directions do you want to generate classes? (.[preset-name]-padding-top, .[preset-name]-padding-right)
+	//  top || right || bottom || left || y || x
+	direction-classes:(
+		top,
+		right,
+		bottom,
+		left,
+		y,
+		x
+	),
+	// Do you want negative classes? (.[preset-name]-margin-top-n)
+	// (boolean) true || false
+	negative-classes: false,
+	// Do you want viewport classes? (.medium-[preset-name]-padding, large-[preset-name]-padding)
+	// (boolean) true || false
+	viewport-classes: true,
+	// Do you want viewport only classes? (.small-only-[preset-name]-padding, .medium-only-[preset-name]-padding)
+	// (boolean) true || false
+	viewport-only-classes: true,
+) !default;
