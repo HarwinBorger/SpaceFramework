@@ -6,6 +6,7 @@
  */
 
 @include space-preset-classes();
+@include position-classes();
 @include font-size-classes();
 @include text-preset-classes();
 @include self-classes();

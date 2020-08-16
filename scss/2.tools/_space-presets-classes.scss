@@ -13,14 +13,8 @@ $space-side-register: (
 	top, right, bottom, left
 );
 
-$space-position-register: (
-	absolute,
-	fixed,
-	relative,
-) !default;
-
-@function allow-negative-classes($settings,$type) {
-	@if (map_get($settings,negative) != true) {
+@function allow-negative-classes($preset-conf,$type) {
+	@if (map_get($preset-conf,negative-classes) != true) {
 		@return false;
 	}
 
@@ -35,14 +29,34 @@ $space-position-register: (
 	@return space-prefix-type($type);
 }
 
-@function extend-class-name($classNameArray, $extendClass) {
+/**
+ * Get space preset configuration
+ * @description if specific preset has a specific custom configuration, then use those. If not use default configuration
+ */
+@function get-space-preset-configuration($configurations) {
+	$conf-keys: (types, directions, negative-classes, viewport-classes, viewport-only-classes);
+
+	@each $conf-key in $conf-keys{
+		// If custom configuration is not set, then use default configuration
+		@if (map_get($configurations, $conf-key) == null) {
+			// Get default configuration
+			$configuration:  map_get($space-presets-support, $conf-key);
+			// Add default configuration to configurations
+			$configurations: map-merge($configurations, ($conf-key: $configuration)) // Use default settings
+		}
+	}
+
+	@return $configurations;
+}
+
+@function extend-class-name($class-name-array, $extendClass) {
 	$newClassName: '';
 
-	@each $className in $classNameArray {
+	@each $class-name in $class-name-array {
 		@if $newClassName == '' {
-			$newClassName: '#{$className}-#{$extendClass}';
+			$newClassName: '#{$class-name}-#{$extendClass}';
 		} @else {
-			$newClassName: '#{$newClassName}, #{$className}-#{$extendClass}';
+			$newClassName: '#{$newClassName}, #{$class-name}-#{$extendClass}';
 		}
 	}
 
@@ -58,7 +72,7 @@ $space-position-register: (
 * @para $sign: defines whether or not a positive (1) or negative (-1) value needs to be generated.
 */
 
-@mixin space-set-property($side, $values, $type, $sign:1) {
+@mixin space-set-property($side, $value, $type, $sign:1) {
 	$typeName: '';
 
 	@if (space-prefix-type($type)) {
@@ -72,7 +86,7 @@ $space-position-register: (
 	@if ($side == false) { //Combined all values
 		//Set property
 		$cssPropertyName: #{$type};
-		$cssPropertyValue: to-string(optimize-values($values), ' ');
+		$cssPropertyValue: $value;
 	} @else {
 		//Set property name based on side
 		$cssPropertyName: #{$typeName+$side};
@@ -80,10 +94,10 @@ $space-position-register: (
 		$variablePosition: index($space-side-register, $side);
 
 		//Check if values is not null
-		@if ($values != null) {
-			$cssPropertyValue: nth($values, $variablePosition) * $sign;
+		@if ($value != null) {
+			$cssPropertyValue: $value * $sign;
 		} @else {
-			@debug ('Values is not allowed to be: ' $values);
+			@debug ('Values is not allowed to be: ' $value);
 		}
 	}
 
@@ -91,146 +105,113 @@ $space-position-register: (
 	#{$cssPropertyName}: $cssPropertyValue;
 }
 
-@mixin space-set-position-classes($className) {
-	@each $position in $space-position-register {
-		.#{$className}-#{$position} {
-			position: $position;
-		}
-	}
-}
-
-@mixin space-loop-sides($classNameArray, $settings, $values, $type) {
+@mixin space-loop-sides($class-name-array, $preset-conf, $value, $type) {
 	$negative: -1;
-	//Set css class like: .space-[type], .space-[type]-[size]
-	#{$classNameArray} {
+	//Set css class like: .[preset-name]-[type], .[preset-name]-[type]-[size]
+	#{$class-name-array} {
 		@if (allow-combined-sides($type)==true) {
-			@include space-set-property(false, $values, $type);
+			@include space-set-property(false, $value, $type);
 		} @else {
 			@each $side in $space-side-register {
-				@include space-set-property($side, $values, $type);
+				@include space-set-property($side, $value, $type);
 			}
 		}
 	}
 
-	@if (allow-negative-classes($settings,$type) == true) {
-		$classNameNegative: extend-class-name($classNameArray, 'negative');
+	@if (allow-negative-classes($preset-conf,$type) == true) {
+		$classNameNegative: extend-class-name($class-name-array, 'negative');
 
 		#{$classNameNegative} {
 			@each $side in $space-side-register {
-				@include space-set-property($side, $values, $type, $negative);
+				@include space-set-property($side, $value, $type, $negative);
 			}
 		}
 	}
 
 	//Loop through different directions and add different classes
-	@each $direction, $sides in map_get($settings, directions) {
-		$classNameDirection: extend-class-name($classNameArray, $direction);
+	@each $direction, $sides in map_get($preset-conf, directions) {
+		$classNameDirection: extend-class-name($class-name-array, $direction);
 
 		//Print css class like based on sides: .space-[type]-vertical, .space-[type]-[size]-horizontal
 		#{$classNameDirection} {
 			@each $side in $sides {
-				@include space-set-property($side, $values, $type);
+				@include space-set-property($side, $value, $type);
 			}
 		}
 
 		//Check if negative values are allowed
-		@if (allow-negative-classes($settings,$type) == true) {
+		@if (allow-negative-classes($preset-conf,$type) == true) {
 			//If allowed generate negative classes: .space-[type]-[direction]-negative
-			$classNameDirectionNegative: extend-class-name($classNameArray, '#{$direction}-negative');
+			$classNameDirectionNegative: extend-class-name($class-name-array, '#{$direction}-negative');
 
 			#{$classNameDirectionNegative} {
 				@each $side in $sides {
-					@include space-set-property($side, $values, $type, $negative);
+					@include space-set-property($side, $value, $type, $negative);
 				}
 			}
 		}
 	}
 }
 
-@mixin space-loop-breakpoints($className, $settings, $type) {
-	@if (map_get($settings,viewports) != null) {
-		$classNameArray: ('.#{$className}');
+@mixin space-loop-viewports($class-name, $preset-conf, $type) {
+	@if (map_get($preset-conf,viewports) != null) {
+		$class-name-array: ('.#{$class-name}');
+		$viewports: map_get($preset-conf, viewports);
+		$viewport-classes: map_get($preset-conf,viewport-classes);
+		$viewport-only-classes: map_get($preset-conf,viewport-only-classes);
 
-		@each $breakpoint, $values in map_get($settings, viewports) {
-			// Convert value to 4 sides
-			$values: convert-sides($values);
-			// Convert space-unit values to rem units
-			$values: convert-space-units-array($values, $breakpoint);
+		// Loop through all viewports
+		@each $viewport, $value in $viewports {
+			$value: convert-space-units($value, $viewport);
 
 			//Generate breakpoints
-			@include breakpoint($breakpoint) {
-				@if (map_get($settings,responsive) == true and $breakpoint != 'small') {
-					$breakpointClassName: '.#{$breakpoint}-#{$className}';
-					$classNameArray: append($classNameArray, $breakpointClassName, comma);
+			@include breakpoint($viewport) {
+				@if ($viewport-classes == true and $viewport != 'small') {
+					$viewport-class-name: '.#{$viewport}-#{$class-name}';
+					$class-name-array: append($class-name-array, $viewport-class-name, comma);
 				}
 
-				@include space-loop-sides($classNameArray, $settings, $values, $type);
+				@include space-loop-sides($class-name-array, $preset-conf, $value, $type);
 			}
 
 			//Generate breakpoint only classes
-			@if (map_get($settings,responsive) == true) {
-				$breakpointClassName: '.#{$breakpoint}-only-#{$className}';
+			@if ($viewport-only-classes == true) {
+				$viewport-class-name: '.#{$viewport}-only-#{$class-name}';
 
-				@include breakpoint($breakpoint only) {
-					@include space-loop-sides($breakpointClassName, $settings, $values, $type);
+				@include breakpoint($viewport only) {
+					@include space-loop-sides($viewport-class-name, $preset-conf, $value, $type);
 				}
 			}
 		}
 	} @else {
-		@warn ("Classes for '#{$className}' are not generated because 'viewports' in $space-object-settings is missing");
+		@warn ("Classes for '#{$class-name}' are not generated because 'viewports' in $space-object-settings is missing");
 	}
 }
 
-@mixin space-loop-types($className, $settings) {
-	@each $type, $options in map_get($settings, types) {
-		$newClassName: '#{$className}-#{$type}';
+/**
+ * Loop through types (padding, margin, positions)
+ */
+@mixin space-loop-types($preset-name, $preset-conf) {
+	$types: map_get($preset-conf, types);
 
-		@if ($type == 'position') {
-			@include space-set-position-classes($className);
-		}
+	@each $type in $types {
+		$class-name: '#{$preset-name}-#{$type}';
 
-		@include space-loop-breakpoints($newClassName, $settings, $type);
+		@include space-loop-viewports($class-name, $preset-conf, $type);
 	}
 }
 
-@mixin space-loop-objects() {
-	//Set default settings
-	$defaultTypes: (
-		types: map_get($space-presets-support, types)
-	);
+/**
+ * Loop through each space preset
+ */
+@mixin space-loop-presets() {
+	// Loop through each space preset
+	@each $preset-name, $preset-conf in $space-presets {
+		// Mix default configuration  with new settings
+		$preset-conf: get-space-preset-configuration($preset-conf);
 
-	$defaultDirections: (
-		directions: map_get($space-presets-support, directions)
-	);
-
-	$defaultNegative: (
-		negative: map_get($space-presets-support, negative)
-	);
-
-	$defaultResponsive: (
-		responsive: map_get($space-presets-support, responsive)
-	);
-
-	@each $sizeClassName, $settings in $space-presets {
-		$className: $sizeClassName; // Generates .object
-
-		@if (map_get($settings, types) == null) {
-			$settings: map-merge($settings, $defaultTypes) // Use default settings
-		}
-
-		@if (map_get($settings, directions) == null) {
-			$settings: map-merge($settings, $defaultDirections) // Use default settings
-		}
-
-		@if (map_get($settings, negative) == null) {
-			$settings: map-merge($settings, $defaultNegative) // Use default settings
-		}
-
-		@if (map_get($settings, responsive) == null) {
-			$settings: map-merge($settings, $defaultResponsive) // Use default settings
-		}
-
-		@include space-loop-types($className, $settings);
+		// Loop through each type (padding, margin, positions)
+		@include space-loop-types($preset-name, $preset-conf);
 	}
 }
 
@@ -238,7 +219,7 @@ $space-position-register: (
  * @return Layout Classes
  */
 @mixin space-preset-classes() {
-	@include space-loop-objects();
+	@include space-loop-presets();
 }
 
 
@@ -249,44 +230,22 @@ $space-position-register: (
 /*
  * @return classes for using general styling
  *
- * Deprecated as of 0.2.5
- */
-@mixin space-init() {
-	@warn ('[DEPRECATED] - "space-init()" is deprecated since SpaceFramework [0.2.5]. Please use "layout-classes()" instead');
-
-	@include layout-classes();
-}
-
-/*
- * @return classes for using general styling
- *
- * Deprecated as of 0.5
- */
-@mixin space-model-classes() {
-	@warn ('[DEPRECATED] - "space-model-classes()" is deprecated since SpaceFramework [0.5]. Please use "layout-classes()" instead');
-
-	@include layout-classes();
-}
-
-/*
- * @return classes for using general styling
- *
- * Deprecated as of 0.18
+ * Deprecated as of 1.0
  */
 @mixin space-classes() {
-	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [0.18]. Please use "layout-classes()" instead');
+	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [1.0]. Please use "space-preset-classes()" instead');
 
-	@include layout-classes();
+	@include space-preset-classes();
 }
 
 
 /*
  * @return Layout Classes
  *
- * Deprecated as of 0.18
+ * Deprecated as of 1.1
  */
 @mixin layout-classes() {
-	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [1.1]. Please use "space-presets-classes()" instead');
+	@warn ('[DEPRECATED] - "layout-classes()" is deprecated since SpaceFramework [1.1]. Please use "space-presets-classes()" instead');
 
-	@include space-loop-objects();
+	@include space-preset-classes();
 }

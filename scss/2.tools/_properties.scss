@@ -11,7 +11,7 @@
 	#{$attr}: su($value);
 }
 
-// Deprecated as of 0.18
+// Deprecated as of 1.0
 @mixin space-property($attr, $value) {
 	@warn ('[DEPRECATED] - "space-property()" is deprecated since SpaceFramework [0.18]. Please use "property()" instead');
 

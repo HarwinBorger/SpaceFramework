@@ -1,5 +1,5 @@
 $space-presets-support: (
-	/** Define generation of: .[object]-[type]
+	/** Define generation of: .[preset-name]-[type]
 	 *
 	 * @example: .space-padding, .space-margin, .space-position
 	 */
@@ -8,49 +8,56 @@ $space-presets-support: (
 		margin,
 		position
 	),
-	/** Define generation of: .[object]-[type]-[direction]
+	/** Define generation of: .[preset-name]-[type]-[direction]
 	 *
-	 * @example 1: .space-[type]-top, .space-[type]-vertical
-	 * @example 2: .space-padding-top, .space-margin-vertical
+	 * @example 1: .space-[type]-top, .space-[type]-y
+	 * @example 2: .space-padding-top, .space-margin-y
 	 */
 	directions:(
+		// top
 		top:(
 			top
 		),
+		// right
 		right:(
 			right
 		),
+		//bottom
 		bottom:(
 			bottom
 		),
+		// left
 		left: (
 			left
 		),
-		vertical: (
+		// vertical
+		y: (
 			top,
 			bottom
 		),
-		horizontal: (
+		// horizontal
+		x: (
 			right,
 			left
 		)
 	),
-	/** Define generation of classes: .[object]-[type]-[direction]-negative
+	/** Define generation of classes: .[preset-name]-[type]-[direction]-negative
 	 *
 	 * @example: .space-margin-horizontal-negative
 	 * @note: does not work on 'padding' type since negative padding values are not allowed
 	 *
 	 * @tip: turn it off if you don't use it.
 	 */
-	negative: true,
-	/** Define generation of classes: .[viewport-name]-[object]-[type]-[direction]
+	negative-classes: false,
+	/** Define generation of classes: .[viewport-name]-[preset-name]-[type]-[direction]
 	 * @description: with the generation of viewport related classes you can
 	 * control on which viewport the padding, margin needs to be applied on.
 	 *
-	 * @example 1: .medium-[object]-[type]-[direction]
-	 * @example 2: .medium-site-margin-horizontal
+	 * @example 1: .medium-[preset-name]-[type]-[direction]
+	 * @example 1: .medium-site-margin-horizontal
 	 *
 	 * @tip: turn it off if you don't use it.
 	 */
-	responsive: true
+	viewport-classes: true,
+	viewport-only-classes: true,
 ) !default;
