@@ -63,7 +63,7 @@
 	 * @description Grid Layout provides a 12 column column structure
 	 */
 	$grid-layout-columns: 12 !default;
-	.layout {
+	.template {
 		grid-template-columns: repeat($grid-layout-columns, 1fr);
 
 		// Set default width of each column to full width
