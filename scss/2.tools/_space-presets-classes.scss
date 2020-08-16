@@ -3,8 +3,8 @@
  *
  * Author: Harwin Borger
  *
- * @uses: (array)$layout-presets
- * @uses: (array)$layout-presets-support
+ * @uses: (array)$space-presets
+ * @uses: (array)$space-presets-support
  *
  * TODO building fallback for single and multiple viewport sizes. Currently you need to give up all different breakpoints in order to have it work. So you only 'small' is not enough, you still need to fill in 'medium' and 'large'
  */
@@ -196,22 +196,22 @@ $space-position-register: (
 @mixin space-loop-objects() {
 	//Set default settings
 	$defaultTypes: (
-		types: map_get($layout-presets-support, types)
+		types: map_get($space-presets-support, types)
 	);
 
 	$defaultDirections: (
-		directions: map_get($layout-presets-support, directions)
+		directions: map_get($space-presets-support, directions)
 	);
 
 	$defaultNegative: (
-		negative: map_get($layout-presets-support, negative)
+		negative: map_get($space-presets-support, negative)
 	);
 
 	$defaultResponsive: (
-		responsive: map_get($layout-presets-support, responsive)
+		responsive: map_get($space-presets-support, responsive)
 	);
 
-	@each $sizeClassName, $settings in $layout-presets {
+	@each $sizeClassName, $settings in $space-presets {
 		$className: $sizeClassName; // Generates .object
 
 		@if (map_get($settings, types) == null) {
@@ -237,9 +237,10 @@ $space-position-register: (
 /*
  * @return Layout Classes
  */
-@mixin layout-classes() {
+@mixin space-preset-classes() {
 	@include space-loop-objects();
 }
+
 
 /************************************************
  * DEPRECATED FUNCTIONS
@@ -276,4 +277,16 @@ $space-position-register: (
 	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [0.18]. Please use "layout-classes()" instead');
 
 	@include layout-classes();
+}
+
+
+/*
+ * @return Layout Classes
+ *
+ * Deprecated as of 0.18
+ */
+@mixin layout-classes() {
+	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [1.1]. Please use "space-presets-classes()" instead');
+
+	@include space-loop-objects();
 }
