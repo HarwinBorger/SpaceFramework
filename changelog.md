@@ -2,6 +2,12 @@
 
 ## [1.1] (unreleased)
 - At font-weight and color support in text-presets
+- Refactor `$layout-presets` to `$space-presets`, since this is more appropriate for the upcoming grid and template classes. Hopefully last time of changing this name (A). 
+  - Simplify the code, 
+  - Remove functionality to have different space sizes at each direction
+  - Improve names of variables 
+  - Rename settings file from `$layout-spresets-support` to `$space-presets-support` and improve readability. 
+ 
 
 ## [1.0] Stable release
 - Bug fixes
