@@ -28,6 +28,11 @@
 		}
 
 		@include breakpoint($viewport) {
+			// Grid Auto
+			.#{$prefix}grid-auto {
+				grid-auto-flow: column;
+			}
+
 			// Grid Columns
 			@each $columns in $grid-columns {
 				.#{$prefix}grid-#{$columns} {
