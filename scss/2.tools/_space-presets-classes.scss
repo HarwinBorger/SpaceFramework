@@ -18,10 +18,31 @@ $space-directions-register: (
 	right:(right),
 	bottom:(bottom),
 	left: (left),
-	y: ( top, bottom),
+	y: (top, bottom),
 	x: (right, left)
 );
 
+
+/**
+ * Get the space preset variable
+ * @public
+ */
+@function var-space-preset($preset-name) {
+	@return get-var('sp', $preset-name);
+}
+
+/**
+ * Set the space preset variable
+ * @public
+ */
+@mixin var-space-preset($preset-name, $value) {
+	#{set-var('sp', $preset-name)}: su($value);
+}
+
+/**
+ * Allow negative classes
+ * @private
+ */
 @function allow-negative-classes($preset-conf,$type) {
 	@if (map_get($preset-conf,negative-classes) != true) {
 		@return false;
@@ -167,7 +188,11 @@ $space-directions-register: (
 
 @mixin space-loop-viewports($class-name, $preset-conf, $type) {
 	@if (map_get($preset-conf,viewports) != null) {
-		$class-name-array: ('.#{$class-name}');
+		$base-class: '.#{$class-name}';
+		$class-array: ();
+		$class-array: append($class-array, $base-class);
+
+		$preset-name: map_get($preset-conf, preset-name);
 		$viewports: map_get($preset-conf, viewports);
 		$viewport-classes: map_get($preset-conf, viewport-classes);
 		$viewport-only-classes: map_get($preset-conf, viewport-only-classes);
@@ -178,20 +203,21 @@ $space-directions-register: (
 
 			//Generate breakpoints
 			@include breakpoint($viewport) {
+
 				@if ($viewport-classes == true and $viewport != 'small') {
-					$viewport-class-name: '.#{$viewport}-#{$class-name}';
-					$class-name-array: append($class-name-array, $viewport-class-name, comma);
+					$viewport-class: '.#{$viewport}-#{$class-name}';
+					$class-array: append($class-array, $viewport-class, comma);
 				}
 
-				@include space-loop-sides($class-name-array, $preset-conf, $value, $type);
+				@include space-loop-sides($class-array, $preset-conf, $value, $type);
 			}
 
 			//Generate breakpoint only classes
 			@if ($viewport-only-classes == true) {
-				$viewport-class-name: '.#{$viewport}-only-#{$class-name}';
+				$viewport-only-class: '.#{$viewport}-only-#{$class-name}';
 
 				@include breakpoint($viewport only) {
-					@include space-loop-sides($viewport-class-name, $preset-conf, $value, $type);
+					@include space-loop-sides($viewport-only-class, $preset-conf, $value, $type);
 				}
 			}
 		}
@@ -214,6 +240,19 @@ $space-directions-register: (
 }
 
 /**
+ * Loop through each viewport to set a variable for preset
+ */
+@mixin space-set-variables($preset-name, $preset-conf) {
+	$viewports: map_get($preset-conf, viewports);
+	@each $viewport, $value in $viewports {
+		@include breakpoint($viewport) {
+			@include var-space-preset($preset-name, $value);
+			@include var-space-preset($preset-name+'-n', $value*-1);
+		}
+	}
+}
+
+/**
  * Loop through each space preset
  */
 @mixin space-loop-presets() {
@@ -221,6 +260,14 @@ $space-directions-register: (
 	@each $preset-name, $preset-conf in $space-presets {
 		// Mix default configuration  with new settings
 		$preset-conf: get-space-preset-configuration($preset-conf);
+		// Safe preset-name in configuration for later use
+		$preset-conf: map-merge((preset-name: $preset-name), $preset-conf);
+
+		// Set CSS variables
+		// Todo write logic for using the variables
+		:root {
+			@include space-set-variables($preset-name, $preset-conf);
+		}
 
 		// Loop through each type (padding, margin, positions)
 		@include space-loop-types($preset-name, $preset-conf);

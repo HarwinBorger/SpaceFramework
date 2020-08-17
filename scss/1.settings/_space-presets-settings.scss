@@ -18,7 +18,7 @@ $space-preset-settings: (
 	),
 	// Do you want negative classes? (.[preset-name]-margin-top-n)
 	// (boolean) true || false
-	negative-classes: false,
+	negative-classes: true,
 	// Do you want viewport classes? (.medium-[preset-name]-padding, large-[preset-name]-padding)
 	// (boolean) true || false
 	viewport-classes: true,
