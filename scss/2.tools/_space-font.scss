@@ -26,7 +26,7 @@ $short-variable: (
 	xheight: 'xh',
 );
 
-@function short($value){
+@function short($value) {
 	@return map-get($short-variable, $value);
 }
 
@@ -201,24 +201,28 @@ $short-variable: (
 		// Set font-size
 		$font-size-legacy-value: last(map-get($text-preset, font-size)); // Get highest value from font-size array
 		$font-size-value: inherit;
+
 		@if ($set-text-preset != inherit) {
 			$font-size-value: #{get-var($text-preset-value, short(font-size))};
 		}
 
 		// Set line-height
 		$line-height-value: inherit;
+
 		@if ($set-text-preset != inherit) {
 			$line-height-value: #{get-var($text-preset-value, short(line-height))};
 		}
 
 		// Set color
 		$color-value: false;
+
 		@if (map-has-key($text-preset, color)) {
 			$color-value: #{map-get($text-preset, short(color))};
 		}
 
 		// Set font-weight
 		$font-weight-value: false;
+
 		@if (map-has-key($text-preset, font-weight)) {
 			$font-weight-value: #{map-get($text-preset, short(font-weight))};
 		}

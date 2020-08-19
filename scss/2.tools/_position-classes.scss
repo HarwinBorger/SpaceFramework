@@ -5,7 +5,7 @@
 	$positions: (static, relative, fixed, absolute, sticky);
 
 	@each $position in $positions {
-		.position-#{$position}{
+		.position-#{$position} {
 			position: $position;
 		}
 	}

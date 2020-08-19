@@ -203,7 +203,6 @@ $space-directions-register: (
 
 			//Generate breakpoints
 			@include breakpoint($viewport) {
-
 				@if ($viewport-classes == true and $viewport != 'small') {
 					$viewport-class: '.#{$viewport}-#{$class-name}';
 					$class-array: append($class-array, $viewport-class, comma);
@@ -236,7 +235,7 @@ $space-directions-register: (
 		$suffix: '';
 
 		// Don't use 'type' in classname when 'position' to stick to vanilla CSS naming convention
-		@if($type!=position){
+		@if ($type!=position) {
 			$suffix: '-#{$type}';
 		}
 
@@ -251,6 +250,7 @@ $space-directions-register: (
  */
 @mixin space-set-variables($preset-name, $preset-conf) {
 	$viewports: map_get($preset-conf, viewports);
+
 	@each $viewport, $value in $viewports {
 		@include breakpoint($viewport) {
 			@include var-space-preset($preset-name, $value);
