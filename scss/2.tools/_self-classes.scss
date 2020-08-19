@@ -11,8 +11,8 @@
 
 		// self-fill class can be used to fill up remaining space on filled components
 		&-fill {
-			padding-top: get-var(default, capheight);
-			padding-bottom: get-var(default, capheight);
+			padding-top: get-var(default, short(capheight));
+			padding-bottom: get-var(default, short(capheight));
 		}
 	}
 }
