@@ -2,12 +2,15 @@
 
 ## [1.1] (unreleased)
 - At font-weight and color support in text-presets
-- Refactor `$layout-presets` to `$space-presets`, since this is more appropriate for the upcoming grid and template classes. Hopefully last time of changing this name (A). 
-  - Simplify the code, 
-  - Remove functionality to have different space sizes at each direction
-  - Improve names of variables 
-  - Rename settings file from `$layout-spresets-support` to `$space-presets-support` and improve readability. 
- 
+
+### Refactor Space-presets
+- Refactor `$layout-presets` to `$space-presets`, since this is more appropriate for the upcoming grid and template classes. Hopefully last time of changing this name (A). This refactor contains:
+- Simplify the code, 
+- Removed functionality to have different space sizes at each direction, this is not logical neither provided in documentation. 
+- Improved names of variables 
+- Renamed settings file from `$layout-spresets-support` to `$space-presets-settings` and improve readability. 
+- Removed `-position` class naming convention. Instead of `.block-position-left` now you only need to write `.block-left`
+- Renamed `-vertical` `-horizontal` conventions  to `-y` and `-x` 
 
 ## [1.0] Stable release
 - Bug fixes
