@@ -233,7 +233,14 @@ $space-directions-register: (
 	$types: map_get($preset-conf, types);
 
 	@each $type in $types {
-		$class-name: '#{$preset-name}-#{$type}';
+		$suffix: '';
+
+		// Don't use 'type' in classname when 'position' to stick to vanilla CSS naming convention
+		@if($type!=position){
+			$suffix: '-#{$type}';
+		}
+
+		$class-name: '#{$preset-name}#{$suffix}';
 
 		@include space-loop-viewports($class-name, $preset-conf, $type);
 	}
