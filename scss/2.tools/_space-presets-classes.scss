@@ -271,7 +271,8 @@ $space-directions-register: (
 		$preset-conf: map-merge((preset-name: $preset-name), $preset-conf);
 
 		// Set CSS variables
-		// Todo write logic for using the variables
+		// Todo combine classes (.margin, margin-y, margin-top) to safe about 10% space
+		// Todo write logic for using the variables to safe about 30% space (doesn't support legacy browsers)
 		:root {
 			@include space-set-variables($preset-name, $preset-conf);
 		}
