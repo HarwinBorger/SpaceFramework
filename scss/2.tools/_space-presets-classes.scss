@@ -300,7 +300,7 @@ $space-directions-register: (
  * Deprecated as of 1.0
  */
 @mixin space-classes() {
-	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [1.0]. Please use "space-preset-classes()" instead');
+	@warn ('[DEPRECATED] - "space-classes()" is deprecated since SpaceFramework [1.0]. Please use "space-preset-classes()" instead. Go to https://docs.spaceframework.dev/grid-layout/space-presets.html to see what\'s changed');
 
 	@include space-preset-classes();
 }
@@ -312,7 +312,7 @@ $space-directions-register: (
  * Deprecated as of 1.1
  */
 @mixin layout-classes() {
-	@warn ('[DEPRECATED] - "layout-classes()" is deprecated since SpaceFramework [1.1]. Please use "space-presets-classes()" instead');
+	@warn ('[DEPRECATED] - "layout-classes()" is deprecated since SpaceFramework [1.1]. Please use "space-presets-classes()" instead. Go to https://docs.spaceframework.dev/grid-layout/space-presets.html to see what\'s changed');
 
 	@include space-preset-classes();
 }
