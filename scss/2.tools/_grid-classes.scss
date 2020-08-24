@@ -5,6 +5,7 @@
 	 */
 	.edge {
 		@include padding-horizontal($edge-padding);
+
 		max-width: $edge-width;
 
 		margin-right: auto;
@@ -24,6 +25,7 @@
 
 	@each $viewport, $size in $viewports {
 		$prefix: '#{$viewport}-';
+
 		@if ($viewport == 'small') {
 			$prefix: '';
 		}
@@ -70,6 +72,7 @@
 	 */
 	.grid-columns {
 		@extend .grid;
+
 		grid-template-columns: repeat($grid-columns, 1fr);
 
 		// Set default width of each column to full width
@@ -78,15 +81,14 @@
 		}
 	}
 
-
 	@each $viewport, $size in $viewports {
 		$prefix: '#{$viewport}-';
+
 		@if ($viewport == 'small') {
 			$prefix: '';
 		}
 
 		@include breakpoint($viewport) {
-
 			@for $i from 1 through $grid-columns {
 				.#{$prefix}span-#{$i} {
 					grid-column-end: span $i;
@@ -97,7 +99,7 @@
 				}
 
 				.#{$prefix}order-#{$i} {
-					order: $i
+					order: $i;
 				}
 			}
 		}
