@@ -13,6 +13,14 @@ $space-unit-sizes: (
 	large: 1rem
 ) !default;
 
-/* GRID */
-$grid-gaps: (1, 2) !default;
-$grid-columns: (1, 2, 3, 4) !default;
+/**
+ * GRID
+ */
+
+// columns
+$grid-columns: 12 !default; // define amount of columns
+// gaps
+$grid-default-gap: 2 !default; // define the default gap space, define in space-units
+$grid-gap-classes: (1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
+// raster
+$grid-raster-classes: (1, 2, 3, 4) !default; // define which raster classes you would like to use: .grid-1, .grid-2, .grid-3, .grid-4 etc.

@@ -16,8 +16,8 @@
 	 */
 	.grid {
 		display: grid;
-		grid-gap: 1rem;
-		grid-gap: su(1);
+		grid-gap: su-fallback($grid-default-gap);
+		grid-gap: su($grid-default-gap);
 		grid-template-columns: repeat(1, 1fr);
 	}
 
@@ -34,29 +34,29 @@
 			}
 
 			// Grid Columns
-			@each $columns in $grid-columns {
+			@each $columns in $grid-raster-classes {
 				.#{$prefix}grid-#{$columns} {
 					grid-template-columns: repeat($columns, 1fr);
 				}
 			}
 
 			// Grid Gap
-			@each $gap in $grid-gaps {
-				.#{$prefix}grid-gap-#{$gap} {
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}gap-#{$gap} {
 					grid-gap: su($gap);
 				}
 			}
 
 			// Grid Row Gap
-			@each $gap in $grid-gaps {
-				.#{$prefix}grid-row-gap-#{$gap} {
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}row-gap-#{$gap} {
 					grid-row-gap: su($gap);
 				}
 			}
 
 			// Grid Column Gap
-			@each $gap in $grid-gaps {
-				.#{$prefix}grid-column-gap-#{$gap} {
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}column-gap-#{$gap} {
 					grid-column-gap: su($gap);
 				}
 			}
@@ -64,16 +64,16 @@
 	}
 
 	/**
-	 * Grid Layout
-	 * @description Grid Layout provides a 12 column column structure
+	 * Grid Template
+	 * @description Grid Template provides a 12 column column structure
 	 */
-	$grid-layout-columns: 12 !default;
-	.template {
-		grid-template-columns: repeat($grid-layout-columns, 1fr);
+	.grid-columns {
+		@extend .grid;
+		grid-template-columns: repeat($grid-columns, 1fr);
 
 		// Set default width of each column to full width
 		> * {
-			grid-column-end: span $grid-layout-columns;
+			grid-column-end: span $grid-columns;
 		}
 	}
 
@@ -86,7 +86,7 @@
 
 		@include breakpoint($viewport) {
 
-			@for $i from 1 through $grid-layout-columns {
+			@for $i from 1 through $grid-columns {
 				.#{$prefix}span-#{$i} {
 					grid-column-end: span $i;
 				}
