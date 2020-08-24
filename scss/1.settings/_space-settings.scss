@@ -2,26 +2,33 @@
  * BASIC CORE SETTINGS
  *
  * Context:
- * - Space Units
- * - Grid
+ * - SPACE UNITS
+ * - VIEWPORTS
+ * - EDGE
+ * - GRID
 **************************************************************/
 
-/* SPACE UNITS */
+/***** SPACE UNITS *****/
 $space-unit-sizes: (
 	small: .75rem,
 	medium: .875rem,
 	large: 1rem
 ) !default;
 
-/**
- * EDGE
- */
+/***** VIEWPORTS *****/
+$viewports: (
+	small: 0,
+	medium: 640px,
+	large: 1280px,
+) !default; // Define each viewport you want to support for the SpaceFramework
+
+$viewport-classes: (small, medium, large) !default; // Define on which viewports you want to generate your classes (layout and typography classes)
+
+/***** EDGE *****/
 $edge-width: 1280px; // define the width of the website
 $edge-padding: 1; // define the edge padding, define in space-units
 
-/**
- * GRID
- */
+/***** GRID *****/
 // columns
 $grid-columns: 12 !default; // define amount of columns
 // gaps

@@ -1,6 +1,7 @@
 @mixin grid-classes() {
 	/**
-	 * Edge provides the width of your webpage
+	 * Edge
+	 * @description edge is the container for the website
 	 */
 	.edge {
 		@include padding-horizontal($edge-padding);
@@ -11,7 +12,7 @@
 	}
 
 	/**
-	 * Grid
+	 * Grid classes
 	 * @description grid provides the basic settings of the grid
 	 */
 	.grid {
