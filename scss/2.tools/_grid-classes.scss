@@ -20,7 +20,6 @@
 		display: grid;
 		grid-gap: su-fallback($grid-default-gap);
 		grid-gap: su($grid-default-gap);
-		grid-template-columns: repeat(1, 1fr);
 	}
 
 	@each $viewport, $size in $viewports {
