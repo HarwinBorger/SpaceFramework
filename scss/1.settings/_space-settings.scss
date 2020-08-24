@@ -14,9 +14,14 @@ $space-unit-sizes: (
 ) !default;
 
 /**
+ * EDGE
+ */
+$edge-width: 1280px; // define the width of the website
+$edge-padding: 1; // define the edge padding, define in space-units
+
+/**
  * GRID
  */
-
 // columns
 $grid-columns: 12 !default; // define amount of columns
 // gaps

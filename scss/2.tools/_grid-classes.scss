@@ -3,8 +3,8 @@
 	 * Edge provides the width of your webpage
 	 */
 	.edge {
-		@include padding-horizontal(1);
-		max-width: 1280px;
+		@include padding-horizontal($edge-padding);
+		max-width: $edge-width;
 
 		margin-right: auto;
 		margin-left: auto;
