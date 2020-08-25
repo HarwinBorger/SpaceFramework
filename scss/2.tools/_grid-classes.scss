@@ -4,6 +4,7 @@
 	 * @description edge is the container for the website
 	 */
 	.edge {
+		box-sizing: content-box;
 		@include padding-horizontal($edge-padding);
 
 		max-width: $edge-width;
