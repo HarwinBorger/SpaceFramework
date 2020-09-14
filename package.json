@@ -35,7 +35,7 @@
     "stylelint-scss": "^3.18.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dashboard": "^3.2.0"
+    "webpack-dashboard": "^3.2.1"
   },
   "dependencies": {
     "normalize.css": "*"

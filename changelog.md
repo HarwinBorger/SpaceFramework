@@ -1,5 +1,9 @@
 # SpaceLog
 
+## (unreleased)
+- Add basic grid system providing block structure
+- Add basic grid template system providing column structure 
+
 ## [1.1] Extended text-presets (14-09-2020)
 - Add font-weight and color support in text-presets
 

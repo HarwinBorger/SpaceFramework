@@ -1,0 +1,108 @@
+@mixin grid-classes() {
+	/**
+	 * Edge
+	 * @description edge is the container for the website
+	 */
+	.edge {
+		box-sizing: content-box;
+
+		@include padding-horizontal($edge-padding);
+
+		max-width: $edge-width;
+
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/**
+	 * Grid classes
+	 * @description grid provides the basic settings of the grid
+	 */
+	.grid {
+		display: grid;
+		grid-gap: su-fallback($grid-default-gap);
+		grid-gap: su($grid-default-gap);
+	}
+
+	@each $viewport, $size in $viewports {
+		$prefix: '#{$viewport}-';
+
+		@if ($viewport == 'small') {
+			$prefix: '';
+		}
+
+		@include breakpoint($viewport) {
+			// Grid Auto
+			.#{$prefix}grid-auto {
+				grid-auto-flow: column;
+			}
+
+			// Grid Columns
+			@each $columns in $grid-raster-classes {
+				.#{$prefix}grid-#{$columns} {
+					grid-template-columns: repeat($columns, 1fr);
+				}
+			}
+
+			// Grid Gap
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}gap-#{$gap} {
+					grid-gap: su($gap);
+				}
+			}
+
+			// Grid Row Gap
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}row-gap-#{$gap} {
+					grid-row-gap: su($gap);
+				}
+			}
+
+			// Grid Column Gap
+			@each $gap in $grid-gap-classes {
+				.#{$prefix}column-gap-#{$gap} {
+					grid-column-gap: su($gap);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Grid Template
+	 * @description Grid Template provides a 12 column column structure
+	 */
+	.grid-columns {
+		@extend .grid;
+
+		grid-template-columns: repeat($grid-columns, 1fr);
+
+		// Set default width of each column to full width
+		> * {
+			grid-column-end: span $grid-columns;
+		}
+	}
+
+	@each $viewport, $size in $viewports {
+		$prefix: '#{$viewport}-';
+
+		@if ($viewport == 'small') {
+			$prefix: '';
+		}
+
+		@include breakpoint($viewport) {
+			@for $i from 1 through $grid-columns {
+				.#{$prefix}span-#{$i} {
+					grid-column-end: span $i;
+				}
+
+				.#{$prefix}start-#{$i} {
+					grid-column-start: $i;
+				}
+
+				.#{$prefix}order-#{$i} {
+					order: $i;
+				}
+			}
+		}
+	}
+}

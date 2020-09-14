@@ -2,17 +2,59 @@
  * BASIC CORE SETTINGS
  *
  * Context:
- * - Space Unit Sizes
- * - Space Breakpoints
+ * - SPACE UNITS
+ * - VIEWPORTS
+ * - EDGE
+ * - GRID
 **************************************************************/
 
-/**
- * Space Rhythm: Define grid setting
- */
-
-// Define the size of your virtual grid units for each breakpoint
+/***** SPACE UNITS *****/
 $space-unit-sizes: (
 	small: .75rem,
 	medium: .875rem,
 	large: 1rem
 ) !default;
+
+/***** VIEWPORTS *****/
+$viewports: (
+	small: 0,
+	medium: 640px,
+	large: 1024px,
+) !default; // Define each viewport you want to support for the SpaceFramework
+
+$viewport-classes: (small, medium, large) !default; // Define on which viewports you want to generate your classes (layout and typography classes)
+
+/***** EDGE *****/
+$edge-width: 1120px !default; // define the width of the website
+$edge-padding: 2 !default; // define the edge padding, define in space-units
+
+/***** GRID *****/
+$grid-columns: 12 !default; // define amount of columns
+$grid-default-gap: 2 !default; // define the default gap space, define in space-units
+$grid-gap-classes: (1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
+$grid-raster-classes: (1, 2, 3, 4) !default; // define which raster classes you would like to use: .grid-1, .grid-2, .grid-3, .grid-4 etc.
+
+/***** TYPOGRAPHY *****/
+$space-support: (
+	align-baseline: true,
+	align-capline: false,
+	align-median: false,
+	align-reset: false,
+	fit-baseline: true,
+	fit-capline: false,
+) !default;
+
+/***** LEGACY *****/
+
+/* Use $space-legacy if you want to provide some support for old browsers such as:
+ * - IE 11
+ * - < Edge 15
+ * - < Android 4.4.4
+ *
+ * SpaceFramework uses modern functions like 'css-variables' to avoid large stylesheets.
+ * @source https://caniuse.com/#feat=css-variables
+ *
+ * Space legacy is true by default, providing max reliability.
+ * If you are certain you are up for it, check the provided sources and change $space-legacy to false
+ */
+$space-legacy: true !default;

@@ -5,6 +5,7 @@
  * design patterns, for example media object known from OOCSS
  */
 
+@include grid-classes();
 @include layout-classes();
 @include font-size-classes();
 @include text-preset-classes();
