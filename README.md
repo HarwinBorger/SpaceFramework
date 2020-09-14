@@ -22,5 +22,8 @@ npm install spaceframework
 ## Documentation
 For documentation go to https://docs.spaceframework.dev 
 
+## Calculate X-Height and Capheight
+https://fonts.spaceframework.dev 
+
 ## Credits
-Proudly made in the Netherlands by @HarwinBorger
+Proudly made in the Netherlands by Harwin
