@@ -1,34 +1,22 @@
 # SpaceLog
 
-## [1.1] (unreleased)
-- At font-weight and color support in text-presets
+## [1.1] Extended text-presets (14-09-2020)
+- Add font-weight and color support in text-presets
 
-## [1.0] Stable release
+## [1.0] Stable release (15-03-2020)
 - Bug fixes
-
-#### [1.0.0-alpha.6] (unreleased)
 - Set default space-unit size to 1rem instead of .875rem
 - Add fallback message for deprecated `font-preset-classes()`
-
-#### [1.0.0-alpha.5]
 - Renamed `$font-presets` variable to `$text-presets` since this name fits it's purpose better
 - Renamed `@include font-preset` mixin to `@include text-preset` since this name fits it's purpose better
 - Renamed `font-preset-variables()` function to `text-preset-variables()` since this name fits it's purpose better
 - Renamed `font-preset-classes()` function to `text-preset-classes()` since this name fits it's purpose better
- 
-#### [1.0.0-alpha.4] 
 - Fix node problem causing white space in classnames
 - Rename old `$space-class-settings` variable to `$layout-presets-support`
-
-#### [1.0.0-alpha.3]
 - Move documentation from docs folder to own repository
 - Improve naming of core .scss files (`spaceframework.scss` and `init-spaceframework.scss`) 
-
-#### [1.0.0-alpha.2]
 - Add fallback with warning for situation when a used font-preset is not present within `$font-presets`. For example when `@include font-preset('hero')` is used when `hero` does not exist within `$font-presets`
 - Remove secondary font from the pre-setup so no conflicts are given when using easy setup
-
-#### [1.0.0-alpha.1]
 - Replace Grunt with Webpack
 - Add Travis CI for unit testing
 - Add first documentation
