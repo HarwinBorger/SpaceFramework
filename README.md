@@ -6,7 +6,7 @@ Were most front-end frameworks focus only on the horizontal grid, the SpaceFrame
 The core of the framework lays in the use of the so called Space-Units. With Space-Units, a virtual grid is created on which every element in the website is aligned on.
 
 ## Recommended to use
-- Space Framework is build on top of Foundation. However we made 
+- SpaceFramework is build on top of Foundation. However we made 
 SpaceFramework to work without Foundation as well, but full power can be unlocked by combining them. (https://foundation.zurb.com/) 
 
 ## Installation
