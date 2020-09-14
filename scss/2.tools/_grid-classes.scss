@@ -5,6 +5,7 @@
 	 */
 	.edge {
 		box-sizing: content-box;
+
 		@include padding-horizontal($edge-padding);
 
 		max-width: $edge-width;

@@ -45,7 +45,8 @@ $space-support: (
 ) !default;
 
 /***** LEGACY *****/
- /* Use $space-legacy if you want to provide some support for old browsers such as:
+
+/* Use $space-legacy if you want to provide some support for old browsers such as:
  * - IE 11
  * - < Edge 15
  * - < Android 4.4.4
@@ -57,4 +58,3 @@ $space-support: (
  * If you are certain you are up for it, check the provided sources and change $space-legacy to false
  */
 $space-legacy: true !default;
-
