@@ -306,7 +306,7 @@ $short-variable: (
 					margin-top: get-var($text-preset-value, fit);
 				}
 			}
-			
+
 			@if (space-support(fit-up-baseline)) {
 				#{$class-align-baseline} #{$class-fit-up} > &:first-child,
 				#{$class-align-baseline}#{$class-fit-up} > &:first-child {
