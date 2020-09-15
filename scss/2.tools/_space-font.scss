@@ -17,6 +17,8 @@ $class-align-capline: '.align-capline' !default;
 $class-align-median: '.align-median' !default;
 $class-align-reset: '.align-reset' !default;
 $class-fit: '.fit' !default;
+$class-fit-up: '.fit-up' !default;
+$class-fit-down: '.fit-down' !default;
 
 // Short vars
 $short-variable: (
@@ -24,6 +26,9 @@ $short-variable: (
 	line-height: 'lh',
 	capheight: 'ch',
 	xheight: 'xh',
+	fit: 'fit',
+	fit-up: 'fit-u',
+	fit-down: 'fit-d',
 );
 
 /* Calculate font functions  */
@@ -151,6 +156,16 @@ $short-variable: (
 				// Add element to .align-xline object
 				#{set-var($text-preset-value, xheight)}: #{$xheight-correction-value};
 			}
+
+			// Calculate fit corrections
+			$su: map_get($space-unit-sizes, $viewport);
+			$fit-value: $capheight-correction-value*-2;
+			$fit-up-value: floor($fit-value / $su) * $su;
+			$fit-down-value: ceil($fit-value / $su) * $su;
+
+			#{set-var($text-preset-value, fit)}: #{$fit-value};
+			#{set-var($text-preset-value, fit-up)}: #{$fit-up-value};
+			#{set-var($text-preset-value, fit-down)}: #{$fit-down-value};
 		}
 	}
 }
@@ -288,7 +303,21 @@ $short-variable: (
 			@if (space-support(fit-baseline)) {
 				#{$class-align-baseline} #{$class-fit} > &:first-child,
 				#{$class-align-baseline}#{$class-fit} > &:first-child {
-					margin-top: calc(#{get-var($text-preset-value, capheight)} * -2);
+					margin-top: get-var($text-preset-value, fit);
+				}
+			}
+
+			@if (space-support(fit-up-baseline)) {
+				#{$class-align-baseline} #{$class-fit-up} > &:first-child,
+				#{$class-align-baseline}#{$class-fit-up} > &:first-child {
+					margin-top: get-var($text-preset-value, fit-up);
+				}
+			}
+
+			@if (space-support(fit-down-baseline)) {
+				#{$class-align-baseline} #{$class-fit-down} > &:first-child,
+				#{$class-align-baseline}#{$class-fit-down} > &:first-child {
+					margin-top: get-var($text-preset-value, fit-down);
 				}
 			}
 
