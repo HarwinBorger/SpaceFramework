@@ -105,4 +105,18 @@
 			}
 		}
 	}
+
+	/**
+	 * Grid utility classes
+	 */
+	.align-items {
+		&-start {
+			align-items: start;
+		}
+
+		&-end {
+			align-items: end;
+		}
+	}
+
 }

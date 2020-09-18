@@ -3,7 +3,8 @@
 ## (unreleased)
 - Add basic grid system providing block structure
 - Add basic grid template system providing column structure 
-- Add advanced fit classes such as `.fit-up` and `.fit-down` which you can use to keep everything on the grid while trying to fit. 
+- Add advanced fit classes such as `.fit-up` and `.fit-down` which you can use to keep everything on the grid while trying to fit.
+- Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end` 
 
 ## [1.1] Extended text-presets (14-09-2020)
 - Add font-weight and color support in text-presets
