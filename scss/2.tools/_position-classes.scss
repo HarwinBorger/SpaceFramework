@@ -1,0 +1,11 @@
+$position-classes: ('static', 'relative', 'absolute', 'fixed','sticky') !default;
+
+@mixin position-classes() {
+	.position {
+		@each $position in $position-classes {
+			&-#{$position} {
+				position: #{$position};
+			}
+		}
+	}
+}
