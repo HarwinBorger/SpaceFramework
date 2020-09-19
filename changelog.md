@@ -5,6 +5,7 @@
 - Add basic grid template system providing column structure 
 - Add advanced fit classes such as `.fit-up` and `.fit-down` which you can use to keep everything on the grid while trying to fit.
 - Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end` 
+- Add force classes such as `.force`, `.force-start`, and `.force-end` to force a background behind a margin to be shown
 
 ## [1.1] Extended text-presets (14-09-2020)
 - Add font-weight and color support in text-presets
