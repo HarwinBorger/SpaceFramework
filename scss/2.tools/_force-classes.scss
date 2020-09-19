@@ -3,20 +3,21 @@
 		&::before,
 		&-start::before,
 		&::after,
-		&-start::after{
+		&-start::after {
 			content: '';
-			height: 0.1px; // fake height to force the child margin to stay within component
+
 			display: block;
+			height: .1px; // fake height to force the child margin to stay within component
 		}
 
 		&::before,
-		&-start::before{
-			margin-bottom: -0.1px; // undo height
+		&-start::before {
+			margin-bottom: -.1px; // undo height
 		}
 
 		&::after,
-		&-start::after{
-			margin-top: -0.1px; // undo height
+		&-start::after {
+			margin-top: -.1px; // undo height
 		}
 	}
 }
