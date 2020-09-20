@@ -5,13 +5,25 @@
 @mixin trim-classes() {
 	.trim {
 		&,
+		&-v,
 		&-top {
 			@include reset-child-margin-top();
 		}
 
 		&,
+		&-v,
 		&-bottom {
 			@include reset-child-margin-bottom();
+		}
+
+		&-h,
+		&-left {
+			@include reset-child-margin-left();
+		}
+
+		&-h,
+		&-right {
+			@include reset-child-margin-right();
 		}
 	}
 }

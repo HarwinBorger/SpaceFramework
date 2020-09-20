@@ -16,6 +16,18 @@
 	}
 }
 
+@mixin reset-child-margin-left($cascading: 1) {
+	> *:last-child {
+		margin-left: 0;
+	}
+}
+
+@mixin reset-child-margin-right($cascading: 1) {
+	> *:last-child {
+		margin-right: 0;
+	}
+}
+
 @mixin reset-child-margin($cascading: 1) {
 	@include reset-child-margin-top($cascading);
 	@include reset-child-margin-bottom($cascading);

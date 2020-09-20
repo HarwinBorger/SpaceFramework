@@ -1,12 +1,17 @@
 # SpaceLog
 
 ## (unreleased)
-- Add basic grid system providing block structure
-- Add basic grid template system providing column structure 
+### Grid
+- Add basic grid system providing block structure such as `.grid`, `.grid-2` and `.grid-3`
+- Add basic grid template system providing column structure, use classes like: `.grid-columns`, `span-3`
+- Add order classes such as: `.order-1`, `.order-2`
+- Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end`
+
+### Other 
 - Add advanced fit classes such as `.fit-up` and `.fit-down` which you can use to keep everything on the grid while trying to fit.
-- Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end` 
 - Add force classes such as `.force`, `.force-start`, and `.force-end` to force a background behind a margin to be shown
 - Add position classes such as `.position-absolute` and `.position-relative`
+- Add extra trim classes: `.trim-h` (horizontal), `.trim-v` (vertical), `.trim-left` and `.trim-right` 
 
 ## [1.1] Extended text-presets (14-09-2020)
 - Add font-weight and color support in text-presets
