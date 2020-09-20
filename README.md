@@ -28,5 +28,5 @@ https://docs.spaceframework.dev
 ## Calculate X-Height and Capheight
 https://fonts.spaceframework.dev 
 
-## Credits
-Proudly made in the Netherlands by Harwin
+## Thanks for using the SpaceFramwork
+Made with :alien: from the Netherlands — Harwin 
