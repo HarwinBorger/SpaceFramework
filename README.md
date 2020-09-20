@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/spaceframework.svg)](https://www.npmjs.com/package/spaceframework)
 [![Bower version](https://badge.fury.io/bo/spaceframework.svg)](https://asset-packagist.org/package/bower-asset/spaceframework)
+[![Bower version](https://img.shields.io/github/license/harwinborger/spaceframework)](https://github.com/HarwinBorger/SpaceFramework/blob/master/LICENSE)
 
 # SpaceFramework 
 The SpaceFramework is a front-end framework build in SASS which focuses on building websites rapidly, responsive and pixel perfect. The framework helps you with centralizing typography, centralizing layouts elements and delivering vertical alignment on typography and elements. Each component you create, can be placed modular in the website and writing exceptions belongs to the past.
@@ -18,9 +19,11 @@ SpaceFramework to work without Foundation as well, but full power can be unlocke
 ```
 npm install spaceframework
 ```
+## Examples
+https://spaceframework.dev
 
 ## Documentation
-For documentation go to https://docs.spaceframework.dev 
+https://docs.spaceframework.dev 
 
 ## Calculate X-Height and Capheight
 https://fonts.spaceframework.dev 
