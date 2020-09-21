@@ -31,7 +31,7 @@ $edge-padding: 2 !default; // define the edge padding, define in space-units
 /***** GRID *****/
 $grid-columns: 12 !default; // define amount of columns
 $grid-default-gap: 2 !default; // define the default gap space, define in space-units
-$grid-gap-classes: (1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
+$grid-gap-classes: (0, 1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
 $grid-raster-classes: (1, 2, 3, 4) !default; // define which raster classes you would like to use: .grid-1, .grid-2, .grid-3, .grid-4 etc.
 
 /***** TYPOGRAPHY *****/
