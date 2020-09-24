@@ -23,7 +23,8 @@
     "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
     "test": "concurrently 'npm run stylelint' 'npm run build'",
     "update:vendor": "./scripts/normalize.sh",
-    "version": "./scripts/version.sh"
+    "version": "./scripts/version.sh",
+    "version:dep": "./scripts/dep-npm-version.sh"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
