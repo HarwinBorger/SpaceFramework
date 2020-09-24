@@ -1,12 +1,19 @@
 #!/bin/bash
 # Colors
 HIGHLIGHT='\033[38;2;0;255;255m'
+RED='\033[38;2;255;20;20m'
 BLUE='\033[38;2;0;160;255m'
 GREEN='\033[38;2;0;255;160m'
 WHITE='\033[38;2;255;255;255m'
 NC='\033[0m' # No Color
 BOLD='\033[1m'
 
+if git diff-index HEAD;
+then
+	git status
+	echo -e "${RED}First commit your files please...${NC}"
+	exit
+fi
 
 # Welcome
 echo -e "------------------------------------------------------------------"
@@ -68,6 +75,7 @@ done
 echo "---------------------------------"
 echo -e "git tag ${BLUE}$version${NC}"
 git tag $version
+git push --tags
 
 echo -e "${GREEN}Done"
 
