@@ -1,10 +1,19 @@
 {
   "name": "spaceframework",
-  "version": "1.2.0-alpha.7",
+  "version": "1.2.0-alpha.8",
   "description": "A powerful responsive SCSS framework build with typography standards in mind.",
   "repository": "https://github.com/HarwinBorger/SpaceFramework",
   "homepage": "https://spaceframework.dev",
-  "keywords": ["scss","framework","css","typography","baseline","capline","html","grid"],
+  "keywords": [
+    "scss",
+    "framework",
+    "css",
+    "typography",
+    "baseline",
+    "capline",
+    "html",
+    "grid"
+  ],
   "author": "Harwin Borger <hello@harwin.nl>",
   "license": "GPL-3.0-only",
   "scripts": {
