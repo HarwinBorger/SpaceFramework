@@ -19,7 +19,7 @@ SpaceFramework to work without Foundation as well, but full power can be unlocke
 ```
 npm install spaceframework
 ```
-## Examples
+## Official website & Examples
 https://spaceframework.dev
 
 ## Documentation
