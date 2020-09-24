@@ -103,6 +103,12 @@
 					order: $i;
 				}
 			}
+
+			@each $row in $grid-row-span-classes {
+				.#{$prefix}row-span-#{$row} {
+					grid-row-end: span $row;
+				}
+			}
 		}
 	}
 
