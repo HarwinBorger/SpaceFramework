@@ -4,6 +4,7 @@
 ### Grid
 - Add basic grid system providing block structure such as `.grid`, `.grid-2` and `.grid-3`
 - Add basic grid template system providing column structure, use classes like: `.grid-columns`, `span-3`
+- Add gap classes such as`.gap-0`, `.gap-2`, `.row-gap-0` and `.col-gap-0`
 - Add order classes such as: `.order-1`, `.order-2`
 - Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end`
 

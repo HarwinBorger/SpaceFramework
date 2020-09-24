@@ -60,7 +60,7 @@
 
 			// Grid Column Gap
 			@each $gap in $grid-gap-classes {
-				.#{$prefix}column-gap-#{$gap} {
+				.#{$prefix}col-gap-#{$gap} {
 					grid-column-gap: su($gap);
 				}
 			}
