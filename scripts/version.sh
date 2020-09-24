@@ -8,8 +8,8 @@ WHITE='\033[38;2;255;255;255m'
 NC='\033[0m' # No Color
 BOLD='\033[1m'
 
-if git diff-index HEAD;
-then
+CHANGED=$(git diff-index --name-only HEAD)
+if [ -n "$CHANGED" ]; then
 	git status
 	echo -e "${RED}First commit your files please...${NC}"
 	exit
