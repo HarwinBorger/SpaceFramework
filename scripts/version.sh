@@ -75,6 +75,9 @@ done
 echo "---------------------------------"
 echo -e "git tag ${BLUE}$version${NC}"
 git tag $version
+echo -e "git commit -m `Update to version $version`"
+git commit -m "Update to version $version"
+echo -e "git push --tags"
 git push --tags
 
 echo -e "${GREEN}Done"
