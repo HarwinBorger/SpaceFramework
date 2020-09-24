@@ -10,6 +10,7 @@ Were most front-end frameworks focus only on the horizontal grid, the SpaceFrame
 The core of the framework lays in the use of the so called Space-Units. With Space-Units, a virtual grid is created on which every element in the website is aligned on.
 
 ## Features
+- Fixed units of measurement called 'space-units'
 - Real vertical text alignment such as align-baseline, align-capline and align-median
 - Grid
 - Centralized typography
