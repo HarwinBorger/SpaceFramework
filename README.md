@@ -8,7 +8,7 @@ The SpaceFramework is a SCSS framework build for front-end professionals and can
 Extensive knowledge of typography and alignments is required to use the framework optimally. Therefor a good collaboration between UX/UI designers and front-end developers is advised. 
 
 ## How the SpaceFramework differs from common frameworks
-Most front-end frameworks like Bootstrap and ZURB Foundation focus mostly on the horizontal grid, instead the SpaceFramework does focus on the vertical grid and the vertical rhythms. The SpaceFramework uses advanced methods based on theories from typography and grids to create vertical patterns. As result websites and applications feel smooth and pixel perfect balanced.  
+Most front-end frameworks like Bootstrap and ZURB Foundation focus mostly on the horizontal grid, instead the SpaceFramework does focus on the vertical grid and the vertical rhythms. The SpaceFramework uses advanced methods based on theories from typography and grids to create vertical patterns. As result websites and applications become extremely well aligned and feel pixel perfect balanced.  
 
 The core of the framework lays in the use of the so called Space-Units and defining the x-height and cap-heights of fonts. With Space-Units, a virtual grid is created on which every element in the website is aligned.
 
