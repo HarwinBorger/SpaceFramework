@@ -1,6 +1,7 @@
 # SpaceLog
 
-## (unreleased)
+## [1.2] Grid — 2020-09-24
+
 ### Grid
 - Add basic grid system providing block structure such as `.grid`, `.grid-2` and `.grid-3`
 - Add basic grid template system providing column structure, use classes like: `.grid-columns`, `span-3`
@@ -15,10 +16,10 @@
 - Add position classes such as `.position-absolute` and `.position-relative`
 - Add extra trim classes: `.trim-h` (horizontal), `.trim-v` (vertical), `.trim-left` and `.trim-right` 
 
-## [1.1] Extended text-presets (14-09-2020)
+## [1.1] Extended text-presets — 2020-09-14 
 - Add font-weight and color support in text-presets
 
-## [1.0] Stable release (15-03-2020)
+## [1.0] Stable release 2020-03-15
 - Bug fixes
 - Set default space-unit size to 1rem instead of .875rem
 - Add fallback message for deprecated `font-preset-classes()`
@@ -43,7 +44,7 @@
 - Change scss implementation way of self classes
 - Reorder multiple files for more logical places
 
-## [0.17.1] Security fix 29-05-2019
+## [0.17.1] Security fix — 2019-05-29
 - Replace old package for merging media queries
 
 ## [0.17.0] Self and reset classes
@@ -51,14 +52,14 @@
 - Add self-fill and self-align classes and test
 - Add align-reset class to reset vertical alignments
 
-## [0.16.2] Fix calculation of capline and median values - 04-10-2018
+## [0.16.2] Fix calculation of capline and median values — 2018-10-04
 
-## [0.16.1] Fix space unit variable - 07-09-2018
+## [0.16.1] Fix space unit variable — 2018-09-07
 ### Fixed
 - Print space-unit-variables outside the media query instead of inside.
  This way the variable is no longer related to a viewport size and can it be used globally
 
-## [0.16] Custom properties and optimize space - 16-07-2018
+## [0.16] Custom properties and optimize space — 2018-07-16
 ### Added
 - Add support for min-height, max-height, min-width, max-width and possibility to add custom properties combined with space units 
 
@@ -66,25 +67,25 @@
 - Optimize variable length and functions
 - Cleanup old code
 
-## [0.15.1] Space unit variable - 09-07-2018
+## [0.15.1] Space unit variable — 2018-07-09
 ### Optimize
 - Optimize space units to save even more space
 
-## [0.15] Shift en optimize - 08-07-2018
+## [0.15] Shift en optimize — 2018-07-08
 ### Added
 - Add shift utility to move objects by a number
 
 ### Optimize
 - Optimize space dimensions
 
-## [0.14] New fit and position functions - 08-07-2018
+## [0.14] New fit and position functions — 2018-07-08
 ### Added
 - Add helper function to turn on and off typography alignment classes if you not used
 - Add support for *fit* in combination with baseline alignment, removing remaining line-height space
 - Add support for *fit* in combination with capline alignment, removing remaining line-height space
 - Add support for position offsets such as: top, left, right, bottom.  
 
-## [0.13] Saving bytes - 04-07-2018
+## [0.13] Saving bytes — 2018-07-04
 ### Added
 - Add optimize values function to generate less code by default
 
@@ -100,15 +101,15 @@
 ### Fixed 
 - Fix merge media in grunt
 
-## [0.12] Global line-heights support- 03-07-2018
+## [0.12] Global line-heights support — 2018-07-03
 ### Added
 - Add global line-heights support
 
-## [0.11.1] Clean up - 03-07-2018
+## [0.11.1] Clean up — 2018-07-03
 ### Removed
 - Remove text-column concept, concept not ready for use yet
 
-## [0.11] Standalone and extra utilities - 28-06-2018
+## [0.11] Standalone and extra utilities — 2018-06-28
 ### Added
 - Add Foundation 6.3 unit functions 
 - Add Foundation 6.3 breakpoint mixin / functions  
@@ -126,7 +127,7 @@
 ### Changed
 - Improved the font-preset array 
 
-## [0.9] Inherit FontPreset support and Capline naming - 15-03-2018
+## [0.9] Inherit FontPreset support and Capline naming — 2018-03-15
 ### Added
 - Add support for inherit font-preset falling back to default alignments
 - Add support for align-median 
@@ -135,12 +136,12 @@
 - Change align-topline to align-capline conform typography naming conventions
 - Replace $baseline-correction variable by $font-families to set x-height and cap-height attributes
 
-## [0.8] Offset and lineheight - 14-03-2018
+## [0.8] Offset and lineheight — 2018-03-14
 ### Added
 - Add line-height mixin so you can define customs line-heights
 - Add side classes for space offset
 
-## [0.7] Vertical alignment classes - 13-03-2018
+## [0.7] Vertical alignment classes — 2018-03-13
 
 ### Added
 - Add align-baseline so you can specify where you want to apply baseline alignment
@@ -149,11 +150,11 @@
 ### Remove
 - Remove default alignment of main elements. 
 
-## [0.6] Rework Font Presets - 12-03-2018
+## [0.6] Rework Font Presets — 2018-03-12
 ### Changed
 - Rework of font-size variables to font-presets and mixin 
 
-## [0.5] Space Units - 11-03-2018
+## [0.5] Space Units — 2018-03-11
 ### Added
 - Add overall support for space units
 - Add reset-child-margin mixin
@@ -167,11 +168,11 @@
 ### Removed
 - Remove pixel-perfect module
 
-## [0.4] New file structure - 04-03-2018
+## [0.4] New file structure — 2018-03-4
 ### Changed
 - Use ITCSS file structure 
 
-## [0.3] New features - 07-09-2017
+## [0.3] New features — 2017-09-07
 ### Added
 - Add negative classes for main object classes in space model
 - Add line-space module
@@ -179,10 +180,10 @@
 - Add line-height module
 - Add pixel-perfect module
 
-## [0.2.7] NPM - 07-09-2017
+## [0.2.7] NPM — 2017-09-07
 ### Added
 - Add support for NPM 
 
-## [V0.2.4] Hotfix - 04-08-2017
+## [V0.2.4] Hotfix — 2017-08-04
 ### Fixed
 - Add missing dot for position classes in space model
