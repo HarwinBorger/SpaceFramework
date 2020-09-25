@@ -1,6 +1,7 @@
 [![npm version](https://badge.fury.io/js/spaceframework.svg)](https://www.npmjs.com/package/spaceframework)
 [![Bower version](https://badge.fury.io/bo/spaceframework.svg)](https://asset-packagist.org/package/bower-asset/spaceframework)
 [![Bower version](https://img.shields.io/github/license/harwinborger/spaceframework)](https://github.com/HarwinBorger/SpaceFramework/blob/master/LICENSE)
+[![NPM Downloads](https://img.shields.io/npm/dt/spaceframework.svg?style=flat)](https://www.npmjs.com/package/spaceframework)  
 
 # SpaceFramework 
 The SpaceFramework is a SCSS framework build for front-end professionals and can be used to align elements pixel perfect on a virtual raster grid. The framework helps you with centralizing typography and the preserving of equivalent spaces between elements. 
