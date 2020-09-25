@@ -19,7 +19,7 @@
 ## [1.1] Extended text-presets — 2020-09-14 
 - Add font-weight and color support in text-presets
 
-## [1.0] Stable release 2020-03-15
+## [1.0] Stable release — 2020-03-15
 - Bug fixes
 - Set default space-unit size to 1rem instead of .875rem
 - Add fallback message for deprecated `font-preset-classes()`
