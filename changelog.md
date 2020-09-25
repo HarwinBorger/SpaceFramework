@@ -10,6 +10,9 @@
 - Add order classes such as: `.order-1`, `.order-2`
 - Add vanilla utility classes for grid such as `.align-items-start` and `.align-items-end`
 
+### Edge
+- Add edge class `.edge` which can be used as a container to center the website with a fixed maximum width
+
 ### Other 
 - Add advanced fit classes such as `.fit-up` and `.fit-down` which you can use to keep everything on the grid while trying to fit.
 - Add force classes such as `.force`, `.force-start`, and `.force-end` to force a background behind a margin to be shown
