@@ -5,10 +5,10 @@
 # SpaceFramework 
 The SpaceFramework is a SCSS framework build for front-end professionals and can be used to align elements pixel perfect on a virtual raster grid. The framework helps you with centralizing typography and the preserving of equivalent spaces between elements. 
 
-One of the key features is the vertical alignment of typography. You can align text and elements on the baseline, capline and median. This is done by defining x-height and cap-heights of each font. 
+One of the key features is the vertical alignment of typography. You can align text and elements on the baseline, capline and median. This is done by defining x-height and cap-heights of each font. Another large key feature is the measurement unit called 'Space-Unit'. Which is used to define equal space steps between everything. 
 
 ## Knowledge of typography and grids
-Extensive knowledge of typography, grids and alignments is required to use the framework optimally. Therefor a good collaboration between UX/UI designers and front-end developers is advised. 
+Extensive knowledge of typography, grids and alignments is required to use the framework optimally. Therefor a good collaboration between UX/UI designers and Front-end developers is advised. 
 
 ## How the SpaceFramework differs from common frameworks
 Most front-end frameworks like Bootstrap and ZURB Foundation focus mostly on the horizontal grid, instead the SpaceFramework does focus on the vertical grid and the vertical rhythms. The SpaceFramework uses advanced methods based on theories from typography and grids to create vertical patterns. As result websites and applications become extremely well aligned and feel pixel perfect balanced.  
