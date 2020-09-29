@@ -14,7 +14,7 @@
     "html",
     "grid"
   ],
-  "author": "Harwin Borger <hello@harwin.nl>",
+  "author": "Harwin Borger <harwin@spaceframework.dev>",
   "license": "GPL-3.0-only",
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard webpack-dev-server",
