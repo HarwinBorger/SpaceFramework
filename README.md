@@ -43,5 +43,12 @@ https://docs.spaceframework.dev
 ## Calculate X-Height and Capheight
 https://fonts.spaceframework.dev 
 
-## Thanks for using the SpaceFramwork
+## Changelog
+https://github.com/HarwinBorger/SpaceFramework/blob/master/changelog.md 
+
+## Thank you for using the SpaceFramwork
 Made with :alien: from the Netherlands — Harwin 
+
+## Supported by
+[![JetBrains](./images/jetbrains.svg)](https://www.jetbrains.com/?from=SpaceFramework)
+
