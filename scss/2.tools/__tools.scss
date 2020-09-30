@@ -20,6 +20,10 @@
 @import 'space-offset';
 @import 'properties';
 
+
+/* ELEMENT GENERATION MIXINS */
+@import "space-normalize";
+
 /* CLASSES GENERATION MIXINS */
 // 5.objects
 @import 'grid-classes';

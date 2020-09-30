@@ -1,0 +1,7 @@
+@mixin space-normalize (){
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+}
