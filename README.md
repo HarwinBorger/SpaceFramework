@@ -34,16 +34,19 @@ SpaceFramework to work without Foundation as well, but full power can be unlocke
 ```
 npm install spaceframework
 ```
-## Official website & Examples
+
+## Ecosystem
+
+### Official website & Examples
 https://spaceframework.dev
 
-## Documentation
+### Documentation
 https://docs.spaceframework.dev 
 
-## Calculate X-Height and Capheight
+### Calculate X-Height and Capheight
 https://fonts.spaceframework.dev 
 
-## Changelog
+### Changelog
 https://github.com/HarwinBorger/SpaceFramework/blob/master/changelog.md 
 
 ## Thank you for using the SpaceFramwork
