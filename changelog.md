@@ -1,5 +1,8 @@
 # SpaceLog
 
+## (unreleased) 
+- Add `.align-items-center`
+
 ## [1.2.1] — 2020-09-30
 - Add space normalize mixin to make `box-sizing: border-box` default
 
