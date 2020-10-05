@@ -1,8 +1,12 @@
 # SpaceLog
 
 ## (unreleased) 
-- Add `.align-items-center` to vertical align grid/flex items. 
-- Add `.edge-snap` to snap to the outer side of the edge. 
+### Grid
+- Add `.align-items-center` to vertical align grid/flex items.
+
+### Edge 
+- Add `.snap-edge` to snap to the outer side of the edge. 
+- Add experimental `.breakout-edge` to breakout of an edge.
 
 ## [1.2.1] — 2020-09-30
 - Add space normalize mixin to make `box-sizing: border-box` default
