@@ -15,6 +15,15 @@
 	}
 
 	/**
+	 * Edge snap
+	 * @description slightly breakout of to the outside of the edge
+	 */
+	.edge-snap{
+		margin-left: #{su($edge-padding*-1)};
+		margin-right: #{su($edge-padding*-1)}
+	}
+
+	/**
 	 * Grid classes
 	 * @description grid provides the basic settings of the grid
 	 */
