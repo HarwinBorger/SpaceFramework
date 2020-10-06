@@ -18,7 +18,7 @@
 	 * Snap edge
 	 * @description slightly breakout of to the outside of the edge
 	 */
-	.snap-edge{
+	.snap-edge {
 		margin-left: #{su($edge-padding*-1)};
 		margin-right: #{su($edge-padding*-1)}
 	}
@@ -64,23 +64,25 @@
 			}
 
 			// Grid Gap
-			@each $gap in $grid-gap-classes {
-				.grid.#{$prefix}gap-#{$gap} {
-					grid-gap: su($gap);
+			[class^="grid"] {
+				@each $gap in $grid-gap-classes {
+					&.#{$prefix}gap-#{$gap} {
+						grid-gap: su($gap);
+					}
 				}
-			}
 
-			// Grid Row Gap
-			@each $gap in $grid-gap-classes {
-				.grid.#{$prefix}row-gap-#{$gap} {
-					grid-row-gap: su($gap);
+				// Grid Row Gap
+				@each $gap in $grid-gap-classes {
+					&.#{$prefix}row-gap-#{$gap} {
+						grid-row-gap: su($gap);
+					}
 				}
-			}
 
-			// Grid Column Gap
-			@each $gap in $grid-gap-classes {
-				.grid.#{$prefix}col-gap-#{$gap} {
-					grid-column-gap: su($gap);
+				// Grid Column Gap
+				@each $gap in $grid-gap-classes {
+					&.#{$prefix}col-gap-#{$gap} {
+						grid-column-gap: su($gap);
+					}
 				}
 			}
 		}

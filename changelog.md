@@ -3,6 +3,7 @@
 ## (unreleased) 
 ### Grid
 - Add `.align-items-center` to vertical align grid/flex items.
+- Improve `.grid-gap` class: it now can only applied in combination with the `.grid` class
 
 ### Edge 
 - Add `.snap-edge` to snap to the outer side of the edge. 
