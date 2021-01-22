@@ -1,0 +1,20 @@
+@use '../node_modules/sass-true' as *;
+@use '../scss/spaceframework';
+
+@include describe('Function: short-var') {
+	@include it('Should run') {
+		@include assert-true(short-var(test, font-size));
+	}
+}
+
+@include describe('Function: get-var') {
+	@include it('Should run') {
+		@include assert-true(get-var(test, font-size));
+	}
+}
+
+@include describe('Function: set-var') {
+	@include it('Should run') {
+		@include assert-true(set-var(test, font-size));
+	}
+}

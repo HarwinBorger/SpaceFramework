@@ -1,0 +1,14 @@
+@use '../node_modules/sass-true' as *;
+@use '../scss/spaceframework';
+
+@include describe('Function: is-list') {
+	@include it('A string should be false') {
+		$list: 0;
+		@include is-equal(is-list($list), false);
+	}
+
+	@include it('A list should be true') {
+		$list: (1,2,3);
+		@include is-truthy(is-list($list));
+	}
+}

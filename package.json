@@ -22,6 +22,7 @@
     "stylelint": "stylelint 'scss/**/*.scss'",
     "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
     "test": "concurrently 'npm run stylelint' 'npm run build'",
+    "jest": "jest --env=node",
     "update:vendor": "./scripts/normalize.sh",
     "version": "./scripts/version.sh",
     "version:dep": "./scripts/dep-npm-version.sh"
@@ -32,7 +33,10 @@
     "css-loader": "^3.6.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
+    "dart-sass": "^1.25.0",
+    "glob": "^7.1.6",
     "husky": "^3.1.0",
+    "jest": "^26.6.3",
     "matchdep": "*",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.14.1",
@@ -46,9 +50,12 @@
     "stylelint-scss": "^3.18.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
+    "sass-true": "^6.0.1",
     "webpack-dashboard": "^3.3.0"
   },
   "dependencies": {
-    "normalize.css": "*"
+    "foundation-sites": "^6.6.3",
+    "normalize.css": "*",
+    "zurb-foundation": "^4.2.3"
   }
 }
