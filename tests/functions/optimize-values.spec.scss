@@ -1,5 +1,5 @@
-@use '../node_modules/sass-true' as true;
-@use '../scss/spaceframework' as *;
+@use '../../node_modules/sass-true/index' as true;
+@use '../../scss/spaceframework' as *;
 
 @include true.describe('optimizes-values()') {
 	@include true.it('A list with equal numbers should be shortened') {

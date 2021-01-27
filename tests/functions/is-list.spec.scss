@@ -1,5 +1,5 @@
-@use '../node_modules/sass-true' as true;
-@use '../scss/spaceframework' as *;
+@use '../../node_modules/sass-true/index' as true;
+@use '../../scss/spaceframework' as *;
 
 @include true.describe('is-list()') {
 	@include true.it('A list should be true') {
