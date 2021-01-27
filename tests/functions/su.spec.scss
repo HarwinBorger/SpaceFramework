@@ -1,0 +1,14 @@
+@use '../../node_modules/sass-true/index' as true;
+@use '../../scss/spaceframework' as *;
+
+@include true.describe('su()') {
+	@include true.it('A call to su() should return a property with css calc() with the given value') {
+		@include true.is-equal(su(2), calc(2 * var(--su)));
+	}
+}
+
+@include true.describe('su-fallback()') {
+	@include true.it('A call to su-fallback() should return a property with the calculated value') {
+		@include true.is-equal(su-fallback(2), 2rem);
+	}
+}

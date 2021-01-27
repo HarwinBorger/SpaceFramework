@@ -1,0 +1,19 @@
+@use '../../node_modules/sass-true/index' as true;
+@use '../../scss/spaceframework' as *;
+
+@include true.describe('is-list()') {
+	@include true.it('A list should be true') {
+		$list: (1,2,3);
+		@include true.is-truthy(is-list($list));
+	}
+
+	@include  true.it('A number is not allowed') {
+		$list: 0;
+		@include true.is-falsy(is-list($list));
+	}
+
+	@include  true.it('A string is not allowed') {
+		$list: 0;
+		@include true.is-falsy(is-list($list));
+	}
+}

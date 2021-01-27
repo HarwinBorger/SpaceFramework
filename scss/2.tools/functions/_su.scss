@@ -1,0 +1,22 @@
+/** Su
+ *  @description returns a css calc value
+ *  @param value
+ */
+@function su($value) {
+	@if ($space-legacy == true) {
+		//@warn('The function su() should not be used while $space-legacy = true');
+	}
+
+	@return calc(#{$value} * var(#{$su}));
+}
+
+/** Su Fallback
+ *  @description return a calculated value
+ *  @param $value
+ */
+@function su-fallback($value) {
+	$breakpoint: last(map-keys($space-unit-sizes));
+	$calculated-value: convert-space-units($value, $breakpoint);
+
+	@return ($calculated-value);
+}

@@ -1,6 +1,9 @@
 # SpaceLog
 
 ## (unreleased) 
+### Testing
+- Add unit testing
+
 ### Grid
 - Add `.align-items-center` to vertical align grid/flex items.
 - Improve `.grid-gap` class: it now can only applied in combination with the `.grid` class
