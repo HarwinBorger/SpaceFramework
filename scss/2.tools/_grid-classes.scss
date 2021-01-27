@@ -19,8 +19,8 @@
 	 * @description slightly breakout of to the outside of the edge
 	 */
 	.snap-edge {
+		margin-right: #{su($edge-padding*-1)};
 		margin-left: #{su($edge-padding*-1)};
-		margin-right: #{su($edge-padding*-1)}
 	}
 
 	/**
@@ -29,8 +29,9 @@
 	 */
 	.breakout-edge {
 		$total-width: $edge-width + su($edge-padding*2);
-		margin-left: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)});
-		margin-right: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)});
+
+		margin-right: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)}); /* stylelint-disable-line */
+		margin-left: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)}); /* stylelint-disable-line  */
 	}
 
 	/**
