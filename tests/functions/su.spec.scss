@@ -9,7 +9,6 @@
 
 @include true.describe('su-fallback()') {
 	@include true.it('A call to su-fallback() should return a property with the calculated value') {
-		@debug(su-fallback(2));
 		@include true.is-equal(su-fallback(2), 2rem);
 	}
 }

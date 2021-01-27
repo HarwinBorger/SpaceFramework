@@ -19,10 +19,10 @@
   "scripts": {
     "start": "NODE_ENV=development webpack-dashboard webpack-dev-server",
     "build": "NODE_ENV=production webpack",
+    "jest": "jest --env=node",
     "stylelint": "stylelint 'scss/**/*.scss'",
     "stylelint:fix": "stylelint 'scss/**/*.scss' --fix",
-    "test": "concurrently 'npm run stylelint' 'npm run build'",
-    "jest": "jest --env=node",
+    "test": "concurrently 'npm run stylelint' 'npm run build' 'npm run jest'",
     "update:vendor": "./scripts/normalize.sh",
     "version": "./scripts/version.sh",
     "version:dep": "./scripts/dep-npm-version.sh"
@@ -54,8 +54,6 @@
     "webpack-dashboard": "^3.3.0"
   },
   "dependencies": {
-    "foundation-sites": "^6.6.3",
-    "normalize.css": "*",
-    "zurb-foundation": "^4.2.3"
+    "normalize.css": "*"
   }
 }
