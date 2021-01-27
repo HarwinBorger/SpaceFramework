@@ -1,0 +1,8 @@
+@use '../../node_modules/sass-true/index' as true;
+@use '../../scss/spaceframework' as *;
+
+@include true.describe('strip-unit()') {
+	@include true.it('A call to strip-unit() should convert 5px to 5') {
+		@include true.is-equal(strip-unit(5px), 5);
+	}
+}
