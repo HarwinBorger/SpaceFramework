@@ -1,0 +1,16 @@
+@use '../node_modules/sass-true' as true;
+@use '../scss/spaceframework' as *;
+
+@include true.describe('optimizes-values()') {
+	@include true.it('A list with equal numbers should be shortened') {
+		$list: (5, 5, 5, 5);
+		@debug(optimize-values($list));
+		@include true.is-equal(optimize-values($list), 5);
+	}
+
+	@include true.it('A list with non equal numbers should not be changed') {
+		$list: (5, 5, 3, 5);
+		@debug(optimize-values($list));
+		@include true.is-equal(optimize-values($list), $list);
+	}
+}
