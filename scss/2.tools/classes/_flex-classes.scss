@@ -38,7 +38,39 @@
 		}
 	}
 
+	.flex-direction {
+		&-row {
+			flex-direction: row;
+		}
+
+		&-column {
+			flex-direction: column;
+		}
+	}
+
+	.align-items {
+		&-start {
+			align-items: start;
+		}
+
+		&-center {
+			align-items: center;
+		}
+
+		&-end {
+			align-items: end;
+		}
+	}
+
 	.justify {
+		&-start {
+			justify-content: start;
+		}
+
+		&-end {
+			justify-content: end;
+		}
+
 		&-left {
 			justify-content: left;
 		}
@@ -59,7 +91,7 @@
 			justify-content: space-evenly;
 		}
 
-		&-space-around{
+		&-space-around {
 			justify-content: space-around;
 		}
 	}
