@@ -20,6 +20,7 @@ The core of the framework lays in the use of the so called Space-Units and defin
 - Fixed units of measurement called 'space-units'
 - Real vertical text alignment such as align-baseline, align-capline and align-median
 - Grid
+- Flex
 - Centralized typography
 - Centralized spacing
 - Trim, Fit and Force utility classes
