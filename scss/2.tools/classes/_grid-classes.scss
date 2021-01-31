@@ -98,21 +98,4 @@
 			}
 		}
 	}
-
-	/**
-	 * Grid utility classes
-	 */
-	.align-items {
-		&-start {
-			align-items: start;
-		}
-
-		&-center {
-			align-items: center;
-		}
-
-		&-end {
-			align-items: end;
-		}
-	}
 }
