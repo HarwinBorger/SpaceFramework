@@ -6,7 +6,6 @@
 	.align-items {
 		&-start {
 			align-items: flex-start;
-			align-items: start;
 		}
 
 		&-center {
@@ -15,28 +14,23 @@
 
 		&-end {
 			align-items: flex-end;
-			align-items: end;
 		}
 	}
 
 	.justify {
 		&-start {
 			justify-content: flex-start;
-			justify-content: start;
 		}
 
 		&-end {
 			justify-content: flex-end;
-			justify-content: end;
 		}
 
 		&-left {
-			justify-content: flex-start;
 			justify-content: left;
 		}
 
 		&-right {
-			justify-content: flex-end;
 			justify-content: right;
 		}
 
