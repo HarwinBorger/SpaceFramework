@@ -6,6 +6,7 @@
  */
 
 @include grid-classes();
+@include flex-classes();
 @include layout-classes();
 @include font-size-classes();
 @include text-preset-classes();

@@ -4,6 +4,10 @@
 ### Testing
 - Add unit testing
 
+### Flex
+- Add basic support for flex classes
+- Add justify classes such as `.justify-left` and `justify-space-between` 
+
 ### Grid
 - Add `.align-items-center` to vertical align grid/flex items.
 - Improve `.grid-gap` class: it now can only applied in combination with the `.grid` class
@@ -12,8 +16,9 @@
 - Add `.snap-edge` to snap to the outer side of the edge. 
 - Add experimental `.breakout-edge` to breakout of an edge.
 
-### Line-heights
+### Other
 - Remove old line-height system
+- Remove unneeded classes such `block-absolute`, `block-fixed` etc. Just use: `position-absolute`, `position-fixed` etc. 
 
 ## [1.2.1] — 2020-09-30
 - Add space normalize mixin to make `box-sizing: border-box` default

@@ -1,4 +1,4 @@
-@mixin flex-classes(){
+@mixin flex-classes() {
 	.flex {
 		display: flex;
 
@@ -25,12 +25,12 @@
 				// Grid Gap
 				@each $gap in $flex-gap-classes {
 					&.#{$prefix}gap-#{$gap} {
-						margin-left: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
 						margin-right: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+						margin-left: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
 
 						> * {
-							margin-left: su($gap/2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
 							margin-right: su($gap/2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+							margin-left: su($gap/2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
 						}
 					}
 				}
@@ -39,16 +39,28 @@
 	}
 
 	.justify {
-		&-left{
-			justify-content: flex-start;
+		&-left {
+			justify-content: left;
 		}
 
-		&-right{
-			justify-content: flex-end;
+		&-right {
+			justify-content: right;
 		}
 
-		&-space-between{
+		&-center {
 			justify-content: space-between;
+		}
+
+		&-space-between {
+			justify-content: space-between;
+		}
+
+		&-space-evenly {
+			justify-content: space-evenly;
+		}
+
+		&-space-around{
+			justify-content: space-around;
 		}
 	}
 }
