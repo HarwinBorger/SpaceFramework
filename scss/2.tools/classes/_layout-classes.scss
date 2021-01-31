@@ -91,14 +91,6 @@ $space-position-register: (
 	#{$cssPropertyName}: $cssPropertyValue;
 }
 
-@mixin space-set-position-classes($className) {
-	@each $position in $space-position-register {
-		.#{$className}-#{$position} {
-			position: $position;
-		}
-	}
-}
-
 @mixin space-loop-sides($classNameArray, $settings, $values, $type) {
 	$negative: -1;
 	//Set css class like: .space-[type], .space-[type]-[size]
@@ -184,10 +176,6 @@ $space-position-register: (
 @mixin space-loop-types($className, $settings) {
 	@each $type, $options in map_get($settings, types) {
 		$newClassName: '#{$className}-#{$type}';
-
-		@if ($type == 'position') {
-			@include space-set-position-classes($className);
-		}
 
 		@include space-loop-breakpoints($newClassName, $settings, $type);
 	}
