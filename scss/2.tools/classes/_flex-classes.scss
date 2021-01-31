@@ -23,7 +23,7 @@
 
 			@include breakpoint($viewport) {
 				// Grid Gap
-				@each $gap in $grid-gap-classes {
+				@each $gap in $flex-gap-classes {
 					&.#{$prefix}gap-#{$gap} {
 						margin-left: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
 						margin-right: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
