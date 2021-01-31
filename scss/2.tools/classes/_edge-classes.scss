@@ -1,0 +1,36 @@
+@mixin edge-classes(){
+	/**
+	 * Edge
+	 * @description edge is the container for the website
+	 */
+	.edge {
+		box-sizing: content-box;
+
+		@include padding-horizontal($edge-padding);
+
+		max-width: $edge-width;
+
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	/**
+	 * Snap edge
+	 * @description slightly breakout of to the outside of the edge
+	 */
+	.snap-edge {
+		margin-right: #{su($edge-padding*-1)};
+		margin-left: #{su($edge-padding*-1)};
+	}
+
+	/**
+	 * Breakout edge
+	 * @description breakout of the edge the viewport width of the website
+	 */
+	.breakout-edge {
+		$total-width: $edge-width + su($edge-padding*2);
+
+		margin-right: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)}); /* stylelint-disable-line */
+		margin-left: Min(calc((100vw - #{$edge-width}) / 2 * -1), #{su($edge-padding*-1)}); /* stylelint-disable-line  */
+	}
+}

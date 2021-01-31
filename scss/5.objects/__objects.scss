@@ -5,6 +5,7 @@
  * design patterns, for example media object known from OOCSS
  */
 
+@include edge-classes();
 @include grid-classes();
 @include flex-classes();
 @include box-layout-classes();
