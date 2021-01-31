@@ -1,0 +1,54 @@
+@mixin flex-classes(){
+	.flex {
+		display: flex;
+
+		> .auto {
+			flex: 1;
+		}
+
+		> .grow {
+			flex: auto 0 0;
+		}
+
+		> .shrink {
+			flex: 0 auto 0;
+		}
+
+		@each $viewport, $size in $viewports {
+			$prefix: '#{$viewport}-';
+
+			@if ($viewport == 'small') {
+				$prefix: '';
+			}
+
+			@include breakpoint($viewport) {
+				// Grid Gap
+				@each $gap in $grid-gap-classes {
+					&.#{$prefix}gap-#{$gap} {
+						margin-left: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+						margin-right: su($gap/-2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+
+						> * {
+							margin-left: su($gap/2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+							margin-right: su($gap/2); // todo replace with flex-gap when full browser support: https://caniuse.com/flexbox-gap
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.justify {
+		&-left{
+			justify-content: flex-start;
+		}
+
+		&-right{
+			justify-content: flex-end;
+		}
+
+		&-space-between{
+			justify-content: space-between;
+		}
+	}
+}
