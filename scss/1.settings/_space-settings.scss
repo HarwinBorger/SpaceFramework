@@ -37,7 +37,7 @@ $grid-raster-classes: (1, 2, 3, 4) !default; // define which raster classes you 
 $grid-row-span-classes: (2, 3, 4) !default; // define which row-span classes you would like to use: .row-span-2, row-span-3, row-span-4 etc.
 
 /***** FLEX *****/
-$flex-gap-classes: (0, 1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
+$flex-gap-classes: (1, 2) !default; // define which gap classes you would like to use: .gap-1, .gap-2 etc
 
 /***** TYPOGRAPHY *****/
 $space-support: (
