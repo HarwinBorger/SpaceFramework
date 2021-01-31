@@ -16,7 +16,6 @@
 /* SPACE MIXINS */
 @import 'space-unit';
 @import 'space-font';
-@import 'line-height';
 @import 'space-offset';
 @import 'properties';
 
@@ -24,14 +23,4 @@
 @import "space-normalize";
 
 /* CLASSES GENERATION MIXINS */
-// 5.objects
-@import 'grid-classes';
-@import 'layout-classes';
-@import 'self-classes';
-@import 'position-classes';
-
-// 7.utilities
-@import 'trim-classes';
-@import 'implode-classes';
-@import 'shift-classes';
-@import 'force-classes';
+@import "classes/_classes";

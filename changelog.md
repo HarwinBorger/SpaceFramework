@@ -12,6 +12,9 @@
 - Add `.snap-edge` to snap to the outer side of the edge. 
 - Add experimental `.breakout-edge` to breakout of an edge.
 
+### Line-heights
+- Remove old line-height system
+
 ## [1.2.1] — 2020-09-30
 - Add space normalize mixin to make `box-sizing: border-box` default
 
