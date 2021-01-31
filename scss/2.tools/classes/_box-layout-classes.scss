@@ -2,7 +2,7 @@
  * Box Layout Classes
  * @description can be used for either flex or grid classes
  */
-@mixin box-layout-classes(){
+@mixin box-layout-classes() {
 	.align-items {
 		&-start {
 			align-items: flex-start;
