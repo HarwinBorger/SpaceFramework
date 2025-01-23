@@ -39,13 +39,13 @@ npm install spaceframework
 ## Ecosystem
 
 ### Official website & Examples
-https://spaceframework.dev
+https://spaceframework.harwin.nl
 
 ### Documentation
-https://docs.spaceframework.dev 
+https://docs.spaceframework.harwin.nl
 
 ### Calculate X-Height and Capheight
-https://fonts.spaceframework.dev 
+https://fonts.spaceframework.harwin.nl
 
 ### Changelog
 https://github.com/HarwinBorger/SpaceFramework/blob/master/changelog.md 
